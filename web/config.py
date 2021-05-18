@@ -9,4 +9,3 @@ class Config:
 
     FREEZER_DESTINATION = "../build"
     FREEZER_RELATIVE_URLS = True
-    FREEZER_IGNORE_MIMETYPE_WARNINGS = True

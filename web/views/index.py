@@ -11,31 +11,19 @@ index_bp = Blueprint("index", __name__)
 @index_bp.route("/")
 def index():
     """Return home page."""
-    return (
-        render_template("home.html.j2"),
-        200,
-        {"Content-Type": "text/html; charset=utf-8"},
-    )
+    return render_template("home.html.j2")
 
 
-@index_bp.route("/about")
+@index_bp.route("/about/")
 def about():
     """Return home page."""
-    return (
-        render_template("home.html.j2"),
-        200,
-        {"Content-Type": "text/html; charset=utf-8"},
-    )
+    return render_template("home.html.j2")
 
 
-@index_bp.route("/pricing")
+@index_bp.route("/pricing/")
 def pricing():
     """Return pricing page."""
-    return (
-        render_template("pricing.html.j2"),
-        200,
-        {"Content-Type": "text/html; charset=utf-8"},
-    )
+    return render_template("pricing.html.j2")
 
 
 @index_bp.route("/favicon.ico")
