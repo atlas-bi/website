@@ -24,14 +24,7 @@
             <div class="column is-1"></div>
             <div class="column">
                 <h1>Looking for more?</h1>
-
-                <script>
-                        document.write('<form action="mailto:')
-                        document.write('qelna'.replace(/[a-zA-Z]/g, function(c) { return String.fromCharCode((c <= "Z" ? 90 : 122) >= (c = c.charCodeAt(0) + 13) ? c : c - 26); }));
-                        document.write("@")
-                        document.write('eup.arg'.replace(/[a-zA-Z]/g, function(c) { return String.fromCharCode((c <= "Z" ? 90 : 122) >= (c = c.charCodeAt(0) + 13) ? c : c - 26); }));
-                        document.write('" method="get" enctype="text/plain">')
-                </script>
+                <form name="contact" method="POST" data-netlify="true">
                     <div class="field">
                         <label class="label" for="email">Subject:</label>
                         <input class="input" type="text" name="subject" id="email" placeholder="I need help with..." />
