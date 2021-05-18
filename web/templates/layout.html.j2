@@ -1,55 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <title>{{ title or "Atlas BI"}}</title>
-    <meta name="description" content="Atlas of Information Management">
+    <meta name="description" content="Atlas of Information Management, a business intelligence library and documentation database.">
     <meta name="subject" content="Take your reporting to the next level with a consolidated report library!">
-
     <meta name="robots" content="index,follow">
     <meta name="googlebot" content="index,follow">
-
     <link rel="icon" sizes="192x192" href="/static/img/android-chrome-192x192.png">
     <link rel="apple-touch-icon" href="/static/img/apple-touch-icon.png">
-
-    <meta property="og:url" content="https://example.com/page.html">
+    <meta property="og:url" content="https://atlas.bi">
     <meta property="og:type" content="website">
     <meta property="og:title" content="{{ title or "Atlas BI"}}">
     <meta property="og:image" content="https://atlas.bi/static/img/android-chrome-192x192.png">
-    <meta property="og:description" content="Take your reporting to the next level with a consolidated report library!">
+    <meta property="og:description" content="Atlas of Information Management, a business intelligence library and documentation database.">
     <meta property="og:site_name" content="Atlas of Information Management">
     <meta property="og:locale" content="en_US">
     <meta property="article:author" content="Riverside Healthcare">
-
     <link type="text/css" rel="stylesheet" href="/static/lib/prism/prism.min.css" />
     {% assets "css_font" %}
-        <link type="text/css" rel="stylesheet" href="{{ ASSET_URL }}" />
+    <link type="text/css" rel="stylesheet" href="{{ ASSET_URL }}" />
     {% endassets %}
     {% assets "css_site" %}
-         <link type="text/css" rel="stylesheet" href="{{ ASSET_URL }}" />
+    <link type="text/css" rel="stylesheet" href="{{ ASSET_URL }}" />
     {% endassets %}
+</head>
 
-  </head>
-    <body>
-{% include "nav.html.j2" %}
-
-
-  <section class="is-flex-grow-1">
-      {% block body %}
-      <h1 class="title">
-        Hello World
-      </h1>
-      <p class="subtitle">
-        My first website with <strong>Bulma</strong>!
-      </p>
-      {% endblock body %}
-  </section>
-  {% include "foot.html.j2" %}
-  {% assets "js_site" %}
+<body>
+    {% include "nav.html.j2" %}
+    <section class="is-flex-grow-1">
+        {% block body %}
+        <h1 class="title">
+            Hello World
+        </h1>
+        <p class="subtitle">
+            My first website with <strong>Bulma</strong>!
+        </p>
+        {% endblock body %}
+    </section>
+    {% include "foot.html.j2" %}
+    {% assets "js_site" %}
     <script type="text/javascript" src="{{ ASSET_URL }}"></script>
     {% endassets %}
     <script type="text/javascript" src="/static/lib/prism/prism.min.js"></script>
-  </body>
+</body>
+
 </html>
