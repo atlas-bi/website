@@ -6,8 +6,6 @@ exclude: >
       static/lib/|
   )
 
-files: ^atlas/
-
 repos:
   - repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v3.4.0
@@ -36,13 +34,13 @@ repos:
         name: prettier-js
         args: [--write,--loglevel=error]
         types: [javascript]
-        files: atlas/static/js/.*.js$
+        files: web/static/js/.*.js$
   - repo: https://github.com/pre-commit/mirrors-eslint
     rev: 'v7.19.0'
     hooks:
       - id: eslint
         args: [--fix]
-        files: atlas/static/js/.*.js$
+        files: web/static/js/.*.js$
         types: [file]
         additional_dependencies:
         - eslint-config-prettier@^7.1.0
@@ -54,12 +52,12 @@ repos:
         name: prettier-css
         args: [--write,--loglevel=error]
         types: [css]
-        files: atlas/static/css/.*.css$
+        files: web/static/css/.*.css$
   - repo: https://github.com/awebdeveloper/pre-commit-stylelint
     rev: '8f63da4'
     hooks:
       - id: stylelint
-        files: atlas/static/css/.*.css$
+        files: web/static/css/.*.css$
         args: [--fix]
         additional_dependencies:
         - prettier@^2.2.1
