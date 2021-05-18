@@ -1,0 +1,60 @@
+html {
+    height: 100%;
+}
+
+body {
+    font-family: Inter, Arial, san-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+}
+
+.atlas-nav {
+    padding-left: 15px;
+}
+
+.atlas-nav img {
+    width: 40px !important;
+    height: 40px !important;
+    margin-top: 5px;
+}
+
+@media screen and (min-width:1024px) {
+    .atlas-nav {
+        padding: 15px 0;
+    }
+
+    .atlas-nav img {
+        width: 56px !important;
+        height: 56px !important;
+    }
+
+}
+
+a.navbar-item:hover {
+    background: transparent;
+}
+
+.hero-body {
+    background-color: rgba(167, 200, 204, .7)
+}
+
+.hero-two {
+    background-color: rgba(0, 68, 106, .08)
+}
+
+h1 {
+    font-size: 50px;
+}
+
+/* fix for prism in bulma */
+pre .number {
+    background-color: inherit;
+    font: inherit;
+    padding: 0;
+    margin: 0;
+    height: inherit;
+    min-width: inherit;
+    text-align: inherit;
+    vertical-align: inherit;
+}

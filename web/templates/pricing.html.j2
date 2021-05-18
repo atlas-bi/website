@@ -1,0 +1,54 @@
+{% extends "layout.html.j2" %}
+{% block body %}
+<div class="hero-body">
+    <div class="container">
+        <div class="columns">
+            <div class="column">
+                <h1><strong>Atlas</strong> is Free!</h1>
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-header-title">
+                            What?!
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <div class="content">
+                            Atlas is an <a href="https://github.com/Riverside-Healthcare/Atlas">open source</a> project.
+                            Your contributes are more than welcome!
+                            <br>
+                            <a href="https://riverside-healthcare.github.io/Atlas/">Extensive documentation</a> is available!
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="column is-1"></div>
+            <div class="column">
+                <h1>Looking for more?</h1>
+
+                <script>
+                        document.write('<form action="mailto:')
+                        document.write('qelna'.replace(/[a-zA-Z]/g, function(c) { return String.fromCharCode((c <= "Z" ? 90 : 122) >= (c = c.charCodeAt(0) + 13) ? c : c - 26); }));
+                        document.write("@")
+                        document.write('eup.arg'.replace(/[a-zA-Z]/g, function(c) { return String.fromCharCode((c <= "Z" ? 90 : 122) >= (c = c.charCodeAt(0) + 13) ? c : c - 26); }));
+                        document.write('" method="get" enctype="text/plain">')
+                </script>
+                    <div class="field">
+                        <label class="label" for="email">Subject:</label>
+                        <input class="input" type="text" name="subject" id="email" placeholder="I need help with..." />
+                    </div>
+                    <div class="field">
+                        <label class="label">How can we help?:</label>
+                        <textarea class="textarea" name="body" rows="12" cols="35" placeholder="When is the next demo?"></textarea>
+                    </div>
+                    <div class="field">
+                        <div class="control">
+                            <button type="button" onclick="this.closest('form').submit();this.closest('form').reset();return !1;" class="button is-link is-fullwidth">Send</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock body %}
+<a href="mailto:dryan@rhc.net"
