@@ -1,81 +1,73 @@
-exclude: >
-  (?x)(
-      build/|
-      .webassets-cache/|
-      .webassets-manifest|
-      static/lib/|
-  )
-
 repos:
-  - repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: v3.4.0
-    hooks:
-      - id: pretty-format-json
-        args: [--autofix]
-      - id: check-json
-        exclude: package-lock.json
-      - id: check-toml
-      - id: check-yaml
-      - id: end-of-file-fixer
-  - repo: https://github.com/timothycrosley/isort
-    rev: 4.3.21
-    hooks:
-      - id: isort
-        additional_dependencies: [toml]
-  - repo: https://github.com/ambv/black
-    rev: 20.8b1
-    hooks:
-      - id: black
-        language_version: python3.8
-  - repo: https://github.com/pre-commit/mirrors-prettier
-    rev: 'v2.2.1'
-    hooks:
-      - id: prettier
-        name: prettier-js
-        args: [--write,--loglevel=error]
-        types: [javascript]
-        files: web/static/js/.*.js$
-  - repo: https://github.com/pre-commit/mirrors-eslint
-    rev: 'v7.19.0'
-    hooks:
-      - id: eslint
-        args: [--fix]
-        files: web/static/js/.*.js$
-        types: [file]
-        additional_dependencies:
-        - eslint-config-prettier@^7.1.0
-        - eslint-plugin-prettier@^3.3.1
-  - repo: https://github.com/pre-commit/mirrors-prettier
-    rev: 'v2.2.1'
-    hooks:
-      - id: prettier
-        name: prettier-css
-        args: [--write,--loglevel=error]
-        types: [css]
-        files: web/static/css/.*.css$
-  - repo: https://github.com/awebdeveloper/pre-commit-stylelint
-    rev: '8f63da4'
-    hooks:
-      - id: stylelint
-        files: web/static/css/.*.css$
-        args: [--fix]
-        additional_dependencies:
-        - prettier@^2.2.1
-        - stylelint@13.2.1
-        - stylelint-config-standard@20.0.0
-        - stylelint-config-prettier@^8.0.2
-        - stylelint-config-standard@^20.0.0
-        - stylelint-prettier@^1.1.2
-  - repo: https://github.com/asottile/pyupgrade
-    rev: v2.13.0
-    hooks:
-      - id: pyupgrade
-  - repo: https://github.com/macisamuele/language-formatters-pre-commit-hooks
-    rev: befdfee
-    hooks:
-    - id: pretty-format-toml
-      args: [--autofix]
-    - id: pretty-format-ini
-      args: [--autofix]
-    - id: pretty-format-yaml
-      args: [--autofix, --indent, '2']
+- repo: https://github.com/pre-commit/pre-commit-hooks
+  rev: v4.0.1
+  hooks:
+  - id: pretty-format-json
+    args: [--autofix]
+  - id: check-json
+    exclude: package-lock.json
+  - id: check-toml
+  - id: check-yaml
+  - id: end-of-file-fixer
+- repo: https://github.com/timothycrosley/isort
+  rev: 5.8.0
+  hooks:
+  - id: isort
+    additional_dependencies: [toml]
+- repo: https://github.com/ambv/black
+  rev: 21.5b1
+  hooks:
+  - id: black
+    language_version: python3.8
+- repo: https://github.com/pre-commit/mirrors-prettier
+  rev: v2.3.0
+  hooks:
+  - id: prettier
+    name: prettier-js
+    args: [--write, --loglevel=error]
+    types: [javascript]
+    files: web/static/js/.*.js$
+- repo: https://github.com/pre-commit/mirrors-eslint
+  rev: v7.26.0
+  hooks:
+  - id: eslint
+    args: [--fix]
+    files: web/static/js/.*.js$
+    types: [file]
+    additional_dependencies:
+    - eslint-config-prettier@^7.1.0
+    - eslint-plugin-prettier@^3.3.1
+- repo: https://github.com/pre-commit/mirrors-prettier
+  rev: v2.3.0
+  hooks:
+  - id: prettier
+    name: prettier-css
+    args: [--write, --loglevel=error]
+    types: [css]
+    files: web/static/css/.*.css$
+- repo: https://github.com/awebdeveloper/pre-commit-stylelint
+  rev: 0.0.2
+  hooks:
+  - id: stylelint
+    files: web/static/css/.*.css$
+    args: [--fix]
+    additional_dependencies:
+    - prettier@^2.2.1
+    - stylelint@13.2.1
+    - stylelint-config-standard@20.0.0
+    - stylelint-config-prettier@^8.0.2
+    - stylelint-config-standard@^20.0.0
+    - stylelint-prettier@^1.1.2
+- repo: https://github.com/asottile/pyupgrade
+  rev: v2.17.0
+  hooks:
+  - id: pyupgrade
+- repo: https://github.com/macisamuele/language-formatters-pre-commit-hooks
+  rev: v2.0.0
+  hooks:
+  - id: pretty-format-toml
+    args: [--autofix]
+  - id: pretty-format-ini
+    args: [--autofix]
+  - id: pretty-format-yaml
+    args: [--autofix, --indent, '2']

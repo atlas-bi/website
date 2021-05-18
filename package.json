@@ -1,0 +1,59 @@
+{
+  "dependencies": {
+    "eslint": "^7.17.0",
+    "eslint-config-prettier": "^7.1.0",
+    "eslint-plugin-prettier": "^3.3.1",
+    "htmlhint": "git+https://github.com/christopherpickering/HTMLHint.git",
+    "jshint": "^2.12.0",
+    "markdown-include": "^0.4.3",
+    "prettier": "^2.2.1",
+    "stylelint": "^13.8.0",
+    "stylelint-config-prettier": "^8.0.2",
+    "stylelint-config-standard": "^20.0.0",
+    "stylelint-prettier": "^1.1.2",
+    "stylelint-scss": "^3.19.0"
+  },
+  "description": "atlas website",
+  "eslintConfig": {
+    "extends": [
+      "plugin:prettier/recommended"
+    ],
+    "plugins": [
+      "prettier"
+    ],
+    "rules": {
+      "prettier/prettier": "error"
+    }
+  },
+  "jshintConfig": {
+    "ignore": [
+      "*.min.js",
+      "lib/*.js"
+    ]
+  },
+  "license": "AGPL-3.0-or-later",
+  "name": "atlas-website",
+  "prittier": {
+    "printWidth": "99",
+    "tabWidth": "4"
+  },
+  "repository": {
+    "private": true
+  },
+  "stylelint": {
+    "extends": [
+      "stylelint-config-standard",
+      "stylelint-config-prettier"
+    ],
+    "ignoreFiles": [
+      "*.min.css",
+      "lib/*.css"
+    ],
+    "plugins": [
+      "stylelint-prettier"
+    ],
+    "rules": {
+      "prettier/prettier": true
+    }
+  }
+}

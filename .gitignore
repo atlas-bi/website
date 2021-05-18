@@ -1,9 +1,12 @@
+
 build/
 poetry.lock
-*.min.css
-*.min.js
+**/static/css/*.min.css
+**/static/js/*.min.js
 .webassets-manifest
 .python-version
+
+
 
 # Created by https://www.toptal.com/developers/gitignore/api/macos,python,flask,windows
 # Edit at https://www.toptal.com/developers/gitignore?templates=macos,python,flask,windows

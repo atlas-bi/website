@@ -34,3 +34,10 @@ def favicon():
         "favicon.ico",
         mimetype="image/x-icon",
     )
+
+
+@index_bp.route("/robots.txt")
+def robots():
+    """Return robots."""
+    return """User-agent: *
+Allow: /"""

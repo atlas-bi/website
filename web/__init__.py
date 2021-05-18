@@ -21,7 +21,7 @@ def create_app():
     cache.clear()
     htmlmin.init_app(this_app)
 
-    with app.app_context():
+    with this_app.app_context():
 
         from web import assets  # noqa: F401
         from web.views import filters, index

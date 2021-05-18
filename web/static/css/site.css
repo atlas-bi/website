@@ -1,60 +1,60 @@
 html {
-    height: 100%;
+  height: 100%;
 }
 
 body {
-    font-family: Inter, Arial, san-serif;
-    display: flex;
-    flex-direction: column;
-    min-height: 100%;
+  font-family: "Inter", Arial, Verdana, Tahoma, sans-serif;
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
 }
 
 .atlas-nav {
-    padding-left: 15px;
+  padding-left: 15px;
 }
 
 .atlas-nav img {
-    width: 40px !important;
-    height: 40px !important;
-    margin-top: 5px;
+  width: 40px !important;
+  height: 40px !important;
+  margin-top: 5px;
+  margin-bottom: -2px;
 }
 
-@media screen and (min-width:1024px) {
-    .atlas-nav {
-        padding: 15px 0;
-    }
+@media screen and (min-width: 1024px) {
+  .atlas-nav {
+    padding: 15px 0;
+  }
 
-    .atlas-nav img {
-        width: 56px !important;
-        height: 56px !important;
-    }
-
+  .atlas-nav img {
+    width: 56px !important;
+    height: 56px !important;
+  }
 }
 
 a.navbar-item:hover {
-    background: transparent;
+  background: transparent;
 }
 
 .hero-body {
-    background-color: rgba(167, 200, 204, .7)
+  background-color: rgba(167, 200, 204, 0.7);
 }
 
 .hero-two {
-    background-color: rgba(0, 68, 106, .08)
+  background-color: rgba(0, 68, 106, 0.08);
 }
 
 h1 {
-    font-size: 50px;
+  font-size: 50px;
 }
 
 /* fix for prism in bulma */
 pre .number {
-    background-color: inherit;
-    font: inherit;
-    padding: 0;
-    margin: 0;
-    height: inherit;
-    min-width: inherit;
-    text-align: inherit;
-    vertical-align: inherit;
+  background-color: inherit;
+  font: inherit;
+  padding: 0;
+  margin: 0;
+  height: inherit;
+  min-width: inherit;
+  text-align: inherit;
+  vertical-align: inherit;
 }
