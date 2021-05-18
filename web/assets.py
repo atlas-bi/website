@@ -20,7 +20,7 @@ def init(app=None):
         env.register("css_font", css_font)
 
         css_site = Bundle(
-            "./css/site.css", filters="rcssmin", output="css/site.min.css"
+            "./css/site.css", filters="libsass,rcssmin", output="css/site.min.css"
         )
         env.register("css_site", css_site)
 
