@@ -20,10 +20,10 @@ def about():
     return render_template("home.html.j2")
 
 
-@index_bp.route("/pricing/")
+@index_bp.route("/download/")
 def pricing():
-    """Return pricing page."""
-    return render_template("pricing.html.j2")
+    """Return download page."""
+    return render_template("download.html.j2")
 
 
 @index_bp.route("/favicon.ico")
