@@ -26,6 +26,12 @@ def pricing():
     return render_template("download.html.j2")
 
 
+@index_bp.route("/help/")
+def help():
+    """Return get help page."""
+    return render_template("help.html.j2")
+
+
 @index_bp.route("/favicon.ico")
 def favicon():
     """Return favicon."""

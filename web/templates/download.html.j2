@@ -1,47 +1,71 @@
 {% extends "layout.html.j2" %}
 {% block body %}
-<div class="hero-body">
-    <div class="container">
-        <div class="columns">
-            <div class="column">
-                <h1><strong>Atlas</strong> is Free!</h1>
+    <div class="hero-body">
+        <div class="container">
+            <div class="columns">
+                <div class="column is-three-fifths is-offset-one-fifth">
+                <h1 class="mb-5">how to get <strong>Atlas</strong></h1>
                 <div class="card">
-                    <div class="card-header">
-                        <div class="card-header-title">
-                            What?!
-                        </div>
-                    </div>
+                    <header class="card-header">
+                        <p class="card-header-title">
+                            Open Source
+                        </p>
+                    </header>
                     <div class="card-content">
                         <div class="content">
-                            Atlas is an <a href="https://github.com/Riverside-Healthcare/Atlas">open source</a> project.
-                            Your contributes are more than welcome!
-                            <br>
-                            <a href="https://riverside-healthcare.github.io/Atlas/">Extensive documentation</a> is available!
+                            Atlas is an open source project and free to use!
+
+                            There are two parts to Atlas - a webapp and an ETL.
+
+                            The ETL process collects the report metadata which is displayed in the webapp.
+
+                            <br /><br />
+
+                            Atlas is most easily installed on an
+                            <a
+                                href="https://docs.atlas.bi/atlas/requirements.html">IIS windows server
+                            </a>.
+
+                            <br /><br />
+
+                            The ETL is most easily installed on a
+                            <a
+                                href="https://docs.atlas.bi/atlas/requirements.html">Microsoft SQL Server
+                            </a>.
+
+                            <br /><br />
+
+                            There is a community of Atlas users who can
+                            <a href="/help">help
+                            </a> you get started!
                         </div>
                     </div>
+                    <footer class="card-footer">
+                        <p class="card-footer-item">
+                            <span>
+                                Download <strong>
+                                <a href="https://github.com/Riverside-Healthcare/Atlas">Atlas
+                                </a></strong>
+                            </span>
+                        </p>
+                        <p class="card-footer-item">
+                            <span>
+                                Download the
+                                <a href="https://github.com/Riverside-Healthcare/Atlas-ETL">ETL
+                                </a>
+                            </span>
+                        </p>
+                        <p class="card-footer-item">
+                            <span>
+                                Read the
+                                <a href="https://docs.atlas.bi">docs
+                                </a>
+                            </span>
+                        </p>
+                    </footer>
                 </div>
-            </div>
-            <div class="column is-1"></div>
-            <div class="column">
-                <h1>Looking for more?</h1>
-                <form name="contact" method="POST" data-netlify="true">
-                    <div class="field">
-                        <label class="label" for="email">Subject:</label>
-                        <input class="input" type="text" name="subject" id="email" placeholder="I need help with..." />
-                    </div>
-                    <div class="field">
-                        <label class="label">How can we help?:</label>
-                        <textarea class="textarea" name="body" rows="12" cols="35" placeholder="When is the next demo?"></textarea>
-                    </div>
-                    <div class="field">
-                        <div class="control">
-                            <button type="button" onclick="this.closest('form').submit();this.closest('form').reset();return !1;" class="button is-link is-fullwidth">Send</button>
-                        </div>
-                    </div>
-                </form>
             </div>
         </div>
     </div>
 </div>
 {% endblock body %}
-<a href="mailto:dryan@rhc.net"
