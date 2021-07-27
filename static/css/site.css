@@ -14,6 +14,7 @@
 
 @import "../lib/bulma/sass/helpers/flexbox";
 @import "../lib/bulma/sass/helpers/typography";
+@import "../lib/bulma/sass/helpers/spacing";
 @import "../lib/bulma/sass/layout/_all";
 
 html {
@@ -32,9 +33,9 @@ body {
 }
 
 .atlas-nav img {
-  width: 40px !important;
+  width: 130px !important;
   height: 40px !important;
-  margin-top: 5px;
+  margin-top: 6px;
   margin-bottom: -2px;
 }
 
@@ -44,7 +45,7 @@ body {
   }
 
   .atlas-nav img {
-    width: 56px !important;
+    width: 182px !important;
     height: 56px !important;
   }
 }
@@ -75,4 +76,8 @@ pre .number {
   min-width: inherit;
   text-align: inherit;
   vertical-align: inherit;
+}
+
+.navbar-item.button {
+  margin: 13px;
 }

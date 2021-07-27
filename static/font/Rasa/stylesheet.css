@@ -1,0 +1,7 @@
+@font-face {
+    font-family: 'Rasa';
+    src: url('/static/font/Rasa/otf/Rasa-Medium.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
