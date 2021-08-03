@@ -9,6 +9,8 @@
 @import "../lib/bulma/sass/elements/content";
 @import "../lib/bulma/sass/elements/image";
 @import "../lib/bulma/sass/elements/title";
+@import "../lib/bulma/sass/elements/other";
+@import "../lib/bulma/sass/elements/box";
 @import "../lib/bulma/sass/form/_all";
 @import "../lib/bulma/sass/grid/columns";
 
@@ -64,6 +66,10 @@ a.navbar-item:hover {
 
 h1 {
   font-size: 50px;
+}
+
+h2 {
+  font-size: 25px;
 }
 
 /* fix for prism in bulma */
