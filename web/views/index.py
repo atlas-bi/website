@@ -27,7 +27,7 @@ def pricing():
 
 
 @index_bp.route("/help/")
-def help():
+def help_page():
     """Return get help page."""
     return render_template("help.html.j2")
 
