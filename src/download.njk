@@ -1,0 +1,74 @@
+{% extends "src/_includes/layout.njk" %}
+{% block body %}
+    <div class="hero-body">
+        <div class="container">
+            <div class="columns">
+                <div class="column is-three-fifths is-offset-one-fifth">
+                    <h1 class="mb-5">
+                        how to get
+                        <strong>Atlas</strong>
+                    </h1>
+                    <div class="card">
+                        <header class="card-header">
+                            <p class="card-header-title">
+                                Open Source
+                            </p>
+                        </header>
+                        <div class="card-content">
+                            <div class="content">
+                                Atlas is an open source project and free to use!
+                                There are two parts to Atlas - a webapp and an ETL.
+                                The ETL process collects the report metadata which is displayed in the webapp.
+                                <br />
+                                <br />
+                                Atlas is most easily installed on an
+                                <a href="https://docs.atlas.bi/atlas/requirements.html">
+                                    IIS windows server
+                                </a>
+                                .
+                                <br />
+                                <br />
+                                The ETL is most easily installed on a
+                                <a href="https://docs.atlas.bi/atlas/requirements.html">
+                                    Microsoft SQL Server
+                                </a>
+                                .
+                                <br />
+                                <br />
+                                There is a community of Atlas users who can
+                                <a href="/help">help</a>
+                                you get started!
+                            </div>
+                        </div>
+                        <footer class="card-footer">
+                            <p class="card-footer-item">
+                                <span>
+                                    Download
+                                    <strong>
+                                    <a href="https://github.com/Riverside-Healthcare/Atlas">
+                                        Atlas
+                                    </a>
+                                    </strong>
+                                </span>
+                            </p>
+                            <p class="card-footer-item">
+                                <span>
+                                    Download the
+                                    <a href="https://github.com/Riverside-Healthcare/Atlas-ETL">
+                                        ETL
+                                    </a>
+                                </span>
+                            </p>
+                            <p class="card-footer-item">
+                                <span>
+                                    Read the
+                                    <a href="https://docs.atlas.bi">docs</a>
+                                </span>
+                            </p>
+                        </footer>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock body %}

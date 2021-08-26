@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta http-equiv="x-ua-compatible" content="ie=edge" />
+        <title>{{ title or 'Atlas of Information Management' }}</title>
+        <meta name="description"
+              content="Atlas of Information Management, a business intelligence library and documentation database."/>
+        <meta name="subject" content="Take your reporting to the next level with a consolidated report library!"/>
+        <meta name="robots" content="index,follow" />
+        <meta name="googlebot" content="index,follow" />
+        <link rel="icon" sizes="192x192" href="/static/img/logo-192x192.png" />
+        <link rel="apple-touch-icon" href="/static/img/apple-touch-icon.png" />
+        <meta property="og:url" content="https://atlas.bi" />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="{{ title or 'Atlas of Information Management' }}" />
+        <meta property="og:image" content="https://atlas.bi/static/img/logo-192x192.png"/>
+        <meta property="og:description"
+              content="Atlas of Information Management, a business intelligence library and documentation database."/>
+        <meta property="og:site_name" content="Atlas of Information Management" />
+        <meta property="og:locale" content="en_US" />
+        <meta property="article:author" content="Riverside Healthcare" />
+        <link type="text/css" rel="stylesheet" href="/static/prismjs/prism.css" />
+        <link type="text/css" rel="stylesheet" href="/static/css/site.css" />
+        <link type="text/css" rel="stylesheet" href="{{ ASSET_URL }}" />
+        <link rel="preload"
+              href="/static/font/inter/files/inter-latin-400-normal.woff2"
+              as="font"
+              type="font/woff2"
+              crossorigin/>
+        <link rel="preload"
+              href="/static/font/inter/files/inter-latin-600-normal.woff2"
+              as="font"
+              type="font/woff2"
+              crossorigin/>
+        <link rel="preload"
+              href="/static/font/inter/files/inter-latin-700-normal.woff2"
+              as="font"
+              type="font/woff2"
+              crossorigin/>
+    </head>
+    <body>
+        {% include "src/_includes/nav.njk" %}
+        <section class="is-flex-grow-1">
+            {% block body %}{% endblock body %}
+        </section>
+        {% include "src/_includes/foot.njk" %}
+        <script type="text/javascript" src="{{ ASSET_URL }}"></script>
+        <!--<script src="//code.tidio.co/8fy8b406o7z2vcwlufj9tb4n4ecks5u8.js" async></script>
+    -->
+</body>
+</html>

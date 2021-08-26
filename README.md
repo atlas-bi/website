@@ -2,29 +2,17 @@
 
 # Atlas Website
 
-Website is built in flask and freezes to a static site.
+Website is built using 11ty static site generator.
 
 ## Run for development
 
-Dependencies are managed with poetry. Run `poetry install` to install them.
-
 ```bash
-export FLASK_ENV=development \
-&& export FLASK_DEBUG=1 \
-&& export FLASK_APP=web \
-&& poetry run flask run 
+npm install
+npm start
 ```
 
 ## Build for publishing
 
-1. Build assets
-
 ```bash
-poetry run python -m web.assets
-```
-
-2. Freeze site
-
-```bash
-poetry run python -m freeze
+npm install
 ```
