@@ -9,6 +9,8 @@ const {
 
 const replace = require('gulp-replace');
 
+const cleanCSS = require('gulp-clean-css');
+
 function bulma() {
   return src('node_modules/bulma/**/*').pipe(dest('src/_static/vendor/bulma'))
 }
