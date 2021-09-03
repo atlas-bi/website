@@ -2,7 +2,7 @@
     <div class="container">
         <div class="navbar-brand">
             <a href="/">
-                {% image "./src/_static/img/atlas-logo.png", "atlas icon", "(min-width:182px) 50vw, 100vw" %}
+                {% image "./src/static/img/atlas-logo.png", "atlas icon", "(min-width:182px) 50vw, 100vw" %}
             </a>
             <a role="button"
                class="navbar-burger"
@@ -15,15 +15,20 @@
             </a>
         </div>
         <div id="atlas-nav-menu" class="navbar-menu">
-            <div class="navbar-end">
+            <div class="navbar-end is-flex-grow-1" id="search-wrap">
+                <form id="search-form"
+                      class="is-flex is-flex-grow-1 is-align-items-center mx-3 ml-5"
+                      style="position: relative;">
+                    <div class="control has-icons-left is-flex-grow-1">
+                        <span class="icon is-small is-left">{% include 'icons/search.njk' %}</span>
+                        <input id="search" class="input" type="text" placeholder="search the docs ...">
+                    </div>
+                    <div id="search-results" class="panel has-background-white"></div>
+                </form>
                 <a class="navbar-item" href="/">About</a>
                 <a class="navbar-item" href="/download">Download</a>
-                <a class="navbar-item" href="https://docs.atlas.bi" target="_blank" rel="noopener">
-                    Documentation
-                </a>
-                <a class="navbar-item button is-info" href="/help">
-                    Get Help
-                </a>
+                <a class="navbar-item" href="/docs">Documentation</a>
+                <a class="navbar-item button is-info" href="/help">Get Help</a>
             </div>
         </div>
     </div>

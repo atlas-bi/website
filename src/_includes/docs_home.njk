@@ -1,0 +1,41 @@
+{% extends "layout.njk" %}
+{% block body %}
+    <section class="section">
+        <div class="container">
+            <h1 class="title">Documentation</h1>
+            {{ super() }}
+            <div class="columns pt-5">
+                <div class="column">
+                    <div class="card">
+                        <div class="card-content">
+                            <p class="title">
+                                <a href="/docs/bi_library" class="is-size-4">Atlas Business Intelligence Library</a>
+                            </p>
+                            <p class="subtitle">
+                                Business intelligence library and documentation database.
+                            </p>
+                            <p>
+                                ETL processes collect metadata from various reporting platforms and store it in a centraly located database. A modern web UI is used to add additional documentation to the report objects and also to provide an intuative way to search, favorite and share reporting content.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="card">
+                        <div class="card-content">
+                            <p class="title">
+                                <a href="https://docs.extract.management" target="_blank" rel="noopener" class="is-size-4">Atlas Automation Center</a>
+                            </p>
+                            <p class="subtitle">
+                                Task runner and scheduling tool.
+                            </p>
+                            <p class="block">
+                                Schedule tasks scheduling tool for getting data from a source and depositing it in a destination - sql servers to SFTP servers.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock body %}

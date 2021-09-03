@@ -1,0 +1,21 @@
+<div class="columns">
+    <div class="column">
+        <div class="content">
+            <h2 class="title">Is there a demo?</h2>
+            <h3 class="title">Yes!</h3>
+            <p>
+                The demo runs with docker. You can run it on
+                <a href="http://labs.play-with-docker.com/" target="_blank" rel="noopener">Play With Docker</a>
+                , or locally.
+            </p>
+            {% highlight "shell" %}
+            docker run -i -t -p 1234:1234 -e PORT=1234 -u 0 christopherpickering/rmc-atlas-demo:latest
+        {% endhighlight %}
+        <p>
+            For more tips on running a demo please take a look in the
+            <a href="https://docs.atlas.bi/atlas/demo.html" target="_blank" rel="noopener">docs</a>
+            .
+        </p>
+    </div>
+</div>
+</div>

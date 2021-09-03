@@ -16,3 +16,10 @@ npm start
 ```bash
 npm install
 ```
+
+## Update Search
+
+```bash
+export ALGOLIA_SEARCH=<key>
+npm run updateSearch
+```
