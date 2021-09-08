@@ -1,17 +1,14 @@
 {% extends "src/_includes/layout.njk" %}
-
-{%  block meta %}
+{% block meta %}
     {% metagen
-        title="Atlas BI Tools",
-        desc="Atlas of Information Management, a business intelligence library and documentation database.",
-        subject="Take your reporting to the next level with a consolidated report library!",
-        url=site.url + page.url,
-        img=site.url + "/static/img/logo-192x192.png",
-        img_alt="Atlas logo"
+    title="Atlas BI Tools",
+    desc="Atlas of Information Management, a business intelligence library and documentation database.",
+    subject="Take your reporting to the next level with a consolidated report library!",
+    url=site.url + page.url,
+    img=site.url + "/static/img/logo-192x192.png",
+    img_alt="Atlas logo"
     %}
-
-{%  endblock meta %}
-
+{% endblock meta %}
 {% block body %}
     <div class="hero-body">
         <div class="container">
@@ -32,16 +29,15 @@
         </div>
     </div>
     <section class="section">
-    <div class="container">
-        <h2 class="title">What is Atlas?</h2>
-        <p class="subtitle pt-3 pb-5">
-            Atlas is a collection of analytics tools, designed by healthcare professionals, for healthcare professionals.
-        </p>
+        <div class="container">
+            <h2 class="title">What is Atlas?</h2>
+            <p class="subtitle pt-3 pb-5">
+                Atlas is a collection of analytics tools, designed by healthcare professionals, for healthcare professionals.
+            </p>
         </div>
         <div class="container">
             {% include "home/library_introduction.njk" %}
             {% include "home/automation_introduction.njk" %}
         </div>
-
     </section>
 {% endblock body %}

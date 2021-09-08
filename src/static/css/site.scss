@@ -257,6 +257,10 @@ a.github img {
   color:$text;
 }
 
+.image.is-35x35 {
+  height: 35px;
+  width: 35px;
+}
 /* menu collapse */
 
 .is-collapsible:not(.is-active) {

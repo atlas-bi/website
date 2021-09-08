@@ -1,10 +1,10 @@
 ---
-title: Atlas Business Intelligence Library
+title: ETL Changelog
 tags: BI Library
 description: Atlas Docs
 layout: docs_library.njk
 eleventyNavigation:
-  key: Updates
+  key: Changelog
   parent: ETL
   order: 6
 ---

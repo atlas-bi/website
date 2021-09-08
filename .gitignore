@@ -5,7 +5,6 @@ poetry.lock
 **/static/js/*.min.js
 .webassets-manifest
 .python-version
-package-lock.json
 node_modules
 
 # Created by https://www.toptal.com/developers/gitignore/api/macos,python,flask,windows

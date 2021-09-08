@@ -1,5 +1,5 @@
 ---
-title: Atlas Business Intelligence Library
+title: Admin UI
 tags: BI Library
 description: Atlas Docs
 layout: docs_library.njk

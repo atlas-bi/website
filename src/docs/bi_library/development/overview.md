@@ -1,12 +1,13 @@
 ---
-title: Atlas Business Intelligence Library
+title: UI Development
 tags: BI Library
 description: Atlas Docs
 layout: docs_library.njk
 eleventyNavigation:
-  key: Overview
+  key: User Interface
   parent: Development
 ---
+
 # Development
 
 ## About the Web UI
