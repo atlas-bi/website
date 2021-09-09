@@ -5,12 +5,27 @@ $link: hsl(207, 61%,  53%);
 
 @import "../../../node_modules/bulma/bulma";
 @import "../../../node_modules/bulma-pricingtable/src/sass/index";
-@import "../../../node_modules/prismjs/themes/prism";
+
 @import "../../../node_modules/@creativebulma/bulma-collapsible/src/sass/index";
 
 $fontDir: "/static/font/inter/";
 @import "../../../node_modules/@fontsource/inter/scss/mixins";
 
+pre .tag {
+  align-items: unset;
+  background-color: unset;
+  border-radius: unset;
+  color: unset;
+  display: unset;
+  font-size: unset;
+  height: unset;
+  justify-content: unset;
+  line-height: unset;
+  padding-left: unset;
+  padding-right: unset;
+  white-space: unset;
+}
+@import "../../../node_modules/prismjs/themes/prism";
 @include fontFace(
   $fontName: Inter,
   $weight: 400,
@@ -296,4 +311,8 @@ a.github img {
 
 pre {
   margin-bottom: 1.5rem !important;
+}
+
+.column:not(.is-narrow) {
+  min-width:0px;
 }

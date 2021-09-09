@@ -23,12 +23,12 @@ The database can be created by running the script "Data Governance WebaApp/Datab
 
 Updates to the database are pulled in with the following scafold commmand:
 
-::: content
+
 ```bash
 # after running this commande we need to manually delete connection string from db context file
 Scaffold-DbContext "Server=rhbidb01;Database=atlas;Trusted_Connection=True;" Microsoft.EntityFrameworkCore.SqlServer -OutputDir Models -force -Context Atlas_WebContext -Namespace Atlas_Web.Models
 ```
-:::
+
 
 Upon DB changes the file "webapp/DatabaseCreationScript.sql" should be updated. This can be done in SSMS by right clicking the db > clicking tasks > script database.
 
