@@ -3,6 +3,7 @@
     {% macro renderNavListItem(entry) -%}
     {# custom code for bi_library section #}
     {% if tool == "BI Library" %}
+
         {% if entry.title == "Requirements" %}
             <p class="menu-label">
                 Implementation
@@ -12,6 +13,9 @@
                 Development
             </p>
         {% elif entry.title == "Demo" %}
+            <a href="/docs/bi_library/" class="{%- if page.url == "/docs/bi_library/" -%}is-active{%- endif -%}">
+                Atlas BI Library
+            </a>
             <p class="menu-label">
                 Welcome
             </p>

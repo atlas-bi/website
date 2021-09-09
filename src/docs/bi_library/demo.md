@@ -19,18 +19,19 @@ Try Atlas out! Its easy to start up, you won't look back!
 
 <div class="tabs">
    <ul>
-    <li class="is-active"><a tab="online">Online Demo</a></li>
-    <li><a tab="local">Local Demo</a></li>
+    <li class="is-active"><a tab="local">Local Demo</a></li>
+    <li><a tab="online">Online Demo</a></li>
   </ul>
 </div>
 <div class="tab-container">
-   <div class="tab is-active"id="online">
-Atlas can be run online [online playground](https://labs.play-with-docker.com/) you can demo in.
+   <div class="tab"id="online">
+
+Atlas can be run in an [online playground](https://labs.play-with-docker.com/).
 
 Create an Instance by clicking "Settings" > 1 Manager and 1 Worker
 
-<div class="tile">
-    <div class="box is-flex is-justify-content-center tile">
+<div class="block tile">
+    <div class="box is-flex is-justify-content-center tile mr-3">
         {% image "./src/static/img/bi_library/demo/demo1.png", "Create an instance", "(min-width:800px) 50vw, 100vw" %}
     </div>
     <div class="box is-flex is-justify-content-center tile">
@@ -58,7 +59,7 @@ Click "Open Port" and type ``1234``
 
 App will open in new tab. The URL should be valid for 3-4 hrs.
    </div>
-   <div class="tab "id="local">
+   <div class="tab is-active"id="local">
 
 
 There is a dockerized Atlas demo available, it can be run with a single command -
@@ -69,6 +70,7 @@ docker run -i -t -p 1234:1234 -e PORT=1234  -u 0 christopherpickering/rmc-atlas-
 Alternatively, you can clone the repository and build your own docker image -
 
 ```bash
+git clone https://github.com/atlas-bi/atlas-bi-library.git .
 docker build  --tag atlas_demo .
 docker run -i -t -p 1234:1234 -e PORT=1234  -u 0 atlas_demo:latest
 # web app will be running @ http://localhost:1234

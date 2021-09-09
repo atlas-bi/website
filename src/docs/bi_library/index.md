@@ -11,11 +11,13 @@ eleventyNavigation:
 
 # Atlas BI Library
 
-Join the chat on Discord - [https://discord.gg/pAzSbMw259](https://discord.gg/pAzSbMw259)
+Join the chat on Discord - [https://discord.gg/hdz2cpygQD](https://discord.gg/hdz2cpygQD)
 
 ## Credits
 
-Atlas was created by the Riverside Healthcare Analytics team -
+Atlas was created by the Riverside Healthcare Analytics team.
+
+## Contributors
 
 ::: content
 * Paula Courville
