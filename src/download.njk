@@ -1,4 +1,14 @@
 {% extends "src/_includes/layout.njk" %}
+{% block meta %}
+    {% metagen
+    title="Atlas » Download",
+    desc="Download Atlas tools.",
+    subject="Download Atlas tools.",
+    url=site.url + page.url,
+    img=site.url + "/static/img/logo-192x192.png",
+    img_alt="Atlas logo"
+    %}
+{% endblock meta %}
 {% block body %}
     <div class="hero-body">
         <div class="container">

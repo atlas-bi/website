@@ -1,4 +1,14 @@
 {% extends "layout.njk" %}
+{% block meta %}
+    {% metagen
+    title="Atlas » Documentation",
+    desc="Atlas documentation.",
+    subject="Atlas documentation.",
+    url=site.url + page.url,
+    img=site.url + "/static/img/logo-192x192.png",
+    img_alt="Atlas logo"
+    %}
+{% endblock meta %}
 {% block body %}
     <section class="section">
         <div class="container">
