@@ -26,7 +26,7 @@ Updates to the database are pulled in with the following scafold commmand:
 
 ```bash
 # after running this commande we need to manually delete connection string from db context file
-Scaffold-DbContext "Server=rhbidb01;Database=atlas;Trusted_Connection=True;" Microsoft.EntityFrameworkCore.SqlServer -OutputDir Models -force -Context Atlas_WebContext -Namespace Atlas_Web.Models
+Scaffold-DbContext "Server=my_server;Database=atlas;Trusted_Connection=True;" Microsoft.EntityFrameworkCore.SqlServer -OutputDir Models -force -Context Atlas_WebContext -Namespace Atlas_Web.Models
 ```
 
 
