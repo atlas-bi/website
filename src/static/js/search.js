@@ -74,7 +74,7 @@ var runSearch = function(event) {
 };
 
 var extractToolName = function(tags) {
-  return tags.filter(function(tag){ return tag === "BI Library" || tag === "Automation Center" || tag === "Atlas"});
+  return tags.filter(function(tag){ return tag === "BI Library" || tag === "Automation Hub" || tag === "Atlas"});
 };
 
 Function.prototype.debounce = function (delay) {
