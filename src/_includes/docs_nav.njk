@@ -23,6 +23,21 @@
             <p class="menu-label">
                 Links
             </p>
+            <li><a href="https://github.com/atlas-bi/atlas-bi-library" target="_blank" rel="noopener">Github Repository</a></li>
+        {% endif %}
+    {% elif tool=="Automation Hub" %}
+        {% if entry.title == "Demo" %}
+            <a href="/docs/automation_hub/" class="{%- if page.url == "/docs/automation_hub/" -%}is-active{%- endif -%}">
+                Atlas BI Library
+            </a>
+            <p class="menu-label">
+                Welcome
+            </p>
+        {% elif entry.title == "License" %}
+            <p class="menu-label">
+                Links
+            </p>
+            <li><a href="https://github.com/atlas-bi/atlas-automation-hub" target="_blank" rel="noopener">Github Repository</a></li>
         {% endif %}
     {% endif %}
     <li>
