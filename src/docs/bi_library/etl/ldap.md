@@ -4,8 +4,9 @@ tags: BI Library
 description: Atlas Docs
 layout: docs_library.njk
 eleventyNavigation:
-  key: LDAP
-  parent: ETL
+  key: BIL LDAP
+  title: LDAP
+  parent: BIL ETL
 ---
 
 # Set Up LDAP

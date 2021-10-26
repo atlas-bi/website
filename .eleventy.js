@@ -111,6 +111,14 @@ module.exports = function(eleventyConfig) {
     return collection.getFilteredByGlob("**/*.md");
   });
 
+  // eleventyConfig.addCollection("AutomationHub", function(collectionApi) {
+  //   return collectionApi.getFilteredByTag("Automation Hub");
+  // });
+
+  // eleventyConfig.addCollection("BI Library", function(collectionApi) {
+  //   return collectionApi.getFilteredByTag("BILibrary");
+  // });
+
   const icons = {
     note: "./src/_includes/icons/blue_pencil.njk",
     hint: "./src/_includes/icons/green_question.njk",

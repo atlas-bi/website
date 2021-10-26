@@ -64,3 +64,13 @@ fastcgi_connect_timeout 999s;
 proxy_connect_timeout 999s;
 proxy_read_timeout 999s;
 ```
+
+## How the Runner works
+
+
+
+### Data Source
+
+The output of "Data Source" is a list of tempfiles containing the source data. If a database query source is uses, there will be only one file.
+
+After the data source is collected, the files are converted into the final output type.

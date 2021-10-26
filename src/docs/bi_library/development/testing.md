@@ -4,8 +4,9 @@ tags: BI Library
 description: Atlas Docs
 layout: docs_library.njk
 eleventyNavigation:
-  key: Testing
-  parent: Development
+  key: BIL Testing
+  title: Testing
+  parent: BIL Development
   order: 3
 ---
 

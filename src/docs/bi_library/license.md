@@ -4,7 +4,8 @@ tags: BI Library
 description: Atlas Docs
 layout: docs_library.njk
 eleventyNavigation:
-  key: License
+  key: BIL License
+  title: License
   parent: BI Library
   order: 8
 ---

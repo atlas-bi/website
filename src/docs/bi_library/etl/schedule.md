@@ -4,8 +4,9 @@ tags: BI Library
 description: Atlas Docs
 layout: docs_library.njk
 eleventyNavigation:
-  key: Schedule
-  parent: ETL
+  key: BIL Schedule
+  title: Schedule
+  parent: BIL ETL
 ---
 
 # Schedule

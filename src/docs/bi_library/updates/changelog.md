@@ -4,8 +4,10 @@ tags: BI Library
 description: Atlas Docs
 layout: docs_library.njk
 eleventyNavigation:
-  key: Changelog
-  parent: Releases
+  key: BIL Changelog
+  title: Changelog
+  parent: BIL Releases
+  order: 0
 ---
 
 # Changelog

@@ -4,7 +4,8 @@ tags: BI Library
 description: Atlas Docs
 layout: docs_library.njk
 eleventyNavigation:
-  key: ETL
+  key: BIL ETL
+  title: ETL
   parent: BI Library
   order: 7
 ---

@@ -4,8 +4,9 @@ tags: BI Library
 description: Atlas Docs
 layout: docs_library.njk
 eleventyNavigation:
-  parent: Navigating Atlas
-  key: Terms
+  parent: BIL Navigating Atlas
+  key: BIL Terms
+  title: Terms
   order: 4
 ---
 

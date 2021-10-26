@@ -4,7 +4,8 @@ tags: BI Library
 description: Atlas Docs
 layout: docs_library.njk
 eleventyNavigation:
-  key: Requirements
+  key: BIL Requirements
+  title: Requirements
   parent: BI Library
   order: 4
 ---

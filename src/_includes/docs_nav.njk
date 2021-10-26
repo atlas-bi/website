@@ -1,9 +1,9 @@
 <aside class="menu">
-    {% set navPages = collections.all | eleventyNavigation(tool) %}
+    {% set navPages =  collections.all | eleventyNavigation(tool) %}
+
     {% macro renderNavListItem(entry) -%}
     {# custom code for bi_library section #}
     {% if tool == "BI Library" %}
-
         {% if entry.title == "Requirements" %}
             <p class="menu-label">
                 Implementation
@@ -13,7 +13,8 @@
                 Development
             </p>
         {% elif entry.title == "Demo" %}
-            <a href="/docs/bi_library/" class="{%- if page.url == "/docs/bi_library/" -%}is-active{%- endif -%}">
+            <a href="/docs/bi_library/"
+               class="{%- if page.url == "/docs/bi_library/" -%}is-active{%- endif -%}">
                 Atlas BI Library
             </a>
             <p class="menu-label">
@@ -23,11 +24,16 @@
             <p class="menu-label">
                 Links
             </p>
-            <li><a href="https://github.com/atlas-bi/atlas-bi-library" target="_blank" rel="noopener">Github Repository</a></li>
+            <li>
+                <a href="https://github.com/atlas-bi/atlas-bi-library"
+                   target="_blank"
+                   rel="noopener">Github Repository</a>
+            </li>
         {% endif %}
     {% elif tool=="Automation Hub" %}
         {% if entry.title == "Demo" %}
-            <a href="/docs/automation_hub/" class="{%- if page.url == "/docs/automation_hub/" -%}is-active{%- endif -%}">
+            <a href="/docs/automation_hub/"
+               class="{%- if page.url == "/docs/automation_hub/" -%}is-active{%- endif -%}">
                 Atlas BI Library
             </a>
             <p class="menu-label">
@@ -37,29 +43,43 @@
             <p class="menu-label">
                 Links
             </p>
-            <li><a href="https://github.com/atlas-bi/atlas-automation-hub" target="_blank" rel="noopener">Github Repository</a></li>
+            <li>
+                <a href="https://github.com/atlas-bi/atlas-automation-hub"
+                   target="_blank"
+                   rel="noopener">Github Repository</a>
+            </li>
         {% endif %}
     {% endif %}
     <li>
         {%- if entry.children.length %}
             <strong>
-        {% endif -%}
-        <a href="{{ entry.url | url }}" class="{%- if entry.url == page.url -%}is-active{%- endif -%}">
-            {{ entry.title }}
-        </a>
-        {%- if entry.children.length %}
+            {% endif -%}
+            <a href="{{ entry.url | url }}"
+               class="{%- if entry.url == page.url -%}is-active{%- endif -%}">{{ entry.title }}</a>
+            {%- if entry.children.length %}
             </strong>
         {% endif -%}
         {%- if entry.children.length -%}
-            <a class="menu-collapse-arrow" data-action="collapse" data-target="{{ entry.url }}">
-                <span class="icon" >{% include "icons/angle_down.njk" %}</span>
+            <a class="menu-collapse-arrow"
+               data-action="collapse"
+               data-target="{{ entry.url }}">
+                <span class="icon">{% include "icons/angle_down.njk" %}</span>
             </a>
         {% endif %}
         {%- if entry.children.length -%}
             <ul id="{{ entry.url }}"
                 entry="{{ entry.url }}"
                 page="{{ page.url }}"
-                class="menu-list{% if entry.url == page.url %}is-active {% endif %} {% for child in entry.children %}{% if child.url== page.url %}is-active{% endif %}{% endfor %} is-collapsible">
+                class="menu-list
+                       {% if entry.url == page.url %}
+                           is-active
+                       {% endif %}
+
+                       {% for child in entry.children %}
+                       {% if child.url== page.url %}
+                           is-active
+                       {% endif %}
+                       {% endfor %} is-collapsible">
                 {%- for child in entry.children %}{{ renderNavListItem(child) }}
                 {% endfor -%}
             </ul>

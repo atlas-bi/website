@@ -4,7 +4,8 @@ tags: Automation Hub
 description: Atlas Docs
 layout: docs_hub.njk
 eleventyNavigation:
-  key: Tasks
+  key: AH Tasks
+  title: Tasks
   parent: Automation Hub
   order: 5
 ---

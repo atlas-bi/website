@@ -29,7 +29,7 @@ module.exports = class {
     // purgecss({
     //   content: ['./src/**/*.njk'],
     //   safelist: {
-    //           deep: [/panel-block/, /p-3/, /is-block/, '/is-justify-content-space-between/', 'is-light'],
+    //           deep: [/panel-block/, /p-3/, /is-block/, '/is-justify-content-space-between/', 'is-light', 'is-active'],
     //         }
     // })
     ])

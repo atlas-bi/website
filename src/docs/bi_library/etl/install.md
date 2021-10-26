@@ -4,8 +4,9 @@ tags: BI Library
 description: Atlas Docs
 layout: docs_library.njk
 eleventyNavigation:
-  key: Install
-  parent: ETL
+  key: BIL Install
+  title: Install
+  parent: BIL ETL
 ---
 
 # How to Install

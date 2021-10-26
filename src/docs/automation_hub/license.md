@@ -4,7 +4,8 @@ tags: Automation Hub
 description: Atlas Docs
 layout: docs_hub.njk
 eleventyNavigation:
-  key: License
+  key: AH License
+  title: License
   parent: Automation Hub
   order: 8
 ---

@@ -1,11 +1,12 @@
 ---
-title: Changlog
+title: Changelog
 tags: Automation Hub
-description: Atlas Docs
+description: Changelog
 layout: docs_hub.njk
 eleventyNavigation:
-  key: Changlog
-  parent: Releases
+  key: AH Changelog
+  title: Changelog
+  parent: AH Releases
   order: 5
 ---
 
@@ -13,6 +14,7 @@ eleventyNavigation:
 
 ## Version 2021.08.1
 
+:::content
 - Fixed installer for latest Poetry update
 - Added ability to run tasks in sequence
 - Updated html linter
@@ -20,9 +22,11 @@ eleventyNavigation:
 - Added python package lookup for py processor
 - Added option to use parameters in file names
 - Added option to pre-parse parameters using python date formats
+:::
 
 ## Version 2021.04.1
 
+:::content
 - Added SAML auth as default
 - Changed to use flask-login for user session
 - Increased test cov to 60%
@@ -33,9 +37,11 @@ eleventyNavigation:
 - Fixed bug with adding duplicate SMB connections when creating a new connection
 - Added option to include custom line ending in output text files
 - Added background task for maintenance
+:::
 
 ## Version 2021.03.1
 
+:::content
 - Rewrote Scheduler API as flask application factory
 - Changed task enable/disable to a toggle
 - Fixed bug that didn't allow py scripts from a git url
@@ -58,3 +64,4 @@ eleventyNavigation:
 - Added option to connect to SFTP servers with SSH keys
 - Added file streaming for large queries/files to reduce memory usage
 - Fixed file size calculation
+:::

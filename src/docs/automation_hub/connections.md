@@ -4,7 +4,8 @@ tags: Automation Hub
 description: Atlas Docs
 layout: docs_hub.njk
 eleventyNavigation:
-  key: Connections
+  key: AH Connections
+  title: Connections
   parent: Automation Hub
   order: 5
 ---

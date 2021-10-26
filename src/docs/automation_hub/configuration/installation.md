@@ -4,8 +4,9 @@ tags: Automation Hub
 description: Atlas Docs
 layout: docs_hub.njk
 eleventyNavigation:
-  key: Installing
-  parent: Configuration
+  key: AH Installing
+  title: Installing
+  parent: AH Configuration
   order: 5
 ---
 

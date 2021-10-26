@@ -4,7 +4,8 @@ tags: Automation Hub
 description: Atlas Docs
 layout: docs_hub.njk
 eleventyNavigation:
-  key: Development
+  key: AH Development
+  title: Development
   parent: Automation Hub
   order: 5
 ---

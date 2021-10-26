@@ -4,8 +4,9 @@ tags: BI Library
 description: Atlas Docs
 layout: docs_library.njk
 eleventyNavigation:
-  key: Dev Requirements
-  parent: Development
+  key: BIL Dev Requirements
+  title: Dev Requirements
+  parent: BIL Development
   order: 1
 ---
 
