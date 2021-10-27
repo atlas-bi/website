@@ -12,6 +12,18 @@ eleventyNavigation:
 
 # Changelog
 
+## Version 2021.10.1
+
+::: content
+- Fixed hyperspace links for SlicerDicer sessions
+- Added feature toe search so screenshots are enlarged when clicked
+- Moved certification tags into separate table
+- Updated Self-Service certification tag criteria
+- Fixed script errors in collections
+- Updated reports to show correct description
+- Fixed bug in repository descriptions
+:::
+
 ## Version 2021.08.1
 
 ::: content
