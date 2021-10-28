@@ -24,6 +24,8 @@ Find the file called ``appsettings.json`` and create a file along side it called
 
 Copy the contents of ``appsettings.json`` into your new file and adjust the settings to meet your needs. The main update required is the database connection.
 
+Development settings for debugging can also be added. Create another file called ``appsettings.cust.Development.json`` and copy the contents of ``appsettings.Development.json`` in.
+
 ## Run the Website Locally
 
 Test out your configuration or changes by running the website locally. In visual studio, select ``Run with IIS Express``.
