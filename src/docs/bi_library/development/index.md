@@ -12,70 +12,34 @@ eleventyNavigation:
 
 # Development
 
+## Getting Started
 
-See `Development Requirements` before getting started.
+Ensure you have already met the [`development requirements`](/docs/bi_library/development/requirements/) before getting started.
 
-## Code Management
+Download or clone the [Altas BI Library](https://github.com/atlas-bi/atlas-bi-library) repository onto your workstation.
 
-The code is revision controlled with [git](https://git-scm.com). You will also have a code server to safely store the code.
+## Update Settings
 
-{% admonition
-   "note",
-   "Note",
-   "Having private repositories make it easier to manage passwords. If you do not already have a git server setup, [GitLab](https://about.gitlab.com/install/) or [Gitea](https://gitea.com) are both free and very simple to setup and manage.
+Find the file called ``appsettings.json`` and create a file along side it called ``appsettings.cust.json``. This file will hold your custom settings.
 
-GitLab includes ``GitLab Runner`` which can be used for auto testing and deploys. Gitea is more lightweight but integrates very nicely with [``Drone-Ci``](https://www.drone.io)."
-%}
+Copy the contents of ``appsettings.json`` into your new file and adjust the settings to meet your needs. The main update required is the database connection.
 
-The code most likely ended up on your workstation from the [Github repository](https://github.com/atlas-bi/atlas-bi-library). For the sake of this guide we will assume that it is your code server.
+## Run the Website Locally
 
-```bash
-# you've create an empty folder and are now inside it
-git init
-git remote add origin git@github.com:atlas-bi/atlas-bi-library.git
-git pull origin master
-```
+Test out your configuration or changes by running the website locally. In visual studio, select ``Run with IIS Express``.
 
-## Make some updates
-
-Now, assume you've made some changes to the code. Maybe you've:
-
-::: content
-- changed one of the c# helper functions
-- tweak the colors in the UI
-- modified some javascript
-:::
-
-Visually test your changes by running the website locally -
-
-<div class="box is-flex is-justify-content-center">
-{% image "./src/static/img/bi_library/development/iisexpress.png", "Start debug", "(min-width:800px) 50vw, 100vw" %}
-</div>
+{% image "./src/static/img/bi_library/development/iisexpress.png", "Start debug", "(min-width:400px) 50vw, 100vw", "boxed" %}
 
 The first time you start up the app there will most likely be two SSL prompts.
 
-<div class="block tile">
-    <div class="box is-flex is-justify-content-center tile mr-3">
-        {% image "./src/static/img/bi_library/development/ssl_warning.png", "ssl warning", "(min-width:800px) 50vw, 100vw" %}
-    </div>
-    <div class="box is-flex is-justify-content-center tile mr-3">
-        {% image "./src/static/img/bi_library/development/ssl_confirm.png", "ssl confirm", "(min-width:800px) 50vw, 100vw" %}
-    </div>
-</div>
+{% image "./src/static/img/bi_library/development/ssl_warning.png", "ssl warning", "(min-width:400px) 50vw, 100vw", "boxed" %}
+{% image "./src/static/img/bi_library/development/ssl_confirm.png", "ssl confirm", "(min-width:400px) 50vw, 100vw", "boxed" %}
 
-::: content
-- it is wise to run the [Selenium tests](/docs/bi_library/development/testing) to check for browser issues
-- next you can commit your code, since you've installed pre-commit your code will be validated.
-:::
 
-```bash
-git add . && git commit -m "did some cool updates" && git push
-````
+## Deploy to the Webserver
 
-## Deploy
+If you changes have tested nicely you can [`deploy`](/docs/bi_library/deploy) to your webserver.
 
-If you changes have tested nicely you can [deploy](/docs/bi_library/deploy) the updates.
+We recommend to having two instances of Atlas (Atlas and Atlas-Test).
 
-It is strongly recommended to have two instances of Atlas (Atlas and Atlas-Test).
-
-First, [deploy](/docs/bi_library/deploy) to test, and if user testing is ok, then [deploy](/docs/bi_library/deploy) to prod.
+First, [deploy](/docs/bi_library/deploy) to test, and if your updates work well, then [deploy](/docs/bi_library/deploy) to your production server.

@@ -7,6 +7,7 @@ eleventyNavigation:
   key: BIL LDAP
   title: LDAP
   parent: BIL ETL
+  order: 2
 ---
 
 # Set Up LDAP

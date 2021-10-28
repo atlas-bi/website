@@ -12,26 +12,28 @@ eleventyNavigation:
 
 # Testing
 
-All Atlas tests are run with [Selenium](https://selenium-python.readthedocs.io).
+Atlas has some basic tests that can be run with [selenium](https://selenium-python.readthedocs.io). The selenium tests are used to check for any browser issues - broken links, javascript errors in IE11, etc.
 
-If you are using ``poetry`` as your recommend package manager you can install the required packages like this:
+Python is used as to run selenium.
 
-```bash
-poetry install
-```
-
-If you prefer pip, there are two packages required:
-
-```bash
-pip install selenium urllib3
-```
-
-Next, download the web drivers needed and place them in the ``testing`` directory:
+## Requirements
 
 ::: content
+- [Python 3.7+](https://www.python.org/downloads/)
+- (Optional) [Poetry](https://python-poetry.org) - For managing dependencies
 - [Chrome web driver](https://chromedriver.chromium.org/downloads)
 - [IE 11 web driver](https://www.microsoft.com/en-us/download/details.aspx?id=44069)
 :::
+
+Move the two web drivers into the `testing` directory after downloading.
+
+## Setup
+
+Install the python packages
+```bash
+poetry install # if you have installed poetry, otherwise, 
+pip install selenium urllib3
+```
 
 {% admonition
    "alert",
@@ -48,7 +50,7 @@ Next, download the web drivers needed and place them in the ``testing`` director
 {% admonition
    "note",
    "Note",
-   "The ``url_test.py`` will attempt to access several hundred URL. It is advisable to update this list to match the top hits on your instance. Run a sql query on your instance to build the list.
+   "The ``url_test.py`` will attempt to access several hundred URL. You can update this list to match the top hits on your instance. Run a sql query on your instance to build the list.
 
    ```sql
       select top 500
@@ -59,21 +61,21 @@ Next, download the web drivers needed and place them in the ``testing`` director
         concat('''',pathname , replace(search, '?EPIC=1','') ,''',')
       order by
         count(1) desc
-   ```"
+   ```
+   "
 %}
 
-Update IE 11 javascript settings to bring a popup on Javascript errors (needed to catch Hyperspace errors.) Selenium cannot pick up IE 11 console output like we can with Chrome, so it is necessary to "crash" the test to review the errors.
+## IE 11 Settings
 
-<div class="box is-flex is-justify-content-center">
+Update IE 11 javascript settings to bring a popup on Javascript errors (needed to catch Hyperspace errors). Selenium cannot pick up IE 11 console output like it can with Chrome, so it is necessary to "crash" the test to review the errors.
+
 {% image "./src/static/img/bi_library/development/ie_settings.png", "Start debug", "(min-width:800px) 50vw, 100vw" %}
-</div>
 
-Start Atlas in Visual Studio in Debug mode.
+## Run Tests
 
-<div class="box is-flex is-justify-content-center">
+Run Atlas in Visual Studio in Debug mode with IIS Express.
+
 {% image "./src/static/img/bi_library/development/start_debug.png", "Start debug", "(min-width:800px) 50vw, 100vw" %}
-</div>
-
 
 Start python tests.
 

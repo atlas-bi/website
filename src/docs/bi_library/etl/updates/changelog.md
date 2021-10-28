@@ -7,7 +7,7 @@ eleventyNavigation:
   key: BIL Changelog
   title: Changelog
   parent: BIL ETL
-  order: 6
+  order: 5
 ---
 
 # Changelog

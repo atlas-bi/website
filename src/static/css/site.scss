@@ -317,3 +317,8 @@ pre {
 .column:not(.is-narrow) {
   min-width:0px;
 }
+
+
+.is-inlineblock {
+  display: inline-block !important;
+}

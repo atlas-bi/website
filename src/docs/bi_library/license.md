@@ -7,7 +7,7 @@ eleventyNavigation:
   key: BIL License
   title: License
   parent: BI Library
-  order: 8
+  order: 9
 ---
 
 # License

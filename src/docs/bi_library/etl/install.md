@@ -7,6 +7,7 @@ eleventyNavigation:
   key: BIL Install
   title: Install
   parent: BIL ETL
+  order: 1
 ---
 
 # How to Install
@@ -46,18 +47,10 @@ The SSRS user is created at the server level. Once created, they can be added to
 
 The account should have reader, writer, admin and owner memberships to the two databases.
 
-<div class="box is-flex is-justify-content-center">
-    {% image "./src/static/img/bi_library/install/add_user.png", "add user", "(min-width:800px) 50vw, 100vw" %}
-</div>
-<div class="box is-flex is-justify-content-center">
-    {% image "./src/static/img/bi_library/install/user.png", "create user", "(min-width:800px) 50vw, 100vw" %}
-</div>
-<div class="box is-flex is-justify-content-center">
-    {% image "./src/static/img/bi_library/install/user_cred.png", "user credentials", "(min-width:800px) 50vw, 100vw" %}
-</div>
-<div class="box is-flex is-justify-content-center">
-    {% image "./src/static/img/bi_library/install/user_membership.png", "user membership", "(min-width:800px) 50vw, 100vw" %}
-</div>
+{% image "./src/static/img/bi_library/install/add_user.png", "add user", "(min-width:800px) 50vw, 100vw", "boxed" %}
+{% image "./src/static/img/bi_library/install/user.png", "create user", "(min-width:800px) 50vw, 100vw", "boxed" %}
+{% image "./src/static/img/bi_library/install/user_cred.png", "user credentials", "(min-width:800px) 50vw, 100vw", "boxed" %}
+{% image "./src/static/img/bi_library/install/user_membership.png", "user membership", "(min-width:800px) 50vw, 100vw", "boxed" %}
 
 ## Set ETL Parameters
 

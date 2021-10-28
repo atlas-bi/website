@@ -31,14 +31,9 @@ Atlas can be run in an [online playground](https://labs.play-with-docker.com/).
 
 Create an Instance by clicking "Settings" > 1 Manager and 1 Worker
 
-<div class="block tile">
-    <div class="box is-flex is-justify-content-center tile mr-3">
-        {% image "./src/static/img/bi_library/demo/demo1.png", "Create an instance", "(min-width:800px) 50vw, 100vw" %}
-    </div>
-    <div class="box is-flex is-justify-content-center tile">
-        {% image "./src/static/img/bi_library/demo/demo2.png", "Create an instance", "(min-width:800px) 50vw, 100vw" %}
-    </div>
-</div>
+{% image "./src/static/img/bi_library/demo/demo1.png", "Create an instance", "(min-width:800px) 50vw, 100vw", "boxed" %}
+
+{% image "./src/static/img/bi_library/demo/demo2.png", "Create an instance", "(min-width:800px) 50vw, 100vw", "boxed" %}
 
 Click on the Manager instance. It seems to allow more space/ram. Paste in the docker command and hit "enter".
 
@@ -46,9 +41,7 @@ Click on the Manager instance. It seems to allow more space/ram. Paste in the do
 docker run -i -t -p 1234:1234 -e PORT=1234  -u 0 christopherpickering/rmc-atlas-demo:latest
 ```
 
-<div class="box is-flex is-justify-content-center">
-{% image "./src/static/img/bi_library/demo/demo3.png", "Task list", "(min-width:800px) 50vw, 100vw" %}
-</div>
+{% image "./src/static/img/bi_library/demo/demo3.png", "Task list", "(min-width:800px) 50vw, 100vw", "boxed" %}
 
 {% admonition
    "note",

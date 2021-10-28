@@ -10,9 +10,9 @@ const outdent = require('outdent');
 const slugifyCustom = (s) =>
   slugify(s, { lower: true, remove: /[*+~.()'"!:@]/g });
 
-async function imageShortcode(src, alt, sizes) {
+async function imageShortcode(src, alt, sizes, type='asdf') {
   let metadata = await Image(src, {
-    widths: [24, 300, 600, 800],
+    widths: [24, 300, 400, 500, 600, 800],
     formats: ["webp"],
     outputDir: "./_site/static/img/",
     urlPath: "/static/img/"
@@ -25,7 +25,9 @@ async function imageShortcode(src, alt, sizes) {
     decoding: "async",
   };
 
-  // You bet we throw an error on missing alt in `imageAttributes` (alt="" works okay)
+  if(type=="boxed"){
+      return `<div class="block"><div class="box is-inlineblock">` + Image.generateHTML(metadata, imageAttributes) + `</div></div>`;
+  }
   return Image.generateHTML(metadata, imageAttributes);
 }
 
