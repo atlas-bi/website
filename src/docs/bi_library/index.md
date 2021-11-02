@@ -1,7 +1,7 @@
 ---
 title: Welcome
 tags: BI Library
-description: Atlas Docs
+description: Atlas BI Library Docs
 layout: docs_library.njk
 eleventyNavigation:
   key: BI Library

@@ -12,6 +12,16 @@ eleventyNavigation:
 
 # Changelog
 
+## Next Release
+
+:::content
+- Added query caching for web query sources, when source is offline, cache can be used
+- Added filename preview
+- Enhanced feedback messages
+- Change log format to console style
+- Updated UI
+:::
+
 ## Version 2021.08.1
 
 :::content

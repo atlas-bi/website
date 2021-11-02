@@ -1,24 +1,21 @@
 ---
 title: Connections
 tags: Automation Hub
-description: Atlas Docs
+description: Automation Hub Connections
 layout: docs_hub.njk
 eleventyNavigation:
   key: AH Connections
   title: Connections
   parent: Automation Hub
-  order: 5
+  order: 6
 ---
 
 # Connections
 
-EM2's connection manager stores credentials for FTP, SFTP, SMB, SSH, Database and GPG encryption keys.
+The connection manager stores credentials for FTP, SFTP, SMB, SSH, Database and GPG encryption keys.
 
-Connections are saved in "Connection Groups called "Organizations" in the Task pages.
+Connections are saved in organization groups which can also store contact information for the organization.
 
 A connection group can have any number of different connections.
 
-Password/ssh key/gpg key fields are all encrypted before being saved into the backend database.
-
-.. image:: ../images/em2-connection.png
-  :alt: Project List
+Password/ssh key/gpg key fields are all encrypted before being saved into the database.

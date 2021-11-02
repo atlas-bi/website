@@ -1,13 +1,13 @@
 ---
 title: License
 tags: Automation Hub
-description: Atlas Docs
+description: Atlas License
 layout: docs_hub.njk
 eleventyNavigation:
   key: AH License
   title: License
   parent: Automation Hub
-  order: 8
+  order: 99
 ---
 
 # License

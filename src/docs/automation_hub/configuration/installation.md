@@ -7,13 +7,20 @@ eleventyNavigation:
   key: AH Installing
   title: Installing
   parent: AH Configuration
-  order: 5
+  order: 2
 ---
 
 # Installation
 
+## Prerequisites
 
-An install script is provided to easily install EM2 onto your Ubuntu server. Update the ``publish/install.sh`` file "dns" value to be the dns of your server, and the "remote" to point to your repo path. If you plan to use ssl you can add the certs into the ``publish`` folder as well. Use names "cert.crt" and "cert.key".
+:::content
+- Atlas Automation Hub is setup to install on an Ubuntu server, however with a few tweaks to the install script it will work well on most Linux OS.
+- curl or wget should be installed
+- Ideally, you will have your own git repository, holding updated config files, and will publish from there.
+:::
+
+An install script is provided to easily install onto your Ubuntu server. Update the ``publish/install.sh`` file "dns" value to be the dns of your server, and the "remote" to point to your repo path. If you plan to use ssl you can add the certs into the ``publish`` folder as well. Use names "cert.crt" and "cert.key".
 
 The publish takes place over SSH from a git server. It is possible to use an accesskey when publishing from fabric.
 

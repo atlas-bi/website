@@ -1,7 +1,7 @@
 ---
 title: Welcome
 tags: Automation Hub
-description: Atlas Docs
+description: Atlas Automation Hub Docs
 layout: docs_hub.njk
 eleventyNavigation:
   key: Automation Hub
@@ -9,68 +9,50 @@ eleventyNavigation:
   order: 1
 ---
 
-# About the App
+# Welcome
 
-Atlas Automation Hub is a three part server:
+Atlas Automation Hub is a task scheduling tool. It is designed to simplify routine data extraction and sending.
 
-- web app
-- scheduler
-- job runner
+The tool easily connects to databases, SFTP, FTP, SMB and SSH servers and GIT servers/web URL's, to pull data, run queries, and load data back.
 
-Atlas Automation Hub runs with Nginx + Gunicorn. Three individual web services are created, the web app is the public web site and the other two (scheduler and runner) are internal API's running on the web server.
+A few handy features - 
 
-## Prerequisites
+:::content
+- Fully parameterized
+- Supports SSH key connections
+- Supports GPG encryption
+- Supports ZIP archives
+- Capable of moving batches of files with wildcard matching
+- Easily run a group of jobs in a sequence, or parallel
+- Powerful scheduler options
+- Fully searchable
+- Easy to use interface
+- Email integration
+- Multiple authentication options - SAML2, LDAP, or local
+- Complete logging
+- Middle man processing scripts can modify data before loading
+:::
 
-- Currently Atlas Automation Hub is setup to install on an Ubuntu server, however with a few tweaks to the install script it will work well on most Linux.
-- curl or wget should be installed
-- Ideally, you will have your own git repository, holding updated config files, and will publish from there.
+## How Does it Work?
 
+Atlas Automation Hub is a collection of three webapps, running with Nginx and Gunicorn. 
 
-## Data Flow
+:::content
+- user interface (website)
+- scheduler (API)
+- job runner (API)
+:::
 
-Project name and schedule are created > tasks can be added to the project.
+The schedule and runner webapps are both API's, designed to only be accessed internally by the website. The scheduler is a single worker process that keeps a schedule of all the tasks. When it is time for a task to run, the scheduler sends a request to the job runner to begin an execution.
 
-Task are completely independent, the order of tasks is not respected and tasks may run in parallel. The purpose of allowing multiple tasks is to keep a clean grouping of tasks that belong to the same data project.
+When a task is run, data is generally "collected" into a "normalized" file. Various task parameters are used to build this file. The file can then be passed into a "processing script" to do any data modifications, calculations, etc.
 
-The tasks in a job can individually be started or stopped.
+Finally, the final output file is created, using various parameters, and then loaded to the final destinations.
 
-## Webserver Info
+## Project and Task Structure
 
-Atlas Automation Hub uses three web services for a few reasons -
+A [project](/docs/automation_hub/projects/) is the place the run schedule is stored. A project is a group of tasks that should run at the same time - either in parallel or series.
 
-- Splitting the UI from the running tasks improves the user experience
-- The scheduler must run on only 1 web worker, while we would like as many workers as possible for the runner.
-- API's are cool.
+A [task](/docs/automation_hub/tasks/) is a job of getting/storing data. Tasks are independent of each other, unless they are run in series - then the success or failure of a task determine weather the successors will run.
 
-In the Atlas Automation Hub admin screen there is an option to retart the web services. For this option to work you may need to give you webapp user sudo permission, or:
-
-``` bash
-
-sudo visudo
-
-# add this line to the end.. assuming the webapp usergroup is "webapp"
-%webapp ALL=NOPASSWD: /bin/systemctl daemon-reload
-%webapp ALL=NOPASSWD: /bin/systemctl restart *
-```
-
-If you will have "long running" tasks, it may be wise to increase the nginx timeout. (Gunicorn timeouts are already increased in the app install files.)
-
-``` bash
-# open nginx config
-sudo nano /etc/nginx/nginx.conf
-
-# add these in the http secion. all for good luck...
-fastcgi_connect_timeout 999s;
-proxy_connect_timeout 999s;
-proxy_read_timeout 999s;
-```
-
-## How the Runner works
-
-
-
-### Data Source
-
-The output of "Data Source" is a list of tempfiles containing the source data. If a database query source is uses, there will be only one file.
-
-After the data source is collected, the files are converted into the final output type.
+Tasks can be individually enabled or disabled.

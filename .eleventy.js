@@ -77,7 +77,8 @@ module.exports = function(eleventyConfig) {
     h4: 'title is-4',
     h5: 'title is-5',
     h6: 'title is-5',
-    p: 'block'
+    p: 'block',
+    table: 'table'
   };
 
   markdownIt

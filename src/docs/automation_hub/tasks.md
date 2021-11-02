@@ -1,7 +1,7 @@
 ---
 title: Tasks
 tags: Automation Hub
-description: Atlas Docs
+description: Automation Hub Tasks
 layout: docs_hub.njk
 eleventyNavigation:
   key: AH Tasks
@@ -12,40 +12,42 @@ eleventyNavigation:
 
 # Tasks
 
-A task is child to a project and contains the details of the job to be run. A typical task will run a sql query, format the results with a delimiter and then upload the file into a SFTP server.
+A task is child to a project and contains the details of the job to be run. A typical task will run a sql query, format the results and upload them as a file into a SFTP server.
 
 Tasks include three primary pages:
 
-- All Tasks. This loads a paginated table of all tasks along with a name cloud of task owners (owners come from the project level), and also a name cloud of the associated projects.
-- My Tasks. This loads a paginated table of all tasks along with a name cloud of the associated projects.
-- Task Details. Summary page of all the task details, a few controls, and the run history.
-- New Task. The page to create or edit tasks.
+:::content
+- `All Tasks` This loads a paginated table of all tasks along with a name cloud of task owners (owners come from the project level), and also a name cloud of the associated projects.
+- `My Tasks` This loads a paginated table of all tasks along with a name cloud of the associated projects.
+- `Task Details` Summary page of all the task details, a few controls, and the run history.
+- `New Task` The page to create or edit tasks.
+:::
 
-.. image:: ../images/em2-task.png
-  :alt: Task List
 
 ## Task Details
 
 From the task details a task can be
 
-- Deleted
+:::content
 - Edited
-- Run Now
+- Deleted
+- Run
 - Rescheduled. This option will remove any existing schedules from the Scheduler API and recreate them.
 - Duplicated. This option will clone the job in a disabled state.
 - Cancel Retry. If the task has failed and and retry has been scheduled the user can click here to prevent the retries. This option cannot be clicked while task is running.
-
-.. image:: ../images/em2-task-header.png
-  :alt: Task Details
+:::
 
 Following this most task details are listed along with a log, and a listing of historical file outputs.
 
 The history files can be downloaded or resent to the *current* destination.
 
-
 ## New Task
 
 There are many options for creating new tasks!
+
+### Parameters
+
+See the [parameters](/docs/automation_hub/parameters/) page for more parameter options.
 
 ### Retries
 
@@ -61,7 +63,7 @@ Run Rank determines which order the tasks will be run in, only if the project is
 
 Most of the data source/ destination options are fairly consistent through all the option groups.
 
-Data sources must first be created in the :ref:`connections`.
+Data sources must first be created in the [connections page](/docs/automation_hub/connections/).
 
 ### Database
 
@@ -69,13 +71,17 @@ A source organization and database can be selected.
 
 The option "Include Query Headers" will include/exclude column headings from the output.
 
-A query location must be chosen. The query can be loaded from SFTP, FTP, SMB, Gitlab, WebURl (for example, github + access token), or can be entered directly into EM2.
+A query location must be chosen. The query can be loaded from SFTP, FTP, SMB, Gitlab, web url (for example, github + access token), or can be entered directly as "source code".
 
-.. note:: Queries will be modified at runtime. A preview of the modifications is available on the Task Details page. For example, "using" statements are not allowed in ODBC, so tables must be fully qualified, or a db specified in the connection. EM2 will automatically remove unauthorized statements in SQL queries.
+{% admonition
+   "note",
+   "Note",
+   "Queries will be modified at runtime. A preview of the modifications is available on the Task Details page. For example, ``using`` statements are not allowed in ODBC, so tables must be fully qualified, or a db specified in the connection. The app will automatically remove unauthorized statements in SQL queries."
+%}
 
-Query Parameters can be added. These will override what is set at the project level and will follow the same format. See :ref:`project_parameters`
+SQL queries will do a row count as the queries run and will log the current row count to the task log.
 
-SQL Server queries will do a row count as the queries run and will log the current row count to the task log.
+There is an option to save queries from Gitlab and web urls when the app runs, and if there is ever a connection issue pulling the code, the cached version will be used. The sql is cached before parameters are inserted so parameters will continue to work.
 
 ### FTP/SFTP/SMB
 
@@ -83,11 +89,9 @@ These data source options allow a remote file to be loaded and sent to a destina
 
 For example a csv can be loaded and changed to a pipe delimited file.
 
-.. note:: wildcards can be used in filenames. For example: "\*this.csv" will match "and_this.csv". Use with caution as only a single file will be loaded even if there are multiple matches.
-
 ### Python Script
 
-While a python script can be run as an add-on to any data source (through `Processing Script`_), if you only wish to run a python script and not have any other data source you can choose this option.
+While a python script can be run as an add-on to any data source (through `Processing Script`), if you only wish to run a python script and not have any other data source you can choose this option.
 
 
 ### SSH
@@ -96,20 +100,19 @@ If you only need to schedule a command to run on a remote server this is the opt
 
 It will attempt to connect to a remote server through SSH and run whatever command you specify.
 
-The commands can be loaded from an exteral script (through SFTP, FTP, SMB, Gitlab or web url), or internally through the code editor.
+The commands can be loaded from an external script (through SFTP, FTP, SMB, Gitlab or web url), or internally through the code editor.
 
 ## Processing Script
 
 Data from the source is passed into a local file and can be modified with a python script.
 
-Also, if you choose `Python Script`_ you can run a python script without input.
+Also, if you choose `Python Script` you can run a python script without input.
 
 If there is a data source selected it will be passed into your python script as parameter 1.
 
 A script like this will pick up that file.
 
 ``` python
-
 import sys
 input_file = sys.argv[1]
 ```
@@ -123,23 +126,7 @@ The Processing Script can be loaded from a multitude of places. You can load a m
 
 Once data is gather is can be sent out!
 
-First set the output file type and name. The file name can use python type data parameters. They also support additional manipulations that are not part of the standard python syntax.
-
-For example, if you want to include the day yesterday in your filename you can do
-
-``` python
-nice_name_yesterday_%d-1.csv
-```
-
-The '%d-1' will parse out to the day number yesterday.
-
-Parameters from project/task parameters can also be used. For example, if you have a parameter `#year=parse(%Y)`, you can add that to the filename as
-
-``` python
-current_year_#year.csv
-```
-
-and the #year value will be updated with the current year value.
+First set the output file type and name. The file name can use python type data parameters. See the [parameters](/docs/automation_hub/parameters/) page for more parameter options.
 
 If needed, the file can be sent inside a zip folder.
 

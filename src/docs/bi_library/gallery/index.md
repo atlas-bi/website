@@ -1,7 +1,7 @@
 ---
-title: Atlas UI
+title: Gallery
 tags: BI Library
-description: Atlas Docs
+description: User interface gallery
 layout: docs_library.njk
 eleventyNavigation:
   key: BIL Gallery

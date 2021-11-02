@@ -1,26 +1,27 @@
 ---
 title: Development
 tags: Automation Hub
-description: Atlas Docs
+description: Automation Hub Development
 layout: docs_hub.njk
 eleventyNavigation:
   key: AH Development
   title: Development
   parent: Automation Hub
-  order: 5
+  order: 8
 ---
 
 # Development
 
-EM2 is developed using python and a few helpful tools:
+Atlas Hub is developed using python and a few helpful tools:
 
 ## Primary Tools
 
+:::content
 - `Pyenv <https://github.com/pyenv/pyenv>`_ for managing python environments
 - `Poetry <https://python-poetry.org>`_ for managing dependencies
 - `Precommit <https://pre-commit.com>`_  for reformating code before committing
 - `Tox <https://tox.readthedocs.io/en/latest/index.html>`_  running tests, verifying code
-
+:::
 
 ## Precommit Setup
 
@@ -32,14 +33,13 @@ precommit install
 
 ## Testing
 
-
-Code (python/javascript/css/html) is all tested with tox:
+Tests can be run with tox:
 
 ``` bash
 tox
 ```
 
-## Running Pytests
+### Running Pytests
 
 With Poetry:
 
