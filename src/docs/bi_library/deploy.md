@@ -90,6 +90,10 @@ Deploying with Visual Studio is the preferred method. After opening the ``web.sl
   {% image "./src/static/img/bi_library/deploy/vs_publish.png", "Publish Atlas", "(min-width:800px) 50vw, 100vw", "boxed" %}
 :::
 
+
+If Visual Studio still cannot resolve the certificate issue, you can disable the check in the publish settings XML file.
+{% image "./src/static/img/bi_library/deploy/cert_error.png", "disable cert", "(min-width:800px) 50vw, 100vw", "boxed" %}
+
 </div>
    <div class="tab" id="manual">
 
