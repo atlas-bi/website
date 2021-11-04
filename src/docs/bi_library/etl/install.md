@@ -73,3 +73,7 @@ If any of these are not needed, delete them from the ETL.
    "Note",
    "The same steps can be followed to the Run Data ETL."
 %}
+
+## System Tables
+
+It is possible that not all tables that Atlas uses are enabled. You may need to enable additional tables.

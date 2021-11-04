@@ -152,6 +152,10 @@ There is an option to attempt to replace existing files with the same name, howe
 
 Getting a success/failure email from the extract can be useful. You have the option to attach or embed the output file to the email as well. Use with caution if you are querying sensitive data, or have a file that may exceed or email size limit.
 
-Finally,
+It is also possible to send a text message. Phone numbers can be entered as an email address using the email to sms gateway. You can find the gateway address for your provider [here](https://email2sms.info).
+
+If you have phone numbers in the address list they will get a plain text message sent by sms, containing only the success or error message you've configured in the app. If no message is entered the default message will send.
+
+## Enable Task
 
 There is an option to enable the task immediately. If this is checked then the task will be picked up an run next time the project is triggered by the Scheduler API.
