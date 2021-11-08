@@ -12,6 +12,16 @@ eleventyNavigation:
 
 # Changelog
 
+## Version 2021.11.1
+
+::: content
+- Added SSAS cubes, measures, and dimensions
+- Added hierarchy for workbench reports
+- Updated creation scripts
+- Added certification tag table
+- Added EpicID to users
+- Modified UserGroup Memberships
+:::
 
 ## Version 2021.07.1
 
