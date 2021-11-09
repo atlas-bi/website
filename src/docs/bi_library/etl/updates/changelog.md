@@ -21,6 +21,7 @@ eleventyNavigation:
 - Added certification tag table
 - Added EpicID to users
 - Modified UserGroup Memberships
+- Added column to ReportObjectType table (must be a Y to be searchable)
 :::
 
 ## Version 2021.07.1
