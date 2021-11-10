@@ -47,6 +47,7 @@ After installing the server should be rebooted, or the web services restarted (`
 
 ::: content
 - An install of SQL Server Database 2016+ with [Full Text Index](https://codingsight.com/implementing-full-text-search-in-sql-server-2016-for-beginners/)
+- See [ETL Install](/docs/bi_library/etl/install/) for a database setup guide
 :::
 
 {% admonition
