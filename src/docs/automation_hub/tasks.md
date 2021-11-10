@@ -128,6 +128,8 @@ Once data is gather is can be sent out!
 
 First set the output file type and name. The file name can use python type data parameters. See the [parameters](/docs/automation_hub/parameters/) page for more parameter options.
 
+Leave the type and name blank if you are moving files and want to keep the original names.
+
 If needed, the file can be sent inside a zip folder.
 
 Additional characters can be appended to each line in the file.

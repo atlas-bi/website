@@ -20,6 +20,9 @@ eleventyNavigation:
 - Enhanced feedback messages
 - Change log format to console style
 - Updated UI
+- Added option to require SQL output
+- Added support for email to sms service
+- Updated to allow multiple source files to be moved to a destination, keeping original name
 :::
 
 ## Version 2021.08.1
