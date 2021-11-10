@@ -30,7 +30,7 @@ eleventyNavigation:
 ### Configure
 In your file explorer, you will see a new folder called `atlas` inside the `server/solr` folder. Navigate to `server/solr/atlas/conf` folder.
 
-{% image "./src/static/img/bi_library/search/file_structure.png", "file structure", "(min-width:800px) 50vw, 100vw", "boxed" %}
+{% image "./src/static/img/bi_library/search/folder_structure.png", "folder structure", "(min-width:800px) 50vw, 100vw", "boxed" %}
 
 1. Copy the three configuration files from the atlas source code folder `solr/atlas/` into the `server/solr/atlas/conf` folder, replacing the three default files.
 2. Copy the three configuration files from the atlas source code folder `solr/atlas_lokups/` into the `server/solr/atlas_lookups/conf` folder, replacing the three default files.
