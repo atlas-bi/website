@@ -12,6 +12,13 @@ eleventyNavigation:
 
 # Changelog
 
+## Version 2021.11.1
+
+::: content
+- Implemented SSAS Cubes- added to search, added run button
+- Updated db creation script
+:::
+
 ## Version 2021.10.1
 
 ::: content
