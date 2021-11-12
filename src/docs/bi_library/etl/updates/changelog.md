@@ -6,8 +6,8 @@ layout: docs_library.njk
 eleventyNavigation:
   key: BIL Changelog
   title: Changelog
-  parent: BIL ETL
-  order: 5
+  parent: BIL ETL Setup
+  order: 4
 ---
 
 # Changelog

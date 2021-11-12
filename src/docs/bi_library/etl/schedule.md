@@ -6,8 +6,8 @@ layout: docs_library.njk
 eleventyNavigation:
   key: BIL Schedule
   title: Schedule
-  parent: BIL ETL
-  order: 4
+  parent: BIL ETL Setup
+  order: 3
 ---
 
 # Schedule

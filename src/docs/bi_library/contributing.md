@@ -7,7 +7,7 @@ eleventyNavigation:
   key: BIL Contributing
   title: Contributing
   parent: BI Library
-  order: 4
+  order: 8
 ---
 
 # Contributing to Atlas BI Library

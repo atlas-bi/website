@@ -7,7 +7,7 @@ eleventyNavigation:
   key: BIL Releases
   title: Releases
   parent: BI Library
-  order: 7
+  order: 9
 ---
 
 # Releases
