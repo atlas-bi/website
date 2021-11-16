@@ -12,6 +12,12 @@ eleventyNavigation:
 
 # Changelog
 
+## Next Release
+
+::: content
+- Add profile to terms
+:::
+
 ## Version 2021.11.1
 
 ::: content

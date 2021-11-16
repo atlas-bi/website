@@ -121,6 +121,7 @@ All processing scripts are run in their own environment and dependencies are aut
 
 The Processing Script can be loaded from a multitude of places. You can load a multi file package and choose what file to run as well.
 
+A processing script can also return a new file name, or file names. The format must be a list of full paths. ex: `[Path(name_one),Path(name_two)]`
 
 ## Data Destination
 
