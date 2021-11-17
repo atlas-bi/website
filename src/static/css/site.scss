@@ -90,7 +90,9 @@ body {
   }
 }
 
-a.navbar-item:hover {
+a.navbar-item:hover,
+a.navbar-link:hover,
+.navbar-item.has-dropdown:hover .navbar-link {
   background: transparent;
 }
 
