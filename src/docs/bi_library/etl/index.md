@@ -29,22 +29,12 @@ The Clarity ETL must be downloaded from the [data handbook](https://datahandbook
 
 There are several supplementary ETL's that run with Python.
 
-- [LDAP User Import](https://github.com/atlas-bi/atlas-bi-libaray-etl/tree/master/LDAP)
+- [LDAP User Import](https://github.com/atlas-bi/LDAP-ETL)
 - [Solr Search Loader](https://github.com/atlas-bi/Solr-Search-ETL)
 - [Tableau Metadata Exporter](https://github.com/atlas-bi/Tableau-Metadata-Exporter)
 - [Sqlize Crystal Reports](https://github.com/atlas-bi/Sqlize-Crystal-Reports)
 
 These ETL's can be run separately from the main metadata ETL and are used to add supplementary information to web app. The supplementary ETL's can also be through `SQL Agent Jobs`, or with another tool [Atlas Automation Hub](/docs/automation_hub/).
-
-### LDAP Information
-
-It is presumed that most user profile information will be coming from LDAP. The [LDAP User Import](https://github.com/atlas-bi/atlas-bi-libaray-etl/tree/master/LDAP) collects the necessary data from LDAP server(s) into a separate database. The primary metadata ETL will pick up from this database.
-
-{% admonition
-   "note",
-   "SQL Server",
-   "[Active Directory Explorer](https://docs.microsoft.com/en-us/sysinternals/downloads/adexplorer) is a useful tool to browse your LDAP setup."
-%}
 
 ## Steps to Run
 
