@@ -7,7 +7,7 @@ eleventyNavigation:
   key: AH Connections
   title: Connections
   parent: Automation Hub
-  order: 6
+  order: 11
 ---
 
 # Connections

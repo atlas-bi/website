@@ -7,7 +7,7 @@ eleventyNavigation:
   key: AH Parameters
   title: Parameters
   parent: Automation Hub
-  order: 7
+  order: 13
 ---
 
 # Parameters

@@ -7,7 +7,7 @@ eleventyNavigation:
   key: AH Projects
   title: Projects
   parent: Automation Hub
-  order: 4
+  order: 9
 ---
 
 # Projects
@@ -22,6 +22,8 @@ Projects include three primary pages:
 - `Project Details` Summary page of some project events and a few actions that can be taken.
 - [`New Project`](#new-project) The page to create or edit a project. If no projects, or no tasks exists, users are directed here to create a project.
 :::
+
+{% image "./src/static/img/automation_hub/my_projects.png", "my projects", "(min-width:800px) 50vw, 100vw", "boxed" %}
 
 ## Project Details
 

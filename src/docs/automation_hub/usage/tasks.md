@@ -7,7 +7,7 @@ eleventyNavigation:
   key: AH Tasks
   title: Tasks
   parent: Automation Hub
-  order: 5
+  order: 10
 ---
 
 # Tasks
@@ -23,6 +23,7 @@ Tasks include three primary pages:
 - `New Task` The page to create or edit tasks.
 :::
 
+{% image "./src/static/img/automation_hub/my_tasks.png", "my tasks", "(min-width:800px) 50vw, 100vw", "boxed" %}
 
 ## Task Details
 

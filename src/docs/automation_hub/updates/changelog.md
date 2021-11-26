@@ -7,7 +7,7 @@ eleventyNavigation:
   key: AH Changelog
   title: Changelog
   parent: AH Releases
-  order: 5
+  order: 1
 ---
 
 # Changelog

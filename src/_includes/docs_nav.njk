@@ -43,11 +43,19 @@
                 <li>
                     <a href="https://atlas-hub.atlas.bi"
                        target="_blank"
-                       rel="noopener">Demo</a>
+                       rel="noopener"> ↪ Demo</a>
                 </li>
+            {% elif entry.title == "Install Guide" %}
+                <p class="menu-label">
+                    How to Install
+                </p>
             {% elif entry.title == "Dashboard" %}
                 <p class="menu-label">
                     How to Use
+                </p>
+            {% elif entry.title == "Development" %}
+                <p class="menu-label">
+                    Contributing
                 </p>
             {% elif entry.title == "License" %}
                 <p class="menu-label">

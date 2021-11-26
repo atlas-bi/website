@@ -7,7 +7,7 @@ eleventyNavigation:
   key: AH Releases
   title: Releases
   parent: Automation Hub
-  order: 10
+  order: 15
 ---
 
 # Releases

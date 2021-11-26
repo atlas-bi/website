@@ -7,7 +7,7 @@ eleventyNavigation:
   key: AH Admin
   title: Admin
   parent: Automation Hub
-  order: 7
+  order: 12
 ---
 
 # Admin
@@ -20,6 +20,8 @@ An admin can
 - Reset all tasks to completed. This is useful after publishing a website update and the admin would like to clear all errored tasks.
 - Reschedule Enabled Jobs. This option will empty the scheduler and then reschedule any enabled jobs.
 :::
+
+{% image "./src/static/img/automation_hub/admin.png", "admin", "(min-width:800px) 50vw, 100vw", "boxed" %}
 
 ## Scheduler Tasks
 
