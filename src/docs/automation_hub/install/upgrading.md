@@ -12,10 +12,25 @@ eleventyNavigation:
 
 # Upgrading Atlas Hub
 
+
 ## Recommended Method
+
+### Create A Backup
+
+Before updating it is recommended to take a backup. The backup files are stored in `/etc/atlas-hub/backups`. They will include a database dump, the current configuration, the current connection passwords, and the current install of the app.
+
+```bash
+atlas-hub --backup
+```
 
 If you've installed Atlas Hub using the recommended installer you can easily update with
 
 ```bash
-sudo apt update && sudo apt upgrade
+atlas-hub --upgrade
+```
+
+Or, use the standard commands
+
+```bash
+sudo apt update && sudo apt install atlas-hub
 ```
