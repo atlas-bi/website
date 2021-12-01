@@ -1,5 +1,5 @@
 ---
-title: Demo
+title: Atlas BI Library Docs » Demo
 tags: BI Library
 description: Atlas Docs
 layout: docs_library.njk

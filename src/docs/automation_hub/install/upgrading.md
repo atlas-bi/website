@@ -1,5 +1,5 @@
 ---
-title: Upgrading
+title: Atlas Automation Hub Docs » Upgrading
 tags: Automation Hub
 description: Automation Hub Upgrades
 layout: docs_hub.njk
@@ -10,7 +10,7 @@ eleventyNavigation:
   order: 5
 ---
 
-# Upgrading Atlas Hub
+# Upgrading
 
 
 ## Recommended Method

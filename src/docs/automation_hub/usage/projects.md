@@ -1,5 +1,5 @@
 ---
-title: Projects
+title: Atlas Automation Hub Docs » Projects
 tags: Automation Hub
 description: Automation Hub Projects
 layout: docs_hub.njk

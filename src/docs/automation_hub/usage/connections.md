@@ -1,5 +1,5 @@
 ---
-title: Connections
+title: Atlas Automation Hub Docs » Connections
 tags: Automation Hub
 description: Automation Hub Connections
 layout: docs_hub.njk

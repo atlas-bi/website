@@ -1,5 +1,5 @@
 ---
-title: Gallery
+title: Atlas Automation Hub Docs » Gallery
 tags: Automation Hub
 description: Atlas Automation Hub Gallery
 layout: docs_hub.njk

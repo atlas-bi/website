@@ -1,5 +1,5 @@
 ---
-title: Reports UI
+title: Atlas BI Library Docs » Gallery » Reports
 tags: BI Library
 description: Atlas Docs
 layout: docs_library.njk

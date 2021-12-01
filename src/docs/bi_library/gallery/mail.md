@@ -1,5 +1,5 @@
 ---
-title: Mail UI
+title: Atlas BI Library Docs » Gallery » Mail
 tags: BI Library
 description: Atlas Docs
 layout: docs_library.njk

@@ -1,5 +1,5 @@
 ---
-title: Welcome
+title: Atlas BI Library Docs » Welcome
 tags: BI Library
 description: Atlas BI Library Docs
 layout: docs_library.njk

@@ -1,5 +1,5 @@
 ---
-title: Welcome
+title: Atlas Automation Hub Docs » Welcome
 tags: Automation Hub
 description: Atlas Automation Hub Docs
 layout: docs_hub.njk

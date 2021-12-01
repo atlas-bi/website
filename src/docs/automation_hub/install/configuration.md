@@ -1,5 +1,5 @@
 ---
-title: Configuration
+title: Atlas Automation Hub Docs » Configuration
 tags: Automation Hub
 description: Atlas Docs
 layout: docs_hub.njk
@@ -10,7 +10,7 @@ eleventyNavigation:
   order: 6
 ---
 
-# Setting Up Atlas Hub
+# Configuration
 
 When you installed Atlas Hub a default configuration file was added to `/etc/atlas-hub/confi.ini`. This file should be edited to meet your needs.
 

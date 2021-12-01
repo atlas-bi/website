@@ -1,5 +1,5 @@
 ---
-title: Tasks
+title: Atlas Automation Hub Docs » Tasks
 tags: Automation Hub
 description: Automation Hub Tasks
 layout: docs_hub.njk

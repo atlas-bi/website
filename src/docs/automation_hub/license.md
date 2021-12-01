@@ -1,5 +1,5 @@
 ---
-title: License
+title: Atlas Automation Hub Docs » License
 tags: Automation Hub
 description: Atlas License
 layout: docs_hub.njk

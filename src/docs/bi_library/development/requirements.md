@@ -1,5 +1,5 @@
 ---
-title: Dev Requirements
+title: Atlas BI Library Docs » Development » Requirements
 tags: BI Library
 description: Atlas Docs
 layout: docs_library.njk

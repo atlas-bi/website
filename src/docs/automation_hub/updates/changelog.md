@@ -1,5 +1,5 @@
 ---
-title: Changelog
+title: Atlas Automation Hub Docs » Changelog
 tags: Automation Hub
 description: Changelog
 layout: docs_hub.njk

@@ -1,5 +1,5 @@
 ---
-title: Contributing
+title: Atlas BI Library Docs » Contributing
 tags: BI Library
 description: Atlas Docs
 layout: docs_library.njk

@@ -1,5 +1,5 @@
 ---
-title: ETL Setup
+title: Atlas BI Library Docs » ETL » Setup
 tags: BI Library
 description: Atlas Docs
 layout: docs_library.njk

@@ -1,5 +1,5 @@
 ---
-title: Deploy
+title: Atlas BI Library Docs » Deploy
 tags: BI Library
 description: Atlas Docs
 layout: docs_library.njk

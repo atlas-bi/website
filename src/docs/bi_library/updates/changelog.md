@@ -1,5 +1,5 @@
 ---
-title: Changelog
+title: Atlas BI Library Docs » Changelog
 tags: BI Library
 description: Atlas Docs
 layout: docs_library.njk

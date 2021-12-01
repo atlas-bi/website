@@ -1,16 +1,16 @@
 ---
-title: Alt Install
+title: Atlas Automation Hub Docs » Alternate Install Method
 tags: Automation Hub
 description: Atlas Docs
 layout: docs_hub.njk
 eleventyNavigation:
   key: AH Alt Install
-  title: Alt Install
+  title: Alternate Install
   parent: Automation Hub
   order: 7
 ---
 
-# Alternate Installation Method
+# Alternate Installation Methods
 
 ## Prerequisites
 
@@ -65,7 +65,7 @@ flask cli seed
 # flask cli seed_demo
 ```
 
-# Authentication
+## Authentication
 
 
 There are two primary authentication options -
@@ -75,7 +75,7 @@ There are two primary authentication options -
 - LDAP
 :::
 
-## SAML2
+### SAML2
 
 The [PySAML2](https://pysaml2.readthedocs.io) library is used for SAML authentication, and all the ``sp`` configuration parameters are supported. See the example config file for an ADFS setup example.
 
@@ -85,7 +85,7 @@ The [PySAML2](https://pysaml2.readthedocs.io) library is used for SAML authentic
    "SAML2 requires that the [xmlsec1](https://pysaml2.readthedocs.io/en/latest/install.html#install-pysaml2) binary be present and mapped to in the config file."
 %}
 
-## LDAP
+### LDAP
 
 LDAP login follows this basic process:
 

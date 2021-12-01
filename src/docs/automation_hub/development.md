@@ -1,5 +1,5 @@
 ---
-title: Development
+title: Atlas Automation Hub Docs » Development
 tags: Automation Hub
 description: Automation Hub Development
 layout: docs_hub.njk

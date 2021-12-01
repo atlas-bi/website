@@ -1,5 +1,5 @@
 ---
-title: UI Development
+title: Atlas BI Library Docs » Development » Special Considerations
 tags: BI Library
 description: Atlas Docs
 layout: docs_library.njk

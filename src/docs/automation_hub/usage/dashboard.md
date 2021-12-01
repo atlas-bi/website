@@ -1,5 +1,5 @@
 ---
-title: Dashboard
+title: Atlas Automation Hub Docs » Dashboard
 tags: Automation Hub
 description: Automation Hub Dashboard
 layout: docs_hub.njk

@@ -1,5 +1,5 @@
 ---
-title: Solr Search
+title: Atlas BI Library Docs » Development » Solr Search
 tags: BI Library
 description: Atlas Docs
 layout: docs_library.njk

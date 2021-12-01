@@ -1,5 +1,5 @@
 ---
-title: Admin
+title: Atlas Automation Hub Docs » Admin
 tags: Automation Hub
 description: Automation Hub Admin
 layout: docs_hub.njk

@@ -3,14 +3,14 @@
     <head>
         {% block meta %}
             {% metagen
-            title=title or metadata.title,
-            desc=desc or metadata.desc,
-            url=site.url + page.url,
-            img=image or site.url + "/static/img/logo-192x192.png",
-            img_alt=alt or "Atlas logo",
-            twitter_card_type=type,
-            twitter_handle=twitter,
-            name=name
+                title=title or metadata.title,
+                desc=desc or metadata.desc,
+                url=site.url + page.url,
+                img=image or site.url + "/static/img/logo-192x192.png",
+                img_alt=alt or "Atlas logo",
+                twitter_card_type=type,
+                twitter_handle=twitter,
+                name="the Atlas team"
             %}
         {% endblock meta %}
         <meta property="og:locale" content="en_US" />

@@ -1,5 +1,5 @@
 ---
-title: Users UI
+title: Atlas BI Library Docs » Gallery » Users
 tags: BI Library
 description: Atlas Docs
 layout: docs_library.njk

@@ -1,5 +1,5 @@
 ---
-title: Install
+title: Atlas Automation Hub Docs » Install
 tags: Automation Hub
 description: Automation Hub Install
 layout: docs_hub.njk
@@ -11,14 +11,11 @@ eleventyNavigation:
 ---
 
 
-# Recommended Install Method
+# Install
 
 This is the recommended way to install Atlas Hub. The installed is designed for a dedicated Ubuntu Server, is easy to install, and easy to upgrade.
 
 The primary server requirement is diskspace - have enough space to hold 2x the data you plan to transfer. Atlas Hub streams all data, so the memory requirements are low.
-
-## Install
-
 
 Install ``curl`` and ``gnupg2``.
 

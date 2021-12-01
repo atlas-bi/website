@@ -1,5 +1,5 @@
 ---
-title: Parameters
+title: Atlas Automation Hub Docs » Parameters
 tags: Automation Hub
 description: Automation Hub Parameters
 layout: docs_hub.njk

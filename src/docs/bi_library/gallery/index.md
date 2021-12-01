@@ -1,5 +1,5 @@
 ---
-title: Gallery
+title: Atlas BI Library Docs » Gallery
 tags: BI Library
 description: User interface gallery
 layout: docs_library.njk

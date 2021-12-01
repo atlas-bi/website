@@ -1,5 +1,5 @@
 ---
-title: Releases
+title: Atlas BI Library Docs » Releases
 tags: BI Library
 description: Atlas Docs
 layout: docs_library.njk

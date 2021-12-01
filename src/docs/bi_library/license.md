@@ -1,5 +1,5 @@
 ---
-title: License
+title: Atlas BI Library Docs » License
 tags: BI Library
 description: Atlas Docs
 layout: docs_library.njk

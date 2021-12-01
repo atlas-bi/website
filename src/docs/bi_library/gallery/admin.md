@@ -1,5 +1,5 @@
 ---
-title: Admin UI
+title: Atlas BI Library Docs » Gallery » Admin
 tags: BI Library
 description: Atlas Docs
 layout: docs_library.njk

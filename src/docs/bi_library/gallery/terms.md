@@ -1,5 +1,5 @@
 ---
-title: Terms UI
+title: Atlas BI Library Docs » Gallery » Terms
 tags: BI Library
 description: Atlas Docs
 layout: docs_library.njk

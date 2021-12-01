@@ -1,5 +1,5 @@
 ---
-title: Releases
+title: Atlas Automation Hub Docs » Releases
 tags: Automation Hub
 description: Atlas Docs
 layout: docs_hub.njk
