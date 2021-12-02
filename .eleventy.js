@@ -99,6 +99,11 @@ module.exports = function(eleventyConfig) {
     "src/static/img": "static/img"
   });
 
+  // copy robots
+  eleventyConfig.addPassthroughCopy({
+    "src/robots.txt": "robots.txt"
+  });
+
   eleventyConfig.addFilter("jsonify", (text) => {
     return JSON.stringify(text).replace(/(?:\\n\s*){2,}/g, "\\n");
   });
