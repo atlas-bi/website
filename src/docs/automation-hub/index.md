@@ -1,7 +1,7 @@
 ---
 title: Atlas Automation Hub Docs » Welcome
 tags: Automation Hub
-description: Atlas Automation Hub Docs
+description: Welcome to the Atlas Automation Hub documentation. Here you'll learn about how to install, configure and update the app.
 layout: docs_hub.njk
 eleventyNavigation:
   key: Automation Hub

@@ -1,7 +1,7 @@
 ---
 title: Atlas BI Library Docs » Contributing
 tags: BI Library
-description: Atlas Docs
+description: Learn about how you can contribute to the Atlas BI Library project. Contributions are welcome.
 layout: docs_library.njk
 eleventyNavigation:
   key: BIL Contributing

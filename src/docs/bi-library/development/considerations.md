@@ -1,7 +1,7 @@
 ---
 title: Atlas BI Library Docs » Development » Special Considerations
 tags: BI Library
-description: Atlas Docs
+description: Special considerations when contributing to the Atlas BI Library development.
 layout: docs_library.njk
 eleventyNavigation:
   key: BIL Special Considerations

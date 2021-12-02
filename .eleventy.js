@@ -10,7 +10,7 @@ const outdent = require('outdent');
 const slugifyCustom = (s) =>
   slugify(s, { lower: true, remove: /[*+~.()'"!:@]/g });
 
-async function imageShortcode(src, alt, sizes, type='asdf') {
+async function imageShortcode(src, alt, sizes, type='asdf', loading="lazy", decoding="async") {
   let metadata = await Image(src, {
     widths: [24, 300, 400, 500, 600, 800],
     formats: ["webp"],
@@ -21,8 +21,8 @@ async function imageShortcode(src, alt, sizes, type='asdf') {
   let imageAttributes = {
     alt,
     sizes,
-    loading: "lazy",
-    decoding: "async",
+    loading: loading,
+    decoding: decoding,
   };
 
   if(type=="boxed"){

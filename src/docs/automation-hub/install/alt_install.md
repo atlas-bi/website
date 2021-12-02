@@ -1,7 +1,7 @@
 ---
 title: Atlas Automation Hub Docs » Alternate Install Method
 tags: Automation Hub
-description: Atlas Docs
+description: Alternate installation method for Atlas Automation Hub. The app can also be installed manually using curl and a python script.
 layout: docs_hub.njk
 eleventyNavigation:
   key: AH Alt Install

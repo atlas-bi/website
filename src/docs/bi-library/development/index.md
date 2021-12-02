@@ -1,7 +1,7 @@
 ---
 title: Atlas BI Library Docs » Development
 tags: BI Library
-description: Atlas Docs
+description: Learn how to start Atlas BI Library locally and make changes to the codebase. Settings are kept in json files.
 layout: docs_library.njk
 eleventyNavigation:
   key: BIL Development

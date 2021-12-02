@@ -1,7 +1,7 @@
 ---
 title: Atlas BI Library Docs » ETL » Changelog
 tags: BI Library
-description: Atlas Docs
+description: Atlas BI Library ETL changelog. Find updates from recent releases and what feature you can expect on your next upgrade.
 layout: docs_library.njk
 eleventyNavigation:
   key: BIL Changelog

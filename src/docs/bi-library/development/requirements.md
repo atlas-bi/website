@@ -1,7 +1,7 @@
 ---
 title: Atlas BI Library Docs » Development » Requirements
 tags: BI Library
-description: Atlas Docs
+description: Learn about the basic development requirements needed to get Atlas BI Library running locally on your computer.
 layout: docs_library.njk
 eleventyNavigation:
   key: BIL Dev Requirements

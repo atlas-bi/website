@@ -1,7 +1,7 @@
 ---
 title: Atlas BI Library Docs » Gallery » Admin
 tags: BI Library
-description: Atlas Docs
+description: Gallery of images from the Atlas BI Library admin page. Images of parameters, tasks, and security.
 layout: docs_library.njk
 eleventyNavigation:
   parent: BIL Gallery

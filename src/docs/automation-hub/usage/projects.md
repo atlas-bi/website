@@ -1,7 +1,7 @@
 ---
 title: Atlas Automation Hub Docs » Projects
 tags: Automation Hub
-description: Automation Hub Projects
+description: Learn about creating and editing Atlas Automation Hub projects.
 layout: docs_hub.njk
 eleventyNavigation:
   key: AH Projects

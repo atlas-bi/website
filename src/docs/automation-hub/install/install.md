@@ -1,7 +1,7 @@
 ---
 title: Atlas Automation Hub Docs » Install
 tags: Automation Hub
-description: Automation Hub Install
+description: How to install Atlas Automation Hub. Easily download and install with our ppa through apt!
 layout: docs_hub.njk
 eleventyNavigation:
   key: AH Install

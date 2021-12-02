@@ -1,7 +1,7 @@
 ---
 title: Atlas BI Library Docs » Development » Solr Search
 tags: BI Library
-description: Atlas Docs
+description: Learn about how to set up Atlas BI Library Solr search. Minimal setup is needed, Solr can be set to autostart when your server reboots.
 layout: docs_library.njk
 eleventyNavigation:
   key: BIL Solr Search
@@ -16,8 +16,8 @@ eleventyNavigation:
 
 1. Install Java JRE on the web server. You can check your current install by running ``java --version`` in command prompt. Java can be downloaded [here](https://www.oracle.com/java/technologies/downloads/#jdk17-windows).
 2. Add a system environment variable "JAVA_HOME" that points to the install path of java. Most likely something close to `C:\Program Files\Java\jdk-17.0.1`
-3. [Download Solr](https://solr.apache.org/downloads.html) as a `zip` folder. Extract into your `inetpub/wwwroot` as `atlas-search`.
-4. Start Solr in command prompt by navigating to the `/bin` folder and running `solr start`. The output will let you know Solr has started on port 8983.
+3. Publish Atlas BI Library
+4. Start Solr in command prompt by navigating to the published site,  `/solr/bin` folder and running `solr start`. The output will let you know Solr has started on port 8983.
 
 {% image "./src/static/img/bi-library/search/start_solr.png", "start solr", "(min-width:800px) 50vw, 100vw", "boxed" %}
 

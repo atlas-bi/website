@@ -1,7 +1,7 @@
 ---
 title: Atlas BI Library Docs » Releases
 tags: BI Library
-description: Atlas Docs
+description: Atlas BI Libaray verion information.
 layout: docs_library.njk
 eleventyNavigation:
   key: BIL Releases

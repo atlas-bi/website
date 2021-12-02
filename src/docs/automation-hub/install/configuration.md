@@ -1,7 +1,7 @@
 ---
 title: Atlas Automation Hub Docs » Configuration
 tags: Automation Hub
-description: Atlas Docs
+description: Configuring Atlas Automation Hub is done through an ini file installed in /etc/atlas-hub/config.ini. Defaults are preset.
 layout: docs_hub.njk
 eleventyNavigation:
   key: AH Configuration
@@ -12,7 +12,7 @@ eleventyNavigation:
 
 # Configuration
 
-When you installed Atlas Hub a default configuration file was added to `/etc/atlas-hub/confi.ini`. This file should be edited to meet your needs.
+When you installed Atlas Hub a default configuration file was added to `/etc/atlas-hub/config.ini`. This file should be edited to meet your needs.
 
 Keep in mind that special characters, like `%` need to be escaped.
 

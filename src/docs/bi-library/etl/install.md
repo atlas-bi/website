@@ -1,7 +1,7 @@
 ---
 title: Atlas BI Library Docs » ETL » Install
 tags: BI Library
-description: Atlas Docs
+description: Lean about how to install the Atlas BI Library ETL on your SSIS server. Installation is done through Visual Studio.
 layout: docs_library.njk
 eleventyNavigation:
   key: BIL Install

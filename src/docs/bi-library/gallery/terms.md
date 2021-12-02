@@ -1,7 +1,7 @@
 ---
 title: Atlas BI Library Docs » Gallery » Terms
 tags: BI Library
-description: Atlas Docs
+description: Gallery of images of Atlas BI Library terms. Terms are a collection of words used to define a shared concept.
 layout: docs_library.njk
 eleventyNavigation:
   parent: BIL Gallery

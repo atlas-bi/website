@@ -1,7 +1,7 @@
 ---
 title: Atlas Automation Hub Docs » Tasks
 tags: Automation Hub
-description: Automation Hub Tasks
+description: Learn about creating and editing Atlas Automation Hub tasks.
 layout: docs_hub.njk
 eleventyNavigation:
   key: AH Tasks

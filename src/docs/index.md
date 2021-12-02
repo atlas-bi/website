@@ -2,7 +2,7 @@
 tags: Atlas
 layout: docs_home.njk
 title: Atlas Documentation
-desc: Atlas Docs
+desc: Learn about how to install and configure Atlas BI Library and Atlas Automation Hub in the Atlas Documentation. Find answers for common questions.
 name: name
 ---
 

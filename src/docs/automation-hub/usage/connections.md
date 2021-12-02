@@ -1,7 +1,7 @@
 ---
 title: Atlas Automation Hub Docs » Connections
 tags: Automation Hub
-description: Automation Hub Connections
+description: Learn about how to use the Atlas Automation Hub Connections page.
 layout: docs_hub.njk
 eleventyNavigation:
   key: AH Connections

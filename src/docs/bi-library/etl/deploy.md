@@ -1,7 +1,7 @@
 ---
 title: Atlas BI Library Docs » ETL » Deploy
 tags: BI Library
-description: Atlas Docs
+description: Learn about how to deploy Atlas BI Library to your web server from Visual Studio.
 layout: docs_library.njk
 eleventyNavigation:
   key: BIL Deploy

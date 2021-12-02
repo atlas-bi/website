@@ -1,7 +1,7 @@
 ---
 title: Atlas BI Library Docs » Gallery » Mail
 tags: BI Library
-description: Atlas Docs
+description: Gallery of images of the Atlas BI Library mail screen. Reports can easily be shared with other users.
 layout: docs_library.njk
 eleventyNavigation:
   parent: BIL Gallery

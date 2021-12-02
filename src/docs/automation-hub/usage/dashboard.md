@@ -1,7 +1,7 @@
 ---
 title: Atlas Automation Hub Docs » Dashboard
 tags: Automation Hub
-description: Automation Hub Dashboard
+description: Learn about the various sections on the Atlas Automation Hub Dashboard.
 layout: docs_hub.njk
 eleventyNavigation:
   key: AH Dashboard

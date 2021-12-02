@@ -1,13 +1,13 @@
 ---
 title: Atlas Automation Hub Docs » Changelog
 tags: Automation Hub
-description: Changelog
+description: Atlas Automation Hub changelog. Find updates from recent releases and what feature you can expect on your next upgrade.
 layout: docs_hub.njk
 eleventyNavigation:
   key: AH Changelog
   title: Changelog
-  parent: AH Releases
-  order: 1
+  parent: Automation Hub
+  order: 15
 ---
 
 # Changelog

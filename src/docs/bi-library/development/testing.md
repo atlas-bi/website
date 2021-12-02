@@ -1,7 +1,7 @@
 ---
 title: Atlas BI Library Docs » Development » Testing
 tags: BI Library
-description: Atlas Docs
+description: Learning about how to test the Atlas BI Library code. Tests are run with python and selenium and try to catch any javasript errors.
 layout: docs_library.njk
 eleventyNavigation:
   key: BIL Testing

@@ -1,7 +1,7 @@
 ---
 title: Atlas BI Library Docs » Gallery
 tags: BI Library
-description: User interface gallery
+description: Gallery of images of the Atlas BI Library user interface. See how an install of the unified report library will look.
 layout: docs_library.njk
 eleventyNavigation:
   key: BIL Gallery

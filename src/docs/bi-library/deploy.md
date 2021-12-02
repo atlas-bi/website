@@ -1,7 +1,7 @@
 ---
 title: Atlas BI Library Docs » Deploy
 tags: BI Library
-description: Atlas Docs
+description: Learn about how to deploy Atlas BI Library onto your web server. Atlas BI Library runs on .NET 5 and is easily deployed from Visual Studio.
 layout: docs_library.njk
 eleventyNavigation:
   key: BIL Deploy

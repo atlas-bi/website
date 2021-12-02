@@ -1,7 +1,7 @@
 ---
 title: Atlas BI Library Docs » License
 tags: BI Library
-description: Atlas Docs
+description: Atlas Automation Hub is licensed under the GNU License.
 layout: docs_library.njk
 eleventyNavigation:
   key: BIL License

@@ -1,7 +1,7 @@
 ---
 title: Atlas Automation Hub Docs » Upgrading
 tags: Automation Hub
-description: Automation Hub Upgrades
+description: Automation Hub upgrades can easily be installed using apt update and apt install commands. Take a backup before upgrading.
 layout: docs_hub.njk
 eleventyNavigation:
   key: AH Upgrade

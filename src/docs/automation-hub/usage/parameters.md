@@ -1,7 +1,7 @@
 ---
 title: Atlas Automation Hub Docs » Parameters
 tags: Automation Hub
-description: Automation Hub Parameters
+description: Learn about how to create project and task level parameters for Atlas Automation Hub. Parameters are a powerful way to make your tasks flexible.
 layout: docs_hub.njk
 eleventyNavigation:
   key: AH Parameters

@@ -1,7 +1,7 @@
 ---
 title: Atlas BI Library Docs » Gallery » Reports
 tags: BI Library
-description: Atlas Docs
+description: Gallery of images of the Atlas BI Library report pages. Documentation is easly added. Report usage included!
 layout: docs_library.njk
 eleventyNavigation:
   parent: BIL Gallery

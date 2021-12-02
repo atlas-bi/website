@@ -1,7 +1,7 @@
 ---
 title: Atlas BI Library Docs » Webserver Setup
 tags: BI Library
-description: Atlas Docs
+description: Learn about how to setup a webserver for installing Atlas BI Library. Setup is quick and requirements minimal.
 layout: docs_library.njk
 eleventyNavigation:
   key: BIL Webserver Setup

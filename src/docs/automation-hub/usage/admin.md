@@ -1,7 +1,7 @@
 ---
 title: Atlas Automation Hub Docs » Admin
 tags: Automation Hub
-description: Automation Hub Admin
+description: Learn about how to use the controls on the Atlas Automation Hub Admin page.
 layout: docs_hub.njk
 eleventyNavigation:
   key: AH Admin
