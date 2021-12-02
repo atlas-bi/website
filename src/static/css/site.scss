@@ -11,6 +11,8 @@ $link: hsl(207, 61%,  53%);
 $fontDir: "/static/font/inter/";
 @import "../../../node_modules/@fontsource/inter/scss/mixins";
 
+/* purgecss start ignore */
+
 pre .tag {
   align-items: unset;
   background-color: unset;
@@ -324,3 +326,9 @@ pre {
 .is-inlineblock {
   display: inline-block !important;
 }
+
+.is-rounded {
+  border-radius: $radius
+}
+
+/* purgecss end ignore */

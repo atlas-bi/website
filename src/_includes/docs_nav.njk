@@ -2,7 +2,7 @@
     {% set navPages =  collections.all | eleventyNavigation(tool) %}
 
     {% macro renderNavListItem(entry) -%}
-        {# custom code for bi_library section #}
+        {# custom code for bi-library section #}
         {% if tool == "BI Library" %}
             {% if entry.title == "Webserver Setup" %}
                 <p class="menu-label">
@@ -13,8 +13,8 @@
                     Development
                 </p>
             {% elif entry.title == "Demo" %}
-                <li><a href="/docs/bi_library/"
-                   class="{%- if page.url == "/docs/bi_library/" -%}is-active{%- endif -%}">
+                <li><a href="/docs/bi-library/"
+                   class="{%- if page.url == "/docs/bi-library/" -%}is-active{%- endif -%}">
                     Atlas BI Library
                 </a></li>
                 <p class="menu-label">
@@ -33,8 +33,8 @@
         {% elif tool=="Automation Hub" %}
             {% if entry.title == "Gallery" %}
                 <li>
-                <a href="/docs/automation_hub/"
-                   class="{%- if page.url == "/docs/automation_hub/" -%}is-active{%- endif -%}">
+                <a href="/docs/automation-hub/"
+                   class="{%- if page.url == "/docs/automation-hub/" -%}is-active{%- endif -%}">
                     Atlas Automation Hub
                 </a></li>
                 <p class="menu-label">

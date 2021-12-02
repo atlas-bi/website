@@ -14,7 +14,6 @@
           .getAttribute("data-target")
           .replace("#", "")
       );
-      console.log("in collapse")
       if (el == null) {
         return;
       }

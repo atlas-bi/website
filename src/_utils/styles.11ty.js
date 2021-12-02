@@ -23,15 +23,16 @@ module.exports = class {
     });
 
   return await postcss([
-    require('autoprefixer'),
     require('postcss-nested'),
+    purgecss({
+      content: ['./src/**/*.njk', './src/**/*.md'],
+      safelist: {
+              deep: [/pre/,/code/,/block/, /box/, /title/, /is-\d/, /table/, /message/, /message-header/, /message-body/, /panel-block/, /p-3/, /is-block/, /is-justify-content-space-between/, /is-light/, /is-active/, /is-info/],
+            }
+    }),
+    require('autoprefixer'),
     require('cssnano'),
-    // purgecss({
-    //   content: ['./src/**/*.njk'],
-    //   safelist: {
-    //           deep: [/panel-block/, /p-3/, /is-block/, '/is-justify-content-space-between/', 'is-light', 'is-active'],
-    //         }
-    // })
+
     ])
     .process(result.css, { from: undefined })
     .then(result => result.css);
