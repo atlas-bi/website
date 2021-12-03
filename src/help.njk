@@ -1,14 +1,9 @@
-{% extends "src/_includes/layout.njk" %}
-{% block meta %}
-    {% metagen
-    title="Atlas » Get Help",
-    desc="Get help your Atlas install. There is a community of dedicated Atlas users to help you.",
-    subject=desc,
-    url=site.url + page.url,
-    img=site.url + "/static/img/logo-192x192.png",
-    img_alt="Atlas logo"
-    %}
-{% endblock meta %}
+---
+layout: layout.njk
+title: Atlas » Get Help
+description: Get help your Atlas install. There is a community of dedicated Atlas users to help you.
+---
+
 {% block body %}
     <div class="hero-body">
         <div class="container">

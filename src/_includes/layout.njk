@@ -3,8 +3,8 @@
     <head>
         {% block meta %}
             {% metagen
-                title=title or metadata.title,
-                desc=desc or metadata.desc,
+                title=title or metadata.title or site.title,
+                desc=desc or description or metadata.desc or metadata.description or site.description,
                 url=site.url + page.url,
                 img=image or site.url + "/static/img/logo-192x192.png",
                 img_alt=alt or "Atlas logo",
@@ -36,6 +36,7 @@
               as="font"
               type="font/woff2"
               crossorigin/>
+        {% jsonLdScript meta, type, tags %}
     </head>
     <body>
         {% include "src/_includes/nav.njk" %}

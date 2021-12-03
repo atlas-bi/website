@@ -6,6 +6,7 @@ const metagen = require("eleventy-plugin-metagen");
 const eleventyNavigationPlugin = require("@11ty/eleventy-navigation");
 const fs = require('fs');
 const outdent = require('outdent');
+const schema = require("@quasibit/eleventy-plugin-schema");
 
 const slugifyCustom = (s) =>
   slugify(s, { lower: true, remove: /[*+~.()'"!:@]/g });
@@ -50,6 +51,7 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPlugin(metagen);
   eleventyConfig.addPlugin(criticalCss);
   eleventyConfig.addPlugin(eleventyNavigationPlugin);
+  eleventyConfig.addPlugin(schema);
 
   /* Markdown Plugins */
   const markdownItAnchor = require("markdown-it-anchor");
@@ -147,6 +149,7 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addFilter('markdown', value => {
     return `${markdownIt.render(value)}`;
   });
+
 
   return {
     dir: {
