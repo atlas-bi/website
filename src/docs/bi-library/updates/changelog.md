@@ -16,6 +16,12 @@ eleventyNavigation:
 
 ::: content
 - Add profile to terms
+- Fixed duplicate term listings on reports
+- Change search from sql full text index to Apache Solr
+- Updated Tableau run URL's to launch externally
+- Added NPM css build
+- Fixed bug adding service tickets to report documentation
+- Fixed bug in access request from search results
 :::
 
 ## Version 2021.11.1

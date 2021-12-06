@@ -1,47 +1,30 @@
-<div class="card block">
-    <div class="card-content">
-        <h2 class="title" id="bi-library">
-            Atlas BI Library
-        </h2>
-        <p class="subtitle mt-1">
-            The unified report library.
+<section class="section">
+        <div class="container">
+<h2 class="title is-3">What do we love?</h2>
+{% for feature in bi_library.features %}
+
+<div class="card my-2">
+    <a class="card-header has-arrow" data-action="collapse" data-target="collapsible-card-{{loop.index}}">
+        <p class="card-header-title">
+            {{ feature.heading }}
         </p>
-        <div class="columns">
-            <div class="column">
-                <div class="content">
-                    <div class="block">
-                        Atlas business intelligence library plugs in to your existing reporting platforms, extracts useful metadata, and displays it in a unified report library where you can easily search for, document, and launch reports.
-                    </div>
-                    <figure class="image">
-                        {% image "./src/static/img/atlas-home.png", "atlas home page", "(min-width:600px) 50vw, 100vw" %}
-                    </figure>
-                </div>
-            </div>
-            <div class="column">
-                <div class="content">
-                    <div class="block">
-                        <h4 class="ml-3 mb-5 pb-5"
-                            style="transform: rotate(-3deg);">need better governance over your report documentation?</h4>
-                        <h4 class="ml-1 mt-5 pt-5"
-                            style="transform: rotate(4deg);">want to make documentation available to users?</h4>
-                        <h4 class="ml-5 mt-5 pt-5"
-                            style="transform: rotate(-1deg);">want to track and manage what reports end users are using?</h4>
-                        <h4 class="ml-3 mt-5 pt-5"
-                            style="transform: rotate(4deg);">easily favorite and share reports with colleagues?</h4>
-                        <h4 class="ml-2 mt-5 pt-5"
-                            style="transform: rotate(-2deg);">organize reports into projects?</h4>
-                        <h4 class="pl-5 ml-5 mt-5 pt-5 mb-5 pb-5"
-                            style="transform: rotate(-4deg);">schedule recurring report maintenance?</h4>
-                        <h4 class="ml-1 mt-5 pt-5" style="transform: rotate(3deg);">track unused reports?</h4>
-                        <h4 class="ml-3 mt-5 pt-5"
-                            style="transform: rotate(1deg);">define specific concept that end users can access?</h4>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="container is-hidden-touch">{% include "home/library_alternate_tools.njk" %}</div>
-        <div class="hero-body hero-two">
-            <div class="container">{% include "home/library_demo.njk" %}</div>
+    </a>
+    <div id="collapsible-card-{{loop.index}}" class="is-collapsible">
+        <div class="card-content">
+            <p class="content">
+               {{ feature.message|safe }}
+            </p>
         </div>
     </div>
 </div>
+{%  endfor %}
+
+</div>
+</section>
+<div class="hero-body hero-two">
+    <div class="container">{% include "home/library_demo.njk" %}</div>
+</div>
+<section class="section">
+
+<div class="container is-hidden-touch">{% include "home/library_alternate_tools.njk" %}</div>
+</section>
