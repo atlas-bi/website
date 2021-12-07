@@ -1,5 +1,5 @@
 ---
-title: Atlas Automation Hub Docs » Development
+title: Development | Atlas Automation Hub Docs
 tags: Automation Hub
 description: Learn about the Atlas Automation Hub development process, and how to test the code.
 layout: docs_hub.njk

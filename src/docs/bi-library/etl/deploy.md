@@ -1,5 +1,5 @@
 ---
-title: Atlas BI Library Docs » ETL » Deploy
+title: Deploy | ETL | Atlas BI Library Docs
 tags: BI Library
 description: Learn about how to deploy Atlas BI Library to your web server from Visual Studio.
 layout: docs_library.njk

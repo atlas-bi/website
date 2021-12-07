@@ -1,5 +1,5 @@
 ---
-title: Atlas Automation Hub Docs » Configuration
+title: Configuration | Atlas Automation Hub Docs
 tags: Automation Hub
 description: Configuring Atlas Automation Hub is done through an ini file installed in /etc/atlas-hub/config.ini. Defaults are preset.
 layout: docs_hub.njk

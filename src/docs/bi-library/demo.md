@@ -1,5 +1,5 @@
 ---
-title: Atlas BI Library Docs » Demo
+title: Demo | Atlas BI Library Docs
 tags: BI Library
 description: Watch a demo of the Atlas BI Library and learn about the features of the app. A demo can also be run locally with docker.
 layout: docs_library.njk

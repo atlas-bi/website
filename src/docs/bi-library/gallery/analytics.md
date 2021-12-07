@@ -1,5 +1,5 @@
 ---
-title: Atlas BI Library Docs » Gallery » Analytics
+title: Analytics | Gallery | Atlas BI Library Docs
 tags: BI Library
 description: Gallery of images of the Atlas BI Library analytics screen. Monitor usage of your Atlas install.
 layout: docs_library.njk

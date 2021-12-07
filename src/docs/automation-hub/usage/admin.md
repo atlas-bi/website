@@ -1,5 +1,5 @@
 ---
-title: Atlas Automation Hub Docs » Admin
+title: Admin | Atlas Automation Hub Docs
 tags: Automation Hub
 description: Learn about how to use the controls on the Atlas Automation Hub Admin page.
 layout: docs_hub.njk

@@ -1,5 +1,5 @@
 ---
-title: Atlas BI Library Docs » Gallery » Mail
+title: Mail | Gallery | Atlas BI Library Docs
 tags: BI Library
 description: Gallery of images of the Atlas BI Library mail screen. Reports can easily be shared with other users.
 layout: docs_library.njk

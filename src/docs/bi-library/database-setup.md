@@ -1,5 +1,5 @@
 ---
-title: Atlas BI Library Docs » Database Setup
+title: Database Setup | Atlas BI Library Docs
 tags: BI Library
 description: Learn about how to setup your database for a new Atlas BI Library install. The database is sql server 2016 or later.
 layout: docs_library.njk

@@ -1,5 +1,5 @@
 ---
-title: Atlas BI Library Docs » Development » Requirements
+title: Requirements | Development | Atlas BI Library Docs
 tags: BI Library
 description: Learn about the basic development requirements needed to get Atlas BI Library running locally on your computer.
 layout: docs_library.njk

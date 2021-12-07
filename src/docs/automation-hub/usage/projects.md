@@ -1,5 +1,5 @@
 ---
-title: Atlas Automation Hub Docs » Projects
+title: Projects | Atlas Automation Hub Docs
 tags: Automation Hub
 description: Learn about creating and editing Atlas Automation Hub projects.
 layout: docs_hub.njk

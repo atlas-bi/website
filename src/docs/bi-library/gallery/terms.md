@@ -1,5 +1,5 @@
 ---
-title: Atlas BI Library Docs » Gallery » Terms
+title: Terms | Gallery | Atlas BI Library Docs
 tags: BI Library
 description: Gallery of images of Atlas BI Library terms. Terms are a collection of words used to define a shared concept.
 layout: docs_library.njk

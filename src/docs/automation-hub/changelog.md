@@ -1,5 +1,5 @@
 ---
-title: Atlas Automation Hub Docs » Changelog
+title: Changelog | Atlas Automation Hub Docs
 tags: Automation Hub
 description: Atlas Automation Hub changelog. Find updates from recent releases and what feature you can expect on your next upgrade.
 layout: docs_hub.njk

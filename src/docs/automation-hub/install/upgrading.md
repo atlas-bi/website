@@ -1,5 +1,5 @@
 ---
-title: Atlas Automation Hub Docs » Upgrading
+title: Upgrading | Atlas Automation Hub Docs
 tags: Automation Hub
 description: Automation Hub upgrades can easily be installed using apt update and apt install commands. Take a backup before upgrading.
 layout: docs_hub.njk

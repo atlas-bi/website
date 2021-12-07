@@ -1,5 +1,5 @@
 ---
-title: Atlas BI Library Docs » Development » Testing
+title: Testing | Development | Atlas BI Library Docs
 tags: BI Library
 description: Learning about how to test the Atlas BI Library code. Tests are run with python and selenium and try to catch any javasript errors.
 layout: docs_library.njk

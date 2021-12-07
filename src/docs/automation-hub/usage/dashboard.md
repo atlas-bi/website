@@ -1,5 +1,5 @@
 ---
-title: Atlas Automation Hub Docs » Dashboard
+title: Dashboard | Atlas Automation Hub Docs
 tags: Automation Hub
 description: Learn about the various sections on the Atlas Automation Hub Dashboard.
 layout: docs_hub.njk

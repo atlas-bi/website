@@ -1,5 +1,5 @@
 ---
-title: Atlas BI Library Docs » Development » Special Considerations
+title: Special Considerations | Development | Atlas BI Library Docs
 tags: BI Library
 description: Special considerations when contributing to the Atlas BI Library development.
 layout: docs_library.njk

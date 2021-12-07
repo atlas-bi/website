@@ -1,5 +1,5 @@
 ---
-title: Atlas BI Library Docs » Gallery » Admin
+title: Admin | Gallery | Atlas BI Library Docs
 tags: BI Library
 description: Gallery of images from the Atlas BI Library admin page. Images of parameters, tasks, and security.
 layout: docs_library.njk

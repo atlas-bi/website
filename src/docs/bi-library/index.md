@@ -1,5 +1,5 @@
 ---
-title: Atlas BI Library Docs » Welcome
+title: Welcome | Atlas BI Library Docs
 tags: BI Library
 description: Welcome to the Atlas BI Library documentation. Learn about how to install and configure your Atlas BI Library install.
 layout: docs_library.njk

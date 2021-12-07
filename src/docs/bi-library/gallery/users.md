@@ -1,5 +1,5 @@
 ---
-title: Atlas BI Library Docs » Gallery » Users
+title: Users | Gallery | Atlas BI Library Docs
 tags: BI Library
 description: Gallery of images of Atlas BI Library user profiles. See user run history, subscriptions and more.
 layout: docs_library.njk

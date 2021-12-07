@@ -1,5 +1,5 @@
 ---
-title: Atlas Automation Hub Docs » Gallery
+title: Gallery | Atlas Automation Hub Docs
 tags: Automation Hub
 description: Gallery of Atlas Automation Hub images. See how the app looks.
 layout: docs_hub.njk

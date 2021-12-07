@@ -1,5 +1,5 @@
 ---
-title: Atlas BI Library Docs » ETL » Setup
+title: Setup | ETL | Atlas BI Library Docs
 tags: BI Library
 description: Learn about the Atlas BI Library ETL, how it works, and the supplimentary ETL's used to gather report metadata.
 layout: docs_library.njk
@@ -25,21 +25,11 @@ The ETL's are SSIS packages and can be scheduled to run as jobs on a Microsoft S
 
 The Clarity ETL must be downloaded from the [data handbook](https://datahandbook.epic.com/Reports/Details/9000648).
 
-## Supplementary ETL's
-
-There are several supplementary ETL's that run with Python.
-
-- [LDAP User Import](https://github.com/atlas-bi/LDAP-ETL)
-- [Solr Search Loader](https://github.com/atlas-bi/Solr-Search-ETL)
-- [Tableau Metadata Exporter](https://github.com/atlas-bi/Tableau-Metadata-Exporter)
-- [Sqlize Crystal Reports](https://github.com/atlas-bi/Sqlize-Crystal-Reports)
-
-These ETL's can be run separately from the main metadata ETL and are used to add supplementary information to web app. The supplementary ETL's can also be through `SQL Agent Jobs`, or with another tool [Atlas Automation Hub](/docs/automation-hub/).
 
 ## Steps to Run
 
 ::: content
-1. Configure and run the supplementary ETL's
+1. Configure and run the [supplementary ETLs](/docs/bi-library/etl/supplimentary-etls/)
 2. Configure and run Atlas ETL's (main ETL and run data)
 
    - Delete SSRS sections if not used

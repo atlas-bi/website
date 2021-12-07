@@ -1,5 +1,5 @@
 ---
-title: Atlas BI Library Docs » ETL » Changelog
+title: Changelog | ETL | Atlas BI Library Docs
 tags: BI Library
 description: Atlas BI Library ETL changelog. Find updates from recent releases and what feature you can expect on your next upgrade.
 layout: docs_library.njk
@@ -63,4 +63,12 @@ eleventyNavigation:
 - Removed custom tables
 - Removed dev connection from ETL
 - Added Tableau and SlicerDicer
+:::
+
+### Updating to 2021.03.1
+
+::: content
+- Rename database ``Data_Governance`` to ``atlas``
+- Drop ``dg_staging`` database and run ETL creation script ``atlas_staging-creation_script.sql``
+- Update ETL connections and parameters to new database names.
 :::

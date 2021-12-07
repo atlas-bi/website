@@ -1,5 +1,5 @@
 ---
-title: Atlas Automation Hub Docs » Tasks
+title: Tasks | Atlas Automation Hub Docs
 tags: Automation Hub
 description: Learn about creating and editing Atlas Automation Hub tasks.
 layout: docs_hub.njk
