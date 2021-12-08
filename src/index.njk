@@ -26,76 +26,80 @@ layout: layout.njk
     </div>
     <section class="section">
         <div class="container">
-            <div class="card block">
-                <div class="card-content">
-
-                    <div class="columns">
-                        <div class="column">
-                         <h2 class="title" id="bi-library">
-                        Atlas BI Library
-                    </h2>
+            <div class="columns">
+                <div class="column">
+                    <h2 class="title is-2" id="bi-library">{{ bi_library.name }}</h2>
                     <p class="subtitle mt-1">
-                        The unified report library.
+                        {{ bi_library.short_description }}
                     </p>
-                            <div class="content">
-                                <div class="block">
-                                    Atlas business intelligence library plugs in to your existing reporting platforms, extracts useful metadata, and displays it in a unified report library where you can easily search for, document, and launch reports.
-                                </div>
-                            </div>
-                        </div>
-                        <div class="column is-vcentered">
-                        <div class="columns is-vcentered">
-                        <div class="column is-one-fifth"></div>
-                        <div class="column">
-                        <a class="title has-text-info pb-3 is-block" href="/bi-library">
-                                      Find out more!
-                                    </a>
-
-                                    <figure class="image">
-                                        {% image "./src/static/img/atlas-home.png", "atlas home page", "(min-width:600px) 50vw, 100vw" %}
-                                    </figure>
-                            </div>
-                            <div class="column is-one-fifth"></div>
-                            </div>
+                    <div class="content">
+                        <div class="block">
+                            {{ bi_library.description }}
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="card block">
-                <div class="card-content">
-
-                    <div class="columns">
-                        <div class="column is-vcentered">
-                        <div class="columns is-vcentered">
-                        <div class="column is-one-fifth"></div>
-                        <div class="column">
-                        <a class="title has-text-info pb-3 is-block" href="/automation-hub">
-                                      Find out more!
-                                    </a>
-
-                                    <figure class="image">
-                                        {% image "./src/static/img/automation-hub/dashboard.png", "atlas home page", "(min-width:600px) 50vw, 100vw" %}
-                                    </figure>
-                            </div>
-                            <div class="column is-one-fifth"></div>
-                            </div>
+                <div class="column is-vcentered">
+                    <div class="box">
+                      <article class="media">
+                        <div class="media-left">
+                          <figure class="image is-256x256">
+                            {% image "./src/static/img/atlas-home.png", "atlas home page", "(min-width:600px) 50vw, 100vw" %}
+                          </figure>
                         </div>
-                        <div class="column has-text-right">
-                         <h2 class="title" id="bi-library">
-                        Atlas Automation Hub
-                    </h2>
-                    <p class="subtitle mt-1">
-                        A simple extract, batch job and script scheduler.
-                    </p>
-                            <div class="content">
-                                <div class="block">
-                                    Atlas Automation Hub is a task scheduling tool for getting data from a source and depositing it in a destination - sql servers to SFTP servers.
-                                </div>
-                            </div>
+                        <div class="media-content">
+                          <div class="content">
+                            <p>
+                              <h3 class="is-3">Find out more!</h3>
+                              <br>
+                              <a href="/bi-library">Is Atlas BI Library the right tool for me?</a>
+                            </p>
+                          </div>
                         </div>
+                      </article>
                     </div>
                 </div>
             </div>
         </div>
+    </section>
+    <section class="section">
+        <div class="container">
+            <div class="columns">
+                <div class="column is-vcentered">
+                    <div class="box">
+                      <article class="media">
+                        <div class="media-left">
+                          <figure class="image is-256x256">
+                                {% image "./src/static/img/automation-hub/dashboard.png", "atlas home page", "(min-width:600px) 50vw, 100vw" %}
+                          </figure>
+                        </div>
+                        <div class="media-content">
+                          <div class="content">
+                            <p>
+                              <h3 class="is-3">Find out more!</h3>
+                              <br>
+                              <a href="/automation">Is Atlas Automation Hub the right tool for me?</a>
+                            </p>
+                          </div>
+                        </div>
+                      </article>
+                    </div>
+            </div>
+                <div class="column has-text-right">
+                 <h2 class="title is-2" id="bi-library">
+                {{ automation_hub.name }}
+            </h2>
+            <p class="subtitle mt-1">
+                {{ automation_hub.short_description }}
+            </p>
+                    <div class="content">
+                        <div class="block">
+                            {{ automation_hub.description }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+                </div>
+            </div>
+
     </section>
 {% endblock body %}

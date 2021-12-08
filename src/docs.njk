@@ -8,19 +8,19 @@ description: Learn about how to install and configure Atlas BI Library and Atlas
     <section class="section is-flex-grow-1">
         <div class="container">
             <h1 class="title is-1">Documentation</h1>
-            Welcome to Atlas. Our tools are powerful, well maintained and easy to setup. Get to know them by exploring our documentation.
+            Welcome to Atlas. well maintained and easy to setup. Get to know them by exploring our documentation.
             <div class="columns pt-5">
                 <div class="column">
                     <div class="card">
                         <div class="card-content">
                             <p class="title">
-                                <a href="/docs/bi-library" class="is-size-4">Atlas BI Library</a>
+                                <a href="/docs/bi-library" class="is-size-4">{{ bi_library.name }}</a>
                             </p>
                             <p class="subtitle">
-                                The unified report library.
+                                {{ bi_library.short_description }}
                             </p>
                             <p>
-                                Atlas business intelligence library plugs in to your existing reporting platforms, extracts useful metadata, and displays it in a unified report library where you can easily search for, document, and launch reports.
+                                {{ bi_library.description }}
                             </p>
                         </div>
                     </div>
@@ -29,13 +29,13 @@ description: Learn about how to install and configure Atlas BI Library and Atlas
                     <div class="card">
                         <div class="card-content">
                             <p class="title">
-                                <a href="/docs/automation-hub" class="is-size-4">Atlas Automation Hub</a>
+                                <a href="/docs/automation-hub" class="is-size-4">{{ automation_hub.name }}</a>
                             </p>
                             <p class="subtitle">
-                                A simple extract, batch job and script scheduler.
+                                {{ automation_hub.short_description }}
                             </p>
                             <p class="block">
-                                Schedule tasks scheduling tool for getting data from a source and depositing it in a destination - sql servers to SFTP servers.
+                                {{ automation_hub.description }}
                             </p>
                         </div>
                     </div>

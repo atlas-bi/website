@@ -1,4 +1,5 @@
 {
+  "description": "Atlas business intelligence library plugs in to your existing reporting platforms, extracts useful metadata, and displays it in a unified report library where you can easily search for, document, and launch reports.",
   "features": [
     {
       "heading": "The unified report library",
@@ -36,5 +37,8 @@
       "heading": "Who? What? When? Why?",
       "message": "These questions are all answered in Atlas BI Library's documentation before your users can ask you! Many documentation options allow you to fully document your content, from images to terms, from report descriptions and assumptions to who requested the report to be made."
     }
-  ]
+  ],
+  "name": "Atlas BI Library",
+  "short_description": "The unified report library.",
+  "short_name": "BI Library"
 }

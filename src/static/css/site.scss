@@ -434,4 +434,10 @@ right: 1.125em;
   background-color: $info-dark !important;
 }
 }
+
+.is-256x256 {
+  max-height:256px;
+  max-width:256px;
+}
+
 /* purgecss end ignore */

@@ -10,9 +10,9 @@
 
 <aside class="menu is-sticky">
     {% if tool == "BI Library" %}
-        <p class="menu-label">BI Library Docs</p>
+        <p class="menu-label">{{ bi_library.short_name }} Docs</p>
     {% elif tool=="Automation Hub" %}
-        <p class="menu-label">Automation Hub Docs</p>
+        <p class="menu-label">{{ automation_hub.short_name }} Docs</p>
     {%  endif %}
     {% set navPages =  collections.all | eleventyNavigation(tool) %}
 

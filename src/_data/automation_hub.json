@@ -1,0 +1,6 @@
+{
+  "description": "Atlas Automation Hub is a task scheduling tool for getting data from a source and depositing it in a destination - sql servers to SFTP servers.",
+  "name": "Atlas Automation Hub",
+  "short_description": "A simple extract, batch job and script scheduler.",
+  "short_name": "Automation Hub"
+}
