@@ -11,7 +11,7 @@ const schema = require("@quasibit/eleventy-plugin-schema");
 const slugifyCustom = (s) =>
   slugify(s, { lower: true, remove: /[*+~.()'"!:@]/g });
 
-async function imageShortcode(src, alt, sizes, cls='', loading="lazy", decoding="async") {
+async function imageShortcode(src, alt, sizes, type='asdf', loading="lazy", decoding="async") {
   let metadata = await Image(src, {
     widths: [24, 300, 400, 500, 600, 800],
     formats: ["webp"],
@@ -20,7 +20,6 @@ async function imageShortcode(src, alt, sizes, cls='', loading="lazy", decoding=
   });
 
   let imageAttributes = {
-    class:cls,
     alt,
     sizes,
     loading: loading,
