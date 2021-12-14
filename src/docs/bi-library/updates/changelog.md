@@ -12,16 +12,18 @@ eleventyNavigation:
 
 # Changelog
 
-## Next Release
+## Version 2021.12.1
 
 ::: content
 - Add profile to terms
 - Fixed duplicate term listings on reports
 - Change search from sql full text index to Apache Solr
 - Updated Tableau run URL's to launch externally
-- Added NPM css build
+- Added NPM build
 - Fixed bug adding service tickets to report documentation
 - Fixed bug in access request from search results
+- Added run button for SAP Crystal Reports
+- Added permission check for Crystal Reports and RW Reports
 :::
 
 ## Version 2021.11.1

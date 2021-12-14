@@ -12,6 +12,20 @@ eleventyNavigation:
 
 # Changelog
 
+## Version 2021.12.1
+
+::: content
+- Added SAP Crystal Report file link import (Requires Supplementary Crystal ETL)
+- Added More Clarity Report Groups
+- Added HRX Report parameters to system detailed description as a collapse
+- Fixed typo in SlicerDicer report type table
+- Moved sql proc's for run data into the ETL (sql clean coming in future release)
+- Added sql query names (webapp inclusion of this feature coming in future release)
+- Added SlicerDicer report groups
+- Added run links for cubes
+- Added cert tag for cubes
+:::
+
 ## Version 2021.11.1
 
 ::: content
