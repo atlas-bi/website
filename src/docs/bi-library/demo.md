@@ -14,6 +14,8 @@ eleventyNavigation:
 
 Try Atlas out! Its easy to start up, you won't look back!
 
+[Watch a demo here.](/bi-library#demo)
+
 <div class="tabs">
    <ul>
     <li class="is-active"><a tab="local">Local Demo</a></li>
