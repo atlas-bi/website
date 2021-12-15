@@ -95,6 +95,9 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy({
     "./node_modules/@fontsource/inter/files": "static/font/inter/files"
   });
+  eleventyConfig.addPassthroughCopy({
+    "./node_modules/@fontsource/rasa/files": "static/font/rasa/files"
+  });
 
   // copy images
   eleventyConfig.addPassthroughCopy({

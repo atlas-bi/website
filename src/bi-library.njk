@@ -9,7 +9,7 @@ description: Atlas BI Library, a unified report library. This business intellige
     <div class="container">
         <div class="columns is-vcentered">
             <div class="column">
-                <h1 class="title is-1 has-text-weight-light" id="bi-library">
+                <h1 class="is-1 has-text-weight-light" id="bi-library">
                     {{ bi_library.name }}
                 </h1>
                 <p class="subtitle mt-1">
@@ -23,7 +23,9 @@ description: Atlas BI Library, a unified report library. This business intellige
             </div>
             <div class="column">
                 <div class="content">
-                    {% image "./src/static/img/atlas-home.png", "atlas home page", "(min-width:600px) 50vw, 100vw", "asdf", "eager", "auto" %}
+                    <figure class="image is-radius">
+                        {% image "./src/static/img/atlas-home.png", "atlas home page", "(min-width:600px) 50vw, 100vw", "asdf", "eager", "auto" %}
+                    </figure>
                 </div>
             </div>
         </div>

@@ -1,46 +1,61 @@
 <footer class="footer">
     <div class="container">
         <div class="columns">
-            <div class="column is-three-fifths is-hidden-mobile">
-                <strong>Atlas</strong>
-                was created by the Riverside Healthcare Analytics team.
-                <br />
-                <span class="copyright">© 2021 Riverside Healthcare</span>
-                <br />
-                <br />
-                help@atlas.bi
+            <div class="column is-one-third">
+                <figure class="image" style="max-width: 100px;">
+                    {% image "./src/static/img/atlas-logo.png", "atlas icon", "(min-width:100px) 50vw, 100vw" %}
+                </figure>
+                <p class="mt-4">
+                Atlas is a collection of open-source projects that help analytics teams manage their report library and create data extracts.
+                </p>
+                <p class="mt-4 mb-2">
+                Atlas was created by the Riverside Healthcare Analytics team.
+                </p>
+
+                <div class="level mt-5 is-justify-content-start">
+                    <a class="mr-3 mb-3" href="https://github.com/atlas-bi" target="_blank" rel="noopener">
+                        <figure class="image is-24x24">
+                            {% image "./src/static/img/github.png", "github icon", "(min-width: 100px) 30px, 30px" %}
+                        </figure>
+                    </a>
+                    <a class="mr-3 mb-3" href="https://discord.gg/hdz2cpygQD" target="_blank" rel="noopener">
+                        <figure class="image is-24x24">
+                            {% image "./src/static/img/discord.png", "discord icon", "(min-width: 100px) 30px, 30px" %}
+                        </figure>
+                    </a>
+                    <a class="mr-3 mb-3" href="mailto:help@atlas.bi">
+                        <figure class="image is-24x24 mail-icon">
+                            {% image "./src/static/img/mail.png", "mail icon", "(min-width: 100px) 30px, 30px" %}
+                        </figure>
+                    </a>
+                  </div>
+                  <p class="copyright has-text-grey">© 2021 Riverside Healthcare</p>
+            </div>
+            <div class="column"></div>
+            <div class="column">
+                <strong>Solutions</strong>
+                <ul>
+                    <li>
+                        <a href="/bi-library">Atlas BI Library</a>
+                    </li>
+                    <li>
+                        <a href="/automation-hub">Atlas Automation Hub</a>
+                    </li>
+                </ul>
             </div>
             <div class="column">
                 <strong>Atlas Links</strong>
                 <ul>
                     <li>
-                        <a href="/docs" target="_blank" rel="noopener">Documentation</a>
+                        <a href="/docs">Documentation</a>
                     </li>
                     <li>
-                        <a href="https://github.com/Riverside-Healthcare/Atlas">Source Code</a>
+                        <a href="/download">Download</a>
                     </li>
                     <li>
-                        <a href="https://github.com/Riverside-Healthcare/Atlas-ETL">ETL Source Code</a>
+                        <a href="/help">Help</a>
                     </li>
                 </ul>
-            </div>
-            <div class="column ">
-                <div class="columns pt-5">
-                    <div class="column is-narrow">
-                        <a href="https://github.com/Riverside-Healthcare/Atlas" class="github">
-                            <figure class="image is-24x24">
-                                {% image "./src/static/img/GitHub-Mark-120px-plus.png", "github icon", "(min-width: 100px) 30px, 30px" %}
-                            </figure>
-                        </a>
-                    </div>
-                    <div class="column is-narrow">
-                        <a href="https://discord.gg/hdz2cpygQD" class="discord">
-                            <figure class="image is-35x35">
-                                {% image "./src/static/img/discord.svg", "discord icon", "(min-width: 100px) 30px, 30px" %}
-                            </figure>
-                        </a>
-                    </div>
-                </div>
             </div>
         </div>
     </div>

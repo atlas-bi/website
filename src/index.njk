@@ -24,11 +24,12 @@ layout: layout.njk
             </div>
         </div>
     </div>
-    <section class="section">
+    <section class="hero is-medium is-white">
+        <div class="hero-body">
         <div class="container">
+        <h2 class="title is-2 mb-5 pb-5" id="bi-library">{{ bi_library.name }}<a href="/bi-library" class="button is-medium is-info is-pulled-right is-family-sans-serif">Find out more!</a></h2>
             <div class="columns">
                 <div class="column">
-                    <h2 class="title is-2" id="bi-library">{{ bi_library.name }}</h2>
                     <p class="subtitle mt-1">
                         {{ bi_library.short_description }}
                     </p>
@@ -38,59 +39,67 @@ layout: layout.njk
                         </div>
                     </div>
                 </div>
-                <div class="column is-vcentered">
+                <div class="column is-two-fifths is-vcentered">
                     <div class="box">
-                      <article class="media">
-                        <div class="media-left">
-                          <figure class="image is-256x256">
-                            {% image "./src/static/img/atlas-home.png", "atlas home page", "(min-width:600px) 50vw, 100vw" %}
+                          <figure class="image">
+                            {% image "./src/static/img/atlas-home.png", "atlas home page", "(min-width:1200px) 50vw, 100vw" %}
                           </figure>
                         </div>
-                        <div class="media-content">
-                          <div class="content">
-                            <p>
-                              <h3 class="is-3">Find out more!</h3>
-                              <br />
-                              <a href="/bi-library">Is Atlas BI Library the right tool for me?</a>
-                            </p>
-                          </div>
-                        </div>
-                      </article>
                     </div>
                 </div>
             </div>
         </div>
+        </div>
     </section>
-    <section class="section">
+<section class="hero is-medium hero-two">
+    <div class="hero-body">
+    <figure class="image background">
+        {% image "./src/static/img/people_together.jpg", "people collaborating", "(min-width:1200px) 50vw, 100vw" %}
+    </figure>
+    <div class="container">
+        <h2 class="title is-2 has-text-centered mb-5">Join the community!</h2>
+        <div class="columns is-centered mt-5">
+        <div class="column is-one-quarter">
+            <div class="box bd-notification has-background-white-bis has-text-centered">
+                <figure class="image is-96x96 mx-auto mb-5">
+                    {% image "./src/static/img/github.png", "github icon", "(min-width: 100px) 50vw, 100vw" %}
+                </figure>
+                <h4 class="title is-3 my-5">Contribute to the code</h4>
+                <p class="subtitle">Open issues, PRs, request features!</p>
+                <a class="button is-info" href="https://github.com/atlas-bi" target="_blank" rel="noopener">Contribute!</a>
+            </div>
+        </div>
+        <div class="column is-one-quarter">
+            <div class="box bd-notification has-background-white-bis has-text-centered">
+                <figure class="image is-96x96 mx-auto mb-5">
+                    {% image "./src/static/img/discord.png", "discord icon", "(min-width: 100px) 50vw, 100vw" %}
+                </figure>
+                <h4 class="title is-3 mt-5">Chat with us</h4>
+                <p class="subtitle">Join us on our chat, ask questions, and get update notifications!</p>
+                <a class="button is-info" href="https://discord.gg/hdz2cpygQD" target="_blank" rel="noopener">Join the chat!</a>
+            </div>
+        </div>
+    </div>
+    </div>
+    </section>
+    <section class="hero is-medium is-white">
+        <div class="hero-body">
         <div class="container">
+            <h2 class="title is-2 has-text-right mb-5 pb-5" id="bi-library">
+                {{ automation_hub.name }}<a href="/automation-hub" class="button is-medium is-info is-pulled-left is-family-sans-serif">Find out more!</a>
+            </h2>
             <div class="columns">
-                <div class="column is-vcentered">
+                <div class="column is-two-fifths is-vcentered">
                     <div class="box">
-                      <article class="media">
-                        <div class="media-left">
-                          <figure class="image is-256x256">
-                                {% image "./src/static/img/automation-hub/dashboard.png", "atlas home page", "(min-width:600px) 50vw, 100vw" %}
-                          </figure>
-                        </div>
-                        <div class="media-content">
-                          <div class="content">
-                            <p>
-                              <h3 class="is-3">Find out more!</h3>
-                              <br />
-                              <a href="/automation-hub">Is Atlas Automation Hub the right tool for me?</a>
-                            </p>
-                          </div>
-                        </div>
-                      </article>
+                      <figure class="image ">
+                            {% image "./src/static/img/automation-hub/dashboard.png", "atlas home page", "(min-width:1200px) 50vw, 100vw" %}
+                      </figure>
                     </div>
             </div>
                 <div class="column has-text-right">
-                 <h2 class="title is-2" id="bi-library">
-                {{ automation_hub.name }}
-            </h2>
-            <p class="subtitle mt-1">
-                {{ automation_hub.short_description }}
-            </p>
+                <p class="subtitle mt-1">
+                    {{ automation_hub.short_description }}
+                </p>
                     <div class="content">
                         <div class="block">
                             {{ automation_hub.description }}
@@ -101,5 +110,7 @@ layout: layout.njk
                 </div>
             </div>
 
+</section>
     </section>
+    
 {% endblock body %}

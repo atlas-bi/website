@@ -9,6 +9,8 @@ $link: hsl(207, 61%,  53%);
 $fontDir: "/static/font/inter/";
 @import "../../../node_modules/@fontsource/inter/scss/mixins";
 
+
+
 /* purgecss start ignore */
 
 pre .tag {
@@ -26,6 +28,7 @@ pre .tag {
   white-space: unset;
 }
 @import "../../../node_modules/prismjs/themes/prism";
+
 @include fontFace(
   $fontName: Inter,
   $weight: 400,
@@ -50,6 +53,33 @@ pre .tag {
   $fontDir: "/static/font/inter/files/"
 );
 
+$fontDir: "/static/font/fasa/";
+@import "../../../node_modules/@fontsource/rasa/scss/mixins";
+
+@include fontFace(
+  $fontName: Rasa,
+  $weight: 500,
+  $display: swap,
+  $unicodeMap: latin,
+  $fontDir: "/static/font/rasa/files/"
+);
+
+@include fontFace(
+  $fontName: Rasa,
+  $weight: 600,
+  $display: swap,
+  $unicodeMap: latin,
+  $fontDir: "/static/font/rasa/files/"
+);
+
+@include fontFace(
+  $fontName: Rasa,
+  $weight: 700,
+  $display: swap,
+  $unicodeMap: latin,
+  $fontDir: "/static/font/rasa/files/"
+);
+
 html {
   height: 100%;
 }
@@ -59,6 +89,10 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100%;
+}
+
+.title {
+  font-family: "Rasa", Georgia, "Times New Roman", Times, serif;
 }
 
 .atlas-nav {
@@ -129,16 +163,9 @@ pre .number {
   margin: 13px;
 }
 
-a.discord img {
-  width:33px;
+.mail-icon > img {
   margin-top:3px;
-  margin-left:-5px;
 }
-
-a.github img {
-  width:25px;
-}
-
 /* comparison */
 .plan-item .icon {
   height:auto;
@@ -392,8 +419,33 @@ pre {
   display: inline-block !important;
 }
 
-.is-rounded {
+.is-radius > img {
   border-radius: $radius
+}
+
+.hero.is-white .hero-body {
+  background-color: $white;
+}
+
+.hero {
+  position:relative
+}
+.background {
+  position:absolute;
+  top:0;
+  left:0;
+  right:0;
+  height:100%;
+  opacity: 0.1;
+  overflow:hidden;
+  display:flex;
+  align-items:center;
+}
+.background > img {
+  min-height: 100%;
+  min-width:100%;
+  width:unset;
+  max-width:unset;
 }
 
 .has-arrow {
