@@ -4,7 +4,7 @@ tags: BI Library
 description: Learn about how to deploy Atlas BI Library to your web server from Visual Studio.
 layout: docs_library.njk
 eleventyNavigation:
-  key: BIL Deploy
+  key: BIL ETL Deploy
   title: Deploy
   parent: BIL ETL Setup
   order: 2

@@ -4,10 +4,10 @@ tags: BI Library
 description: Atlas BI Library ETL changelog. Find updates from recent releases and what feature you can expect on your next upgrade.
 layout: docs_library.njk
 eleventyNavigation:
-  key: BIL Changelog
+  key: BIL ETL Changelog
   title: Changelog
   parent: BIL ETL Setup
-  order: 4
+  order: 5
 ---
 
 # Changelog

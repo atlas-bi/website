@@ -1,16 +1,16 @@
 ---
-title: Deploy | Atlas BI Library Docs
+title: Publish | Deploy | Atlas BI Library Docs
 tags: BI Library
 description: Learn about how to deploy Atlas BI Library onto your web server. Atlas BI Library runs on .NET 5 and is easily deployed from Visual Studio.
 layout: docs_library.njk
 eleventyNavigation:
-  key: BIL Deploy
-  title: Deploy
-  parent: BI Library
-  order: 6
+  key: BIL Publish
+  title: Publish
+  parent: BIL Deploy
+  order: 3
 ---
 
-# Deploy
+# Publish
 
 {% admonition 
    "alert",
@@ -24,28 +24,6 @@ eleventyNavigation:
    "This guide assumes you have already created the Atlas Databases, run the ETL to populate the database, and added your database connection as specified in the [`development guide`](/docs/bi-library/development/)"
 %}
 
-## Setup IIS
-
-Open the **Internet Information Services (IIS) Manager** on your Windows Server.
-
-First, create a new site by right clicking on **Site** then **Create New Site**.
-
-{% image "./src/static/img/bi-library/deploy/add_website.png", "Add website", "(min-width:800px) 50vw, 100vw", "boxed" %}
-
-Next, fill out the require parameters. If you have setup a DNS you can enter it in the **Host name** box.
-
-{% image "./src/static/img/bi-library/deploy/website_config.png", "Add website configuration", "(min-width:800px) 50vw, 100vw", "boxed" %}
-
-{% admonition 
-   "alert",
-   "Attention",
-   "Ideally you will add another binding for https. There are [many tutorials](https://techexpert.tips/iis/enable-https-iis/) showing how to enable HTTPS."
-%}
-
-Finally, verify that **windows** authentication is enabled and **all** other methods are disabled.
-
-{% image "./src/static/img/bi-library/deploy/open_auth.png", "Open authentication settings", "(min-width:800px) 50vw, 100vw", "boxed" %}
-{% image "./src/static/img/bi-library/deploy/windows_auth.png", "Verify windows authentication", "(min-width:800px) 50vw, 100vw", "boxed" %}
 
 ## Deploy to IIS
 

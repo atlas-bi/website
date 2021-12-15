@@ -6,8 +6,8 @@ layout: docs_library.njk
 eleventyNavigation:
   key: BIL Testing
   title: Testing
-  parent: BIL Development
-  order: 4
+  parent: BIL Deploy
+  order: 5
 ---
 
 # Testing

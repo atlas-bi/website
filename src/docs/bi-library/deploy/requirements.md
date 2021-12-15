@@ -6,7 +6,7 @@ layout: docs_library.njk
 eleventyNavigation:
   key: BIL Dev Requirements
   title: System Requirements
-  parent: BIL Development
+  parent: BIL Deploy
   order: 1
 ---
 

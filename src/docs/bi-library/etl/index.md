@@ -7,7 +7,7 @@ eleventyNavigation:
   key: BIL ETL Setup
   title: ETL Setup
   parent: BI Library
-  order: 5
+  order: 6
 ---
 
 # ETL Setup

@@ -7,7 +7,7 @@ eleventyNavigation:
   key: BIL Supplementary ETLs
   title: Supplementary ETLs
   parent: BIL ETL Setup
-  order: 9
+  order: 4
 ---
 
 # Supplementary ETLs

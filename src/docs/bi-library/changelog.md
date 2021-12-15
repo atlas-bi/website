@@ -6,11 +6,13 @@ layout: docs_library.njk
 eleventyNavigation:
   key: BIL Changelog
   title: Changelog
-  parent: BIL Releases
-  order: 0
+  parent: BI Library
+  order: 10
 ---
 
 # Changelog
+
+Version names follow a pattern of YYYY.MM.release.
 
 ## Version 2021.12.1
 

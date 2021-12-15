@@ -4,7 +4,7 @@ tags: BI Library
 description: Learn about how to schedule the Atlas BI Library ETL to run periodically on your SSIS server.
 layout: docs_library.njk
 eleventyNavigation:
-  key: BIL Schedule
+  key: BIL ETL Schedule
   title: Schedule
   parent: BIL ETL Setup
   order: 3

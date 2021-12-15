@@ -14,6 +14,8 @@ eleventyNavigation:
 
 Atlas BI Library is designed to run on **Windows Server 2016 or later**. There are a few installs to get the website running.
 
+## Install Requirements
+
 ::: content
 - IIS Webserver with [Microsoft .NET SDK 5 (Hosting Bundle)](https://dotnet.microsoft.com/download/dotnet/5.0)
   {% image "./src/static/img/bi-library/requirements/dotnetversion.png", "Extension", "(min-width:400px) 50vw, 100vw", "boxed" %}
@@ -42,3 +44,27 @@ After installing the server should be rebooted, or the web services restarted (`
    ".NET 5",
    "While .NET 5 x86 is specified, it is not required. The only *requirement* is that Atlas is *built* and *run* in the same version and bitness."
 %}
+
+
+## Setup IIS
+
+Open the **Internet Information Services (IIS) Manager** on your Windows Server.
+
+First, create a new site by right clicking on **Site** then **Create New Site**.
+
+{% image "./src/static/img/bi-library/deploy/add_website.png", "Add website", "(min-width:800px) 50vw, 100vw", "boxed" %}
+
+Next, fill out the require parameters. If you have setup a DNS you can enter it in the **Host name** box.
+
+{% image "./src/static/img/bi-library/deploy/website_config.png", "Add website configuration", "(min-width:800px) 50vw, 100vw", "boxed" %}
+
+{% admonition 
+   "alert",
+   "Attention",
+   "Ideally you will add another binding for https. There are [many tutorials](https://techexpert.tips/iis/enable-https-iis/) showing how to enable HTTPS."
+%}
+
+Finally, verify that **windows** authentication is enabled and **all** other methods are disabled.
+
+{% image "./src/static/img/bi-library/deploy/open_auth.png", "Open authentication settings", "(min-width:800px) 50vw, 100vw", "boxed" %}
+{% image "./src/static/img/bi-library/deploy/windows_auth.png", "Verify windows authentication", "(min-width:800px) 50vw, 100vw", "boxed" %}
