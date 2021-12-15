@@ -1,7 +1,7 @@
 ---
 title: Setup | ETL | Atlas BI Library Docs
 tags: BI Library
-description: Learn about the Atlas BI Library ETL, how it works, and the supplimentary ETL's used to gather report metadata.
+description: Learn about the Atlas BI Library ETL, how it works, and the supplementary ETL's used to gather report metadata.
 layout: docs_library.njk
 eleventyNavigation:
   key: BIL ETL Setup

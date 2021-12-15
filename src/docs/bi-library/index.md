@@ -9,28 +9,44 @@ eleventyNavigation:
   order: 1
 ---
 
-# Atlas BI Library
+# {{ bi_library.name }}
 
-Business intelligence library and documentation database.
+<p class="subtitle">{{ bi_library.short_description }}</p>
 
-ETL processes collect metadata from various reporting platforms and store it in a centraly located database. A modern web UI is used to add additional documentation to the report objects and also to provide an intuative way to search, favorite and share reporting content.
+{{ bi_library.description }}
 
 
-## Credits
+## Get Started On Your Install!
 
-Atlas was created by the Riverside Healthcare Analytics team.
-
-## Contributors
-
-::: content
-* Paula Courville
-* [Darrel Drake](https://www.linkedin.com/in/darrel-drake-57562529)
-* [Dee Anna Hillebrand](https://github.com/DHillebrand2016)
-* [Scott Manley](https://github.com/Scott-Manley)
-* [Madeline Matz](mailto:mmatz@RHC.net)
-* [Christopher Pickering](https://github.com/christopherpickering)
-* [Sean Pickering](https://github.com/Sean-Pickering)
-* [Dan Ryan](https://github.com/danryan1011)
-* [Richard Schissler](https://github.com/schiss152)
-* [Eric Shultz](https://github.com/eshultz)
-:::
+<div class="tile is-ancestor">
+    <div class="tile is-parent">
+    <div class="tile is-child box bd-notification has-background-white-bis has-text-centered">
+       <h4 class="title is-3 has-text-success my-5">Webserver Setup Guide</h4>
+       <p class="subtitle my-5">Find all the steps to prepare an IIS webserver for your Atlas BI Library install.</p>
+       <a class="button is-info" href="/docs/bi-library/webserver-setup/">Take me there!</a>
+    </div>
+  </div>
+  <div class="tile is-parent">
+     <div class="tile is-child box bd-notification has-background-white-bis has-text-centered">
+       <h4 class="title is-3 has-text-success my-5">Database Setup Guide</h4>
+       <p class="subtitle my-5">Learn about how to setup your database for a new Atlas BI Library install.</p>
+       <a class="button is-info" href="/docs/bi-library/database-setup/">Take me there!</a>
+    </div>
+  </div>
+</div>
+<div class="tile is-ancestor">
+  <div class="tile is-parent">
+     <div class="tile is-child box bd-notification has-background-white-bis has-text-centered">
+       <h4 class="title is-3 has-text-success my-5">ETL Setup Guide</h4>
+       <p class="subtitle my-5">Discover the ETL, how it works, and the supplementary ETL's used to gather report metadata.</p>
+       <a class="button is-info" href="/docs/bi-library/etl/">Take me there!</a>
+    </div>
+  </div>
+  <div class="tile is-parent">
+     <div class="tile is-child box bd-notification has-background-white-bis has-text-centered">
+       <h4 class="title is-3 has-text-success my-5">Publishing</h4>
+       <p class="subtitle my-5">Read about how to deploy Atlas BI Library onto your web server.</p>
+       <a class="button is-info" href="/docs/bi-library/deploy/">Take me there!</a>
+    </div>
+  </div>
+</div>

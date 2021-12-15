@@ -14,10 +14,6 @@ eleventyNavigation:
 
 Try Atlas out! Its easy to start up, you won't look back!
 
-<div class="block video_wrapper" style="padding-bottom: 56.250000%; padding-top: 30px; position: relative; width: 100%">
-<iframe allowfullscreen="true" src="https://www.youtube.com/embed/d_IGbnuXvJ8" style="border: 0; height: 100%; left: 0; position: absolute; top: 0; width: 100%">
-</iframe></div>
-
 <div class="tabs">
    <ul>
     <li class="is-active"><a tab="local">Local Demo</a></li>
@@ -61,14 +57,7 @@ There is a dockerized Atlas demo available, it can be run with a single command 
 ```bash
 docker run -i -t -p 1234:1234 -e PORT=1234  -u 0 christopherpickering/rmc-atlas-demo:latest
 ```
-Alternatively, you can clone the repository and build your own docker image -
 
-```bash
-git clone https://github.com/atlas-bi/atlas-bi-library.git .
-docker build  --tag atlas_demo .
-docker run -i -t -p 1234:1234 -e PORT=1234  -u 0 atlas_demo:latest
-# web app will be running @ http://localhost:1234
-# see Dockerfile for db access
-```
+After starting up, you can access the website at [`http://localhost:1234`](http://localhost:1234).
    </div>
 </div>
