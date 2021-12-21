@@ -158,7 +158,7 @@ module.exports = function(eleventyConfig) {
   const { fontawesomeSubset } = require('fontawesome-subset');
   fontawesomeSubset({
     regular:['envelope'],
-    solid: ['infinity', 'search', 'book', 'project-diagram', 'heart', 'address-card', 'server', 'database', 'ship', 'code']
+    solid: ['infinity', 'search', 'book', 'project-diagram', 'heart', 'address-card', 'server', 'database', 'ship', 'code', 'chart-bar', 'sitemap', 'tasks', 'lock', 'sliders-h', 'user', 'users', 'compass']
         }, '_site/static/font/fontawesome/webfonts');
 
   return {

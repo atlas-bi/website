@@ -48,10 +48,19 @@
       load();
     }, 0);
   });
+
+  var resetHash = function(){
+    if(window.location.hash != ""){
+        history.pushState("", document.title, window.location.pathname + window.location.search);
+      }
+  }
   d.addEventListener(
     "scroll",
     function () {
       debounce(load(), 200);
+
+      debounce(resetHash(), 500);
+
     }
   );
 })();

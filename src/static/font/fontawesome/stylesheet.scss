@@ -114,13 +114,21 @@ $icons: (
         infinity: $fa-var-infinity,
         search: $fa-var-search,
         book: $fa-var-book,
-        project-digram: $fa-var-project-diagram,
+        project-diagram: $fa-var-project-diagram,
         heart: $fa-var-heart,
         address-card: $fa-var-address-card,
         server: $fa-var-server,
         database: $fa-var-database,
         ship: $fa-var-ship,
-        code: $fa-var-code
+        code: $fa-var-code,
+        sitemap: $fa-var-sitemap,
+        chart-bar: $fa-var-chart-bar,
+        tasks: $fa-var-tasks,
+        sliders-h: $fa-var-sliders-h,
+        lock: $fa-var-lock,
+        compass: $fa-var-compass,
+        user: $fa-var-user,
+        users: $fa-var-users,
 );
 
 @each $key, $value in $icons {
