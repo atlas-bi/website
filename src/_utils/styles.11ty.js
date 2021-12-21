@@ -2,24 +2,21 @@
 const util = require('util');
 const sass = require('sass'); // `npm i -D sass`
 const renderSass = util.promisify(sass.render);
-const inputFile = 'src/static/css/site.scss'; // the path to your main SCSS file
-const outputFile = '/static/css/site.css'; // the filename you want this template to be saved as
-
 const purgecss = require('@fullhuman/postcss-purgecss')
-
 const postcss = require('postcss');
+const generateContentHash = require('../lib/generateContentHash');
 
 module.exports = class {
-   async data() {
+  async data() {
     return {
-      permalink: outputFile,
+      permalink: `/static/css/${generateContentHash('src/static/**/*.{scss,css}')}.css`,
       eleventyExcludeFromCollections: true,
     };
   }
 
   async render() {
     const result = await renderSass({
-      file: inputFile,
+      file: 'src/static/css/site.scss',
     });
 
   return await postcss([
@@ -27,7 +24,7 @@ module.exports = class {
     purgecss({
       content: ['./src/**/*.njk', './src/**/*.md'],
       safelist: {
-              deep: [/pre/,/code/,/block/, /box/, /title/, /is-\d/, /table/, /message/, /message-header/, /message-body/, /panel-block/, /p-3/, /is-block/, /is-justify-content-space-between/, /is-light/, /is-active/, /is-info/],
+              deep: [/zoomIn/, /fadeInUp/, /pre/,/code/,/block/, /box/, /title/, /is-\d/, /table/, /message/, /message-header/, /message-body/, /panel-block/, /p-3/, /is-block/, /is-justify-content-space-between/, /is-light/, /is-active/, /is-info/],
             }
     }),
     require('autoprefixer'),

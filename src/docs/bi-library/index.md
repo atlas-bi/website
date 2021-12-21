@@ -22,6 +22,7 @@ eleventyNavigation:
     <div class="tile is-parent">
     <div class="tile is-child box bd-notification has-background-white-bis has-text-centered">
        <h4 class="title is-3 has-text-success my-5">Webserver Setup Guide</h4>
+       <span class="icon is-large has-text-grey-light"><i class="fas fa-server fa-2x"></i></span>
        <p class="subtitle my-5">Find all the steps to prepare an IIS webserver for your Atlas BI Library install.</p>
        <a class="button is-info" href="/docs/bi-library/webserver-setup/">Take me there!</a>
     </div>
@@ -29,6 +30,7 @@ eleventyNavigation:
   <div class="tile is-parent">
      <div class="tile is-child box bd-notification has-background-white-bis has-text-centered">
        <h4 class="title is-3 has-text-success my-5">Database Setup Guide</h4>
+       <span class="icon is-large has-text-grey-light"><i class="fas fa-database fa-2x"></i></span>
        <p class="subtitle my-5">Learn about how to setup your database for a new Atlas BI Library install.</p>
        <a class="button is-info" href="/docs/bi-library/database-setup/">Take me there!</a>
     </div>
@@ -38,6 +40,7 @@ eleventyNavigation:
   <div class="tile is-parent">
      <div class="tile is-child box bd-notification has-background-white-bis has-text-centered">
        <h4 class="title is-3 has-text-success my-5">ETL Setup Guide</h4>
+       <span class="icon is-large has-text-grey-light"><i class="fas fa-code fa-2x"></i></span>
        <p class="subtitle my-5">Discover the ETL, how it works, and the supplementary ETL's used to gather report metadata.</p>
        <a class="button is-info" href="/docs/bi-library/etl/">Take me there!</a>
     </div>
@@ -45,6 +48,7 @@ eleventyNavigation:
   <div class="tile is-parent">
      <div class="tile is-child box bd-notification has-background-white-bis has-text-centered">
        <h4 class="title is-3 has-text-success my-5">Publishing</h4>
+       <span class="icon is-large has-text-grey-light"><i class="fas fa-ship fa-2x"></i></span>
        <p class="subtitle my-5">Read about how to deploy Atlas BI Library onto your web server.</p>
        <a class="button is-info" href="/docs/bi-library/deploy/">Take me there!</a>
     </div>

@@ -6,16 +6,16 @@
       "message": "Have you found yourself switching between four or five different reporting tools finding and running reports? With the unified Atlas BI Library all your report metadata is in one place where you can document, tag, and group reports."
     },
     {
-      "heading": "Superpowered report search",
+      "heading": "Supercharged report search",
       "message": "Capitalizing on a centralized metadata repository, Atlas BI Library makes it possible for you to quickly search for and find reports in any connected system! Most reports can be be launched directly from the search results. Powerful filters quickly narrow results down. Are you a report developer? You can even search for reports using a specific sql table or column!"
     },
     {
       "heading": "Deep report sharing",
-      "message": "Have you even wanted to share a link to an Epic Hyperspace report? Now you can! With Altas BI Library embedded in <a href='https://www.epic.com' target='_blank' rel='noopener'>Epic Hyperspace</a> you can easily share system reports with your colleagues."
+      "message": "Have you even wanted to share a link to an Epic Hyperspace report? Now you can! With Atlas BI Library embedded in <a href='https://www.epic.com' target='_blank' rel='noopener'>Epic Hyperspace</a> you can easily share system reports with your colleagues."
     },
     {
       "heading": "Define key terms",
-      "message": "Commonly used terms, such as 'LOS' for Length of Stay, can be defined in one place and shared accross many reports."
+      "message": "Commonly used terms, such as 'LOS' for Length of Stay, can be defined in one place and shared across many reports."
     },
     {
       "heading": "Track your library's key metrics",

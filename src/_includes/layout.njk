@@ -20,7 +20,7 @@
         <link rel="icon" sizes="192x192" href="/static/img/logo-192x192.png" />
         <link rel="apple-touch-icon" href="/static/img/apple-touch-icon.png" />
         <!-- critical css is inlined, so we can async the rest -->
-        <link rel="preload" href="/static/css/site.css" as="style" onload="this.rel='stylesheet'">
+        <link rel="preload" href="{{ css.stylesCss }}" as="style" onload="this.rel='stylesheet'">
         <link rel="preload"
               href="/static/font/inter/files/inter-latin-400-normal.woff2"
               as="font"
@@ -62,9 +62,6 @@
         </section>
         {% include "src/_includes/foot.njk" %}
         <script src="https://cdn.jsdelivr.net/npm/algoliasearch@4.5.1/dist/algoliasearch-lite.umd.js"></script>
-        <script src="/static/js/search.js" async></script>
-        <script src="/static/js/tabs.js" async></script>
-        <script src="/static/js/collapse.js" async></script>
-        <script src="/static/js/hamburger.js" async></script>
+        <script src="{{ js.scriptsJs }}" async></script>
     </body>
 </html>

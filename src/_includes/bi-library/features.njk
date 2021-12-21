@@ -1,0 +1,23 @@
+<section class="section" id="features">
+        <div class="container">
+<h2 class="title is-2">What do we love?</h2>
+{% for feature in bi_library.features %}
+
+<div class="card my-2">
+    <a class="card-header has-arrow" data-action="collapse" data-target="collapsible-card-{{loop.index}}">
+        <p class="card-header-title">
+            {{ feature.heading }}
+        </p>
+    </a>
+    <div id="collapsible-card-{{loop.index}}" class="is-collapsible">
+        <div class="card-content">
+            <p class="content">
+               {{ feature.message|safe }}
+            </p>
+        </div>
+    </div>
+</div>
+{%  endfor %}
+
+</div>
+</section>

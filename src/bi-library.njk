@@ -8,7 +8,7 @@ description: Atlas BI Library, a unified report library. This business intellige
     <div class="hero-body">
     <div class="container">
         <div class="columns is-vcentered">
-            <div class="column">
+            <div class="column animated fadeIn">
                 <h1 class="is-1 has-text-weight-light" id="bi-library">
                     {{ bi_library.name }}
                 </h1>
@@ -23,7 +23,7 @@ description: Atlas BI Library, a unified report library. This business intellige
             </div>
             <div class="column">
                 <div class="content">
-                    <figure class="image is-radius">
+                    <figure class="image is-radius animated fadeInDown">
                         {% image "./src/static/img/atlas-home.png", "atlas home page", "(min-width:600px) 50vw, 100vw", "asdf", "eager", "auto" %}
                     </figure>
                 </div>
@@ -31,5 +31,9 @@ description: Atlas BI Library, a unified report library. This business intellige
         </div>
     </div></div>
 
-    {% include "home/library_introduction.njk" %}
+    {% include "bi-library/features.njk" %}
+    {% include "bi-library/integrations.njk" %}
+    {% include "bi-library/demo.njk" %}
+    {% include "bi-library/alternate_tools.njk" %}
+    {% include "bi-library/gallery.njk" %}
 {% endblock body %}

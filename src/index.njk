@@ -6,7 +6,7 @@ layout: layout.njk
     <div class="hero-body">
         <div class="container">
             <div class="columns is-vcentered">
-                <div class="column">
+                <div class="column animated fadeIn">
                     <h1>
                         it's called
                         <strong>Atlas</strong>
@@ -19,7 +19,9 @@ layout: layout.njk
                     </p>
                 </div>
                 <div class="column">
+                <figure class="image animated fadeInDown">
                     {% image "./src/static/img/report_group.png", "atlas information sources", "(min-width:600px) 50vw, 100vw", "asdf", "eager", "auto" %}
+                    </figure>
                 </div>
             </div>
         </div>
@@ -59,7 +61,7 @@ layout: layout.njk
     <div class="container">
         <h2 class="title is-2 has-text-centered mb-5">Join the community!</h2>
         <div class="columns is-centered mt-5">
-        <div class="column is-one-quarter">
+        <div class="column is-one-quarter animated" data-animate="slideInLeft">
             <div class="box bd-notification has-background-white-bis has-text-centered">
                 <figure class="image is-96x96 mx-auto mb-5">
                     {% image "./src/static/img/github.png", "github icon", "(min-width: 100px) 50vw, 100vw" %}
@@ -69,7 +71,7 @@ layout: layout.njk
                 <a class="button is-info" href="https://github.com/atlas-bi" target="_blank" rel="noopener">Contribute!</a>
             </div>
         </div>
-        <div class="column is-one-quarter">
+        <div class="column is-one-quarter animated" data-animate="slideInRight">
             <div class="box bd-notification has-background-white-bis has-text-centered">
                 <figure class="image is-96x96 mx-auto mb-5">
                     {% image "./src/static/img/discord.png", "discord icon", "(min-width: 100px) 50vw, 100vw" %}
@@ -91,7 +93,7 @@ layout: layout.njk
             <div class="columns">
                 <div class="column is-two-fifths is-vcentered">
                     <div class="box">
-                      <figure class="image ">
+                      <figure class="image animated" data-animate="fadeInUp">
                             {% image "./src/static/img/automation-hub/dashboard.png", "atlas home page", "(min-width:1200px) 50vw, 100vw" %}
                       </figure>
                     </div>

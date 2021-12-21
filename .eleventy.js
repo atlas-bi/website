@@ -8,6 +8,8 @@ const fs = require('fs');
 const outdent = require('outdent');
 const schema = require("@quasibit/eleventy-plugin-schema");
 
+
+
 const slugifyCustom = (s) =>
   slugify(s, { lower: true, remove: /[*+~.()'"!:@]/g });
 
@@ -153,6 +155,11 @@ module.exports = function(eleventyConfig) {
     return `${markdownIt.render(value)}`;
   });
 
+  const { fontawesomeSubset } = require('fontawesome-subset');
+  fontawesomeSubset({
+    regular:['envelope'],
+    solid: ['infinity', 'search', 'book', 'project-diagram', 'heart', 'address-card', 'server', 'database', 'ship', 'code']
+        }, '_site/static/font/fontawesome/webfonts');
 
   return {
     dir: {
