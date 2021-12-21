@@ -1,21 +1,23 @@
 {% macro isActive(entry, overview) %}
     {% if entry.url == page.url -%}
-      is-active
+        is-active
     {%- elif overview != "overview" -%}
         {%- for child in entry.children -%}
             {{ isActive(child) }}
         {%- endfor -%}
     {%- endif %}
 {% endmacro %}
-
 <aside class="menu is-sticky">
     {% if tool == "BI Library" %}
-        <p class="menu-label">{{ bi_library.short_name }} Docs</p>
+        <p class="menu-label">
+            {{ bi_library.short_name }} Docs
+        </p>
     {% elif tool=="Automation Hub" %}
-        <p class="menu-label">{{ automation_hub.short_name }} Docs</p>
-    {%  endif %}
+        <p class="menu-label">
+            {{ automation_hub.short_name }} Docs
+        </p>
+    {% endif %}
     {% set navPages =  collections.all | eleventyNavigation(tool) %}
-
     {% macro renderNavListItem(entry) -%}
         {# custom code for bi-library section #}
         {% if tool == "BI Library" %}
@@ -28,10 +30,10 @@
                     Development
                 </p>
             {% elif entry.title == "Demo" %}
-                <li><a href="/docs/bi-library/"
-                   class="{%- if page.url == "/docs/bi-library/" -%}is-active{%- endif -%}">
-                    Welcome
-                </a></li>
+                <li>
+                    <a href="/docs/bi-library/"
+                       class="{%- if page.url == "/docs/bi-library/" -%}is-active{%- endif -%}">Welcome</a>
+                </li>
             {% elif entry.title == "License" %}
                 <p class="menu-label">
                     Links
@@ -39,20 +41,19 @@
                 <li>
                     <a href="https://github.com/atlas-bi/atlas-bi-library"
                        target="_blank"
-                       rel="noopener"> ↪ Github Repository</a>
+                       rel="noopener">↪ Github Repository</a>
                 </li>
             {% endif %}
         {% elif tool=="Automation Hub" %}
             {% if entry.title == "Gallery" %}
                 <li>
-                <a href="/docs/automation-hub/"
-                   class="{%- if page.url == "/docs/automation-hub/" -%}is-active{%- endif -%}">
-                    Welcome
-                </a></li>
+                    <a href="/docs/automation-hub/"
+                       class="{%- if page.url == "/docs/automation-hub/" -%}is-active{%- endif -%}">
+                        Welcome
+                    </a>
+                </li>
                 <li>
-                    <a href="https://atlas-hub.atlas.bi"
-                       target="_blank"
-                       rel="noopener"> ↪ Demo</a>
+                    <a href="https://atlas-hub.atlas.bi" target="_blank" rel="noopener">↪ Demo</a>
                 </li>
             {% elif entry.title == "Install Guide" %}
                 <p class="menu-label">
@@ -73,36 +74,34 @@
                 <li>
                     <a href="https://github.com/atlas-bi/atlas-automation-hub"
                        target="_blank"
-                       rel="noopener"> ↪ Github Repository</a>
+                       rel="noopener">↪ Github Repository</a>
                 </li>
             {% endif %}
         {% endif %}
-
         {% if entry.children.length -%}
             <li class="head">
                 <a data-action="collapse-menu"
                    data-target="{{ entry.url }}"
-                   class="{{ isActive(entry) }}">
-                   {{ entry.title }}
-                </a>
+                   class="{{ isActive(entry) }}">{{ entry.title }}</a>
                 <ul id="{{ entry.url }}"
                     entry="{{ entry.url }}"
                     page="{{ page.url }}"
                     class="menu-list {{ isActive(entry) }} is-collapsible-menu">
-                           <li><a href="{{ entry.url | url }}"
-                   class="{{ isActive(entry, 'overview') }}">Overview</a></li>
+                    <li>
+                        <a href="{{ entry.url | url }}"
+                           class="{{ isActive(entry, 'overview') }}">Overview</a>
+                    </li>
                     {%- for child in entry.children %}{{ renderNavListItem(child) }}
                     {% endfor -%}
                 </ul>
             </li>
-            {%  else %}
-                <li>
-                    <a href="{{ entry.url | url }}"
-                       class="{{ isActive(entry) }}">{{ entry.title }}</a>
-                </li>
-            {%- endif -%}
+        {% else %}
+            <li>
+                <a href="{{ entry.url | url }}" class="{{ isActive(entry) }}">{{ entry.title }}</a>
+            </li>
+        {%- endif -%}
     {%- endmacro %}
-<ul class="menu-list">
-    {%- for entry in navPages %}{{ renderNavListItem(entry) }}{%- endfor -%}
-    </ul>
-</aside>
+    <ul class="menu-list">
+        {%- for entry in navPages %}{{ renderNavListItem(entry) }}{%- endfor -%}
+        </ul>
+    </aside>

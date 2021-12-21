@@ -3,32 +3,28 @@ layout: layout.njk
 title: Automation Hub | Atlas
 description: Atlas Automation Hub, A simple extract, batch job and script scheduler. Atlas Automation Hub is a task scheduling tool for getting data from a source and depositing it in a destination - sql servers to SFTP servers.
 ---
-
 {% block body %}
     <div class="hero-body">
-    <div class="container">
-        <div class="columns is-vcentered">
-            <div class="column animated fadeIn">
-                <h1 class="is-1 has-text-weight-light" id="bi-library">
-                    {{ automation_hub.name }}
-                </h1>
-                <p class="subtitle mt-1">
-                    {{ automation_hub.short_description }}
-                </p>
-                <div class="content">
-                    <div class="block">
-                        {{ automation_hub.description }}
+        <div class="container">
+            <div class="columns is-vcentered">
+                <div class="column animated fadeIn">
+                    <h1 class="is-1 has-text-weight-light" id="bi-library">{{ automation_hub.name }}</h1>
+                    <p class="subtitle mt-1">
+                        {{ automation_hub.short_description }}
+                    </p>
+                    <div class="content">
+                        <div class="block">{{ automation_hub.description }}</div>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="content">
+                        <figure class="image is-radius is-stack animated fadeInDown">
+                            {% image "./src/static/img/automation-hub/dashboard.png", "atlas home page", "(min-width:600px) 50vw, 100vw", "asdf", "eager", "auto" %}
+                        </figure>
                     </div>
                 </div>
             </div>
-            <div class="column">
-                <div class="content">
-                    <figure class="image is-radius is-stack animated fadeInDown">
-                        {% image "./src/static/img/automation-hub/dashboard.png", "atlas home page", "(min-width:600px) 50vw, 100vw", "asdf", "eager", "auto" %}
-                    </figure>
-                </div>
-            </div>
         </div>
-    </div></div>
- {% include "home/automation_introduction.njk" %}
+    </div>
+    {% include "home/automation_introduction.njk" %}
 {% endblock body %}

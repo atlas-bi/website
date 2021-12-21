@@ -3,12 +3,13 @@ layout: layout.njk
 title: Download | Atlas
 description: Download Atlas tools. Atlas BI Library, a unified report library, can be easily installed. Download Atlas Automation Hub to solve your extract scheduling needs.
 ---
-
 {% block body %}
     <div class="hero-body">
         <div class="container">
-                <h1 class="mb-5">how to get <strong>Atlas</strong></h1>
-                <div class="subtitle">Atlas tools are open source projects and free to use!</div>
+            <h1 class="mb-5">
+                how to get <strong>Atlas</strong>
+            </h1>
+            <div class="subtitle">Atlas tools are open source projects and free to use!</div>
             <div class="columns">
                 <div class="column animated fadeIn">
                     <div class="card">
@@ -42,21 +43,25 @@ description: Download Atlas tools. Atlas BI Library, a unified report library, c
                             <p class="card-footer-item">
                                 <span>
                                     <strong>
-                                    <a href="https://github.com/atlas-bi/atlas-bi-library">BI Library</a>
+                                        <a href="https://github.com/atlas-bi/atlas-bi-library">BI Library</a>
                                     </strong>
                                     Download
                                 </span>
                             </p>
                             <p class="card-footer-item">
                                 <span>
-                                    <strong><a href="https://github.com/atlas-bi/atlas-bi-libaray-etl">ETL</a></strong>
+                                    <strong>
+                                        <a href="https://github.com/atlas-bi/atlas-bi-libaray-etl">ETL</a>
+                                    </strong>
                                     Download
                                 </span>
                             </p>
                             <p class="card-footer-item">
                                 <span>
                                     Read the
-                                    <strong><a href="/docs/bi-library/">docs</a></strong>
+                                    <strong>
+                                        <a href="/docs/bi-library/">docs</a>
+                                    </strong>
                                 </span>
                             </p>
                         </footer>
@@ -72,33 +77,37 @@ description: Download Atlas tools. Atlas BI Library, a unified report library, c
                         <div class="card-content">
                             <div class="content">
                                 <br />
-                                Atlas Hub is easy to install on 
-                                <a href="/docs/automation-hub/install/">Ubuntu server</a>.<br />
+                                Atlas Hub is easy to install on
+                                <a href="/docs/automation-hub/install/">Ubuntu server</a>
+                                .
+                                <br />
                                 {% highlight "shell" %}
-curl -s "https://packages.atlas.bi/scripts/deb.sh" | sudo bash -
-export EXTERNAL_URL='https://atlas-hub.me.com'; sudo apt install atlas-hub
-                                {% endhighlight %}
-                            </div>
+                                curl -s "https://packages.atlas.bi/scripts/deb.sh" | sudo bash -
+                                export EXTERNAL_URL='https://atlas-hub.me.com'; sudo apt install atlas-hub
+                            {% endhighlight %}
                         </div>
-                        <footer class="card-footer">
-                            <p class="card-footer-item">
-                                <span>
-                                    Download the
-                                    <strong>
-                                    <a href="https://github.com/atlas-bi/atlas-automation-hub">Code</a>
-                                    </strong>
-                                </span>
-                            </p>
-                            <p class="card-footer-item">
-                                <span>
-                                    Read the
-                                    <strong><a href="/docs/automation-hub/">docs</a></strong>
-                                </span>
-                            </p>
-                        </footer>
                     </div>
+                    <footer class="card-footer">
+                        <p class="card-footer-item">
+                            <span>
+                                Download the
+                                <strong>
+                                    <a href="https://github.com/atlas-bi/atlas-automation-hub">Code</a>
+                                </strong>
+                            </span>
+                        </p>
+                        <p class="card-footer-item">
+                            <span>
+                                Read the
+                                <strong>
+                                    <a href="/docs/automation-hub/">docs</a>
+                                </strong>
+                            </span>
+                        </p>
+                    </footer>
                 </div>
             </div>
         </div>
     </div>
+</div>
 {% endblock body %}

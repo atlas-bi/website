@@ -3,7 +3,6 @@ layout: layout.njk
 title: Documentation | Atlas
 description: Learn about how to install and configure Atlas BI Library and Atlas Automation Hub in the Atlas Documentation. Find answers for common questions.
 ---
-
 {% block body %}
     <section class="section is-flex-grow-1">
         <div class="container">
@@ -29,7 +28,9 @@ description: Learn about how to install and configure Atlas BI Library and Atlas
                     <div class="card">
                         <div class="card-content">
                             <p class="title">
-                                <a title="Atlas BI Library" href="/docs/automation-hub" class="is-size-4">{{ automation_hub.name }}</a>
+                                <a title="Atlas BI Library"
+                                   href="/docs/automation-hub"
+                                   class="is-size-4">{{ automation_hub.name }}</a>
                             </p>
                             <p class="subtitle">
                                 {{ automation_hub.short_description }}

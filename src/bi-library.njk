@@ -3,34 +3,29 @@ layout: layout.njk
 title: BI Library | Atlas
 description: Atlas BI Library, a unified report library. This business intelligence library plugs in to your existing reporting platforms, extracts useful metadata, and displays it in a unified report library.
 ---
-
 {% block body %}
     <div class="hero-body">
-    <div class="container">
-        <div class="columns is-vcentered">
-            <div class="column animated fadeIn">
-                <h1 class="is-1 has-text-weight-light" id="bi-library">
-                    {{ bi_library.name }}
-                </h1>
-                <p class="subtitle mt-1">
-                    {{ bi_library.short_description }}
-                </p>
-                <div class="content">
-                    <div class="block">
-                        {{ bi_library.description }}
+        <div class="container">
+            <div class="columns is-vcentered">
+                <div class="column animated fadeIn">
+                    <h1 class="is-1 has-text-weight-light" id="bi-library">{{ bi_library.name }}</h1>
+                    <p class="subtitle mt-1">
+                        {{ bi_library.short_description }}
+                    </p>
+                    <div class="content">
+                        <div class="block">{{ bi_library.description }}</div>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="content">
+                        <figure class="image is-radius animated fadeInDown">
+                            {% image "./src/static/img/atlas-home.png", "atlas home page", "(min-width:600px) 50vw, 100vw", "asdf", "eager", "auto" %}
+                        </figure>
                     </div>
                 </div>
             </div>
-            <div class="column">
-                <div class="content">
-                    <figure class="image is-radius animated fadeInDown">
-                        {% image "./src/static/img/atlas-home.png", "atlas home page", "(min-width:600px) 50vw, 100vw", "asdf", "eager", "auto" %}
-                    </figure>
-                </div>
-            </div>
         </div>
-    </div></div>
-
+    </div>
     {% include "bi-library/features.njk" %}
     {% include "bi-library/integrations.njk" %}
     {% include "bi-library/demo.njk" %}

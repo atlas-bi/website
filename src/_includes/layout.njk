@@ -3,14 +3,14 @@
     <head>
         {% block meta %}
             {% metagen
-                title=title or metadata.title or site.title,
-                desc=desc or description or metadata.desc or metadata.description or site.description,
-                url=site.url + page.url,
-                img=image or site.url + "/static/img/logo-192x192.png",
-                img_alt=alt or "Atlas logo",
-                twitter_card_type=type,
-                twitter_handle=twitter,
-                name="the Atlas team"
+            title=title or metadata.title or site.title,
+            desc=desc or description or metadata.desc or metadata.description or site.description,
+            url=site.url + page.url,
+            img=image or site.url + "/static/img/logo-192x192.png",
+            img_alt=alt or "Atlas logo",
+            twitter_card_type=type,
+            twitter_handle=twitter,
+            name="the Atlas team"
             %}
         {% endblock meta %}
         <meta property="og:locale" content="en_US" />
@@ -20,7 +20,10 @@
         <link rel="icon" sizes="192x192" href="/static/img/logo-192x192.png" />
         <link rel="apple-touch-icon" href="/static/img/apple-touch-icon.png" />
         <!-- critical css is inlined, so we can async the rest -->
-        <link rel="preload" href="{{ css.stylesCss }}" as="style" onload="this.rel='stylesheet'">
+        <link rel="preload"
+              href="{{ css.stylesCss }}"
+              as="style"
+              onload="this.rel='stylesheet'"/>
         <link rel="preload"
               href="/static/font/inter/files/inter-latin-400-normal.woff2"
               as="font"
@@ -36,7 +39,7 @@
               as="font"
               type="font/woff2"
               crossorigin/>
-         <link rel="preload"
+        <link rel="preload"
               href="/static/font/rasa/files/rasa-latin-500-normal.woff2"
               as="font"
               type="font/woff2"
