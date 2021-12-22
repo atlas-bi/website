@@ -30,7 +30,7 @@ eleventyNavigation:
      <div class="tile is-child box bd-notification has-background-white-bis has-text-centered">
        <h4 class="title is-3 has-text-success my-5">Terms</h4>
        <span class="icon is-large has-text-grey-light"><i class="fas fa-book fa-2x"></i></span>
-       <p class="my-5">A terms provides a definition that can be shared across many reports and collections. Terms are a powerful to identify key concepts in your report library.</p>
+       <p class="my-5">A terms provides a definition that can be shared across many reports and collections. Terms are a powerful way to identify key concepts in your report library.</p>
        <a class="button is-info" href="/docs/bi-library/usage/terms/">Take me there!</a>
     </div>
   </div>
@@ -38,7 +38,7 @@ eleventyNavigation:
      <div class="tile is-child box bd-notification has-background-white-bis has-text-centered">
        <h4 class="title is-3 has-text-success my-5">Collections</h4>
        <span class="icon is-large has-text-grey-light"><i class="fas fa-sitemap fa-2x"></i></span>
-       <p class="my-5">Collections are a tool used to similar terms and reports together with summary documentation. Inside a collection you can review users and usage as a combined total.</p>
+       <p class="my-5">Collections are a tool used to group similar terms and reports together with summary documentation. Inside a collection you can review users and usage as a combined total.</p>
        <a class="button is-info" href="/docs/bi-library/usage/collections/">Take me there!</a>
     </div>
   </div>

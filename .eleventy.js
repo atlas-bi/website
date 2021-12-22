@@ -116,6 +116,11 @@ module.exports = function(eleventyConfig) {
     "src/robots.txt": "robots.txt"
   });
 
+  // copy favicon
+  eleventyConfig.addPassthroughCopy({
+    "src/static/img/favicon.ico": "favicon.ico"
+  });
+
   eleventyConfig.addFilter("jsonify", (text) => {
     return JSON.stringify(text).replace(/(?:\\n\s*){2,}/g, "\\n");
   });
