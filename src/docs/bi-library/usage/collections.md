@@ -1,7 +1,7 @@
 ---
 title: Collections | Atlas BI Library Docs
 tags: BI Library
-description: Collections are a tool used to group similar terms and reports together with summary documentation. Inside a collection you can review users and usage as a combined total.
+description: Collections are a tool used to group similar terms and reports together with summary documentation.
 keywords: atlas, atlas bi library, unified report library, data governance, database, collections, metadata, report groups, sharing, report feedback
 layout: docs_library.njk
 eleventyNavigation:

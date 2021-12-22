@@ -22,7 +22,7 @@ eleventyNavigation:
 {% admonition 
    "note",
    "Note",
-   "This guide assumes you have already created the Atlas Databases, run the ETL to populate the database, and added your database connection as specified in the [`development guide`](/docs/bi-library/development/)"
+   "This guide assumes you have already created the Atlas Databases, run the ETL to populate the database, and added your database connection as specified in the [`configuration guide`](/docs/bi-library/deploy/configuration/)"
 %}
 
 

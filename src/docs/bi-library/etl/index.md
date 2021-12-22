@@ -30,7 +30,7 @@ The Clarity ETL must be downloaded from the [data handbook](https://datahandbook
 ## Steps to Run
 
 ::: content
-1. Configure and run the [supplementary ETLs](/docs/bi-library/etl/supplimentary-etls/)
+1. Configure and run the [supplementary ETLs](/docs/bi-library/etl/supplementary-etls/)
 2. Configure and run Atlas ETL's (main ETL and run data)
 
    - Delete SSRS sections if not used
