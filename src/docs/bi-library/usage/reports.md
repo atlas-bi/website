@@ -2,6 +2,7 @@
 title: Reports | Atlas BI Library Docs
 tags: BI Library
 description: Reports are the cornerstone of Atlas BI Library. System data is brought in through the ETLs and more documentation can be added in the app.
+keywords: atlas, atlas bi library, unified report library, data governance, database, reports, etl, metadata, profile, run data, ssrs, crystal
 layout: docs_library.njk
 eleventyNavigation:
   key: BIL Reports

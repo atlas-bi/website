@@ -2,6 +2,7 @@
 title: Gallery | Atlas Automation Hub Docs
 tags: Automation Hub
 description: Gallery of Atlas Automation Hub images. See how the app looks.
+keywords: atlas, atlas automation hub, gallery
 layout: docs_hub.njk
 eleventyNavigation:
   key: AH Gallery

@@ -2,6 +2,7 @@
 title: User Profiles | Atlas BI Library Docs
 tags: BI Library
 description: User profiles are a quick way to find who is using your reporting content, provides tools for sharing content, and more!
+keywords: atlas, atlas bi library, unified report library, data governance, database, user, users, profile, user profile, usage data, user activity
 layout: docs_library.njk
 eleventyNavigation:
   key: BIL User Profiles

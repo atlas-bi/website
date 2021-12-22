@@ -2,6 +2,7 @@
 title: Credits | Atlas BI Library Docs
 tags: BI Library
 description: Atlas BI Library list of contributors and creator credits. Atlas BI Library was created by the Riverside Healthcare Analytics team.
+keywords: atlas, atlas bi library, unified report library, data governance, database, credits, contributors
 layout: docs_library.njk
 eleventyNavigation:
   key: BIL Credits

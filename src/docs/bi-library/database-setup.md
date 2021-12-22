@@ -2,6 +2,7 @@
 title: Database Setup | Atlas BI Library Docs
 tags: BI Library
 description: Learn about how to setup your database for a new Atlas BI Library install. The database is sql server 2016 or later.
+keywords: atlas, atlas bi library, unified report library, data governance, database, setup, database setup, ssrs
 layout: docs_library.njk
 eleventyNavigation:
   key: BIL Database Setup

@@ -2,6 +2,7 @@
 title: Dashboard | Atlas Automation Hub Docs
 tags: Automation Hub
 description: Learn about the various sections on the Atlas Automation Hub Dashboard.
+keywords: atlas, atlas automation hub, extract scheduler, etl, dashboard
 layout: docs_hub.njk
 eleventyNavigation:
   key: AH Dashboard

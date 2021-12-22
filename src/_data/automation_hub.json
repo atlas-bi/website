@@ -1,5 +1,6 @@
 {
   "description": "Atlas Automation Hub is a task scheduling tool for getting data from a source and depositing it in a destination - sql servers to SFTP servers.",
+  "long_description": "With the multitude of routine reporting demands it is essential to have a reliable tool to schedule the data extracts and loads! Atlas Automation Hub will reliably run your SQL reports, delimit the data and deposit it in your vendors SFTP server. With a multitude of options available, from GPG encryption and zip files to running batch jobs over SSH to email with embedded reports, this tool will cover your data extract needs.",
   "name": "Atlas Automation Hub",
   "short_description": "A simple extract, batch job and script scheduler.",
   "short_name": "Automation Hub"

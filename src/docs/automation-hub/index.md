@@ -2,6 +2,7 @@
 title: Welcome | Atlas Automation Hub Docs
 tags: Automation Hub
 description: Welcome to the Atlas Automation Hub documentation. Here you'll learn about how to install, configure and update the app.
+keywords: atlas, atlas automation hub, extract scheduler, etl, documentation, install, configure, update
 layout: docs_hub.njk
 eleventyNavigation:
   key: Automation Hub

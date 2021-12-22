@@ -2,6 +2,7 @@
 title: Upgrading | Atlas Automation Hub Docs
 tags: Automation Hub
 description: Automation Hub upgrades can easily be installed using apt update and apt install commands. Take a backup before upgrading.
+keywords: atlas, atlas automation hub, extract scheduler, etl, upgrading, ubuntu server
 layout: docs_hub.njk
 eleventyNavigation:
   key: AH Upgrade

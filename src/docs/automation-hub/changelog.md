@@ -2,6 +2,7 @@
 title: Changelog | Atlas Automation Hub Docs
 tags: Automation Hub
 description: Atlas Automation Hub changelog. Find updates from recent releases and what feature you can expect on your next upgrade.
+keywords: atlas, atlas automation hub, extract scheduler, etl, changelog
 layout: docs_hub.njk
 eleventyNavigation:
   key: AH Changelog

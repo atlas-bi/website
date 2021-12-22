@@ -2,6 +2,7 @@
 title: Development | Atlas Automation Hub Docs
 tags: Automation Hub
 description: Learn about the Atlas Automation Hub development process, and how to test the code.
+keywords: atlas, atlas automation hub, extract scheduler, etl, development, tools
 layout: docs_hub.njk
 eleventyNavigation:
   key: AH Development

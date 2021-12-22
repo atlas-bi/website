@@ -2,6 +2,7 @@
 title: Contributing | Atlas BI Library Docs
 tags: BI Library
 description: Learn about how you can contribute to the Atlas BI Library project. Contributions are welcome.
+keywords: atlas, atlas bi library, unified report library, data governance, database, congributing, useful tools
 layout: docs_library.njk
 eleventyNavigation:
   key: BIL Contributing

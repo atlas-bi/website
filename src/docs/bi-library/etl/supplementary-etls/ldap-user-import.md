@@ -2,6 +2,7 @@
 title: LDAP User Import | Supplimentary ETLs | Atlas BI Library Docs
 tags: BI Library
 description: Atlas BI Library supplimentary ETL to gather user profile information. It plugs directly into an LDAP server to get basic user data.
+keywords: atlas, atlas bi library, unified report library, data governance, database, ldap, users, user profile, etl
 layout: docs_library.njk
 eleventyNavigation:
   parent: BIL Supplementary ETLs

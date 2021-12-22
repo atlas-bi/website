@@ -2,6 +2,7 @@
 title: Projects | Atlas Automation Hub Docs
 tags: Automation Hub
 description: Learn about creating and editing Atlas Automation Hub projects.
+keywords: atlas, atlas automation hub, extract scheduler, etl, projects, task group, schedule, cron
 layout: docs_hub.njk
 eleventyNavigation:
   key: AH Projects

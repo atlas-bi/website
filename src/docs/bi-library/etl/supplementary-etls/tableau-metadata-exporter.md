@@ -2,6 +2,7 @@
 title: Tableau Metadata Exporter | Supplimentary ETLs | Atlas BI Library Docs
 tags: BI Library
 description: Atlas BI Library supplimentary ETL to parse download Tableau report metadata and usage.
+keywords: atlas, atlas bi library, unified report library, data governance, database, etl, tableau, metadata
 layout: docs_library.njk
 eleventyNavigation:
   parent: BIL Supplementary ETLs

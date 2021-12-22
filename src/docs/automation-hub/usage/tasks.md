@@ -2,6 +2,7 @@
 title: Tasks | Atlas Automation Hub Docs
 tags: Automation Hub
 description: Learn about creating and editing Atlas Automation Hub tasks.
+keywords: atlas, atlas automation hub, extract scheduler, etl, tasks, retry, rank, database, sftp, smb, ftp, gpg, email, csv, output
 layout: docs_hub.njk
 eleventyNavigation:
   key: AH Tasks

@@ -1,7 +1,8 @@
 ---
 title: Special Considerations | Deploy | Atlas BI Library Docs
 tags: BI Library
-description: Special considerations when contributing to the Atlas BI Library development.
+description: Special considerations when using the Atlas BI Library development.
+keywords: atlas, atlas bi library, unified report library, data governance, database, considerations, using the library
 layout: docs_library.njk
 eleventyNavigation:
   key: BIL Special Considerations

@@ -2,6 +2,7 @@
 title: Tasks | Atlas BI Library Docs
 tags: BI Library
 description: Tasks are a combination of prebuilt reports to help govern your report library. Quickly identify areas where attention is needed.
+keywords: atlas, atlas bi library, unified report library, data governance, database, tasks, maintenance, todo
 layout: docs_library.njk
 eleventyNavigation:
   key: BIL Tasks

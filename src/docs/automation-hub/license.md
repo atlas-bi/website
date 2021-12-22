@@ -2,6 +2,7 @@
 title: License | Atlas Automation Hub Docs
 tags: Automation Hub
 description: Atlas Automation Hub is licensed under the GNU License.
+keywords: atlas, atlas automation hub, extract scheduler, etl, license
 layout: docs_hub.njk
 eleventyNavigation:
   key: AH License

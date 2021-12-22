@@ -2,6 +2,7 @@
 title: Deploy | ETL | Atlas BI Library Docs
 tags: BI Library
 description: Learn about how to deploy Atlas BI Library to your web server from Visual Studio.
+keywords: atlas, atlas bi library, unified report library, data governance, database, etl, deploy, visual studio
 layout: docs_library.njk
 eleventyNavigation:
   key: BIL ETL Deploy

@@ -2,6 +2,7 @@
 title: Deploy | Atlas BI Library Docs
 tags: BI Library
 description: Learn how to start Atlas BI Library locally and make changes to the codebase. Settings are kept in json files.
+keywords: atlas, atlas bi library, unified report library, data governance, database, deploy, running locally
 layout: docs_library.njk
 eleventyNavigation:
   key: BIL Deploy

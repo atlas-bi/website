@@ -2,6 +2,7 @@
 title: Admin | Atlas Automation Hub Docs
 tags: Automation Hub
 description: Learn about how to use the controls on the Atlas Automation Hub Admin page.
+keywords: atlas, atlas automation hub, extract scheduler, etl, usage, admin
 layout: docs_hub.njk
 eleventyNavigation:
   key: AH Admin

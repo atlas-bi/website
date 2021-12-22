@@ -2,6 +2,7 @@
 title: Solr Search Loader | Supplimentary ETLs | Atlas BI Library Docs
 tags: BI Library
 description: Atlas BI Library supplimentary ETL to reset and populate the main website search. The etl can be run hourly or on another frequent schedule to keep search results fresh as new documentation is added.
+keywords: atlas, atlas bi library, unified report library, data governance, database, etl, solr, apache solr, search, advanced search
 layout: docs_library.njk
 eleventyNavigation:
   parent: BIL Supplementary ETLs

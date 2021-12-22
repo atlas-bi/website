@@ -2,6 +2,7 @@
 title: Changelog | Atlas BI Library Docs
 tags: BI Library
 description: Atlas BI Library changelog. Find updates from recent releases and what feature you can expect on your next upgrade.
+keywords: atlas, atlas bi library, unified report library, data governance, database, changelog
 layout: docs_library.njk
 eleventyNavigation:
   key: BIL Changelog
