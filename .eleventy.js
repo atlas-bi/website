@@ -17,6 +17,11 @@ async function imageShortcode(src, alt, sizes, type='asdf', loading="lazy", deco
   let metadata = await Image(src, {
     widths: [24, 300, 400, 500, 600, 800, 1200],
     formats: ["webp"],
+    sharpWebpOptions: {
+      options: {
+        quality:70
+      }
+    },
     outputDir: "./_site/static/img/",
     urlPath: "/static/img/"
   });
