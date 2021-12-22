@@ -14,6 +14,7 @@
             %}
         {% endblock meta %}
         <meta name="keywords" content="{{ page.keywords or keywords or site.keywords }}" />
+        <meta name="revised" content="{{ page.date.toISOString() }}" />
         <meta property="og:locale" content="en_US" />
         <meta property="article:author" content="Riverside Healthcare" />
         <meta name="robots" content="index,follow" />
