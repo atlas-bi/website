@@ -11,5 +11,6 @@ eleventyNavigation:
 ---
 
 # Group Profiles
+<p class="subtitle pb-5">Profiles are the ideal way to find active reporting content.</p>
 
-*Documentation is in progress, please check back soon!*
+If you have been curious what the key reports for you finance, or ED department, or any department are, the group profile is the place to look. Not only can you find a listing of who is in the group, but you can also see all the reports that have the same group, or that the group users are running.

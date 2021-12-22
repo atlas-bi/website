@@ -58,7 +58,7 @@ pre .tag {
   $fontDir: "/static/font/inter/files/"
 );
 
-$fontDir: "/static/font/fasa/";
+$fontDir: "/static/font/rasa/";
 @import "../../../node_modules/@fontsource/rasa/scss/mixins";
 
 @include fontFace(
