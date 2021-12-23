@@ -1,0 +1,29 @@
+<section class="hero is-medium is-white">
+        <div class="hero-body">
+            <div class="container">
+                <h2 class="title is-2 has-text-right mb-5 pb-5" id="automation-hub">
+                    {{ automation_hub.name }}
+                    <a href="/automation-hub"
+                       class="button is-medium is-info is-pulled-left is-family-sans-serif">Find out more!</a>
+                </h2>
+                <div class="columns">
+                    <div class="column is-two-fifths is-vcentered">
+                        <div class="box">
+                            <figure class="image animated" data-animate="fadeInUp">
+                                {% image "./src/static/img/automation-hub/dashboard.png", "atlas home page", "(min-width:1200px) 50vw, 100vw" %}
+                            </figure>
+                        </div>
+                    </div>
+                    <div class="column has-text-right">
+                        <h3 class="subtitle mt-1">{{ automation_hub.short_description }}</h3>
+                        <div class="content">
+                            <div class="block">{{ automation_hub.description }}</div>
+                        </div>
+                        <div class="content">
+                            <div class="block has-text-grey-dark">{{ automation_hub.long_description }}</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>

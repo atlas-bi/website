@@ -13,7 +13,8 @@
             name="the Atlas team"
             %}
         {% endblock meta %}
-        <meta name="keywords" content="{{ page.keywords or keywords or site.keywords }}" />
+        <meta name="keywords"
+              content="{{ page.keywords or keywords or site.keywords }}"/>
         <meta name="revised" content="{{ page.date.toISOString() }}" />
         <meta property="og:locale" content="en_US" />
         <meta property="article:author" content="Riverside Healthcare" />
@@ -21,13 +22,18 @@
         <meta name="googlebot" content="index,follow" />
         <link rel="icon" href="/favicon.ico" type="image/x-icon">
         <link rel="apple-touch-icon" href="/static/img/apple-touch-icon.png" />
-        <link rel="apple-touch-icon" sizes="120x120" href="/static/img/logo-120x120.png">
-        <link rel="apple-touch-icon" sizes="192x192" href="/static/img/logo-192x192.png" />
-        <link rel="apple-touch-icon" sizes="512x512" href="/static/img/logo-512x512.png" />
+        <link rel="apple-touch-icon"
+              sizes="120x120"
+              href="/static/img/logo-120x120.png">
+        <link rel="apple-touch-icon"
+              sizes="192x192"
+              href="/static/img/logo-192x192.png"/>
+        <link rel="apple-touch-icon"
+              sizes="512x512"
+              href="/static/img/logo-512x512.png"/>
         <meta content="yes" name="apple-mobile-web-app-capable">
-        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-
-
+        <meta name="apple-mobile-web-app-status-bar-style"
+              content="black-translucent">
         <!-- critical css is inlined, so we can async the rest -->
         <link rel="preload"
               href="{{ css.stylesCss }}"
@@ -60,6 +66,21 @@
               crossorigin/>
         <link rel="preload"
               href="/static/font/rasa/files/rasa-latin-700-normal.woff2"
+              as="font"
+              type="font/woff2"
+              crossorigin/>
+        <link rel="preload"
+              href="/static/font/fontawesome/webfonts/fa-brands-400.woff2"
+              as="font"
+              type="font/woff2"
+              crossorigin/>
+        <link rel="preload"
+              href="/static/font/fontawesome/webfonts/fa-regular-400.woff2"
+              as="font"
+              type="font/woff2"
+              crossorigin/>
+        <link rel="preload"
+              href="/static/font/fontawesome/webfonts/fa-solid-900.woff2"
               as="font"
               type="font/woff2"
               crossorigin/>

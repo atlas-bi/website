@@ -22,7 +22,7 @@ An admin can
 - Reschedule Enabled Jobs. This option will empty the scheduler and then reschedule any enabled jobs.
 :::
 
-{% image "./src/static/img/automation-hub/admin.png", "admin", "(min-width:800px) 50vw, 100vw", "boxed" %}
+{% image "./src/static/img/automation-hub/admin.png", "admin", "(min-width:1200px) 50vw, 100vw", "boxed" %}
 
 ## Scheduler Tasks
 

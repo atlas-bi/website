@@ -17,7 +17,7 @@ The dashboard is designed to give an admin a quick overview of the upcoming run 
 
 The run plan shows the upcoming schedule for the next 24 hours.
 
-{% image "./src/static/img/automation-hub/dashboard.png", "dashboard", "(min-width:800px) 50vw, 100vw", "boxed" %}
+{% image "./src/static/img/automation-hub/dashboard.png", "dashboard", "(min-width:1200px) 50vw, 100vw", "boxed" %}
 
 ## Errored Tasks
 

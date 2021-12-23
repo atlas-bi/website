@@ -1,0 +1,29 @@
+<section class="hero is-medium is-white">
+        <div class="hero-body">
+            <div class="container">
+                <h2 class="title is-2 mb-5 pb-5" id="bi-library">
+                    {{ bi_library.name }}
+                    <a href="/bi-library"
+                       class="button is-medium is-info is-pulled-right is-family-sans-serif">Find out more!</a>
+                </h2>
+                <div class="columns">
+                    <div class="column">
+                        <h3 class="subtitle mt-1">{{ bi_library.short_description }}</h3>
+                        <div class="content">
+                            <div class="block">{{ bi_library.description }}</div>
+                        </div>
+                        <div class="content">
+                            <div class="block has-text-grey-dark">{{ bi_library.long_description }}</div>
+                        </div>
+                    </div>
+                    <div class="column is-two-fifths is-vcentered">
+                        <div class="box">
+                            <figure class="image">
+                                {% image "./src/static/img/atlas-home.png", "atlas home page", "(min-width:1200px) 50vw, 100vw" %}
+                            </figure>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
