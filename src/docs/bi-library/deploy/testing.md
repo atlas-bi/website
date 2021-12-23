@@ -4,6 +4,7 @@ tags: BI Library
 description: Learning about how to test the Atlas BI Library code. Tests are run with python and selenium and try to catch any javasript errors.
 keywords: atlas, atlas bi library, unified report library, data governance, database, testing, python, selenium
 layout: docs_library.njk
+date: Last Modified
 eleventyNavigation:
   key: BIL Testing
   title: Testing

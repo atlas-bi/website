@@ -17,6 +17,7 @@ module.exports = {
       image: {
         src: data => data.page.image
        },
+       modified: data => data.page.date.toISOString(),
      keywords: data => data.keywords
     }
 

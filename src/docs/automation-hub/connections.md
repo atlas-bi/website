@@ -4,6 +4,7 @@ tags: Automation Hub
 description: Learn about how to use the Atlas Automation Hub Connections page.
 keywords: atlas, atlas automation hub, extract scheduler, etl, external connections, database connection, sftp, ssh, smb, gpg
 layout: docs_hub.njk
+date: Last Modified
 eleventyNavigation:
   key: AH Connections
   title: Connections

@@ -4,6 +4,7 @@ tags: BI Library
 description: Watch a demo of the Atlas BI Library and learn about the features of the app. A demo can also be run locally with docker.
 keywords: atlas, atlas bi library, unified report library, data governance, database, demo, docker, run a demo, atlas demo
 layout: docs_library.njk
+date: Last Modified
 eleventyNavigation:
   key: BIL Demo
   title: Demo

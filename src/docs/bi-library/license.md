@@ -4,6 +4,7 @@ tags: BI Library
 description: Atlas Automation Hub is licensed under the GNU License.
 keywords: atlas, atlas bi library, unified report library, data governance, database, license
 layout: docs_library.njk
+date: Last Modified
 eleventyNavigation:
   key: BIL License
   title: License

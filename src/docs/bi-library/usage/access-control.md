@@ -4,6 +4,7 @@ tags: BI Library
 description: Learn how to secure your library by creating access groups and assigning permissions to users.
 keywords: atlas, atlas bi library, unified report library, data governance, database, usage, access control, roles, permissions
 layout: docs_library.njk
+date: Last Modified
 eleventyNavigation:
   key: BIL Access Control
   title: Access Control

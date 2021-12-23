@@ -4,6 +4,7 @@ tags: BI Library
 description: Atlas BI Library supplementary ETL to reset and populate the main website search. The etl to keeps search results fresh as new documentation is added.
 keywords: atlas, atlas bi library, unified report library, data governance, database, etl, solr, apache solr, search, advanced search
 layout: docs_library.njk
+date: Last Modified
 eleventyNavigation:
   parent: BIL Supplementary ETLs
   key: BIL Solr Search Loader

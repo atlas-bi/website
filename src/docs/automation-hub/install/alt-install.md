@@ -4,6 +4,7 @@ tags: Automation Hub
 description: Alternate installation method for Atlas Automation Hub. The app can also be installed manually using curl and a python script.
 keywords: atlas, atlas automation hub, extract scheduler, etl, alternate install
 layout: docs_hub.njk
+date: Last Modified
 eleventyNavigation:
   key: AH Alt Install
   title: Alternate Install

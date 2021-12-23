@@ -4,6 +4,7 @@ tags: BI Library
 description: Atlas BI Libaray Supplementary ETL guide. There are several supplementary ETL's created to help gather extra data outside of the main SSIS packages.
 keywords: atlas, atlas bi library, unified report library, data governance, database, etl, supplementary etl, ldap, solr, tableau, crystal, sap
 layout: docs_library.njk
+date: Last Modified
 eleventyNavigation:
   key: BIL Supplementary ETLs
   title: Supplementary ETLs

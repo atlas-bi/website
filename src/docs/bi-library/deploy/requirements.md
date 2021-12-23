@@ -4,6 +4,7 @@ tags: BI Library
 description: Learn about the basic development requirements needed to get Atlas BI Library running locally on your computer.
 keywords: atlas, atlas bi library, unified report library, data governance, database, requirements, visual studio, sql server
 layout: docs_library.njk
+date: Last Modified
 eleventyNavigation:
   key: BIL Dev Requirements
   title: System Requirements

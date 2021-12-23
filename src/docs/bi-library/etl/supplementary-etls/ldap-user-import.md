@@ -4,6 +4,7 @@ tags: BI Library
 description: Atlas BI Library supplementary ETL to gather user profile information. It plugs directly into an LDAP server to get basic user data.
 keywords: atlas, atlas bi library, unified report library, data governance, database, ldap, users, user profile, etl
 layout: docs_library.njk
+date: Last Modified
 eleventyNavigation:
   parent: BIL Supplementary ETLs
   key: BIL LDAP User Import

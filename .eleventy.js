@@ -9,7 +9,6 @@ const outdent = require('outdent');
 const schema = require("@quasibit/eleventy-plugin-schema");
 
 
-
 const slugifyCustom = (s) =>
   slugify(s, { lower: true, remove: /[*+~.()'"!:@]/g });
 
@@ -123,6 +122,16 @@ module.exports = function(eleventyConfig) {
 
   eleventyConfig.addFilter("jsonify", (text) => {
     return JSON.stringify(text).replace(/(?:\\n\s*){2,}/g, "\\n");
+  });
+
+  eleventyConfig.addFilter("niceDate", (value) => {
+    try{
+      const options = {year: 'numeric', month: 'short', day: 'numeric' };
+          return value.toLocaleDateString('en-us', options);
+        } catch (e) {
+          return value
+        }
+
   });
 
   eleventyConfig.addFilter("algExcerpt", (text) => {

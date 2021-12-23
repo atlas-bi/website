@@ -4,6 +4,7 @@ tags: Automation Hub
 description: Learn about how to create project and task level parameters for Atlas Automation Hub. Parameters are a powerful way to make your tasks flexible.
 keywords: atlas, atlas automation hub, extract scheduler, etl, parameters
 layout: docs_hub.njk
+date: Last Modified
 eleventyNavigation:
   key: AH Parameters
   title: Parameters

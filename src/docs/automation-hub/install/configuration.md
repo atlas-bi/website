@@ -4,6 +4,7 @@ tags: Automation Hub
 description: Configuring Atlas Automation Hub is done through an ini file installed in /etc/atlas-hub/config.ini. Defaults are preset.
 keywords: atlas, atlas automation hub, extract scheduler, etl, configuration
 layout: docs_hub.njk
+date: Last Modified
 eleventyNavigation:
   key: AH Configuration
   title: Configuration

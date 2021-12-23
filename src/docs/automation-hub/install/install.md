@@ -4,6 +4,7 @@ tags: Automation Hub
 description: How to install Atlas Automation Hub. Easily download and install with our ppa through apt!
 keywords: atlas, atlas automation hub, extract scheduler, etl, install, guide, ubuntu server
 layout: docs_hub.njk
+date: Last Modified
 eleventyNavigation:
   key: AH Install
   title: Install Guide

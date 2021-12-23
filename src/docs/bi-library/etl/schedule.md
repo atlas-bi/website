@@ -4,6 +4,7 @@ tags: BI Library
 description: Learn about how to schedule the Atlas BI Library ETL to run periodically on your SSIS server.
 keywords: atlas, atlas bi library, unified report library, data governance, database, etl, schedule, run, ssis
 layout: docs_library.njk
+date: Last Modified
 eleventyNavigation:
   key: BIL ETL Schedule
   title: Schedule

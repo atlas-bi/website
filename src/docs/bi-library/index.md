@@ -4,6 +4,7 @@ tags: BI Library
 description: Welcome to the Atlas BI Library documentation. Learn about how to install and configure your Atlas BI Library install.
 keywords: atlas, atlas bi library, unified report library, data governance, database, documetation
 layout: docs_library.njk
+date: Last Modified
 eleventyNavigation:
   key: BI Library
   parent: Docs

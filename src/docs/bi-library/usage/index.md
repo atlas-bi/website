@@ -4,6 +4,7 @@ tags: BI Library
 description: Discover how to use the Atlas BI Library app, configure basic settings, add report documentation and more!
 keywords: atlas, atlas bi library, unified report library, data governance, database, using atlas, usage guide
 layout: docs_library.njk
+date: Last Modified
 eleventyNavigation:
   key: BIL Usage
   title: Usage
