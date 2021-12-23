@@ -38,7 +38,7 @@
       "message": "These questions are now all answered in your report documentation within the BI Library before your users can ask you! Many documentation options allow you to fully document your content, from images to terms, from report descriptions and assumptions to who requested the report to be made."
     }
   ],
-  "long_description": "Documenting your reporting content is easier than ever. Attach terms - a definition of a commonly used word or acronym, such as LOS (length of stay) - to your reports so users clearly know what definition is used in each report. View report relationships to other reports, and connected security groups. You have the reports profile - all the run data, subscriptions, stars, and user data - at your fingertips. Data governance strategies are easier to implement with the built in report maintenance system, and many report library status reports.",
+  "long_description": "Documenting your reporting content is easier than ever. Attach terms - a definition of a commonly used word or acronym, such as LOS (length of stay) - to your reports so users clearly know what definition is used in each report. View report relationships to other reports, and connected security groups. You have the reports profile - all the run data, subscriptions, stars, and user data - at your fingertips. Data governance strategies are easier to implement with the built in report maintenance system, and many report library status reports. A consolidated data catalog with report metadata is the best gift to data governance!",
   "name": "Atlas BI Library",
   "short_description": "The unified report library.",
   "short_name": "BI Library"
