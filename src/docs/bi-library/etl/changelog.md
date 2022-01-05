@@ -14,6 +14,11 @@ eleventyNavigation:
 
 # Changelog
 
+## Next Release
+::: content
+- Fixed bug causing missing RW report groups
+:::
+
 ## Version 2021.12.1
 
 ::: content

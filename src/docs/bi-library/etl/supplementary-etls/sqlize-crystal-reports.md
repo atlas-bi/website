@@ -69,7 +69,7 @@ Here are a few links to try -
 ### Next, install a few Python packages
 
 ```bash
-pip install pyodbc lxml sqlparse
+pip install pyodbc lxml sqlparse requests xmltodict
 ```
 
 ### Create Database
@@ -86,14 +86,48 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 
-CREATE TABLE [dbo].[Query](
+
+CREATE TABLE [dbo].[Reports](
+  [Name] [nvarchar](max) NULL,
+  [Reference] [nvarchar](max) NULL,
+  [ReportId] [nvarchar](max) NULL,
+  [DocumentId] [nvarchar](max) NULL
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+
+CREATE TABLE [dbo].[Templates](
   [ReportName] [nvarchar](max) NULL,
-  [Query] TEXT NULL,
+  [Query] [text] NULL,
   [Title] [nvarchar](max) NULL,
   [Description] [nvarchar](max) NULL
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 GO
 
+CREATE TABLE [dbo].[Attachments](
+  [HRX] [nvarchar](max) NULL,
+  [PDF] [nvarchar](max) NULL,
+  [CreationDate] [datetime] NULL,
+  [Name] [nvarchar](max) NULL
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+
+CREATE TABLE [dbo].[Documents](
+  [Name] [nvarchar](max) NULL,
+  [Description] [nvarchar](max) NULL,
+  [FolderId] [nvarchar](max) NULL,
+  [Cuid] [nvarchar](max) NULL,
+  [DocumentId] [nvarchar](max) NULL
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+
+CREATE TABLE [dbo].[Objects](
+  [Title] [nvarchar](max) NULL,
+  [Cuid] [nvarchar](max) NULL,
+  [StatusType] [nvarchar](max) NULL,
+  [Type] [nvarchar](max) NULL,
+  [LastRun] [nvarchar](max) NULL
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
 ```
 
 Don't forget to add a user account that can delete and insert.
@@ -102,13 +136,26 @@ Don't forget to add a user account that can delete and insert.
 
 ```py
 database = 'DRIVER={ODBC Driver 17 for SQL Server};SERVER=server_name;DATABASE=database_name;UID=username;PWD=password'
+
+# get report sql settings
 rpt_src = '\\\\network\\c$\\path\\to\\.rpt\\files\\'
+
+# get report data settings
+sap_api_username = "BOE_REPORT"
+sap_api_password = "password"
+sap_api_url = "http://server.example.net"
+
+# get report files settings
+crystal_boe_output_drive = "\\\\server\\Output"
 ```
 
-### Run
+### Running
 
-```bash
-python main.py
+There are three parts to this ETL that can be run separately.
+```sh
+python get_report_data.py # loads BOE report links
+python get_sql.py # gets report sql code
+python get_report_files.py # gets report output links. passed to Atlas as run links
 ```
 
 The rpt > xml conversion takes some time, don't be surprised at a 30+ minute run time if you have 1000 reports.
@@ -117,7 +164,7 @@ The rpt > xml conversion takes some time, don't be surprised at a 30+ minute run
 
 If you are running this with Atlas Automation Hub, keep in mind that it must run on a windows server. Run the command over ssh on a windows server.
 
-A windows ssh command will look something similar to this.
+A example windows ssh command will look something similar to this.
 
 ```bash
 cd c:/Users/Public & \
@@ -127,6 +174,6 @@ cd crystal & \
 git -c http.sslVerify=false clone https://<your-local-git-server>/atlas/etl/crystal-to-sql.git . & \
 "C:\Program Files\Python38\python.exe" -m virtualenv venv &\
 .\venv\Scripts\python -m pip install lxml pyodbc sqlparse &\
-.\venv\Scripts\python main.py & \
+.\venv\Scripts\python get_sql.py & \
 cd .. & rmdir /s /q crystal
 ```
