@@ -41,6 +41,6 @@ There are two databases used -
 The databases can be created by running the two database creation scripts:
 
 ::: content
-- [atlas_staging-creation_script.sql](https://github.com/atlas-bi/atlas-bi-libaray-etl/blob/master/atlas_staging_creation_script.sql)
+- [atlas_staging-creation_script.sql](https://github.com/atlas-bi/atlas-bi-library-etl/blob/master/atlas_staging_creation_script.sql)
 - [atlas-creation_script.sql](https://github.com/atlas-bi/atlas-bi-library/blob/master/web/atlas-creation_script.sql)
 :::
