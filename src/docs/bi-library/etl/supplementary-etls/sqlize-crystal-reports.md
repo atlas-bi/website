@@ -152,7 +152,7 @@ crystal_boe_output_drive = "\\\\server\\Output"
 ### Running
 
 There are three parts to this ETL that can be run separately.
-```sh
+```bash
 python get_report_data.py # loads BOE report links
 python get_sql.py # gets report sql code
 python get_report_files.py # gets report output links. passed to Atlas as run links
