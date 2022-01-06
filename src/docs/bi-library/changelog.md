@@ -16,6 +16,12 @@ eleventyNavigation:
 
 Version names follow a pattern of YYYY.MM.release.
 
+## Next Release
+::: content
+- Improved asset handling
+- Fixed bug with search share links
+:::
+
 ## Version 2021.12.1
 
 ::: content

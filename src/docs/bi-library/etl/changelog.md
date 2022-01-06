@@ -17,6 +17,7 @@ eleventyNavigation:
 ## Next Release
 ::: content
 - Fixed bug causing missing RW report groups
+- Fixed spelling on report parameters
 :::
 
 ## Version 2021.12.1
