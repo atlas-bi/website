@@ -16,10 +16,15 @@ eleventyNavigation:
 
 Version names follow a pattern of YYYY.MM.release.
 
-## Next Release
+## Version 2022.01.1
 ::: content
 - Improved asset handling
 - Fixed bug with search share links
+- Fixed spelling in search settings
+- Changed disabled run button text from "Login to Hyperspace to run report." to "Run from the Hyperspace report library."
+- Fixed Crystal Hyperspace embedded run link on report modal to use an embedded display action
+- Fixed bug in permission check requiring 2 matching groups instead of 1
+- Fixed bug adding a favorite from search results
 :::
 
 ## Version 2021.12.1
