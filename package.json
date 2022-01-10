@@ -1,5 +1,9 @@
 {
-  "browserslist": "> 2%, not dead",
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "ie >= 11"
+  ],
   "dependencies": {
     "@creativebulma/bulma-divider": "^1.1.0",
     "@fontsource/rasa": "^4.5.3",
