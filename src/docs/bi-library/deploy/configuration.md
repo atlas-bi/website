@@ -51,6 +51,13 @@ The available settings are:
   },
   "solr": {
     "atlas_address": "http://localhost:8983/solr/atlas"
+  },
+  "features": {
+    "enable_request_access": true,
+    "enable_feedback": true,
+    "enable_comments": true,
+    "enable_demo_video": true,
+    "enable_sharing": true
   }
 }
 ```

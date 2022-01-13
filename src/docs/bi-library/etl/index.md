@@ -28,6 +28,10 @@ The ETL's are SSIS packages and can be scheduled to run as jobs on a Microsoft S
 The Clarity ETL must be downloaded from the [data handbook](https://datahandbook.epic.com/Reports/Details/9000648).
 
 
+## Metadata ETL
+
+The metadata ETL is composed of multiple SSIS packages - basically one package per source system. There is a `setup` ETL that creates the database tables needed for the data merge, and then each other ETL will create their own specific data tables.
+
 ## Steps to Run
 
 ::: content

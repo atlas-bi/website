@@ -16,6 +16,16 @@ eleventyNavigation:
 
 Version names follow a pattern of YYYY.MM.release.
 
+## Next Release
+::: content
+- Added image processing for thumbnails to reduce data transfer
+- Updated site nav style
+- Updated thumbnail view in search results and favorites
+- Sitewide messages from the config or settings now support markdown and html
+- Added config option to disable the demo video, request access and feedback buttons, comments, and report sharing
+- Updated Solr to v8.11.1
+:::
+
 ## Version 2022.01.1
 ::: content
 - Improved asset handling
