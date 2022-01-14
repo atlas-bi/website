@@ -33,7 +33,7 @@
     "fontawesome-subset": "^3.0.0",
     "fontsource-inter": "^4.0.0",
     "html-minifier": "^4.0.0",
-    "husky": "^7.0.4",
+    "husky": "^7.0.0",
     "markdown-it": "^12.3.0",
     "markdown-it-anchor": "^8.3.0",
     "markdown-it-div": "^1.1.0",
@@ -60,10 +60,5 @@
     "test:eslint": "eslint \"./**/*.js\" --color",
     "test:prettier": "prettier --check ./**/*.js",
     "format": "prettier --config .prettierrc \"src/**/*.{ts,css,less,scss,js}\" --write"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "npm run format"
-    }
   }
 }
