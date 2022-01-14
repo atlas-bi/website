@@ -4,54 +4,51 @@
     #el
     */
   var d = document;
-  d.addEventListener("click", function (e) {
+  d.addEventListener('click', function (e) {
     var el, src;
 
     if (e.target.closest('[data-action="collapse"]')) {
       src = e.target.closest('[data-action="collapse"]');
-      el = d.getElementById(
-          src.getAttribute("data-target")
-          .replace("#", "")
-      );
+      el = d.getElementById(src.getAttribute('data-target').replace('#', ''));
       if (el == null) {
         return;
       }
 
-      if (el.style.maxHeight || el.classList.contains("is-active")) {
+      if (el.style.maxHeight || el.classList.contains('is-active')) {
         c(el);
-        src.classList.remove("is-active");
+        src.classList.remove('is-active');
       } else {
-        src.classList.add("is-active");
+        src.classList.add('is-active');
         o(el);
       }
-    // } else if (e.target.closest(".collapse:not(.is-active")) {
-    //   src = e.target.closest(".collapse:not(.is-active")
-    //   o(src);
-    //   src.classList.add("is-active")
-     }
+      // } else if (e.target.closest(".collapse:not(.is-active")) {
+      //   src = e.target.closest(".collapse:not(.is-active")
+      //   o(src);
+      //   src.classList.add("is-active")
+    }
   });
 
   function h(el) {
-    el.style.maxHeight = el.scrollHeight + "px";
+    el.style.maxHeight = el.scrollHeight + 'px';
   }
 
   function c(el) {
     el.style.maxHeight = null;
-    el.style.overflow = "hidden";
-    el.classList.remove("is-active");
+    el.style.overflow = 'hidden';
+    el.classList.remove('is-active');
   }
 
   function o(el) {
-    el.classList.add("is-active");
+    el.classList.add('is-active');
     h(el);
     var l = el;
-    while ((l = l.parentElement.closest(".is-collapsible.is-active"))) {
-      l.style.removeProperty("max-height");
+    while ((l = l.parentElement.closest('.is-collapsible.is-active'))) {
+      l.style.removeProperty('max-height');
     }
-    d.dispatchEvent(new CustomEvent("collapse-opened"));
+    d.dispatchEvent(new CustomEvent('collapse-opened'));
 
     // close siblings
-    var o = el.parentElement.querySelector(".is-collapsible.is-active"),
+    var o = el.parentElement.querySelector('.is-collapsible.is-active'),
       r = [];
 
     while (o) {
@@ -63,72 +60,69 @@
 
     // after animation finished add max-height back
     window.setTimeout(function () {
-      var l = el.parentElement.closest(".is-collapsible.is-active");
+      var l = el.parentElement.closest('.is-collapsible.is-active');
       while (l) {
         h(l);
-        l = l.parentElement.closest(".is-collapsible.is-active");
+        l = l.parentElement.closest('.is-collapsible.is-active');
       }
-      if (el.classList.contains("is-active")) {
-        el.style.overflow = "visible";
+      if (el.classList.contains('is-active')) {
+        el.style.overflow = 'visible';
       }
     }, 300);
   }
 
-  d.addEventListener("change", function (e) {
-    if (e.target.closest(".is-collapsible.is-active")) {
-      var l = e.target.closest(".is-collapsible.is-active");
+  d.addEventListener('change', function (e) {
+    if (e.target.closest('.is-collapsible.is-active')) {
+      var l = e.target.closest('.is-collapsible.is-active');
       while (l) {
-        l.style.removeProperty("max-height");
-        l = l.parentElement.closest(".is-collapsible.is-active");
+        l.style.removeProperty('max-height');
+        l = l.parentElement.closest('.is-collapsible.is-active');
       }
       // after animation finished add max-height back
       window.setTimeout(function () {
-        var l = e.target.closest(".is-collapsible.is-active");
+        var l = e.target.closest('.is-collapsible.is-active');
         while (l) {
           h(l);
-          l = l.parentElement.closest(".is-collapsible.is-active");
+          l = l.parentElement.closest('.is-collapsible.is-active');
         }
       }, 300);
     }
   });
 
   d.addEventListener(
-    "clps-close",
+    'clps-close',
     function (e) {
-      if (typeof e.detail !== "undefined") {
+      if (typeof e.detail !== 'undefined') {
         c(e.detail.el);
       }
     },
-    false
+    false,
   );
   d.addEventListener(
-    "clps-open",
+    'clps-open',
     function (e) {
-      if (typeof e.detail !== "undefined") {
+      if (typeof e.detail !== 'undefined') {
         o(e.detail.el);
       }
     },
-    false
+    false,
   );
-  d.addEventListener("click", function (e) {
+  d.addEventListener('click', function (e) {
     var el, src;
 
     if (e.target.closest('[data-action="collapse-menu"]')) {
       src = e.target.closest('[data-action="collapse-menu"]');
-      el = d.getElementById(
-          src.getAttribute("data-target")
-          .replace("#", "")
-      );
+      el = d.getElementById(src.getAttribute('data-target').replace('#', ''));
       if (el == null) {
         return;
       }
-      if (el.style.maxHeight || el.classList.contains("is-active")) {
-        el.classList.remove("is-active");
-        src.classList.remove("is-active");
+      if (el.style.maxHeight || el.classList.contains('is-active')) {
+        el.classList.remove('is-active');
+        src.classList.remove('is-active');
       } else {
-        src.classList.add("is-active");
-        el.classList.add("is-active");
+        src.classList.add('is-active');
+        el.classList.add('is-active');
       }
-     }
+    }
   });
 })();

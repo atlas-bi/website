@@ -7,13 +7,7 @@ labels: bug
 
 <!--
     Thanks for finding and submitting an issue.
-
-    Have you...
 -->
-
-- [ ] I'm on the [latest version](https://github.com/atlas-bi/atlas-bi-library)
-- [ ] I've searched the [issues](https://github.com/atlas-bi/atlas-bi-library/issues)
-- [ ] I've read the [docs](https://www.atlas.bi/docs/bi_library/)
 
 ## System Info
  - Browser: e.g. IE 11
