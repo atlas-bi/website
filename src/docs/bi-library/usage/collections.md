@@ -13,8 +13,8 @@ eleventyNavigation:
 ---
 
 # Collections
-<p class="subtitle pb-5">Group reports and terms together around reporting topics.</p>
 
+<p class="subtitle pb-5">Group reports and terms together around reporting topics.</p>
 
 ## Description & Meta
 
@@ -23,6 +23,7 @@ Collections come with a few useful options to make this a very flexible tool, fr
 The editor options include
 
 ::: content
+
 - Search summary and a detailed description
 - Option to hide the collection from search
 - Upload file attachments
@@ -35,7 +36,6 @@ The editor options include
    "Markdown",
    "Descriptions fields and most other free text fields support full markdown, including tables, code highlighting, and more! [Learn more about markdown](https://www.markdownguide.org/getting-started)"
 %}
-
 
 ## Collection Profile
 
@@ -52,7 +52,6 @@ Collections can be shard directly in the app. The person receiving the share wil
 ## Giving Feedback
 
 Users have the option to give feedback on collections. These option integrates with the `Manage Engine` ticketing system.
-
 
 ## Commenting
 

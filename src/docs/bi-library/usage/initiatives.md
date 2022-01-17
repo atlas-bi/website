@@ -13,6 +13,7 @@ eleventyNavigation:
 ---
 
 # Initiatives
+
 <p class="subtitle pb-5">Combine collections together into an organizational initiative.</p>
 
 ## Description & Meta
@@ -20,6 +21,7 @@ eleventyNavigation:
 There are several documentation fields available
 
 :::content
+
 - Description of the initiative
 - External contacts that are connected
 - Owners from various departments

@@ -34,4 +34,4 @@ Any enabled task will be listed in this table.
 
 ## Orphaned Job
 
-Any job that is left behind in the scheduler after a task is disabled will show in this table. They should be removed by clicking ``Delete All``.
+Any job that is left behind in the scheduler after a task is disabled will show in this table. They should be removed by clicking `Delete All`.

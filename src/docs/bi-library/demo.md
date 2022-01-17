@@ -49,12 +49,12 @@ docker run -i -t -p 1234:1234 -e PORT=1234  -u 0 christopherpickering/rmc-atlas-
    "Wait about 1-2 mins for app to download and startup. Output will say ``Now listening on: http://[::]:1234`` when ready."
 %}
 
-Click "Open Port" and type ``1234``
+Click "Open Port" and type `1234`
 
 App will open in new tab. The URL should be valid for 3-4 hrs.
+
    </div>
    <div class="tab is-active"id="local">
-
 
 There is a dockerized Atlas demo available, it can be run with a single command -
 
@@ -63,5 +63,6 @@ docker run -i -t -p 1234:1234 -e PORT=1234  -u 0 christopherpickering/rmc-atlas-
 ```
 
 After starting up, you can access the website at [`http://localhost:1234`](http://localhost:1234).
+
    </div>
 </div>

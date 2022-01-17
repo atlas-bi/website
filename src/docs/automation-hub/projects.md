@@ -19,11 +19,12 @@ A project is a group of tasks that run on the same schedule. The tasks can be se
 Projects include three primary pages:
 
 :::content
-- ``All Projects`` This loads a paginated table of all projects along with a name cloud of project owners.
-- ``My Projects`` This loads a paginated table of all projects for the specified owner.
+
+- `All Projects` This loads a paginated table of all projects along with a name cloud of project owners.
+- `My Projects` This loads a paginated table of all projects for the specified owner.
 - `Project Details` Summary page of some project events and a few actions that can be taken.
 - [`New Project`](#new-project) The page to create or edit a project. If no projects, or no tasks exists, users are directed here to create a project.
-:::
+  :::
 
 {% image "./src/static/img/automation-hub/my_projects.png", "my projects", "(min-width:800px) 50vw, 100vw", "boxed" %}
 
@@ -34,11 +35,12 @@ There are two actions a user can take in a project - delete or edit.
 There are a few task control options:
 
 :::content
-- `New` This will redirect to the [``task``](/docs/automation-hub/tasks/) page, tasks can only be created under a project.
+
+- `New` This will redirect to the [`task`](/docs/automation-hub/tasks/) page, tasks can only be created under a project.
 - `Disable All` This will disable all tasks in the project from running.
 - `Enable All` This will enable all tasks in the project to run.
-- `Run All` This will immediately run all ``enabled`` tasks.
-:::
+- `Run All` This will immediately run all `enabled` tasks.
+  :::
 
 ## New Project
 
@@ -69,12 +71,13 @@ The interval schedule runs tasks with a duration between them. For example, runn
 An interval schedule will run a project "ever x <time period>". Where the time periods is either
 
 :::content
+
 - week(s)
 - day(s)
 - hour(s)
 - minute(s)
 - second(s)
-:::
+  :::
 
 #### One Off
 

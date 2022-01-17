@@ -19,9 +19,10 @@ eleventyNavigation:
 An admin can
 
 :::content
+
 - Reset all tasks to completed. This is useful after publishing a website update and the admin would like to clear all errored tasks.
 - Reschedule Enabled Jobs. This option will empty the scheduler and then reschedule any enabled jobs.
-:::
+  :::
 
 {% image "./src/static/img/automation-hub/admin.png", "admin", "(min-width:1200px) 50vw, 100vw", "boxed" %}
 
@@ -30,10 +31,11 @@ An admin can
 An admin can
 
 :::content
+
 - Pause All Jobs. This will ask the scheduler API to stop running any jobs until clicking "Resume Enabled Jobs."
 - Resume Enabled Jobs. This will ask the scheduler API to resume running any enabled jobs that had been paused.
 - Kill Scheduler. This will turn off the scheduler. Keep in mind that task are run in the Runner API and any started tasks will not be affected.
-:::
+  :::
 
 ## User Task History
 

@@ -14,10 +14,10 @@ eleventyNavigation:
 
 # Deploy
 
-
 Once the ETL performs to your satisfaction in Visual Studio it can be deployed to an SSRS server and scheduled as a job.
 
 ::: content
+
 - Open ETL solution (ETL.sln) in Visual Studio
 - Highlight all the packages to deploy, right click on the ETL > deploy.
   {% image "./src/static/img/bi-library/deploy/packages.png", "visual studio deploy", "(min-width:800px) 50vw, 100vw", "boxed" %}
@@ -31,4 +31,4 @@ Once the ETL performs to your satisfaction in Visual Studio it can be deployed t
   {% image "./src/static/img/bi-library/deploy/deploy_button.png", "deploy button", "(min-width:800px) 50vw, 100vw", "boxed" %}
 - Verify "Success"
   {% image "./src/static/img/bi-library/deploy/results.png", "deploy button", "(min-width:800px) 50vw, 100vw", "boxed" %}
-:::
+  :::

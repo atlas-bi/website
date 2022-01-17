@@ -11,6 +11,7 @@
     "@sindresorhus/slugify": "^2.1.0",
     "animate-sass": "^0.8.2",
     "eleventy-critical-css": "^1.0.0",
+    "lint-staged": "^12.1.7",
     "md5": "^2.3.0"
   },
   "description": "atlas website",
@@ -56,9 +57,16 @@
     "start": "ELEVENTY_PRODUCTION=true eleventy --serve --watch",
     "updateSearch": "node ./src/search/update-algolia-index.js",
     "prepare": "husky install",
+    "pre-commit": "lint-staged",
     "test": "npm run test:eslint && npm run test:prettier",
     "test:eslint": "eslint \"./**/*.js\" --color",
     "test:prettier": "prettier --check ./**/*.js",
-    "format": "prettier --config .prettierrc \"src/**/*.{ts,css,less,scss,js}\" --write"
+    "format": "prettier --config .prettierrc \"src/**/*.{ts,css,less,scss,js,json,md,yaml,html}\" --write"
+  },
+  "lint-staged": {
+    "src/**/*.{ts,css,less,scss,js,json,md,yaml,html}": [
+      "npm run format"
+    ]
   }
+
 }

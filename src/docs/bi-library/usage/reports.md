@@ -13,6 +13,7 @@ eleventyNavigation:
 ---
 
 # Reports
+
 <p class="subtitle pb-5">Reports are the cornerstone of Atlas BI Library.</p>
 
 ## ETL Loaded Content
@@ -20,13 +21,14 @@ eleventyNavigation:
 Reports are added to the library through the [ETL processes](/docs/bi-library/etl/). A report general will include several sets of data or actions:
 
 :::content
+
 - Title, Description, basic meta details such as last updated, report type, author, etc.
 - Usage information include report run data by person, in some cases also report failed runs, subscription information etc.
 - Links to run, edit, or manage the report in its source system
 - Source SQL queries uses in the report.
 - Report security groups.
 - Report hierarchy structure (sub-reports, parent reports etc).
-:::
+  :::
 
 This basic information provides the foundation for your consolidated report library, and is fed into the search.
 
@@ -35,6 +37,7 @@ This basic information provides the foundation for your consolidated report libr
 Additional documentation and metadata can now be added through the app. There are a variety of ways to enhance your documentation!
 
 :::content
+
 - Images describing your report
 - Developer description and key assumptions
 - Link to [terms](/docs/bi-library/usage/terms/), with custom notes
@@ -42,25 +45,24 @@ Additional documentation and metadata can now be added through the app. There ar
 - Report owners, requester, link to the source code
 - Through [parameters](/docs/bi-library/usage/parameters/), custom values can be added as options for
 
-    - Organizational value
-    - Estimated run frequency
-    - Fragility rating
-    - Maintenance schedule - used to trigger [maintenance tasks](/docs/bi-library/usage/tasks/) and certification tags!
-    - Fragility tags - tag potential fragility points that could affect you reports during upgrades, etc
-    - Executive visibility - flag all reports that your execs are using
-    - Do No Purge - flag reports that you want to hide from the [recommended retire task](/docs/bi-library/usage/tasks/)
-    - Hide Report - flag to hide the report in search for users without advanced search permissions
+  - Organizational value
+  - Estimated run frequency
+  - Fragility rating
+  - Maintenance schedule - used to trigger [maintenance tasks](/docs/bi-library/usage/tasks/) and certification tags!
+  - Fragility tags - tag potential fragility points that could affect you reports during upgrades, etc
+  - Executive visibility - flag all reports that your execs are using
+  - Do No Purge - flag reports that you want to hide from the [recommended retire task](/docs/bi-library/usage/tasks/)
+  - Hide Report - flag to hide the report in search for users without advanced search permissions
 
 - Service tickets - add the ticket number, a link to the ticketing system, and a few comments describing the change
 - Maintenance - add maintenance logs directly to your documentation to track the history and changes and maintain report certification
-:::
+  :::
 
 {% admonition
    "note",
    "Markdown",
    "Descriptions fields and most other free text fields support full markdown, including tables, code highlighting, and more! [Learn more about markdown](https://www.markdownguide.org/getting-started)"
 %}
-
 
 ## Report Certification
 

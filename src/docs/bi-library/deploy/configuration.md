@@ -14,10 +14,9 @@ eleventyNavigation:
 
 # Configuration
 
-Copy the file ``/web/appsettings.json`` to a new file called ``appsettings.cust.json``. This file should be modified to hold your custom settings. The file is excluded from git revision control, so pulling fresh code updates will preserve this file.
+Copy the file `/web/appsettings.json` to a new file called `appsettings.cust.json`. This file should be modified to hold your custom settings. The file is excluded from git revision control, so pulling fresh code updates will preserve this file.
 
-
-Development settings for debugging can also be added. Copy the file ``/web/appsettings.Development.json`` to a new file called ``appsettings.cust.Development.json``.
+Development settings for debugging can also be added. Copy the file `/web/appsettings.Development.json` to a new file called `appsettings.cust.Development.json`.
 
 The available settings are:
 

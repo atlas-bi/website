@@ -14,7 +14,6 @@ eleventyNavigation:
 
 # Upgrading
 
-
 ## Recommended Method
 
 ### Create A Backup

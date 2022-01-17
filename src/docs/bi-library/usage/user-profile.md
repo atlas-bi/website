@@ -13,6 +13,7 @@ eleventyNavigation:
 ---
 
 # User Profiles
+
 <p class="subtitle pb-5">Profiles are the ideal way to find active reporting content.</p>
 
-User profiles contain a host of information helping users to find the most active reporting content. Quickly find users favorites, what they are subscribed to, what reports they are using, and what groups they are a part of. 
+User profiles contain a host of information helping users to find the most active reporting content. Quickly find users favorites, what they are subscribed to, what reports they are using, and what groups they are a part of.

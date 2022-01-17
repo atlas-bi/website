@@ -17,6 +17,7 @@ eleventyNavigation:
 ## Next Release
 
 :::content
+
 - Added query caching for web query sources, when source is offline, cache can be used
 - Added filename preview
 - Enhanced feedback messages
@@ -25,11 +26,12 @@ eleventyNavigation:
 - Added option to require SQL output
 - Added support for email to sms service
 - Updated to allow multiple source files to be moved to a destination, keeping original name
-:::
+  :::
 
 ## Version 2021.08.1
 
 :::content
+
 - Fixed installer for latest Poetry update
 - Added ability to run tasks in sequence
 - Updated html linter
@@ -37,26 +39,28 @@ eleventyNavigation:
 - Added python package lookup for py processor
 - Added option to use parameters in file names
 - Added option to pre-parse parameters using python date formats
-:::
+  :::
 
 ## Version 2021.04.1
 
 :::content
+
 - Added SAML auth as default
 - Changed to use flask-login for user session
 - Increased test cov to 60%
 - Hide nav when showing 400/500 errors
-- Fixed bug where ``errored > run all now`` button was not working
+- Fixed bug where `errored > run all now` button was not working
 - Fixed bug with screen resize when changing tabs
 - Updated project page to have logs on tab 2
 - Fixed bug with adding duplicate SMB connections when creating a new connection
 - Added option to include custom line ending in output text files
 - Added background task for maintenance
-:::
+  :::
 
 ## Version 2021.03.1
 
 :::content
+
 - Rewrote Scheduler API as flask application factory
 - Changed task enable/disable to a toggle
 - Fixed bug that didn't allow py scripts from a git url
@@ -79,4 +83,4 @@ eleventyNavigation:
 - Added option to connect to SFTP servers with SSH keys
 - Added file streaming for large queries/files to reduce memory usage
 - Fixed file size calculation
-:::
+  :::

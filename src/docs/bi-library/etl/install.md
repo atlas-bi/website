@@ -17,9 +17,10 @@ eleventyNavigation:
 There are two user accounts needed to make the ETL's work.
 
 ::: content
+
 1. A **domain** account with read access to all source databases, and write access to the staging database.
 2. A **local** sql login with full access to the two databases `atlas` and `atlas-staging`.
-:::
+   :::
 
 ## Local SQL User
 

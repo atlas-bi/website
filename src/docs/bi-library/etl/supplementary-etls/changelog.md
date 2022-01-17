@@ -30,6 +30,7 @@ eleventyNavigation:
 ## Version 2021.12.1
 
 ::: content
+
 - Added fields
 :::
    </div>
@@ -40,6 +41,7 @@ eleventyNavigation:
 ## Version 2022.1.1
 
 ::: content
+
 - Split from primary ETL
 :::
 </div>
@@ -50,6 +52,7 @@ eleventyNavigation:
 ## Version 2022.1.1
 
 :::content
+
 - Split ETL's into individual files so they can be run independently.
 - Fix bug in report data load from BOE.
 :::
@@ -61,6 +64,7 @@ eleventyNavigation:
 ## Version 0.0.1
 
 ::: content
+
 - Updated to work with any Tableau version
 :::
 </div>

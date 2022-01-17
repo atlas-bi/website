@@ -26,7 +26,7 @@ Update the website configuration files as specified in [configuration](/docs/bi-
 
 ## Run the Website Locally
 
-Test out your configuration or changes by running the website locally. In visual studio, select ``Run with IIS Express``.
+Test out your configuration or changes by running the website locally. In visual studio, select `Run with IIS Express`.
 
 {% image "./src/static/img/bi-library/development/iisexpress.png", "Start debug", "(min-width:400px) 50vw, 100vw", "boxed" %}
 
@@ -34,7 +34,6 @@ The first time you start up the app there will most likely be two SSL prompts.
 
 {% image "./src/static/img/bi-library/development/ssl_warning.png", "ssl warning", "(min-width:400px) 50vw, 100vw", "boxed" %}
 {% image "./src/static/img/bi-library/development/ssl_confirm.png", "ssl confirm", "(min-width:400px) 50vw, 100vw", "boxed" %}
-
 
 ## Publish to the Webserver
 

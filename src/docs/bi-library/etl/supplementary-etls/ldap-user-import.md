@@ -37,7 +37,6 @@ eleventyNavigation:
 
 This supplementary ETL loads data from an LDAP server into a database that is accessible by the primary [Atlas metadata ETL](/docs/bi-library/etl/).
 
-
 ## Setup
 
 Create a `settings.py` file with the following settings, modified to fit your needs.
@@ -58,12 +57,11 @@ group_search_bases = [
 ]
 ```
 
-Next, create the database and tables using the ``LDAPDatabaseCreationScript.sql`` provided in the download.
-
+Next, create the database and tables using the `LDAPDatabaseCreationScript.sql` provided in the download.
 
 ## Usage
 
-The ``ldap.py`` script can be periodically run to keep you user profiles fresh.
+The `ldap.py` script can be periodically run to keep you user profiles fresh.
 
 ```python
 python ldap.py

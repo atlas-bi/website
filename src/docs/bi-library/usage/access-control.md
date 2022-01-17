@@ -13,6 +13,7 @@ eleventyNavigation:
 ---
 
 # Access Control
+
 <p class="subtitle pb-5">Secure your documentation.</p>
 
 Atlas BI Library relies on the security from your source reporting systems to define who has access to reporting content. Most of the features inside of Atlas BI Library can be turned on/off for different user groups in access control.

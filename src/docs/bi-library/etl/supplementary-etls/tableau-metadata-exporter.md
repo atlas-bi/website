@@ -42,12 +42,13 @@ Tableau runs a Python script that pulls and parses XML data from PSQL readonly T
 It logs in to the Tableau server and connects to the Tableau PSQL Admin account in the workgroup database.
 
 :::content
+
 1.  The query will create .twbx and .twb files containing SQL queries related to the workbooks stored in Tableau
 2.  The files retrieved are placed in the "TwbxFiles" folder and any zipped folders are unzipped
 3.  All XML files are parsed and the server, database name, and SQL queries are pulled from each along with the the respective workbook
 4.  Connection to SQL database is established to hold Tableau data. All tables are truncated so as not to duplicate data
 5.  All PSQL queries are run and data pulled is stored in SQl tables
-:::
+    :::
 
 ## How To Run
 
@@ -58,13 +59,14 @@ CREATE DATABASE [TableauSQL]
  GO
 ```
 
-Run the ``create_tables.sql`` script included in the download.
+Run the `create_tables.sql` script included in the download.
 
 ### Create settings.py file
 
 For the settings.py file, the Tableau admin and readonly passwords will be needed.
 
 Navigate to the Tableau server and open command prompt.
+
 ```py
 cd C:\Program Files\Tableau\Tableau Server\packages\pgsql.<version>\bin
 
@@ -75,7 +77,7 @@ tsm configuration get -k pgsql.adminpassword
 tsm configuration get -k pgsql.readonly_password
 ```
 
-The ``settings.py`` file should look something like this:
+The `settings.py` file should look something like this:
 
 ```py
 # readonly account

@@ -19,11 +19,12 @@ A task is child to a project and contains the details of the job to be run. A ty
 Tasks include three primary pages:
 
 :::content
+
 - `All Tasks` This loads a paginated table of all tasks along with a name cloud of task owners (owners come from the project level), and also a name cloud of the associated projects.
 - `My Tasks` This loads a paginated table of all tasks along with a name cloud of the associated projects.
 - `Task Details` Summary page of all the task details, a few controls, and the run history.
 - `New Task` The page to create or edit tasks.
-:::
+  :::
 
 {% image "./src/static/img/automation-hub/my_tasks.png", "my tasks", "(min-width:800px) 50vw, 100vw", "boxed" %}
 
@@ -32,17 +33,18 @@ Tasks include three primary pages:
 From the task details a task can be
 
 :::content
+
 - Edited
 - Deleted
 - Run
 - Rescheduled. This option will remove any existing schedules from the Scheduler API and recreate them.
 - Duplicated. This option will clone the job in a disabled state.
 - Cancel Retry. If the task has failed and and retry has been scheduled the user can click here to prevent the retries. This option cannot be clicked while task is running.
-:::
+  :::
 
 Following this most task details are listed along with a log, and a listing of historical file outputs.
 
-The history files can be downloaded or resent to the *current* destination.
+The history files can be downloaded or resent to the _current_ destination.
 
 ## New Task
 
@@ -96,7 +98,6 @@ For example a csv can be loaded and changed to a pipe delimited file.
 
 While a python script can be run as an add-on to any data source (through `Processing Script`), if you only wish to run a python script and not have any other data source you can choose this option.
 
-
 ### SSH
 
 If you only need to schedule a command to run on a remote server this is the option to use.
@@ -115,7 +116,7 @@ If there is a data source selected it will be passed into your python script as 
 
 A script like this will pick up that file.
 
-``` python
+```python
 import sys
 input_file = sys.argv[1]
 ```

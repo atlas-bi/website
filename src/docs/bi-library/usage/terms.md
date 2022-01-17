@@ -13,10 +13,10 @@ eleventyNavigation:
 ---
 
 # Terms
+
 <p class="subtitle pb-5">Define key concepts that are shared across reports.</p>
 
 Terms give you the powers to share common definitions between reports. For example, perhaps you have multiple LOS (length of stay) definitions, depending on who you are reporting for. This is the ideal tool to keep those definitions clearly defined and assigned to the correct reports. Your users can know what LOS definition is being used, without needing to call the poor Analyst every time they are in doubt.
-
 
 ## Description & Meta
 
@@ -47,7 +47,6 @@ Terms can be shard directly in the app. The person receiving the share will rece
 ## Giving Feedback
 
 Users have the option to give feedback on terms. These option integrates with the `Manage Engine` ticketing system.
-
 
 ## Commenting
 

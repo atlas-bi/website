@@ -17,7 +17,6 @@ eleventyNavigation:
 
 {{ bi_library.description }}
 
-
 ## Get Started On Your Install!
 
 <div class="tile is-ancestor">

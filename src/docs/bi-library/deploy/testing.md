@@ -21,19 +21,21 @@ Python is used as to run selenium.
 ## Requirements
 
 ::: content
+
 - [Python 3.7+](https://www.python.org/downloads/)
 - (Optional) [Poetry](https://python-poetry.org) - For managing dependencies
 - [Chrome web driver](https://chromedriver.chromium.org/downloads)
 - [IE 11 web driver](https://www.microsoft.com/en-us/download/details.aspx?id=44069)
-:::
+  :::
 
 Move the two web drivers into the `testing` directory after downloading.
 
 ## Setup
 
 Install the python packages
+
 ```bash
-poetry install # if you have installed poetry, otherwise, 
+poetry install # if you have installed poetry, otherwise,
 pip install selenium urllib3
 ```
 
@@ -50,21 +52,22 @@ pip install selenium urllib3
 %}
 
 {% admonition
-   "note",
-   "Note",
-   "The ``url_test.py`` will attempt to access several hundred URL. You can update this list to match the top hits on your instance. Run a sql query on your instance to build the list.
+"note",
+"Note",
+"The `url_test.py` will attempt to access several hundred URL. You can update this list to match the top hits on your instance. Run a sql query on your instance to build the list.
 
-   ```sql
-      select top 500
-        concat('''',pathname , replace(search, '?EPIC=1','') ,''',')
-      from
-        app.Analytics
-      group by
-        concat('''',pathname , replace(search, '?EPIC=1','') ,''',')
-      order by
-        count(1) desc
-   ```
-   "
+```sql
+   select top 500
+     concat('''',pathname , replace(search, '?EPIC=1','') ,''',')
+   from
+     app.Analytics
+   group by
+     concat('''',pathname , replace(search, '?EPIC=1','') ,''',')
+   order by
+     count(1) desc
+```
+
+"
 %}
 
 ## IE 11 Settings

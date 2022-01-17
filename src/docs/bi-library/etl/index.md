@@ -19,14 +19,14 @@ The Atlas ETL's are used to collect metadata from a variety of sources and merge
 There are two primary ETLs -
 
 ::: content
+
 - Report Metadata (split into 8 sections)
 - Report Run Data
-:::
+  :::
 
 The ETL's are SSIS packages and can be scheduled to run as jobs on a Microsoft SQL Server. The metadata ETL can be scheduled to run at a fairly frequent interval - every hour for example - while the run data ETL can be run daily.
 
 The Clarity ETL must be downloaded from the [data handbook](https://datahandbook.epic.com/Reports/Details/9000648).
-
 
 ## Metadata ETL
 
@@ -35,6 +35,7 @@ The metadata ETL is composed of multiple SSIS packages - basically one package p
 ## Steps to Run
 
 ::: content
+
 1. Configure and run the [supplementary ETLs](/docs/bi-library/etl/supplementary-etls/)
 2. Configure and run Atlas ETL's (main ETL and run data)
 
@@ -42,4 +43,4 @@ The metadata ETL is composed of multiple SSIS packages - basically one package p
    - Update Clarity server and credentials
    - Update Database connection strings
    - Schedule ETL's in SQL Agent Jobs
-:::
+     :::

@@ -20,20 +20,20 @@ Parameters can be added at the project and task level. Project parameters are pa
 
 ## Creating Parameters
 
-A parameter is a key value pair, separated with a ``=`` or ``:``.
+A parameter is a key value pair, separated with a `=` or `:`.
 
 ```bash
 key=value
 key:value
 ```
 
-Parameters can include date/time variables, wrapped in a ``parse(...)`` tag.
+Parameters can include date/time variables, wrapped in a `parse(...)` tag.
 
 ```bash
 @my_param=nice_day-parse(%d)
 ```
 
-Values using inside a ``parse`` tag should be a [strftime pattern](https://strftime.org).
+Values using inside a `parse` tag should be a [strftime pattern](https://strftime.org).
 
 ## Parameters in SQL
 
@@ -67,8 +67,8 @@ Atlas Hub has a few options for filename parameters as well.
 Filenames for a data source can use Unix shell-style wildcards to allow groups of files, or a file with an unknown name, to be found. Options are:
 
 | Pattern | Meaning                          |
-|---------|----------------------------------|
-| *       | matches everything               |
+| ------- | -------------------------------- |
+| \*      | matches everything               |
 | ?       | matches any single character     |
 | [seq]   | matches any character in seq     |
 | [!seq]  | matches any character not in seq |
@@ -99,4 +99,4 @@ The last day and first day of the month are also available, using `lastday`, `fi
 
 Parsed parameters can be used in filenames as well.
 
-For example, and parameter of ```#cool=parse(%d_%Y)``` can be used in a filename ```my_date_#cool.csv```. The output will be something like ```my_date_01_21.csv```.
+For example, and parameter of `#cool=parse(%d_%Y)` can be used in a filename `my_date_#cool.csv`. The output will be something like `my_date_01_21.csv`.

@@ -15,14 +15,17 @@ eleventyNavigation:
 # Changelog
 
 ## Next Release
+
 ::: content
+
 - Fixed bug causing missing RW report groups
 - Fixed spelling on report parameters
-:::
+  :::
 
 ## Version 2021.12.1
 
 ::: content
+
 - Added SAP Crystal Report file link import (Requires Supplementary Crystal ETL)
 - Added More Clarity Report Groups
 - Added HRX Report parameters to system detailed description as a collapse
@@ -32,11 +35,12 @@ eleventyNavigation:
 - Added SlicerDicer report groups
 - Added run links for cubes
 - Added cert tag for cubes
-:::
+  :::
 
 ## Version 2021.11.1
 
 ::: content
+
 - Added SSAS cubes, measures, and dimensions
 - Added hierarchy for workbench reports
 - Updated creation scripts
@@ -44,21 +48,23 @@ eleventyNavigation:
 - Added EpicID to users
 - Modified UserGroup Memberships
 - Added column to ReportObjectType table (must be a Y to be searchable)
-:::
+  :::
 
 ## Version 2021.07.1
 
 ::: content
+
 - Added SlicerDicer session info to ETL
 - Updated certification tags to include self-service
 - Fixed Tableau rundata
 - Updated hierarchies for sessions
 - Added Clarity tags and tag memberships
-:::
+  :::
 
 ## Version 2021.06.1
 
 ::: content
+
 - Modularized ETL
 - Fixed a bug in the run data for SlicerDicer
 - Updated SlicerDicer column mapping to Clarity-ETL
@@ -67,30 +73,33 @@ eleventyNavigation:
 - Added HGR to HRX relationships
 - Removed personal dashboards (IDN)
 - Added private report column
-:::
+  :::
 
 ## Version 2021.05.1
 
 ::: content
+
 - Added step to import repository information
 - Updated run data ETL connections
 - Fixed a bug in ReportObjectQuery where queries were not being removed
-:::
+  :::
 
 ## Version 2021.03.1
 
 ::: content
+
 - Updated database names
 - Fixed a bug in ReportObject merge where nulls were not being updated
 - Removed custom tables
 - Removed dev connection from ETL
 - Added Tableau and SlicerDicer
-:::
+  :::
 
 ### Updating to 2021.03.1
 
 ::: content
-- Rename database ``Data_Governance`` to ``atlas``
-- Drop ``dg_staging`` database and run ETL creation script ``atlas_staging-creation_script.sql``
+
+- Rename database `Data_Governance` to `atlas`
+- Drop `dg_staging` database and run ETL creation script `atlas_staging-creation_script.sql`
 - Update ETL connections and parameters to new database names.
-:::
+  :::

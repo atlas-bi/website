@@ -17,9 +17,10 @@ Atlas Automation Hub is a task scheduling tool. It is designed to simplify routi
 
 The tool easily connects to databases, SFTP, FTP, SMB and SSH servers and GIT servers/web URL's, to pull data, run queries, and load data back.
 
-A few handy features - 
+A few handy features -
 
 :::content
+
 - Fully parameterized
 - Supports SSH key connections
 - Supports GPG encryption
@@ -33,17 +34,18 @@ A few handy features -
 - Multiple authentication options - SAML2, LDAP, or local
 - Complete logging
 - Middle man processing scripts can modify data before loading
-:::
+  :::
 
 ## How Does it Work?
 
-Atlas Automation Hub is a collection of three webapps, running with Nginx and Gunicorn. 
+Atlas Automation Hub is a collection of three webapps, running with Nginx and Gunicorn.
 
 :::content
+
 - user interface (website)
 - scheduler (API)
 - job runner (API)
-:::
+  :::
 
 The schedule and runner webapps are both API's, designed to only be accessed internally by the website. The scheduler is a single worker process that keeps a schedule of all the tasks. When it is time for a task to run, the scheduler sends a request to the job runner to begin an execution.
 

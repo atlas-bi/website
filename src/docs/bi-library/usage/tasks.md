@@ -13,6 +13,7 @@ eleventyNavigation:
 ---
 
 # Tasks
+
 <p class="subtitle pb-5">Keep your report library in top condition.</p>
 
 There are a few tasks included in you Atlas BI Library install to help you stay on top of your library maintenance.
@@ -29,11 +30,9 @@ This report searches for report content that is no longer being used, but is sti
 
 Find reports that have a maintenance schedule of `Audit Only` and perform an audit.
 
-
 ## No Maintenance Schedule
 
 A good report should be maintained. This will list your reports that are missing a schedule.
-
 
 ## Edited by Others
 
@@ -46,7 +45,6 @@ Wondering what to document next? Check this list. Your top running reports that 
 ## New Undocumented
 
 Part of the report creation process should be adding the documentation. This report will list new reports that have not yet been documented.
-
 
 ## Users with Create
 

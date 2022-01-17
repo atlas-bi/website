@@ -14,13 +14,13 @@ eleventyNavigation:
 
 # Supplementary ETLs
 
-There are several supplementary ETLs that run with Python. 
+There are several supplementary ETLs that run with Python.
 
 - LDAP User Import
 - Solr Search Loader
 - Tableau Metadata Exporter
 - Sqlize Crystal Reports
 
-These ETLs can be run separately from the main metadata ETL and are used to add supplementary information to web app. 
+These ETLs can be run separately from the main metadata ETL and are used to add supplementary information to web app.
 
 The recommended way to run these ETLs is through [Atlas Automation Hub](/docs/automation-hub/), however then can also be run with `SQL Agent Jobs` or another tool .

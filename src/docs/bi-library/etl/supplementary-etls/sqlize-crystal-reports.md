@@ -35,14 +35,15 @@ eleventyNavigation:
 
 ## About
 
-**Sqlize Crystal Reports** runs [Aidan Ryan's](https://github.com/ajryan) [RptToXml](https://github.com/ajryan/RptToXml) converter to convert a directory of SAP Crystal Reports into XLM files, and then makes a strong attempt at parsing that XML out into a *somewhat* readable and *potentially* runnable t-sql statement. The results are saved into a database table along with the reports:
+**Sqlize Crystal Reports** runs [Aidan Ryan's](https://github.com/ajryan) [RptToXml](https://github.com/ajryan/RptToXml) converter to convert a directory of SAP Crystal Reports into XLM files, and then makes a strong attempt at parsing that XML out into a _somewhat_ readable and _potentially_ runnable t-sql statement. The results are saved into a database table along with the reports:
 
 :::content
+
 - FileName
 - Title
 - Description
 - Query
-:::
+  :::
 
 If multiple queries are found in the report, there will be a db entry for each query.
 
@@ -56,15 +57,15 @@ Special thanks to [Aidan Ryan](https://github.com/ajryan) for creating the [RptT
 
 Here are a few links to try -
 
-* [Direct link to download https://www.sap.com/cmp/td/sap-crystal-reports-visual-studio-trial.html](https://www.sap.com/cmp/td/sap-crystal-reports-visual-studio-trial.html)
-* [How To Page https://wiki.scn.sap.com/wiki/display/BOBJ/Crystal+Reports%2C+Developer+for+Visual+Studio+Downloads](https://wiki.scn.sap.com/wiki/display/BOBJ/Crystal+Reports%2C+Developer+for+Visual+Studio+Downloads)
-* [Wiki Home https://blogs.sap.com/2016/12/06/sap-crystal-reports-developer-version-for-microsoft-visual-studio-updates-runtime-downloads/](https://blogs.sap.com/2016/12/06/sap-crystal-reports-developer-version-for-microsoft-visual-studio-updates-runtime-downloads/)
-
+- [Direct link to download https://www.sap.com/cmp/td/sap-crystal-reports-visual-studio-trial.html](https://www.sap.com/cmp/td/sap-crystal-reports-visual-studio-trial.html)
+- [How To Page https://wiki.scn.sap.com/wiki/display/BOBJ/Crystal+Reports%2C+Developer+for+Visual+Studio+Downloads](https://wiki.scn.sap.com/wiki/display/BOBJ/Crystal+Reports%2C+Developer+for+Visual+Studio+Downloads)
+- [Wiki Home https://blogs.sap.com/2016/12/06/sap-crystal-reports-developer-version-for-microsoft-visual-studio-updates-runtime-downloads/](https://blogs.sap.com/2016/12/06/sap-crystal-reports-developer-version-for-microsoft-visual-studio-updates-runtime-downloads/)
 
 :::content
+
 - SAP Crystal Reports for Visual Studio (SP28) runtime engine for .NET framework MSI (64-bit)
 - SAP Crystal Reports for Visual Studio (SP28) runtime (64-bit)
-:::
+  :::
 
 ### Next, install a few Python packages
 
@@ -152,6 +153,7 @@ crystal_boe_output_drive = "\\\\server\\Output"
 ### Running
 
 There are three parts to this ETL that can be run separately.
+
 ```bash
 python get_report_data.py # loads BOE report links
 python get_sql.py # gets report sql code
