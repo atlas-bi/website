@@ -26,6 +26,8 @@ Version names follow a pattern of YYYY.MM.release.
 - Sitewide messages from the config or settings now support markdown and html
 - Added config option to disable the demo video, request access and feedback buttons, comments, and report sharing
 - Updated Solr to v8.11.1
+- Fixed v tag on preloaded fonts
+- Removed Collection milestone feature from UI
   :::
 
 ## Version 2022.01.1
