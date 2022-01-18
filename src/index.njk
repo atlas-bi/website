@@ -1,6 +1,30 @@
 ---
 layout: layout.njk
 date: Last Modified
+eleventyComputed:
+    meta:
+      organization:
+        name: Atlas
+        url: "{{ site.url }}"
+        logo: "{{ site.url }}{{ site.image }}"
+        description: "{{ site.description }} Created by the Riverside Healthcare Analytics team."
+        foundingDate: '2019'
+        founders:
+        - name: Dan Ryan
+        - name: Christopher Pickering
+        - name: Scott Manley
+        - name: Sean Pickering
+        - name: Madeline Matz
+        - name: Richard Schissler
+        - name: Eric Shultz
+        - name: Darrel Drake
+        - name: Dee Anna Hillebrand
+        - name: Paula Courville
+        address:
+          addressLocality: Kankakee
+          addressRegion: IL
+          postalCode: '60901'
+          addressCountry: USA
 ---
 {% block body %}
     <div class="hero-body">

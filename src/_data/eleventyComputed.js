@@ -20,5 +20,9 @@ module.exports = {
     },
     modified: (data) => data.page.date.toISOString(),
     keywords: (data) => data.keywords,
+    potentialAction: {
+      type: 'SearchAction',
+      url: (data) => data.site.url + '?search={search_term_string}',
+    },
   },
 };
