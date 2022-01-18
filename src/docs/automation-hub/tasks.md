@@ -10,6 +10,18 @@ eleventyNavigation:
   title: Tasks
   parent: Automation Hub
   order: 10
+eleventyComputed:
+  meta:
+    breadcrumbs:
+      - name: Atlas
+        url: '{{ site.url }}'
+        position: 1
+      - name: Docs
+        url: '{{ site.url }}/docs/'
+        position: 2
+      - name: Docs
+        url: '{{ site.url }}/docs/automation-hub/'
+        position: 3
 ---
 
 # Tasks

@@ -10,6 +10,18 @@ eleventyNavigation:
   title: Demo
   parent: BI Library
   order: 1
+eleventyComputed:
+  meta:
+    breadcrumbs:
+      - name: Atlas
+        url: '{{ site.url }}'
+        position: 1
+      - name: Docs
+        url: '{{ site.url }}/docs/'
+        position: 2
+      - name: BI Library
+        url: '{{ site.url }}/docs/bi-library/'
+        position: 3
 ---
 
 # Atlas Demo

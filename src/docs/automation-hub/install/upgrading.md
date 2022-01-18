@@ -10,6 +10,18 @@ eleventyNavigation:
   title: Upgrade Guide
   parent: Automation Hub
   order: 5
+eleventyComputed:
+  meta:
+    breadcrumbs:
+      - name: Atlas
+        url: '{{ site.url }}'
+        position: 1
+      - name: Docs
+        url: '{{ site.url }}/docs/'
+        position: 2
+      - name: Docs
+        url: '{{ site.url }}/docs/automation-hub/'
+        position: 3
 ---
 
 # Upgrading

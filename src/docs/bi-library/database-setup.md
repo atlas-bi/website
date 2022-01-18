@@ -10,6 +10,18 @@ eleventyNavigation:
   title: Database Setup
   parent: BI Library
   order: 4
+eleventyComputed:
+  meta:
+    breadcrumbs:
+      - name: Atlas
+        url: '{{ site.url }}'
+        position: 1
+      - name: Docs
+        url: '{{ site.url }}/docs/'
+        position: 2
+      - name: BI Library
+        url: '{{ site.url }}/docs/bi-library/'
+        position: 3
 ---
 
 # Database Server

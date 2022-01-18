@@ -99,7 +99,7 @@ body {
 }
 
 .atlas-nav {
-  padding-left: 15px;
+  padding-left: 0px;
 }
 
 .atlas-nav .navbar-brand img {
@@ -127,6 +127,11 @@ body {
   }
 }
 
+@media screen and (max-width: $tablet) {
+  .atlas-nav .navbar-brand picture {
+    padding-left: 15px;
+  }
+}
 a.navbar-item:hover,
 a.navbar-link:hover,
 .navbar-item.has-dropdown:hover .navbar-link {
@@ -200,9 +205,14 @@ pre .number {
   position: absolute;
   top: 70px;
   left: 0;
-  right: 0;
+  min-width: 100%;
+  min-width: max(50vw, 100%);
+  max-width: 800px;
   display: none;
   border-radius: $radius;
+  z-index: 999999;
+  max-height: calc(100vh - 145px);
+  overflow-y: scroll;
 }
 
 #search-results:empty {
@@ -218,7 +228,7 @@ pre .number {
   box-shadow: $input-focus-box-shadow-size bulmaRgba($info, 0.25);
 }
 
-#search-wrap:focus-within #search-results {
+#search-wrap #search-results.search-focus {
   display: block;
   box-shadow: $input-focus-box-shadow-size bulmaRgba($info, 0.25);
   border: 1px solid $info;
@@ -235,6 +245,27 @@ pre .number {
   border-top-right-radius: inherit;
 }
 
+#search-background {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: transparent;
+  z-index: 10;
+  display: none;
+}
+#search-background.search-focus-background {
+  display: block;
+}
+
+#search-background + div {
+  z-index: 11;
+}
+
+.navbar-brand .navbar-burger {
+  z-index: 12;
+}
 #search-results em {
   background-color: $info-light;
   color: $info;

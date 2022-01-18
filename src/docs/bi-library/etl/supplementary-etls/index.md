@@ -10,6 +10,21 @@ eleventyNavigation:
   title: Supplementary ETLs
   parent: BIL ETL Setup
   order: 4
+eleventyComputed:
+  meta:
+    breadcrumbs:
+      - name: Atlas
+        url: '{{ site.url }}'
+        position: 1
+      - name: Docs
+        url: '{{ site.url }}/docs/'
+        position: 2
+      - name: BI Library
+        url: '{{ site.url }}/docs/bi-library/'
+        position: 3
+      - name: ETL Setup
+        url: '{{ site.url }}/docs/bi-library/etl/'
+        position: 4
 ---
 
 # Supplementary ETLs

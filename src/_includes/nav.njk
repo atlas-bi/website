@@ -2,7 +2,7 @@
      aria-label="main navigation">
     <div class="container">
         <div class="navbar-brand">
-            <a href="/">{% image "./src/static/img/atlas-logo.png", "atlas icon", "(min-width:182px) 50vw, 100vw" %}</a>
+            <a href="/" class="mr-5">{% image "./src/static/img/atlas-logo.png", "atlas icon", "(min-width:182px) 50vw, 100vw" %}</a>
             <a role="button"
                class="navbar-burger"
                aria-label="menu"
@@ -16,8 +16,9 @@
         <div id="atlas-nav-menu" class="navbar-menu">
             <div class="navbar-end is-flex-grow-1" id="search-wrap">
                 <form id="search-form"
-                      class="is-flex is-flex-grow-1 is-align-items-center mx-3 ml-5"
+                      class="is-flex is-flex-grow-1 is-align-items-center mx-3 is-relative"
                       style="position: relative;">
+                      <div id="search-background"></div>
                     <div class="control has-icons-left is-flex-grow-1">
                         <span class="icon is-small is-left">{% include 'icons/search.njk' %}</span>
                         <input id="search"
@@ -29,14 +30,14 @@
                     <div id="search-results" class="panel has-background-white"></div>
                 </form>
                 <div class="navbar-item has-dropdown is-hoverable is-mega">
-                    <a class="navbar-link flex">BI Library</a>
+                    <a class="navbar-link flex is-hidden-touch">BI Library</a>
                     <div class="navbar-dropdown">
                         <div class="container is-fluid mt-4">
                             <div class="columns mb-0">
                                 <div class="column">
                                     <h5 class="title is-2">Atlas BI Library</h5>
                                 </div>
-                                <div class="column is-narrow">
+                                <div class="column is-narrow is-hidden-touch">
                                     <a class="button is-medium mr-2"  href="/docs/bi-library/">
                                         <span class="icon">
                                             <i class="fas fa-share"></i>
@@ -287,7 +288,7 @@
                 </div>
             </div>
             <div class="navbar-item has-dropdown is-hoverable is-mega">
-                <a class="navbar-link flex">
+                <a class="navbar-link flex is-hidden-touch">
                     Automation Hub
                 </a>
                 <div class="navbar-dropdown">
@@ -298,7 +299,7 @@
                                     Atlas Automation Hub
                                 </h5>
                             </div>
-                            <div class="column is-narrow">
+                            <div class="column is-narrow is-hidden-touch">
                                 <a class="button is-medium mr-2"  href="/docs/automation-hub/">
                                     <span class="icon">
                                         <i class="fas fa-share"></i>
@@ -436,7 +437,7 @@
                                                     <a href="/docs/automation-hub/install/configuration/">Configuration</a>
                                                 </p>
                                                 <p class="subtitle is-6">
-                                                    onfiguring Atlas Automation Hub is done through an INI file ...
+                                                    Configuring Atlas Automation Hub is done through an INI file ...
                                                 </p>
                                             </div>
                                         </div>
@@ -453,7 +454,7 @@
                                                     </a>
                                                 </p>
                                                 <p class="subtitle is-6">
-                                                    RLearn about the various sections on your install ...
+                                                    Learn about the various sections on your install ...
                                                 </p>
                                             </div>
                                         </div>
@@ -463,9 +464,11 @@
                     </div>
                 </div>
             </div>
-        </div>
-        <a class="navbar-item" href="/docs">
+        <a class="navbar-item is-hidden-touch" href="/docs">
             Documentation
+        </a>
+        <a class="navbar-item button is-info is-hidden-desktop" href="/docs">
+            <span>Documentation</span>
         </a>
         <a class="navbar-item button is-info animated fadeIn" href="/help">
              <span class="icon">
@@ -473,6 +476,7 @@
                                                 </span>
             <span>Get Help</span>
         </a>
+        </div>
     </div>
 </div>
 </nav>

@@ -4,6 +4,12 @@ title: About & Credits | Atlas
 description: Atlas BI Library and Atlas Automation Hub list of contributors and creator credits. Atlas Tools are created and maintained by the Riverside Healthcare Analytics team.
 date: Last Modified
 keywords: atlas, atlas bi library, unified report library, data governance, database, credits, contributors
+eleventyComputed:
+  meta:
+    breadcrumbs:
+      - name: Atlas
+        url: '{{ site.url }}'
+        position: 1
 ---
 
 <div class="container mt-5">

@@ -10,6 +10,18 @@ eleventyNavigation:
   title: Development
   parent: Automation Hub
   order: 14
+eleventyComputed:
+  meta:
+    breadcrumbs:
+      - name: Atlas
+        url: '{{ site.url }}'
+        position: 1
+      - name: Docs
+        url: '{{ site.url }}/docs/'
+        position: 2
+      - name: Docs
+        url: '{{ site.url }}/docs/automation-hub/'
+        position: 3
 ---
 
 # Development

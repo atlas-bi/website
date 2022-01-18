@@ -9,6 +9,15 @@ eleventyNavigation:
   key: Automation Hub
   parent: Docs
   order: 1
+eleventyComputed:
+  meta:
+    breadcrumbs:
+      - name: Atlas
+        url: '{{ site.url }}'
+        position: 1
+      - name: Docs
+        url: '{{ site.url }}/docs/'
+        position: 2
 ---
 
 # Welcome

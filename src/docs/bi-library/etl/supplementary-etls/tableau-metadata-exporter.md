@@ -10,6 +10,24 @@ eleventyNavigation:
   key: BIL Tableau Metadata Exporter
   title: Tableau Metadata Exporter
   order: 3
+eleventyComputed:
+  meta:
+    breadcrumbs:
+      - name: Atlas
+        url: '{{ site.url }}'
+        position: 1
+      - name: Docs
+        url: '{{ site.url }}/docs/'
+        position: 2
+      - name: BI Library
+        url: '{{ site.url }}/docs/bi-library/'
+        position: 3
+      - name: ETL Setup
+        url: '{{ site.url }}/docs/bi-library/etl/'
+        position: 4
+      - name: Supplementary ETLs
+        url: '{{ site.url }}/docs/bi-library/etl/supplementary-etls/'
+        position: 5
 ---
 
 # Tableau Metadata Exporter
