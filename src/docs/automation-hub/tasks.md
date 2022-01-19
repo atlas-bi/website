@@ -167,6 +167,8 @@ The output file can be loaded into an existing connection.
 
 There is an option to attempt to replace existing files with the same name, however this option is also set on the SFTP server level and may conflict.
 
+Also, you can prevent an empty file from uploading by checking the box to disable empty uploads. This will also prevent an empty file from being zip'd and sent.
+
 ## Email
 
 Getting a success/failure email from the extract can be useful. You have the option to attach or embed the output file to the email as well. Use with caution if you are querying sensitive data, or have a file that may exceed or email size limit.
