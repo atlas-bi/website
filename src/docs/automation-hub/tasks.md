@@ -167,7 +167,7 @@ The output file can be loaded into an existing connection.
 
 There is an option to attempt to replace existing files with the same name, however this option is also set on the SFTP server level and may conflict.
 
-Also, you can prevent an empty file from uploading by checking the box to disable empty uploads. This will also prevent an empty file from being zip'd and sent.
+Also, you can prevent an empty file (for sql, an output with 0 rows, excluding headers) from uploading by checking the box to disable empty uploads. This will also prevent an empty file from being zip'd and sent.
 
 ## Email
 
