@@ -1,0 +1,41 @@
+name: Build and Publish [Weekly]
+
+on:
+  schedule:
+  - cron: 0 0 * * 0
+
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: checkout
+      uses: actions/checkout@v2
+      with:
+        fetch-depth: '0'
+
+    - name: Update npm packages
+      run: |
+        cd docs
+        npm install
+        npm install -g npm-check-updates
+        # update deps
+        ncu -u
+        # update package lock
+        npm install
+
+    - name: npm format
+      run: |
+        cd docs
+        npm run format
+
+    - name: Stage, commit and push files
+      uses: stefanzweifel/git-auto-commit-action@v4
+      with:
+        commit_user_name: atlasbi-bot
+        commit_user_email: atlasbi-bot@users.noreply.github.com
+        commit_author: atlasbi-bot <atlasbi-bot@users.noreply.github.com>
+        commit_message: 'chore(build): update packages [Weekly]'
+      continue-on-error: true

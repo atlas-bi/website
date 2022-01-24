@@ -153,6 +153,8 @@ $icons: (
   download: $fa-var-download,
   sync-alt: $fa-var-sync-alt,
   life-ring: $fa-var-life-ring,
+  long-arrow-alt-left: $fa-var-long-arrow-alt-left,
+  long-arrow-alt-right: $fa-var-long-arrow-alt-right,
 );
 
 @each $key, $value in $icons {

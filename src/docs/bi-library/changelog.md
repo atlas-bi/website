@@ -40,6 +40,10 @@ Version names follow a pattern of YYYY.MM.release.
 - Updated Solr to v8.11.1
 - Fixed v tag on preloaded fonts
 - Removed Collection milestone feature from UI
+- Moved editor lookups from sq procs to solr
+- Removed Initiatives Contact list
+- Fixed IE11 script error when clicking search pagination
+- Added feedback message to site header when a user attempts to access something they do not have permission for
   :::
 
 ## Version 2022.01.1

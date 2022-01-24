@@ -49,7 +49,8 @@ The available settings are:
     "enableTagHelperBundling": true
   },
   "solr": {
-    "atlas_address": "http://localhost:8983/solr/atlas"
+    "atlas_address": "http://localhost:8983/solr/atlas",
+    "atlas_lookup_address": "http://localhost:8983/solr/atlas_lookups"
   },
   "features": {
     "enable_request_access": true,

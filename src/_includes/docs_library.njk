@@ -7,11 +7,42 @@ tool: BI Library
         <div class="container">
             <div class="columns">
                 <div class="column is-narrow">{% include "docs_nav.njk" %}</div>
-                <div class="column">
-                    {{ content | safe }}
+                <div class="column is-flex is-flex-direction-column">
+                    <div class="is-flex-grow-1">
+                        {{ content | safe }}
+                    </div>
+
+                    <div class="is-flex is-justify-content-space-between mt-5">
+
+                        {% set flatNavItems = collections.all | eleventyNavigation(tool) | flattenNavigationAndAddNextPrev %}
+                        {% for item in flatNavItems %}
+                            {% if item.url === page.url %}
+                                {% if flatNavItems[loop.index0 - 1] %}
+                                    <a class="button" href="{{ flatNavItems[loop.index0 - 1].url }}">
+                                        <span class="icon is-small">
+                                            <i class="fas fa-long-arrow-alt-left"></i>
+                                        </span>
+                                        <span>{{ flatNavItems[loop.index0 - 1].title }}</span>
+                                    </a>
+                                {%  else %}
+                                    <span></span>
+                                {% endif %}
+
+                                {% if flatNavItems[loop.index0 +1] %}
+                                    <a class="button" href="{{ flatNavItems[loop.index0 + 1].url }}">
+                                        <span>{{ flatNavItems[loop.index0 + 1].title }}</span>
+                                        <span class="icon is-small">
+                                            <i class="fas fa-long-arrow-alt-right"></i>
+                                        </span>
+                                    </a>
+                                {%  else %}
+                                    <span></span>
+                                {% endif %}
+                            {%  endif  %}
+                        {% endfor %}
+                    </div>
                 </div>
             </div>
-
         </div>
     </section>
 

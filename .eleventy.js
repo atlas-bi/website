@@ -134,6 +134,18 @@ module.exports = function(eleventyConfig) {
 
   });
 
+  eleventyConfig.addFilter('flattenNavigationAndAddNextPrev', (nav) => {
+    const flat = [];
+    const visit = (items) => {
+      for (const item of items) {
+        flat.push(item);
+        visit(item.children);
+      }
+    };
+    visit(nav);
+    return flat;
+  });
+
   eleventyConfig.addFilter("algExcerpt", (text) => {
     return text
       .replace(/<code class="language-.*?">.*?<\/code>/gs, "")
@@ -178,7 +190,7 @@ module.exports = function(eleventyConfig) {
   fontawesomeSubset({
     brands:['discord', 'github'],
     regular:['envelope', 'life-ring'],
-    solid: ['envelope', 'share', 'infinity', 'search', 'book', 'project-diagram', 'heart', 'address-card', 'server', 'database', 'ship', 'code', 'chart-bar', 'sitemap', 'tasks', 'lock', 'sliders-h', 'user', 'users', 'compass', 'download', 'sync-alt']
+    solid: ['long-arrow-alt-right', 'long-arrow-alt-left', 'envelope', 'share', 'infinity', 'search', 'book', 'project-diagram', 'heart', 'address-card', 'server', 'database', 'ship', 'code', 'chart-bar', 'sitemap', 'tasks', 'lock', 'sliders-h', 'user', 'users', 'compass', 'download', 'sync-alt']
         }, '_site/static/font/fontawesome/webfonts');
 
   return {
