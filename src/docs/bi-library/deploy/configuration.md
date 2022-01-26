@@ -53,11 +53,18 @@ The available settings are:
     "atlas_lookup_address": "http://localhost:8983/solr/atlas_lookups"
   },
   "features": {
-    "enable_request_access": true,
-    "enable_feedback": true,
     "enable_comments": true,
-    "enable_demo_video": true,
-    "enable_sharing": true
+    "enable_feedback": true,
+    "enable_initiatives": true,
+    "enable_request_access": true,
+    "enable_sharing": true,
+    "enable_terms": true,
+    "enable_user_profile": true
+  },
+  "text": {
+    "reports": {
+      "external_link": "GitLab Project Link"
+    }
   }
 }
 ```

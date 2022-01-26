@@ -7,7 +7,7 @@ const eleventyNavigationPlugin = require("@11ty/eleventy-navigation");
 const fs = require('fs');
 const outdent = require('outdent');
 const schema = require("@quasibit/eleventy-plugin-schema");
-
+const readingTime = require('reading-time');
 
 const slugifyCustom = (s) =>
   slugify(s, { lower: true, remove: /[*+~.()'"!:@]/g });
@@ -124,6 +124,10 @@ module.exports = function(eleventyConfig) {
     return JSON.stringify(text).replace(/(?:\\n\s*){2,}/g, "\\n");
   });
 
+  eleventyConfig.addFilter("readingTime", (text) => {
+    return stats = readingTime(text).text;
+  })
+
   eleventyConfig.addFilter("niceDate", (value) => {
     try{
       const options = {year: 'numeric', month: 'short', day: 'numeric' };
@@ -156,14 +160,6 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addCollection("algolia", function(collection) {
     return collection.getFilteredByGlob("**/*.md");
   });
-
-  // eleventyConfig.addCollection("AutomationHub", function(collectionApi) {
-  //   return collectionApi.getFilteredByTag("Automation Hub");
-  // });
-
-  // eleventyConfig.addCollection("BI Library", function(collectionApi) {
-  //   return collectionApi.getFilteredByTag("BILibrary");
-  // });
 
   const icons = {
     note: "./src/_includes/icons/blue_pencil.njk",

@@ -40,10 +40,14 @@ Version names follow a pattern of YYYY.MM.release.
 - Updated Solr to v8.11.1
 - Fixed v tag on preloaded fonts
 - Removed Collection milestone feature from UI
-- Moved editor lookups from sq procs to solr
+- Moved editor lookups from sq proc's to solr
 - Removed Initiatives Contact list
 - Fixed IE11 script error when clicking search pagination
 - Added feedback message to site header when a user attempts to access something they do not have permission for
+- Removed demo video
+- Added Babel as the js transpiler
+- Reworked the way scripts are loaded
+- Added parameter for custom css styles as global overrides
   :::
 
 ## Version 2022.01.1
