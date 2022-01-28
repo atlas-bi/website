@@ -64,12 +64,13 @@
     "pre-commit": "lint-staged",
     "test": "npm run test:prettier && node_modules/.bin/netlify-lambda build functions",
     "test:eslint": "eslint \"./src/**/*.js\" --color",
-    "test:prettier": "prettier --check ./src/**/*.js",
+    "test:prettier": "prettier --check --config .prettierrc \"src/**/*.{ts,css,less,scss,js,json,md,yaml,html}\"",
     "format": "prettier --config .prettierrc \"src/**/*.{ts,css,less,scss,js,json,md,yaml,html}\" --write"
   },
   "lint-staged": {
     "src/**/*.{ts,css,less,scss,js,json,md,yaml,html}": [
       "npm run format"
-    ]
+    ],
+    "*":"npm run test"
   }
 }

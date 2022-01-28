@@ -48,6 +48,11 @@ Version names follow a pattern of YYYY.MM.release.
 - Added Babel as the js transpiler
 - Reworked the way scripts are loaded
 - Added parameter for custom css styles as global overrides
+- Renamed Parameters to Settings
+- Fixed multi-word synonym configuration in solr
+- Added option to change report categories in search results
+- Updated search synonym list
+- Fixed search results stacking when result contained malformed html
   :::
 
 ## Version 2022.01.1

@@ -27,6 +27,13 @@ eleventyNavigation:
 
 # Solr Search Loader
 
+## Version 2022.01.1
+
+::: content
+
+- Strip html from input descriptions to avoid format breaking in return snippets
+  :::
+
 ## Version 2021.12.1
 
 ::: content

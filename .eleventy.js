@@ -55,7 +55,11 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addTransform("htmlmin", require("./src/_utils/minify-html.js"));
   eleventyConfig.addPlugin(syntaxHighlight);
   eleventyConfig.addPlugin(metagen);
-  eleventyConfig.addPlugin(criticalCss);
+  eleventyConfig.addPlugin(criticalCss, {
+    penthouse: {
+      timeout:60000
+    }
+  });
   eleventyConfig.addPlugin(eleventyNavigationPlugin);
   eleventyConfig.addPlugin(schema);
 
