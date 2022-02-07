@@ -53,6 +53,19 @@ Version names follow a pattern of YYYY.MM.release.
 - Added option to change report categories in search results
 - Updated search synonym list
 - Fixed search results stacking when result contained malformed html
+- Removed collection agreements
+- Removed collection attachments in favor of a soon coming file object
+- Removed hidden fields from collections
+  :::
+
+## Version 2022.01.1-patch-1
+
+::: content
+
+- Added missing font icon
+- Fixed bug
+- Added missing solr startup scripts
+- Fixed RW File permission check
   :::
 
 ## Version 2022.01.1

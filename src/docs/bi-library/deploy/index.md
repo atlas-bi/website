@@ -49,7 +49,7 @@ The first time you start up the app there will most likely be two SSL prompts.
 
 ## Publish to the Webserver
 
-If you changes have tested nicely you can [publish](/docs/bi-library/deploy/publish) to your webserver.
+If you changes have tested nicely you can [publish](/docs/bi-library/publish) to your webserver.
 
 We recommend to having two instances of Atlas (Atlas and Atlas-Test).
 

@@ -29,12 +29,14 @@ eleventyComputed:
 
 # Changelog
 
-## Next Release
+## Version 2022.01.1
 
 ::: content
 
 - Fixed bug causing missing RW report groups
 - Fixed spelling on report parameters
+- Added User RW Report Group overrides
+- Updated deprecated run data table
   :::
 
 ## Version 2021.12.1

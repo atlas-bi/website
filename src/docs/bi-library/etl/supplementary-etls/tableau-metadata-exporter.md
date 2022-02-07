@@ -81,7 +81,7 @@ Run the `create_tables.sql` script included in the download.
 
 ### Create settings.py file
 
-For the settings.py file, the Tableau admin and readonly passwords will be needed.
+For the `settings.py` file, the Tableau admin and readonly passwords will be needed.
 
 Navigate to the Tableau server and open command prompt.
 

@@ -103,7 +103,7 @@ LDAP login follows this basic process:
 
 :::content
 
-1. config.py file holds the general connection info. A connection to the ldap server is made with the service account credentials supplied in the config file.
+1. `config.py` file holds the general connection info. A connection to the ldap server is made with the service account credentials supplied in the config file.
 2. Once a connection is established and a user attempts to access the site the package first verifies that the user exists, by doing a search for the user. If the user exists we save their details and groups.
 3. If the user exists then we attempt to log them in.. this returns true if they had a valid username/pass.
 4. Finally, as this site can be restricted to users in a certain LDAP group, for example, we only allow users that have the "Analytics" group on their profile.

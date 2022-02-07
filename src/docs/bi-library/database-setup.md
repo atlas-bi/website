@@ -37,7 +37,7 @@ Atlas BI Library is designed to run with **SQL Server Database 2016 or later**.
 {% admonition
    "note",
    "SQL Server",
-   "Any SQL Server license type will work. If you need a demo database we recommend [running with docker](https://schwabencode.com/blog/2019/10/27/MSSQL-Server-2017-Docker-Full-Text-Search>)."
+   "Any SQL Server license type will work. If you need a demo database we recommend running with docker."
 %}
 
 ## Create Databases

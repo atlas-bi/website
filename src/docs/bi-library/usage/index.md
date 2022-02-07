@@ -58,7 +58,7 @@ eleventyNavigation:
        <h4 class="title is-3 has-text-success my-5">User Profiles</h4>
        <span class="icon is-large has-text-grey-light"><i class="fas fa-user fa-2x"></i></span>
        <p class="my-5">User profiles are a quick way to find who is using your reporting content, provides tools for sharing content, and more!</p>
-       <a class="button is-info" href="/docs/bi-library/usage/user-profiles/">Take me there!</a>
+       <a class="button is-info" href="/docs/bi-library/usage/user-profile/">Take me there!</a>
     </div>
   </div>
   <div class="tile is-parent">
