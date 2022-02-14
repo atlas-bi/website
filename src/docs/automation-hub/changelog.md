@@ -26,7 +26,9 @@ eleventyComputed:
 
 # Changelog
 
-## Next Release
+## Version 0.0.1-rc.8
+
+Using "release candidate" tags until we are able to get more apt install testing/feedback.
 
 :::content
 
@@ -38,6 +40,8 @@ eleventyComputed:
 - Added option to require SQL output
 - Added support for email to sms service
 - Updated to allow multiple source files to be moved to a destination, keeping original name
+- Fixed layout issue on connection page
+- Fixed search layout on chrome
   :::
 
 ## Version 2021.08.1

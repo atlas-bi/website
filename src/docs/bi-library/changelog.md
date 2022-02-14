@@ -36,7 +36,7 @@ Version names follow a pattern of YYYY.MM.release.
 - Updated site nav style
 - Updated thumbnail view in search results and favorites
 - Sitewide messages from the config or settings now support markdown and html
-- Added config option to disable the demo video, request access and feedback buttons, comments, and report sharing
+- Added config option to disable the demo video, request access and feedback buttons, and report sharing
 - Updated Solr to v8.11.1
 - Fixed v tag on preloaded fonts
 - Removed Collection milestone feature from UI
@@ -45,7 +45,7 @@ Version names follow a pattern of YYYY.MM.release.
 - Fixed IE11 script error when clicking search pagination
 - Added feedback message to site header when a user attempts to access something they do not have permission for
 - Removed demo video
-- Added Babel as the js transpiler
+- Added Babel as a js transpiler
 - Reworked the way scripts are loaded
 - Added parameter for custom css styles as global overrides
 - Renamed Parameters to Settings
@@ -56,6 +56,10 @@ Version names follow a pattern of YYYY.MM.release.
 - Removed collection agreements
 - Removed collection attachments in favor of a soon coming file object
 - Removed hidden fields from collections
+- Removed comments in favor of a better feedback system to come. Please share ideas!
+- Removed old Project > Collections route map
+- Changed sliding cache to fixed duration cache
+- Move "Access Control" into "Settings"
   :::
 
 ## Version 2022.01.1-patch-1
