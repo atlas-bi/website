@@ -94,6 +94,7 @@
             {% endblock body %}
         </section>
         {% include "src/_includes/foot.njk" %}
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=Element.prototype.closest"></script>
         <script src="https://cdn.jsdelivr.net/npm/algoliasearch@4.12.0/dist/algoliasearch-lite.umd.js"></script>
         <script src="{{ js.scriptsJs }}" async></script>
     </body>
