@@ -10,13 +10,34 @@ eleventyComputed:
             - name: Atlas
               url: "{{ site.url }}"
               position: 1
-        rating:
-            ratingValue: 5
-            bestRating: 5
-            worstRating: 0
-            ratingCount: 5
-        category: Software
-    type: product
+        video:
+            - name: Atlas UserWeb Presentation
+              datePublished: '02-12-2021'
+              description: Learn about the data governance features, how the tool can be embedded and find you reports.
+              caption: Introduction to Atlas BI Library.
+              thumbnailUrl: "{{ site.url}}/static/img/atlas-home.png"
+              duration: "PM56S13"
+              embedUrl: https://player.vimeo.com/video/659016594?h=898e42eb2a&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479
+              contentUrl: https://player.vimeo.com/video/659016594?h=898e42eb2a
+              dateCreated: "02-21-2022"
+              author:
+               - name: Dan Ryan
+              keywords: "{{ keywords }}"
+              teaches: How Atlas can help with data governance. How to use Atlas BI Library.
+            - name: Atlas HDAA Presentation
+              datePublished: '12-09-2020'
+              description: Learn about the data governance features, how the tool can be embedded and find you reports.
+              caption: Introduction to Atlas BI Library.
+              thumbnailUrl: "{{ site.url}}/static/img/atlas-home.png"
+              duration: "PM39S34"
+              embedUrl: https://player.vimeo.com/video/500220637?h=898e42eb2a&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479
+              contentUrl: https://player.vimeo.com/video/659016594?h=898e42eb2a
+              dateCreated: "02-21-2022"
+              author:
+                 - name: Dan Ryan
+              keywords:  "{{ keywords }}"
+              teaches: How Atlas can help with data governance. How to use Atlas BI Library.
+    type: page
 ---
 {% block body %}
     <div class="hero-body">
