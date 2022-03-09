@@ -32,7 +32,7 @@ Atlas BI Library is designed to run on **Windows Server 2016 or later**. There a
 
 ::: content
 
-- IIS Webserver with [Microsoft .NET SDK 5 (Hosting Bundle)](https://dotnet.microsoft.com/download/dotnet/5.0)
+- IIS Webserver with [Microsoft .NET SDK 6 (Hosting Bundle)](https://dotnet.microsoft.com/download/dotnet/6.0) (6.0 after release 2022.03.1)
   {% image "./src/static/img/bi-library/requirements/dotnetversion.png", "Extension", "(min-width:400px) 50vw, 100vw", "boxed" %}
 - Ensure IIS has server roles needed for [web deploy and web management service](https://docs.microsoft.com/en-us/aspnet/web-forms/overview/deployment/visual-studio-web-deployment/deploying-to-iis) installed and started. Microsoft has a few [examples](https://docs.microsoft.com/en-us/aspnet/web-forms/overview/deployment/visual-studio-web-deployment/deploying-to-iis).
 

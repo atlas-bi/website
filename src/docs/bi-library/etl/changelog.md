@@ -29,6 +29,14 @@ eleventyComputed:
 
 # Changelog
 
+## Next Release
+
+::: content
+
+- Fixed RW report group id's
+- Moved username parsing into ETL from webapp
+  :::
+
 ## Version 2022.01.1
 
 ::: content

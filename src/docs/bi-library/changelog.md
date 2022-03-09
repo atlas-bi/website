@@ -60,6 +60,9 @@ Version names follow a pattern of YYYY.MM.release.
 - Removed old Project > Collections route map
 - Changed sliding cache to fixed duration cache
 - Move "Access Control" into "Settings"
+- Improved starring (favorites) process. See [#62](https://github.com/atlas-bi/atlas-bi-library/issues/62) for new table structure.
+- Updated to dotnet 6
+- Move HRG and HRX parameters from the description into their own table
   :::
 
 ## Version 2022.01.1-patch-1
