@@ -28,41 +28,44 @@ eleventyComputed:
 
 Version names follow a pattern of YYYY.MM.release.
 
-## Next Release
+## Version 2022.3.01
 
 ::: content
 
 - Added image processing for thumbnails to reduce data transfer
+- Added configuration option for custom logo
+- Added config option to disable request access, feedback buttons, and report sharing
+- Added feedback message to site header when a user attempts to access something they do not have permission for
+- Added Babel as a js transpiler
+- Added parameter for custom css styles as global overrides
+- Added option to change report categories in search results
+- Added feature that allows editor image reordering
 - Updated site nav style
 - Updated thumbnail view in search results and favorites
-- Sitewide messages from the config or settings now support markdown and html
-- Added config option to disable the demo video, request access and feedback buttons, and report sharing
+- Updated Sitewide messages from the config or settings now support markdown and html
 - Updated Solr to v8.11.1
-- Fixed v tag on preloaded fonts
-- Removed Collection milestone feature from UI
 - Moved editor lookups from sq proc's to solr
-- Removed Initiatives Contact list
-- Fixed IE11 script error when clicking search pagination
-- Added feedback message to site header when a user attempts to access something they do not have permission for
-- Removed demo video
-- Added Babel as a js transpiler
 - Reworked the way scripts are loaded
-- Added parameter for custom css styles as global overrides
 - Renamed Parameters to Settings
+- Fixed v tag on preloaded fonts
+- Fixed IE11 script error when clicking search pagination
 - Fixed multi-word synonym configuration in solr
-- Added option to change report categories in search results
-- Updated search synonym list
 - Fixed search results stacking when result contained malformed html
+- Updated search synonym list
+- Removed Collection milestone feature from UI
+- Removed Initiatives Contact list
+- Removed demo video
 - Removed collection agreements
 - Removed collection attachments in favor of a soon coming file object
 - Removed hidden fields from collections
 - Removed comments in favor of a better feedback system to come. Please share ideas!
 - Removed old Project > Collections route map
 - Changed sliding cache to fixed duration cache
-- Move "Access Control" into "Settings"
+- Moved "Access Control" into "Settings"
 - Improved starring (favorites) process. See [#62](https://github.com/atlas-bi/atlas-bi-library/issues/62) for new table structure.
 - Updated to dotnet 6
 - Move HRG and HRX parameters from the description into their own table
+- Fixed favorites caching issue
   :::
 
 ## Version 2022.01.1-patch-1

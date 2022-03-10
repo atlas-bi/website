@@ -29,12 +29,23 @@ eleventyComputed:
 
 # Changelog
 
-## Next Release
+## Version 2022.03.1
 
 ::: content
 
 - Fixed RW report group id's
 - Moved username parsing into ETL from webapp
+- Moved report parameters from description into separate db table
+- Added number of report runs in last x months to reportobject table
+- Updated Slicer Dicer session tags to all be "self service"
+  :::
+
+## Version 2022.02.1
+
+::: content
+
+- Updated deprecated table
+- Added user RW groups
   :::
 
 ## Version 2022.01.1

@@ -52,8 +52,8 @@ The available settings are:
     "atlas_address": "http://localhost:8983/solr/atlas",
     "atlas_lookup_address": "http://localhost:8983/solr/atlas_lookups"
   },
+  "logo": "path/to/override_logo.png",
   "features": {
-    "enable_comments": true,
     "enable_feedback": true,
     "enable_initiatives": true,
     "enable_request_access": true,
