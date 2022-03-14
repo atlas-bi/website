@@ -18,7 +18,6 @@ jobs:
 
     - name: Update npm packages
       run: |
-        cd docs
         npm install
         npm install -g npm-check-updates
         # update deps
@@ -28,7 +27,6 @@ jobs:
 
     - name: npm format
       run: |
-        cd docs
         npm run format
 
     - name: Stage, commit and push files
