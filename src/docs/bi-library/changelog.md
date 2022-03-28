@@ -28,6 +28,22 @@ eleventyComputed:
 
 Version names follow a pattern of YYYY.MM.release.
 
+## Version 2022.4.01
+
+::: content
+
+- Enhanced site analytics dashboard to show browser versions, os, filterable chart, and console bug logging
+- Prevented orphaned reports from having system action urls (edit, manage, etc)
+- Fixed a bug that prevented user role permissions from being edited from the web ui
+- Fixed a bug that showed favorite editing controls when viewing another users profile
+- Prevent report sharing form from being submitted without recipients
+- Moved "read more" link from snippets into the description text
+- Removed favorite filter buttons for users with only one favorite type
+- Fixed centering of preview images
+- Fixed missing preview on editor images
+- Added javascript bug tracker script to log console errors
+  :::
+
 ## Version 2022.3.01
 
 ::: content
