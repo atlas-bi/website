@@ -93,34 +93,3 @@ Atlas is also fairly simple to manually deploy.
 
 </div>
 </div>
-
-## Starting Solr Search
-
-After publishing for the first time you will need to start Solr. This is done in command prompt. Navigate to the published site, then `/solr/bin` folder and running `solr start -p 8983`. The output will let you know Solr has started on port 8983.
-
-{% image "./src/static/img/bi-library/search/start_solr.png", "start solr", "(min-width:800px) 50vw, 100vw", "boxed" %}
-
-You will be able to access Solr externally for testing at `https://server_name:8983`.
-
-### Auto Start Solr
-
-If your server reboots you would like Solr to automatically start. There are several tools you can use to auto start commands. One option is to use windows task scheduler.
-
-Create a new folder for `atlas` tasks, and then add a new task.
-
-{% image "./src/static/img/bi-library/search/create_task.png", "create task", "(min-width:800px) 50vw, 100vw", "boxed" %}
-
-Set the trigger, action and then test.
-
-{% image "./src/static/img/bi-library/search/create_trigger.png", "create trigger", "(min-width:800px) 50vw, 100vw", "boxed" %}
-{% image "./src/static/img/bi-library/search/create_action.png", "create action", "(min-width:800px) 50vw, 100vw", "boxed" %}
-
-Ensure that you do not need to be logged in to run the task.
-{% image "./src/static/img/bi-library/search/not_logged_in.png", "no login needed", "(min-width:800px) 50vw, 100vw", "boxed" %}
-
-{% image "./src/static/img/bi-library/search/test_task.png", "test task", "(min-width:800px) 50vw, 100vw", "boxed" %}
-
-## Notes
-
-1. Stop Solr in command prompt by navigating to the `/bin` folder and running `solr stop -p 8983`.
-2. When publishing the website again, you may need to stop solr before publishing.

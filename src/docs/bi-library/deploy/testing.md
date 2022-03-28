@@ -9,7 +9,7 @@ eleventyNavigation:
   key: BIL Testing
   title: Testing
   parent: BIL Deploy
-  order: 5
+  order: 6
 ---
 
 # Testing

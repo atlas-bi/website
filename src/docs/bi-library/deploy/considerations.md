@@ -9,7 +9,7 @@ eleventyNavigation:
   key: BIL Special Considerations
   title: Special Considerations
   parent: BIL Deploy
-  order: 4
+  order: 5
 ---
 
 # Special Considerations
@@ -24,6 +24,12 @@ Any changes to the base tables must be done in the database first, then pulled i
 
 ```bash
 Scaffold-DbContext "Server=my_server;Database=atlas;Trusted_Connection=True;" Microsoft.EntityFrameworkCore.SqlServer -OutputDir Models -force -Context Atlas_WebContext -Namespace Atlas_Web.Models
+```
+
+Or from the [dotnet cli](https://docs.microsoft.com/en-us/ef/core/cli/dotnet)
+
+```bash
+dotnet ef dbcontext scaffold "Server=my_server;Database=atlas;Trusted_Connection=True;" Microsoft.EntityFrameworkCore.SqlServer --output-dir Models --force --context Atlas_WebContext --namespace Atlas_Web.Models --project web/web.csproj
 ```
 
 The file `web/atlas-creation_script.sql` must be updated after making database changes. This can be done in SSMS by right clicking the db > clicking tasks > script database.
