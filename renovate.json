@@ -1,3 +1,4 @@
 {
-"extends": ["github>commitizen/commitizen-renovate-config"]
+"extends": ["github>commitizen/commitizen-renovate-config"],
+"ignoreDeps": ["@fortawesome/fontawesome-free"]
 }
