@@ -30,6 +30,7 @@
     "bulma": "^0.9.3",
     "bulma-pricingtable": "^0.2.0",
     "cssnano": "^5.0.17",
+    "cz-conventional-changelog": "^3.3.0",
     "eleventy-plugin-metagen": "^1.5.2",
     "esbuild": "^0.14.23",
     "eslint": "^8.9.0",
@@ -65,12 +66,18 @@
     "test": "npm run test:prettier && node_modules/.bin/netlify-lambda build functions",
     "test:eslint": "eslint \"./src/**/*.js\" --color",
     "test:prettier": "prettier --check --config .prettierrc \"src/**/*.{ts,css,less,scss,js,json,md,yaml,html}\"",
-    "format": "prettier --config .prettierrc \"src/**/*.{ts,css,less,scss,js,json,md,yaml,html}\" --write"
+    "format": "prettier --config .prettierrc \"src/**/*.{ts,css,less,scss,js,json,md,yaml,html}\" --write",
+    "commit": "cz"
   },
   "lint-staged": {
     "src/**/*.{ts,css,less,scss,js,json,md,yaml,html}": [
       "npm run format"
     ],
     "*": "npm run test"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
   }
 }
