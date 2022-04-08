@@ -97,7 +97,7 @@ function getUrlVars() {
   return vars;
 }
 
-var urlParams = getUrlVars(decodeURI(window.location.search));
+var urlParams = getUrlVars();
 // prefill search
 // set input value
 if (urlParams['search']) {
