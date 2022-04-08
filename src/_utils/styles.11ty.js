@@ -20,7 +20,7 @@ module.exports = class {
       file: 'src/static/css/site.scss',
     });
 
-    return await postcss([
+    return postcss([
       require('postcss-nested'),
       purgecss({
         content: ['./src/**/*.njk', './src/**/*.md'],
