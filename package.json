@@ -38,7 +38,7 @@
     "html-minifier": "4.0.0",
     "husky": "7.0.4",
     "markdown-it": "12.3.2",
-    "markdown-it-anchor": "8.5.0",
+    "markdown-it-anchor": "8.6.1",
     "markdown-it-div": "1.1.0",
     "markdown-it-imsize": "2.0.1",
     "netlify-lambda": "2.0.15",
