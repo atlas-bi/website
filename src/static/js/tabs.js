@@ -23,7 +23,7 @@ document.addEventListener('click', function (e) {
 
     var tabs = tabContainer.querySelectorAll('.tab.is-active');
 
-    for (i = 0; i < tabs.length; i++) {
+    for (var i = 0; i < tabs.length; i++) {
       tabs[i].classList.remove('is-active');
     }
 
