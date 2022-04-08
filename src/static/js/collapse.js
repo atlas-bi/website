@@ -48,22 +48,22 @@
     d.dispatchEvent(new CustomEvent('collapse-opened'));
 
     // close siblings
-    var o = el.parentElement.querySelector('.is-collapsible.is-active'),
+    var open = el.parentElement.querySelector('.is-collapsible.is-active'),
       r = [];
 
-    while (o) {
-      if (o !== el && o.nodeType === Node.ELEMENT_NODE) r.push(o);
-      o = o.nextElementSibling || o.nextSibling;
+    while (open) {
+      if (open !== el && o.nodeType === Node.ELEMENT_NODE) r.push(open);
+      open = open.nextElementSibling || open.nextSibling;
     }
 
     for (var x = 0; x < r.length; x++) c(r[x]);
 
     // after animation finished add max-height back
     window.setTimeout(function () {
-      var l = el.parentElement.closest('.is-collapsible.is-active');
-      while (l) {
-        h(l);
-        l = l.parentElement.closest('.is-collapsible.is-active');
+      var subL = el.parentElement.closest('.is-collapsible.is-active');
+      while (subL) {
+        h(subL);
+        subL = subL.parentElement.closest('.is-collapsible.is-active');
       }
       if (el.classList.contains('is-active')) {
         el.style.overflow = 'visible';
@@ -80,10 +80,10 @@
       }
       // after animation finished add max-height back
       window.setTimeout(function () {
-        var l = e.target.closest('.is-collapsible.is-active');
-        while (l) {
-          h(l);
-          l = l.parentElement.closest('.is-collapsible.is-active');
+        var subL = e.target.closest('.is-collapsible.is-active');
+        while (subL) {
+          h(subL);
+          subL = subL.parentElement.closest('.is-collapsible.is-active');
         }
       }, 300);
     }

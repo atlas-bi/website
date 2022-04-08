@@ -8,7 +8,7 @@ document.addEventListener('click', function (e) {
     // change active tab button
     var tabLinks = e.target.closest('.tabs').querySelectorAll('li.is-active');
 
-    for (i = 0; i < tabLinks.length; i++) {
+    for (var i = 0; i < tabLinks.length; i++) {
       tabLinks[i].classList.remove('is-active');
     }
 

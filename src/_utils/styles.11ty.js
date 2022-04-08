@@ -52,6 +52,6 @@ module.exports = class {
       require('cssnano'),
     ])
       .process(result.css, { from: undefined })
-      .then((result) => result.css);
+      .then((out) => out.css);
   }
 };

@@ -23,7 +23,7 @@ var runSearch = function (event) {
   if (toolToFilterBy) alogliaArgs.filters = toolToFilterBy;
 
   searchIndex.search(searchTerm, alogliaArgs).then(function (e) {
-    results = e['hits'];
+    var results = e['hits'];
 
     var formattedResults = results.map(function (result) {
       var toolName = extractToolName(result._tags);
@@ -89,9 +89,9 @@ searchForm.addEventListener('submit', (e) => e.preventDefault());
 // load search from url param
 function getUrlVars() {
   var vars = {};
-  var parts = window.location.href
+  window.location.href
     .split('#')[0]
-    .replace(/[?&]+([^=&]+)=([^&]*)/gi, function (m, key, value) {
+    .replace(/[?&]+([^=&]+)=([^&]*)/gi, function (_m, key, value) {
       vars[key] = value;
     });
   return vars;
@@ -134,7 +134,7 @@ function closeSearch() {
 
 document
   .getElementById('search-background')
-  .addEventListener('click', function (event) {
+  .addEventListener('click', function () {
     closeSearch();
   });
 
