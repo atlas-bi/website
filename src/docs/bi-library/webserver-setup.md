@@ -55,8 +55,8 @@ After installing the server should be rebooted, or the web services restarted (`
 
 {% admonition
    "alert",
-   ".NET 5",
-   "While .NET 5 x86 is specified, it is not required. The only *requirement* is that Atlas is *built* and *run* in the same version and bitness."
+   ".NET 6",
+   "While .NET 6 x86 is specified, it is not required. The only *requirement* is that Atlas is *built* and *run* in the same version and bitness."
 %}
 
 ## Setup IIS
