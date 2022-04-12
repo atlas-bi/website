@@ -31,7 +31,7 @@
     "bulma-pricingtable": "0.2.0",
     "cssnano": "5.1.7",
     "eleventy-plugin-metagen": "1.6.1",
-    "esbuild": "0.14.34",
+    "esbuild": "0.14.36",
     "eslint": "8.13.0",
     "fontawesome-subset": "3.0.0",
     "fontsource-inter": "4.0.0",
