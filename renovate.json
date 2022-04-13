@@ -19,7 +19,7 @@
     "maintenance", 
     "renovate"
   ],
-  "packageRules: [
+  "packageRules": [
     {
       "matchUpdateTypes": ["pin","digest"],
       "automerge": true
