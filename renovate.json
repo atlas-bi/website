@@ -46,5 +46,5 @@
     }
   ],
   "schedule": ["on monday before 8:00am"],
-  "timezone": "CST"
+  "timezone": "America/Chicago"
 }
