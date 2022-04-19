@@ -65,3 +65,7 @@ Several data connection in the [Clarity ETL](https://datahandbook.epic.com/Repor
 ## System Tables
 
 It is possible that not all tables that Atlas uses are exported to your Clarity database. You may need to enable additional tables.
+
+## Create the Staging Database
+
+The Staging database can be created using the [creation script](https://github.com/atlas-bi/atlas-bi-library-etl/blob/master/atlas_staging_creation_script.sql).

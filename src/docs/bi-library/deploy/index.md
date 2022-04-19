@@ -36,6 +36,35 @@ Download the [latest release](https://github.com/atlas-bi/atlas-bi-library/relea
 
 Update the website configuration files as specified in [configuration](/docs/bi-library/deploy/configuration).
 
+## Setup the Database
+
+The database can be setup after updating the configuration settings.
+
+To create the production database vs development simple change the environment variable from `Development` to `Production`.
+
+```
+# install ef command line tools
+dotnet tool install --global dotnet-ef
+
+# set environment (powershell)
+$env:ASPNETCORE_ENVIRONMENT='Development'
+
+# install database
+dotnet ef database update --project web/web.csproj -v
+```
+
+{% admonition
+   "alert",
+   "Database",
+   "If you have a manually created database, ensure the database is current the old [creation script](https://github.com/atlas-bi/atlas-bi-library/blob/2d961e765106c26044ec29f415573d1d8e385c7e/web/atlas-creation_script.sql), then comment out the code in the `Migrations/*Initial.cs` that updates the database before running migrations!"
+%}
+
+{% admonition
+   "alert",
+   "Security",
+   "Installing Atlas for the first time will create a administrator user called `Default` - which is also the default user. Ensure that admin privileges are removed from this user once you have your ETL running."
+%}
+
 ## Run the Website Locally
 
 Test out your configuration or changes by running the website locally. In visual studio, select `Run with IIS Express`.
