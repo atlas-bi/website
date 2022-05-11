@@ -65,6 +65,18 @@ The available settings are:
     "reports": {
       "external_link": "GitLab Project Link"
     }
+  },
+  "footer": {
+    "links": {
+      "Group One": {
+        "Something": "https://something",
+        "Something Else": "https://soemthingelse"
+      },
+      "Group One": {
+        "Something": "https://something",
+        "Something Else": "https://soemthingelse"
+      }
+    }
   }
 }
 ```
