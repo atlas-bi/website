@@ -33,9 +33,12 @@ Keep in mind that special characters, like `%` need to be escaped.
 ```ini
 [MASTER]
 ; web address used to access the site
+; something along the lines of 'atlas-hub.com'
 EXTERNAL_URL='localhost'
 
 ; min requirements to keep tasks running
+; once the server falls below this threshold
+; tasks will stop running.
 ; MIN_DISK_SPACE=1 * 1024 * 1024 * 1024
 ; MIN_FREE_MEM_PERC=3
 ; MIN_FREE_CPU_PERC=3
@@ -46,7 +49,10 @@ EXTERNAL_URL='localhost'
 ; GIT_PASSWORD=r"password"
 ; GIT_TOKEN=r"token"
 
-; connection information for back smb server
+; connection information for backup smb server
+; if this is populated, all task runs will be
+; backed up. This allows you to be able to re-
+; send files at a later time.
 ; SMB_USERNAME="username"
 ; SMB_PASSWORD="password"
 ; SMB_SERVER_IP="10.0.0.0"
@@ -63,6 +69,11 @@ EXTERNAL_URL='localhost'
 
 ; ORG_NAME="My Org"
 ; auth options are SAML, DEV and LDAP
+; a new install will be set at DEV, meaning
+; you can login with the username 'admin'
+; and no password. This should be changed to
+; SAML or LDAP before adding sensitive information
+; to the site.
 ; AUTH_METHOD="SAML"
 
 ; Optionally use an external database
@@ -74,8 +85,12 @@ EXTERNAL_URL='localhost'
 ; NGINX_HTTPS_CERT='/usr/atlas-hub/cert.crt'
 ; NGINX_HTTPS_CERT_KEY='/usr/atlas-hub/cert.crt'
 
+[AUTH]
+; optionally require users to be part of a SAML or LDAP
+; group before they can access the site
+; REQUIRED_GROUPS=["Analytics","My Friends"]
+
 [LDAP]
-; REQUIRED_GROUPS=[b"Analytics"]
 ; LDAP_HOST="ldap.host.net"
 ; LDAP_BASE_DN="OU=RHC & Offsite Locations,OU=Employees,DC=MyOrg,DC=net"
 ; LDAP_USER_OBJECT_FILTER="(|(sAMAccountName=%%s)(userPrincipalName=%%s))"
@@ -85,6 +100,9 @@ EXTERNAL_URL='localhost'
 [SAML]
 ; meta and certs required for saml to work.
 ; saml metadata is access at $EXTERNAL_URL/saml2/metadata/
+; four claims are needed from your saml server:
+; "name" (full name), "emailAddress", "surname" (last name),
+; "givenName" (first name), "group" (users groups)
 ; REMOTE_META_URL=https://rhcfs.MyOrg.net/FederationMetadata/2007-06/FederationMetadata.XML
 ; SAML_CERT='/usr/atlas-hub/cert.crt'
 ; SAML_CERT_KEY='/usr/atlas-hub/cert.key'
