@@ -26,7 +26,7 @@ eleventyComputed:
 
 # Install Guide
 
-This is the recommended way to install Atlas Hub. The installed is designed for a dedicated Ubuntu Server, is easy to install and upgrade.
+This is the recommended way to install Atlas Hub. The installed is designed for a dedicated Ubuntu 20 Server, is easy to install and upgrade.
 
 The primary server requirement is disk space - have enough space to hold 2x the data you plan to transfer. Atlas Hub streams all data, so the memory requirements are low.
 

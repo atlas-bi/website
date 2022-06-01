@@ -54,7 +54,6 @@ The available settings are:
   },
   "logo": "path/to/override_logo.png",
   "features": {
-    "enable_feedback": true,
     "enable_initiatives": true,
     "enable_request_access": true,
     "enable_sharing": true,
