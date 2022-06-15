@@ -23,7 +23,7 @@ module.exports = class {
     return postcss([
       require('postcss-nested'),
       purgecss({
-        content: ['./src/**/*.njk', './src/**/*.md'],
+        content: ['./src/**/*.njk', './src/**/*.md', './src/**/*.js'],
         safelist: {
           deep: [
             /zoomIn/,

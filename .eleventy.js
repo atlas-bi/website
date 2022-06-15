@@ -138,6 +138,11 @@ module.exports = function(eleventyConfig) {
     "src/static/img/favicon.ico": "favicon.ico"
   });
 
+  // copy office hours
+  eleventyConfig.addPassthroughCopy({
+    "src/static/files": "static/files"
+  });
+
   eleventyConfig.addFilter("jsonify", (text) => {
     return JSON.stringify(text).replace(/(?:\\n\s*){2,}/g, "\\n");
   });

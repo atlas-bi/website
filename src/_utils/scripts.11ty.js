@@ -20,6 +20,7 @@ module.exports = class {
         './src/static/js/hamburger.js',
         './src/static/js/animate.js',
         './src/static/js/modal.js',
+        './src/static/js/office_hours.js',
       ],
       bundle: true,
       minify: true,

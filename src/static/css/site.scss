@@ -535,6 +535,16 @@ pre {
   width: 6rem;
 }
 
+.office-hours-countdown_title,
+.office-hours-countdown:not(.no-style) > div {
+  color: $grey-darker;
+  font-size: 20px;
+}
+
+.button.is-transparent {
+  background: transparent;
+}
+
 /* purgecss end ignore */
 
 .navbar-item.is-mega {
