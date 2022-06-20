@@ -32,7 +32,7 @@
     "cssnano": "5.1.12",
     "eleventy-plugin-metagen": "1.7.8",
     "esbuild": "0.14.46",
-    "eslint": "8.17.0",
+    "eslint": "8.18.0",
     "fontawesome-subset": "3.0.0",
     "fontsource-inter": "4.0.0",
     "html-minifier": "4.0.0",
