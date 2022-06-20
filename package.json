@@ -7,10 +7,10 @@
   "dependencies": {
     "@creativebulma/bulma-divider": "1.1.0",
     "@fontsource/rasa": "4.5.11",
-    "@quasibit/eleventy-plugin-schema": "1.9.1",
+    "@quasibit/eleventy-plugin-schema": "1.10.0",
     "@sindresorhus/slugify": "2.1.0",
     "eleventy-critical-css": "1.1.0",
-    "lint-staged": "13.0.0",
+    "lint-staged": "13.0.2",
     "md5": "2.3.0"
   },
   "description": "atlas website",
@@ -29,9 +29,9 @@
     "axios": "0.27.2",
     "bulma": "0.9.4",
     "bulma-pricingtable": "0.2.0",
-    "cssnano": "5.1.11",
+    "cssnano": "5.1.12",
     "eleventy-plugin-metagen": "1.7.8",
-    "esbuild": "0.14.42",
+    "esbuild": "0.14.46",
     "eslint": "8.17.0",
     "fontawesome-subset": "3.0.0",
     "fontsource-inter": "4.0.0",
@@ -47,7 +47,7 @@
     "postcss-nested": "5.0.6",
     "prismjs": "1.28.0",
     "reading-time": "1.5.0",
-    "sass": "1.52.2",
+    "sass": "1.52.3",
     "slugify": "1.6.5"
   },
   "license": "AGPL-3.0-or-later",
