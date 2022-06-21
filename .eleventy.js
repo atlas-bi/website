@@ -8,6 +8,7 @@ const fs = require('fs');
 const outdent = require('outdent');
 const schema = require("@quasibit/eleventy-plugin-schema");
 const readingTime = require('reading-time');
+const editOnGithub = require('eleventy-plugin-edit-on-github');
 
 const slugifyCustom = (s) =>
   slugify(s, { lower: true, remove: /[*+~.()'"!:@]/g });
@@ -76,6 +77,10 @@ module.exports = function(eleventyConfig) {
   });
   eleventyConfig.addPlugin(eleventyNavigationPlugin);
   eleventyConfig.addPlugin(schema);
+  eleventyConfig.addPlugin(editOnGithub, {
+    github_edit_repo: 'https://github.com/atlas-bi/website',
+    github_edit_text: '✍️ Edit Page'
+  });
 
   /* Markdown Plugins */
   const markdownItAnchor = require("markdown-it-anchor");

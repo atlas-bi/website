@@ -30,6 +30,8 @@
     "bulma": "0.9.4",
     "bulma-pricingtable": "0.2.0",
     "cssnano": "5.1.11",
+    "cz-conventional-changelog": "^3.3.0",
+    "eleventy-plugin-edit-on-github": "^1.0.0",
     "eleventy-plugin-metagen": "1.7.8",
     "esbuild": "0.14.42",
     "eslint": "8.17.0",
@@ -57,7 +59,7 @@
     "url": "github:atlas-bi/website"
   },
   "scripts": {
-    "install": "ELEVENTY_PRODUCTION=true eleventy && npm run updateSearch",
+    "build": "ELEVENTY_PRODUCTION=true eleventy && npm run updateSearch",
     "start": "ELEVENTY_PRODUCTION=true eleventy --serve --watch",
     "updateSearch": "node ./src/search/update-algolia-index.js",
     "prepare": "husky install",
