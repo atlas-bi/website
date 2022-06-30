@@ -48,7 +48,7 @@ eleventyNavigation:
   <div class="tile is-parent">
      <div class="tile is-child box bd-notification has-background-white-bis has-text-centered">
        <h4 class="title is-3 has-text-success my-5">Initiatives</h4>
-       <span class="icon is-large has-text-grey-light"><i class="fas fa-project-diagram fa-2x"></i></i></span>
+       <span class="icon is-large has-text-grey-light"><i class="fa-solid fa-diagram-project fa-2x"></i></i></span>
        <p class="my-5">Initiatives are a tool used to combine collections together into a larger project with some additional documentation.</p>
        <a class="button is-info" href="/docs/bi-library/usage/initiatives/">Take me there!</a>
     </div>
@@ -85,7 +85,7 @@ eleventyNavigation:
   <div class="tile is-parent">
      <div class="tile is-child box bd-notification has-background-white-bis has-text-centered">
        <h4 class="title is-3 has-text-success my-5">Parameters</h4>
-       <span class="icon is-large has-text-grey-light"><i class="fas fa-sliders-h fa-2x"></i></span>
+       <span class="icon is-large has-text-grey-light"><i class="fa-solid fa-sliders fa-2x"></i></span>
        <p class="my-5">Customize you install by setting parameters to configure search, add global site messages, set documentation options and more!</p>
        <a class="button is-info" href="/docs/bi-library/usage/parameters/">Take me there!</a>
     </div>
@@ -93,7 +93,7 @@ eleventyNavigation:
   <div class="tile is-parent">
      <div class="tile is-child box bd-notification has-background-white-bis has-text-centered">
        <h4 class="title is-3 has-text-success my-5">Tasks</h4>
-       <span class="icon is-large has-text-grey-light"><i class="fas fa-tasks fa-2x"></i></span>
+       <span class="icon is-large has-text-grey-light"><i class="fa-solid fa-list-check fa-2x"></i></span>
        <p class="my-5">Tasks are a combination of prebuilt reports to help govern your report library. Quickly identify areas where attention is needed.</p>
        <a class="button is-info" href="/docs/bi-library/usage/tasks/">Take me there!</a>
     </div>

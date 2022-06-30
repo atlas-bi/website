@@ -190,18 +190,18 @@ module.exports = function(eleventyConfig) {
   });
 
   const icons = {
-    note: "./src/_includes/icons/blue_pencil.njk",
-    hint: "./src/_includes/icons/green_question.njk",
-    alert: "./src/_includes/icons/red_triangle.njk"
+    note: "<span class='icon has-text-info'><i class='fa-solid fa-pencil'></i></span>",
+    hint: "<span class='icon has-text-success'><i class='fa-solid fa-question'></i></span>",
+    alert: "<span class='icon has-text-danger'><i class='fa-solid fa-triangle-exclamation'></i></span>"
   };
 
   eleventyConfig.addShortcode("admonition", function(icon, title, text) {
     return outdent`
-    <article class="message ` + icon + ` box">
+    <article class="message ${icon} box">
       <div class="message-header">
-        <p>` + fs.readFileSync(icons[icon]).toString() +title+`</p>
+        <p>${icons[icon]} ${title}</p>
       </div>
-      <div class="message-body">` + `${markdownIt.render(text)}`+ `</div>
+      <div class="message-body">${markdownIt.render(text)}</div>
     </article>`;
   });
 
@@ -214,7 +214,7 @@ module.exports = function(eleventyConfig) {
   fontawesomeSubset({
     brands:['discord', 'github'],
     regular:['envelope', 'life-ring'],
-    solid: ['long-arrow-alt-right', 'long-arrow-alt-left', 'envelope', 'share', 'infinity', 'search', 'book', 'project-diagram', 'heart', 'address-card', 'server', 'database', 'ship', 'code', 'chart-bar', 'sitemap', 'tasks', 'lock', 'sliders-h', 'user', 'users', 'compass', 'download', 'sync-alt']
+    solid: ['right-long', 'left-long', 'envelope', 'share', 'infinity', 'magnifying-glass', 'book', 'diagram-project', 'heart', 'address-card', 'server', 'database', 'ship', 'code', 'chart-bar', 'sitemap', 'list-check', 'lock', 'sliders', 'user', 'users', 'compass', 'download', 'rotate', 'check', 'xmark', 'pencil', 'question', 'triangle-exclamation']
         }, '_site/static/font/fontawesome/webfonts');
 
   return {
