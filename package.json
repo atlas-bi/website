@@ -33,7 +33,7 @@
     "cz-conventional-changelog": "3.3.0",
     "eleventy-plugin-edit-on-github": "1.1.0",
     "eleventy-plugin-metagen": "1.7.11",
-    "esbuild": "0.14.48",
+    "esbuild": "0.14.49",
     "eslint": "8.19.0",
     "fontawesome-subset": "4.1.0",
     "fontsource-inter": "4.0.0",
