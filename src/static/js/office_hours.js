@@ -37,11 +37,13 @@ function countDown(offset) {
 }
 
 // Save reference to the DIV
-$refresh = document.querySelector('.office-hours-countdown');
+var $refresh = document.querySelector('.office-hours-countdown');
 
-$refresh.innerHTML = countDown();
-
-// Update DIV contents every second
-setInterval(function () {
+if ($refresh) {
   $refresh.innerHTML = countDown();
-}, 1000);
+
+  // Update DIV contents every second
+  setInterval(function () {
+    $refresh.innerHTML = countDown();
+  }, 1000);
+}
