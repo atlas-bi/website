@@ -24,7 +24,7 @@ The available settings are:
 {
   "AllowedHosts": "*",
   "AppSettings": {
-    "default_from_email_address": "your default sender address for smtp",
+    "base_url": "https://atlas.example.org",
     "manage_engine_server": "http://manage engine server for manage engine integration",
     "manage_engine_tech_key": "api key for manage engine",
     "org_ad_domain": "org domain should match the ETl setting for org domain",
@@ -32,7 +32,11 @@ The available settings are:
     "org_name": "My Organization Name",
     "smtp_port": 465,
     "smtp_server": "your smtp email server",
-    "smtp_use_ssl": true
+    "smtp_use_ssl": true,
+    "smtp_sender_email": "atlas@example.com",
+    "smtp_sender_name": "Atlas | Example Healthcare Analytics",
+    "smtp_username": "this is an option value, only use if your smtp requires auth.",
+    "smtp_password": "this is an option value, only use if your smtp requires auth."
   },
   "ConnectionStrings": {
     "AtlasDatabase": "Server=server_name;Database=atlas;User Id=datagov; Password=<password>; MultipleActiveResultSets=true"
@@ -58,7 +62,8 @@ The available settings are:
     "enable_request_access": true,
     "enable_sharing": true,
     "enable_terms": true,
-    "enable_user_profile": true
+    "enable_user_profile": true,
+    "enable_breadcrumbs": true
   },
   "text": {
     "reports": {
