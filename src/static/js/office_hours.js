@@ -21,12 +21,16 @@ function countDown(offset) {
 
   // bi-weekly
   var days = 12 - now.getDay() || 12;
-  if (week % 2 == 0) {
+  if (week % 2 !== 0) {
     // this week if we are on an even week
     days = 5 - now.getDay() || 5;
   }
 
-  var hours = pad(13 - now.getHours());
+  if (now.getHours() >= 9) {
+    days -= 1;
+  }
+
+  var hours = pad(24 + 9 - now.getHours());
   var minutes = pad(60 - parseInt(now.getMinutes()));
   var seconds = pad(60 - parseInt(now.getSeconds()));
 
