@@ -9,7 +9,7 @@ eleventyNavigation:
   key: BIL ETL Setup
   title: ETL Setup
   parent: BI Library
-  order: 6
+  order: 4
 eleventyComputed:
   meta:
     breadcrumbs:
@@ -56,3 +56,14 @@ The metadata ETL is composed of multiple SSIS packages - basically one package p
    - Update Database connection strings
    - Schedule ETL's in SQL Agent Jobs
      :::
+
+## Requirements
+
+::: content
+
+- Install [Visual Studio 2017](https://visualstudio.microsoft.com/downloads/). The community edition works well.
+- Visual Studio's `SQL Server Integration Services Projects` extension
+  {% image "./src/static/img/bi-library/requirements/vs_extension.png", "Extension", "(min-width:800px) 50vw, 100vw", "boxed" %}
+- `Data Storage and Processing` component
+  {% image "./src/static/img/bi-library/requirements/sqlservices.png", "sql services component", "(min-width:800px) 50vw, 100vw", "boxed" %}
+  :::

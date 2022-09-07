@@ -9,7 +9,7 @@ eleventyNavigation:
   key: BIL Webserver Setup
   title: Webserver Setup
   parent: BI Library
-  order: 3
+  order: 5
 eleventyComputed:
   meta:
     breadcrumbs:
@@ -46,18 +46,6 @@ Atlas BI Library is designed to run on **Windows Server 2016 or later**. There a
     :::
 
 After installing the server should be rebooted, or the web services restarted (`Web Deployment Agent Service` and `Web Management Service`).
-
-{% admonition
-   "hint",
-   "Deploy Atlas",
-   "We recommend deploying with Visual Studio. See the [`deploy guide`](/docs/bi-library/deploy/). It is also possible to deploy with a ci/cd pipeline if you prefer."
-%}
-
-{% admonition
-   "alert",
-   ".NET 6",
-   "While .NET 6 x86 is specified, it is not required. The only *requirement* is that Atlas is *built* and *run* in the same version and bitness."
-%}
 
 ## Setup IIS
 

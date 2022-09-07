@@ -21,7 +21,7 @@
     {% macro renderNavListItem(entry) -%}
         {# custom code for bi-library section #}
         {% if tool == "BI Library" %}
-            {% if entry.title == "Webserver Setup" %}
+            {% if entry.title == "Getting Started" %}
                 <li>
                     <a href="/docs/bi-library/"
                        class="{%- if page.url == "/docs/bi-library/" -%}is-active{%- endif -%}">👋 Welcome</a>

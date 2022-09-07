@@ -28,68 +28,40 @@ eleventyNavigation:
 
 ## Deploy to IIS
 
-<div class="tabs">
-   <ul>
-    <li class="is-active"><a tab="vs">Deploy With Visual Studio</a></li>
-    <li><a tab="manual">Manual or CI/CD Deploy</a></li>
-  </ul>
-</div>
-<div class="tab-container">
-   <div class="tab is-active"id="vs">
+Deploying the build of Atlas from your `/out` directory is simple. If you are doing an update or redeploying, a few services should be stopped before copying in the new build.
 
-Deploying with Visual Studio is the preferred method. After opening the `web.sln` file -
+First, stop solr search engine.
 
-::: content
+In window services, find and stop "solr", or use this command in your cmd terminal.
 
-- In Visual Studio's menu, click **Build** then **Publish Web**
-- Create a new publish profile.
-  - Choose **Web Server (IIS)** as the **Target**
-  - Choose **Web Deploy** as the **Specific target**
-  - Enter your IIS **Server** name
-  - Enter your **Site name**. This must match the site name already created on the web server (`atlas-dev`)
-  - Enter the web url in **Destination URL**
-  - Optionally enter you credentials for the web server
-- After the profile is created click **Edit** to change additional settings.
-- Change to the **Settings** tab and change the **Target Runtime** to match the web servers .NET bitness.
-  {% image "./src/static/img/bi-library/deploy/vs_profile.png", "Edit publish profile", "(min-width:800px) 50vw, 100vw", "boxed" %}
-- In order to successfully publish the connection must be validated to allow self-signed certificates.
-  {% image "./src/static/img/bi-library/deploy/vs_connection.png", "Validate connection", "(min-width:800px) 50vw, 100vw", "boxed" %}
-  {% image "./src/static/img/bi-library/development/ssl_warning.png", "ssl warning", "(min-width:800px) 50vw, 100vw", "boxed" %}
-  {% image "./src/static/img/bi-library/development/ssl_confirm.png", "ssl confirm", "(min-width:800px) 50vw, 100vw", "boxed" %}
-  :::
+```bash
+net stop solr
+```
+
+Next, stop the Atlas website in IIS, or use this command in your cmd terminal.
+
+```bash
+Powershell.exe -Command "Stop-Website -Name atlas"
+```
+
+Then stop the Atlas pool in IIS, or use this command in your cmd terminal.
+
+```bash
+Powershell.exe -Command "Stop-WebAppPool -Name atlas"
+```
+
+Now, copy the contents of the `/out` folder onto the atlas website folder (probably `C:\inetpub\wwwroot\atlas`) on your server.
+
+Turn all the services on in reverse order that you used in turning them off.
+
+```bash
+Powershell.exe -Command "Start-WebAppPool -Name atlas"
+Powershell.exe -Command "Start-Website -Name atlas"
+net start solr
+```
 
 {% admonition
-  "alert",
-  "Attention",
-  "The connection must be re-verified every time Visual Studio is restarted."
+   "note",
+   "Note",
+   "It is possible your app pool and website will have a different name than give here. Check your IIS Manager to see the exact names to use in your case."
 %}
-
-::: content
-
-- Finally publish Atlas by clicking **Publish** button.
-  {% image "./src/static/img/bi-library/deploy/vs_publish.png", "Publish Atlas", "(min-width:800px) 50vw, 100vw", "boxed" %}
-  :::
-
-If Visual Studio still cannot resolve the certificate issue, you can disable the check in the publish settings XML file.
-{% image "./src/static/img/bi-library/deploy/cert_error.png", "disable cert", "(min-width:800px) 50vw, 100vw", "boxed" %}
-
-</div>
-   <div class="tab" id="manual">
-
-Atlas is also fairly simple to manually deploy.
-
-{% admonition "alert", "Attention", "Ensure the bitness matches the bitness of the .NET version you've installed on the server!" %}
-
-::: content
-
-- Run dotnet publish from the `web` folder to build the Atlas runtime.
-  ```bash
-  dotnet publish -r win-x86 --self-contained false -c Release -o out
-  ```
-- Copy the contents of the newly created `out` directory into the `c://inetpub/wwwroot/atlas-dev` folder.
-  :::
-
-**Navigate to your binding and Atlas should be available!**
-
-</div>
-</div>

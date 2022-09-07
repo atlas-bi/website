@@ -14,28 +14,6 @@ eleventyNavigation:
 
 # Special Considerations
 
-## Database Information
-
-The app is currently using a SQL Server database, with a "database first" model.
-
-The database can be created by running the script `/web/atlas-creation_script.sql`.
-
-Any changes to the base tables must be done in the database first, then pulled into the webapp with the scaffold command.
-
-```bash
-Scaffold-DbContext "Server=my_server;Database=atlas;Trusted_Connection=True;" Microsoft.EntityFrameworkCore.SqlServer -OutputDir Models -force -Context Atlas_WebContext -Namespace Atlas_Web.Models
-```
-
-Or from the [dotnet cli](https://docs.microsoft.com/en-us/ef/core/cli/dotnet)
-
-```bash
-dotnet ef dbcontext scaffold "Server=my_server;Database=atlas;Trusted_Connection=True;" Microsoft.EntityFrameworkCore.SqlServer --output-dir Models --force --context Atlas_WebContext --namespace Atlas_Web.Models --project web/web.csproj
-```
-
-The file `web/atlas-creation_script.sql` must be updated after making database changes. This can be done in SSMS by right clicking the db > clicking tasks > script database.
-
-Calculated fields can be added as a customization in the `/web/model/customizations/` folder.
-
 ## Hyperspace Integration
 
 Linking to Atlas from a Dashboard
