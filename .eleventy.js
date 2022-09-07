@@ -214,7 +214,7 @@ module.exports = function(eleventyConfig) {
   fontawesomeSubset({
     brands:['discord', 'github'],
     regular:['envelope', 'life-ring'],
-    solid: ['right-long', 'left-long', 'envelope', 'share', 'infinity', 'magnifying-glass', 'book', 'diagram-project', 'heart', 'address-card', 'server', 'database', 'ship', 'code', 'chart-bar', 'sitemap', 'list-check', 'lock', 'sliders', 'user', 'users', 'compass', 'download', 'rotate', 'check', 'xmark', 'pencil', 'question', 'triangle-exclamation']
+    solid: ['rocket', 'right-long', 'left-long', 'envelope', 'share', 'infinity', 'magnifying-glass', 'book', 'diagram-project', 'heart', 'address-card', 'server', 'database', 'ship', 'code', 'chart-bar', 'sitemap', 'list-check', 'lock', 'sliders', 'user', 'users', 'compass', 'download', 'rotate', 'check', 'xmark', 'pencil', 'question', 'triangle-exclamation']
         }, '_site/static/font/fontawesome/webfonts');
 
   return {

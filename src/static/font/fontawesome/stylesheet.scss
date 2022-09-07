@@ -90,6 +90,7 @@ $icons: (
   pencil: $fa-var-pencil,
   question: $fa-var-question,
   triangle-exclamation: $fa-var-triangle-exclamation,
+  rocket: $fa-var-rocket,
 );
 
 @each $key, $value in $icons {
