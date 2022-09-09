@@ -9,6 +9,7 @@ const outdent = require('outdent');
 const schema = require("@quasibit/eleventy-plugin-schema");
 const readingTime = require('reading-time');
 const editOnGithub = require('eleventy-plugin-edit-on-github');
+const fetch = require('node-fetch');
 
 const slugifyCustom = (s) =>
   slugify(s, { lower: true, remove: /[*+~.()'"!:@]/g });
@@ -61,12 +62,20 @@ const widont = (string) => {
     : string;
 };
 
+async function getPage(url){
+  const response = await fetch(url);
+  const body = await response.text();
+  fixed = body.replace(/```env/g, '```ini')
+  fixed = fixed.replace(/```sh/g, '```bash')
+  return fixed
+}
 module.exports = function(eleventyConfig) {
 
   eleventyConfig.setUseGitIgnore(false);
   eleventyConfig.addFilter("widont", widont);
   eleventyConfig.addWatchTarget("./src/static/");
   eleventyConfig.addNunjucksAsyncShortcode("image", imageShortcode);
+  eleventyConfig.addNunjucksAsyncShortcode("get_page", getPage);
   eleventyConfig.addTransform("htmlmin", require("./src/_utils/minify-html.js"));
   eleventyConfig.addPlugin(syntaxHighlight);
   eleventyConfig.addPlugin(metagen);

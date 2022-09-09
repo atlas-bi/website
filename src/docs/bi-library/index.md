@@ -26,9 +26,15 @@ eleventyComputed:
 
 {{ bi_library.description }}
 
-## Get Started On Your Install!
-
 <div class="tile is-ancestor">
+    <div class="tile is-parent">
+       <div class="tile is-child box bd-notification has-background-white-bis has-text-centered">
+         <h4 class="title is-3 has-text-success my-5">Getting Started</h4>
+         <span class="icon is-large has-text-grey-light"><i class="fas fa-rocket fa-2x"></i></span>
+         <p class="subtitle my-5">In just a few minutes you can have Atlas BI Library web app running on your computer.</p>
+         <a class="button is-info" href="/docs/bi-library/getting-started/">Take me there!</a>
+      </div>
+    </div>
     <div class="tile is-parent">
     <div class="tile is-child box bd-notification has-background-white-bis has-text-centered">
        <h4 class="title is-3 has-text-success my-5">Webserver Setup Guide</h4>
@@ -37,14 +43,7 @@ eleventyComputed:
        <a class="button is-info" href="/docs/bi-library/webserver-setup/">Take me there!</a>
     </div>
   </div>
-  <div class="tile is-parent">
-     <div class="tile is-child box bd-notification has-background-white-bis has-text-centered">
-       <h4 class="title is-3 has-text-success my-5">Database Setup Guide</h4>
-       <span class="icon is-large has-text-grey-light"><i class="fas fa-database fa-2x"></i></span>
-       <p class="subtitle my-5">Learn about how to setup your database for a new Atlas BI Library install.</p>
-       <a class="button is-info" href="/docs/bi-library/database-setup/">Take me there!</a>
-    </div>
-  </div>
+  
 </div>
 <div class="tile is-ancestor">
   <div class="tile is-parent">

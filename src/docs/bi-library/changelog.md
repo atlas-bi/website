@@ -26,7 +26,7 @@ eleventyComputed:
 
 # Changelog
 
-Version names follow a pattern of YYYY.MM.release.
+Release notes have been moved into the [releases](https://github.com/atlas-bi/atlas-bi-library/releases).
 
 ## Version 2022.3.02
 

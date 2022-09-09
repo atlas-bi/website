@@ -1,7 +1,7 @@
 ---
 title: Getting Started | Atlas BI Library Docs
 tags: BI Library
-description: Learn about how to setup a webserver for installing Atlas BI Library. Setup is quick and requirements minimal.
+description: In just a few minutes you can have Atlas BI Library web app running on your computer.
 keywords: atlas, atlas bi library, unified report library, data governance, database, webserver, setup, iss, iis setup
 layout: docs_library.njk
 date: Last Modified
@@ -28,12 +28,6 @@ eleventyComputed:
 
 In just a few minutes you can have Atlas BI Library web app running on your computer.
 
-{% admonition
-  "note",
-  "Visual Studio Code",
-  "Due to version conflicts in Visual Studio, the webapp is now developed in Visual Studio Code, and the ETL developed in Visual Studio 2017. Unfortunately later versions of Visual Studio do not yet include SQL Server Integration Services."
-%}
-
 ## Required Tools
 
 There are a few build tools required to get started. The .Net version of Atlas BI Library is intended to run on Windows PC's that are connected to a domain.
@@ -45,11 +39,17 @@ There are a few build tools required to get started. The .Net version of Atlas B
 - [Visual Studio Code](https://code.visualstudio.com)
   :::
 
+{% admonition
+  "note",
+  "Visual Studio Code",
+  "Due to version conflicts in Visual Studio, the webapp is now developed in Visual Studio Code, and the ETL developed in Visual Studio 2017. Unfortunately later versions of Visual Studio do not yet include SQL Server Integration Services."
+%}
+
 Clone the project form GitHub into a new Visual Studio Code project using the clone url: https://github.com/atlas-bi/atlas-bi-library.git
 
 {% image "./src/static/img/bi-library/getting_started/git_clone.png", "razor component", "(min-width:800px) 50vw, 100vw", "boxed" %}
 
-Create a file called `web/appsettings.cust.Development.json` with a database connection string. Localdb is an easy way to get started.
+Create a file called `web/appsettings.cust.Development.json` with a database connection string. `Localdb` is an easy way to get started. For a production website you should use a database on a real instance of sql server.
 
 ```json
 {

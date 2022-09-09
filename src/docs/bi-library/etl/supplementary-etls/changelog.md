@@ -14,6 +14,17 @@ eleventyNavigation:
 
 # Changelog
 
+Release notes have been moved into the releases.
+
+::: content
+
+- [Solr Search Loader](https://github.com/atlas-bi/Solr-Search-ETL/releases)
+- [LDAP User Import](https://github.com/atlas-bi/atlas-bi-library/releases)
+- [Sqlize Crystal Reports](https://github.com/atlas-bi/Sqlize-Crystal-Reports/releases)
+- [Tableau Metadata Exporter](https://github.com/atlas-bi/Tableau-Metadata-Exporter/releases)
+
+:::
+
 <div class="tabs">
    <ul>
     <li class="is-active"><a tab="solr">Solr Search Loader</a></li>

@@ -44,47 +44,15 @@ eleventyComputed:
         <p>
           <strong>Download this ETL</strong>
           <br>
-          <a href="https://github.com/atlas-bi/LDAP-ETL" rel="noopener" target="blank">https://github.com/atlas-bi/LDAP-ETL</a>
+          <a href="https://github.com/atlas-bi/LDAP-ETL/releases" rel="noopener" target="blank">https://github.com/atlas-bi/LDAP-ETL</a>
         </p>
       </div>
     </div>
   </article>
 </div>
 
-## What it does
+::: content
 
-This supplementary ETL loads data from an LDAP server into a database that is accessible by the primary [Atlas metadata ETL](/docs/bi-library/etl/).
+{% get_page "https://raw.githubusercontent.com/atlas-bi/LDAP-ETL/master/README.md" %}
 
-## Setup
-
-Create a `settings.py` file with the following settings, modified to fit your needs.
-
-```py
-server_uri = "ldap.example.net"
-username = "MYORG\\my_user"
-password = "my_pass"
-database = "DRIVER={ODBC Driver 17 for SQL Server};SERVER=server_name;DATABASE=LDAP;UID=user_name;PWD=password"
-ad_domain = "MYORG"
-dc = "MyOrg"
-search_bases = ["EPIC", "Employees", "Doctors", "Non-Staff", "Students", "Volunteers"]
-
-group_search_bases = [
-    "Email Distribution Groups",
-    "Room & Shared Mailboxes",
-    "Access & Permissions",
-]
-```
-
-Next, create the database and tables using the `LDAPDatabaseCreationScript.sql` provided in the download.
-
-## Usage
-
-The `ldap.py` script can be periodically run to keep you user profiles fresh.
-
-```python
-python ldap.py
-```
-
-## Other Tools
-
-[Active Directory Explorer](https://docs.microsoft.com/en-us/sysinternals/downloads/adexplorer) is a useful tool to browse your LDAP setup to find the correct bases and dc.
+:::

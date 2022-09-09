@@ -31,10 +31,14 @@ eleventyComputed:
 
 There are several supplementary ETLs that run with Python.
 
+::: content
+
 - LDAP User Import
 - Solr Search Loader
 - Tableau Metadata Exporter
 - Sqlize Crystal Reports
+
+:::
 
 These ETLs can be run separately from the main metadata ETL and are used to add supplementary information to web app.
 

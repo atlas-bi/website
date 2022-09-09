@@ -28,15 +28,19 @@ eleventyComputed:
 
 The Atlas ETL's are used to collect metadata from a variety of sources and merge it into a common database.
 
-There are two primary ETLs -
+There are several ETLs -
 
 ::: content
 
-- Report Metadata (split into 8 sections)
-- Report Run Data
+- Report Metadata (split into 8 sections): Collects metadata from over five different reporting tools.
+- Report Run Data: Collects run data from various reporting tools.
+- LDAP: Loads user information from an LDAP server.
+- Solr Search: ETL to keep the search results fresh.
+- Sqlize Crystal Reports: ETL to extract sql queries from Crystal Reports.
+- Tableau Metadata: ETL to extract Tableau metadata, sql queries and run data.
   :::
 
-The ETL's are SSIS packages and can be scheduled to run as jobs on a Microsoft SQL Server. The metadata ETL can be scheduled to run at a fairly frequent interval - every hour for example - while the run data ETL can be run daily.
+The Report Metadata and Run Data ETL's are SSIS packages and can be scheduled to run as jobs on a Microsoft SQL Server. The metadata ETL can be scheduled to run at a fairly frequent interval - every hour or few hours for example - while the run data ETL can be run daily.
 
 The Clarity ETL must be downloaded from the [data handbook](https://datahandbook.epic.com/Reports/Details/9000648).
 
