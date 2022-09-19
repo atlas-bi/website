@@ -21,7 +21,7 @@ function countDown(offset) {
 
   // bi-weekly
   var days = 12 - now.getDay() || 12;
-  if (week % 2 == 0) {
+  if (week % 2 != 0) {
     // this week if we are on an even week
     days = 5 - now.getDay() || 5;
   }

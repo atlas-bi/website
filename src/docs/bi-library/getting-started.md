@@ -28,6 +28,21 @@ eleventyComputed:
 
 In just a few minutes you can have Atlas BI Library web app running on your computer.
 
+<div class="block">
+            <div class="video_wrapper" style="padding:56% 0 0 0;position:relative;">
+                <iframe src="https://player.vimeo.com/video/747041298?h=c98d7a41bd&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
+                        frameborder="0"
+                        allow="autoplay; fullscreen; picture-in-picture"
+                        allowfullscreen
+                        style="position:absolute;
+                               top:0;
+                               left:0;
+                               width:100%;
+                               height:100%;"
+                        title="Demo 02 12 2021.mp4"></iframe>
+            </div>
+        </div>
+
 ## Required Tools
 
 There are a few build tools required to get started. The .Net version of Atlas BI Library is intended to run on Windows PC's that are connected to a domain.
