@@ -4,9 +4,18 @@ module.exports = {
       target: 'lhci',
       serverBaseUrl: 'https://lighthouse.atlas.bi',
     },
-    // assert: {
-    //   preset: 'lighthouse:recommended',
-    // },
+    "assert": {
+      "preset": "lighthouse:no-pwa",
+      "assertions": {
+        "content-width": "off",
+        "color-contrast": "off",
+        "crawlable-anchors": "off",
+        "csp-xss": "off",
+        "link-name": "off",
+        "link-text": "off",
+        "unused-css-rules": "off",
+      },
+    },
     collect: {
       staticDistDir: "_site",
       maxAutodiscoverUrls: 10,
