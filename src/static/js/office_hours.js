@@ -17,7 +17,7 @@ function countDown(offset) {
 
   var year = new Date(now.getFullYear(), 0, 1);
   var day = Math.floor((now - year) / (24 * 60 * 60 * 1000));
-  var week = Math.ceil((now.getDay() + 1 + day) / 7);
+  var week = Math.ceil(day / 7);
 
   // bi-weekly
   var days = 12 - now.getDay() || 12;
