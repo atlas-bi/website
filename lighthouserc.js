@@ -7,7 +7,10 @@ module.exports = {
       preset: 'lighthouse:recommended',
     },
     collect: {
-      staticDistDir: "_site"
+      staticDistDir: "_site",
+      settings: {
+        hostname: '127.0.0.1'
+      },
     },
   },
 };
