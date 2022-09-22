@@ -26,7 +26,7 @@
     "@toycode/markdown-it-class": "1.2.4",
     "algoliasearch": "4.14.2",
     "animate-sass": "github:christopherpickering/animate-sass#patch-2",
-    "autoprefixer": "10.4.11",
+    "autoprefixer": "10.4.12",
     "axios": "0.27.2",
     "bulma": "0.9.4",
     "bulma-pricingtable": "0.2.0",
@@ -48,7 +48,7 @@
     "postcss-nested": "5.0.6",
     "prismjs": "1.29.0",
     "reading-time": "1.5.0",
-    "sass": "1.54.9",
+    "sass": "1.55.0",
     "slugify": "1.6.5"
   },
   "license": "AGPL-3.0-or-later",
