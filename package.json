@@ -11,6 +11,7 @@
     "@sindresorhus/slugify": "2.1.0",
     "eleventy-critical-css": "1.1.0",
     "lint-staged": "13.0.3",
+    "markdown-it-emoji": "^2.0.2",
     "md5": "2.3.0"
   },
   "description": "atlas website",

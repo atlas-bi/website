@@ -8,7 +8,7 @@ date: Last Modified
 eleventyNavigation:
   key: BIL ETL Install
   title: Install
-  parent: BIL ETL Setup
+  parent: BIL SSIS ETLs
   order: 1
 eleventyComputed:
   meta:
@@ -25,6 +25,9 @@ eleventyComputed:
       - name: ETL Setup
         url: '{{ site.url }}/docs/bi-library/etl/'
         position: 4
+      - name: SSIS ETLs
+        url: '{{ site.url }}/docs/bi-library/etl/ssis-etls/'
+        position: 5
 ---
 
 # How to Install

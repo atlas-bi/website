@@ -6,7 +6,7 @@ keywords: atlas, atlas bi library, unified report library, data governance, data
 layout: docs_library.njk
 date: Last Modified
 eleventyNavigation:
-  parent: BIL Supplementary ETLs
+  parent: BIL ETL Setup
   key: BIL Tableau Metadata Exporter
   title: Tableau Metadata Exporter
   order: 3
@@ -25,9 +25,6 @@ eleventyComputed:
       - name: ETL Setup
         url: '{{ site.url }}/docs/bi-library/etl/'
         position: 4
-      - name: Supplementary ETLs
-        url: '{{ site.url }}/docs/bi-library/etl/supplementary-etls/'
-        position: 5
 ---
 
 # Tableau Metadata Exporter

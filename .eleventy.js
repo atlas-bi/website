@@ -49,8 +49,8 @@ async function imageShortcode(src, alt, sizes, type='asdf', loading="lazy", deco
         width="${highsrc.width}"
         height="${highsrc.height}"
         alt="${alt}"
-        loading="lazy"
-        decoding="async">
+        loading="${loading}"
+        decoding="${decoding}">
     </picture>`;
 }
 
@@ -125,7 +125,8 @@ module.exports = function(eleventyConfig) {
       .use(markdownItAnchor, opts)
       .use(require("markdown-it-imsize"), { autofill: true })
       .use(require('@toycode/markdown-it-class'), mapping)
-      .use(require('markdown-it-div'), 'div', {});
+      .use(require('markdown-it-div'), 'div', {})
+      .use(require('markdown-it-emoji'));
 
   eleventyConfig.setLibrary("md", markdownIt);
 
