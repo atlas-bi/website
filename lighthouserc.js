@@ -22,6 +22,7 @@ module.exports = {
         "list": "warn",
         "heading-order": "warn",
         "label": "warn",
+        "uses-rel-preconnect": "warn"
       },
     },
     collect: {
