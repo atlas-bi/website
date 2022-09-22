@@ -1,15 +1,15 @@
 ---
-title: Sqlize Crystal Reports | Supplementary ETLs | Atlas BI Library Docs
+title: LDAP User Import | Supplementary ETLs | Atlas BI Library Docs
 tags: BI Library
-description: Atlas BI Library supplementary ETL to parse SAP Crystal report templates, and connect to APIs to gather report data.
-keywords: atlas, atlas bi library, unified report library, data governance, database, etl, crystal, sap reports, sql
-date: Last Modified
+description: Atlas BI Library supplementary ETL to gather user profile information. It plugs directly into an LDAP server to get basic user data.
+keywords: atlas, atlas bi library, unified report library, data governance, database, ldap, users, user profile, etl
 layout: docs_library.njk
+date: Last Modified
 eleventyNavigation:
-  parent: BIL Supplementary ETLs
-  key: BIL Sqlize Crystal Reports
-  title: Sqlize Crystal Reports
-  order: 2
+  parent: BIL ETL Setup
+  key: BIL LDAP User Import
+  title: LDAP User Import
+  order: 1
 eleventyComputed:
   meta:
     breadcrumbs:
@@ -30,7 +30,7 @@ eleventyComputed:
         position: 5
 ---
 
-# Sqlize Crystal Reports
+# LDAP User Import
 
 <div class="box">
   <article class="media">
@@ -44,7 +44,7 @@ eleventyComputed:
         <p>
           <strong>Download this ETL</strong>
           <br>
-          <a href="https://github.com/atlas-bi/Sqlize-Crystal-Reports/releases" rel="noopener" target="blank">https://github.com/atlas-bi/Sqlize-Crystal-Reports</a>
+          <a href="https://github.com/atlas-bi/LDAP-ETL/releases" rel="noopener" target="blank">https://github.com/atlas-bi/LDAP-ETL</a>
         </p>
       </div>
     </div>
@@ -53,6 +53,6 @@ eleventyComputed:
 
 ::: content
 
-{% get_page "https://raw.githubusercontent.com/atlas-bi/Sqlize-Crystal-Reports/master/readme.md" %}
+{% get_page "https://raw.githubusercontent.com/atlas-bi/LDAP-ETL/master/README.md" %}
 
 :::

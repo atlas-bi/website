@@ -2,7 +2,7 @@
      aria-label="main navigation">
     <div class="container">
         <div class="navbar-brand">
-            <a href="/" class="mr-5">{% image "./src/static/img/atlas-logo.png", "atlas icon", "(min-width:182px) 50vw, 100vw" %}</a>
+            <a href="/" class="mr-5">{% image "./src/static/img/atlas-logo.png", "atlas icon", "(min-width:182px) 50vw, 100vw" , "asdf", "eager", "auto" %}</a>
             <a role="button"
                class="navbar-burger"
                aria-label="menu"
@@ -22,7 +22,6 @@
                     <div class="control has-icons-left is-flex-grow-1">
                         <span class="icon is-small is-left">
                             <i class="fa-solid fa-magnifying-glass"></i>
-                            {# {% include 'icons/search.njk' %} #}
                         </span>
                         <input id="search"
                                class="input"

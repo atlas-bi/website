@@ -32,42 +32,12 @@ There are several ETLs -
 
 ::: content
 
+- LDAP: Loads user information from an LDAP server.
+- _(Optional)_ Sqlize Crystal Reports: ETL to extract sql queries from Crystal Reports.
+- _(Optional)_ Tableau Metadata: ETL to extract Tableau metadata, sql queries and run data.
+- _(Optional)_ PowerBI Metadata: ETL to extract PowerBI metadata and run data.
 - Report Metadata (split into 8 sections): Collects metadata from over five different reporting tools.
 - Report Run Data: Collects run data from various reporting tools.
-- LDAP: Loads user information from an LDAP server.
 - Solr Search: ETL to keep the search results fresh.
-- Sqlize Crystal Reports: ETL to extract sql queries from Crystal Reports.
-- Tableau Metadata: ETL to extract Tableau metadata, sql queries and run data.
-  :::
 
-The Report Metadata and Run Data ETL's are SSIS packages and can be scheduled to run as jobs on a Microsoft SQL Server. The metadata ETL can be scheduled to run at a fairly frequent interval - every hour or few hours for example - while the run data ETL can be run daily.
-
-The Clarity ETL must be downloaded from the [data handbook](https://datahandbook.epic.com/Reports/Details/9000648).
-
-## Metadata ETL
-
-The metadata ETL is composed of multiple SSIS packages - basically one package per source system. There is a `setup` ETL that creates the database tables needed for the data merge, and then each other ETL will create their own specific data tables.
-
-## Steps to Run
-
-::: content
-
-1. Configure and run the [supplementary ETLs](/docs/bi-library/etl/supplementary-etls/)
-2. Configure and run Atlas ETL's (main ETL and run data)
-
-   - Delete SSRS sections if not used
-   - Update Clarity server and credentials
-   - Update Database connection strings
-   - Schedule ETL's in SQL Agent Jobs
-     :::
-
-## Requirements
-
-::: content
-
-- Install [Visual Studio 2017](https://visualstudio.microsoft.com/downloads/). The community edition works well.
-- Visual Studio's `SQL Server Integration Services Projects` extension
-  {% image "./src/static/img/bi-library/requirements/vs_extension.png", "Extension", "(min-width:800px) 50vw, 100vw", "boxed" %}
-- `Data Storage and Processing` component
-  {% image "./src/static/img/bi-library/requirements/sqlservices.png", "sql services component", "(min-width:800px) 50vw, 100vw", "boxed" %}
   :::

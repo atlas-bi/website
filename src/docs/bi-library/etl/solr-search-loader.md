@@ -6,10 +6,10 @@ keywords: atlas, atlas bi library, unified report library, data governance, data
 layout: docs_library.njk
 date: Last Modified
 eleventyNavigation:
-  parent: BIL Supplementary ETLs
+  parent: BIL ETL Setup
   key: BIL Solr Search Loader
   title: Solr Search Loader
-  order: 4
+  order: 6
 eleventyComputed:
   meta:
     breadcrumbs:

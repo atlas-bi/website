@@ -8,8 +8,8 @@ date: Last Modified
 eleventyNavigation:
   key: BIL ETL Changelog
   title: Changelog
-  parent: BIL ETL Setup
-  order: 5
+  parent: BIL SSIS ETLs
+  order: 4
 eleventyComputed:
   meta:
     breadcrumbs:
