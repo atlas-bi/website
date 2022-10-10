@@ -8,7 +8,7 @@
     "@creativebulma/bulma-divider": "1.1.0",
     "@fontsource/rasa": "4.5.13",
     "@quasibit/eleventy-plugin-schema": "1.10.0",
-    "@sindresorhus/slugify": "2.1.0",
+    "@sindresorhus/slugify": "2.1.1",
     "eleventy-critical-css": "1.1.0",
     "lint-staged": "13.0.3",
     "markdown-it-emoji": "2.0.2",
