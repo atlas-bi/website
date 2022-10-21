@@ -51,6 +51,23 @@ eleventyComputed:
   </article>
 </div>
 
+<div class="block">
+<div class="video_wrapper" style="padding:56% 0 0 0;position:relative;">
+                <iframe title="Atlas Solr Search ETL" 
+                        src="https://video.atlas.bi/videos/embed/0beefee6-f054-4640-aeef-73818f4c28d9"
+                        frameborder="0"
+                        allowfullscreen=""
+                        allow="autoplay; fullscreen; picture-in-picture"
+                        sandbox="allow-same-origin allow-scripts allow-popups"
+                        style="position:absolute;
+                               top:0;
+                               left:0;
+                               width:100%;
+                               height:100%;">
+                        </iframe>
+            </div>
+</div>
+
 ::: content
 
 {% get_page "https://raw.githubusercontent.com/atlas-bi/Solr-Search-ETL/master/readme.md" %}

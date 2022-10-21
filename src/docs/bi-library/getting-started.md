@@ -29,19 +29,21 @@ eleventyComputed:
 In just a few minutes you can have Atlas BI Library web app running on your computer.
 
 <div class="block">
-            <div class="video_wrapper" style="padding:56% 0 0 0;position:relative;">
-                <iframe src="https://player.vimeo.com/video/747041298?h=c98d7a41bd&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
+<div class="video_wrapper" style="padding:56% 0 0 0;position:relative;">
+                <iframe title="Atlas BI Library - Getting Stated" 
+                        src="https://video.atlas.bi/videos/embed/0233dd97-2f96-4750-a84e-7f7ec30bb8ef"
                         frameborder="0"
+                        allowfullscreen=""
                         allow="autoplay; fullscreen; picture-in-picture"
-                        allowfullscreen
+                        sandbox="allow-same-origin allow-scripts allow-popups"
                         style="position:absolute;
                                top:0;
                                left:0;
                                width:100%;
-                               height:100%;"
-                        title="Demo 02 12 2021.mp4"></iframe>
+                               height:100%;">
+                        </iframe>
             </div>
-        </div>
+</div>
 
 ## Required Tools
 
