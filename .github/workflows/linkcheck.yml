@@ -14,11 +14,12 @@ jobs:
         run: |
           npm install
           npm run build:ci
-
-      - name: start site
-        run: |
-          nohup npx http-server _site &
-          sleep 1
+      - run: ls
+      - name: Serve Files
+        uses: Eun/http-server-action@v1
+        with:
+          directory: _site
+          port: 8080
 
       - name: Check links with linkcheck
         uses: filiph/linkcheck@2.0.23
