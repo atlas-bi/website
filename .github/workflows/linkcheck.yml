@@ -16,7 +16,7 @@ jobs:
           npm run build:ci
 
       - name: start site
-        run: nohup npx http-server _site
+        run: nohup npx http-server _site &
 
       - name: Check links with linkcheck
         uses: filiph/linkcheck@2.0.23
