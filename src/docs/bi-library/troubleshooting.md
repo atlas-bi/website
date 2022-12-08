@@ -29,4 +29,4 @@ eleventyComputed:
 ## Blank Search Results
 
 - [Check that solr is running](/docs/bi-library/deploy/publish/#starting-solr-search)
-- [Check that solr ETL's are running](/docs/bi-library/etl/supplementary-etls/solr-search-loader/)
+- [Check that solr ETL's are running](/docs/bi-library/etl/solr-search-loader/)

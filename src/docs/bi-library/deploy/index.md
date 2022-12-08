@@ -28,7 +28,7 @@ eleventyComputed:
 
 ## Getting Started
 
-Download the [latest release](https://github.com/atlas-bi/atlas-bi-library/releases) of Atlas BI Library onto your workstation and getting running with the [getting started](/docs/bi-library/getting_started/) guide.
+Download the [latest release](https://github.com/atlas-bi/atlas-bi-library/releases) of Atlas BI Library onto your workstation and getting running with the [getting started](/docs/bi-library/getting-started/) guide.
 
 ## Update Settings
 
@@ -54,8 +54,8 @@ The built website is will be in the `/out` folder and is ready to be copied to y
 
 ## Publish to the Web Server
 
-If you changes have tested nicely you can [publish](/docs/bi-library/publish) to your web server.
+If you changes have tested nicely you can [publish](/docs/bi-library/deploy/publish) to your web server.
 
 We recommend to having two instances of Atlas (Atlas and Atlas-Test).
 
-First, [publish](/docs/bi-library/publish) to test, and if your updates work well, then [publish](/docs/bi-library/publish) to your production server.
+First, [publish](/docs/bi-library/deploy/publish) to test, and if your updates work well, then [publish](/docs/bi-library/deploy/publish) to your production server.

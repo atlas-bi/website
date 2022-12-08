@@ -66,7 +66,7 @@ eleventyNavigation:
        <h4 class="title is-3 has-text-success my-5">Group Profiles</h4>
        <span class="icon is-large has-text-grey-light"><i class="fas fa-users fa-2x"></i></span>
        <p class="my-5">Group profiles identify users in groups from your various reporting systems or LDAP. Quickly find groups that use your reporting content.</p>
-       <a class="button is-info" href="/docs/bi-library/usage/group-profiles/">Take me there!</a>
+       <a class="button is-info" href="/docs/bi-library/usage/group-profile/">Take me there!</a>
     </div>
   </div>
 </div>

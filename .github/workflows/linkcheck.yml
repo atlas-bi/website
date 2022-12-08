@@ -17,4 +17,4 @@ jobs:
 
       - uses: untitaker/hyperlink@0.1.26
         with:
-          args: _site/
+          args: _site/ --github-actions

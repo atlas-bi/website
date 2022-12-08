@@ -25,9 +25,6 @@ eleventyComputed:
       - name: ETL Setup
         url: '{{ site.url }}/docs/bi-library/etl/'
         position: 4
-      - name: Supplementary ETLs
-        url: '{{ site.url }}/docs/bi-library/etl/supplementary-etls/'
-        position: 5
 ---
 
 # Solr Search Loader
