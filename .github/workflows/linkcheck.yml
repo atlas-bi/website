@@ -1,0 +1,21 @@
+name: Linkcheck
+on: [push]
+jobs:
+  linkcheck:
+    name: Linkcheck
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 18.x
+
+      - name: npm install, build
+        run: |
+          npm install
+          npm run build:ci
+
+      - name: start site
+        run: npx http-server _site
+
+      - name: Check links with linkcheck
+        uses: filiph/linkcheck@2.0.23

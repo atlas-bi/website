@@ -28,6 +28,19 @@ eleventyComputed:
 
 Atlas BI Library is designed to run on **Windows Server 2016 or later**. There are a few installs to get the website running.
 
+## Server Requirements
+
+A single hospital install will generally have <40gb of data. A majority of the data is report usage data. Here is a rule of thumb sizing for a single hospital. You can scale the numbers to your size -
+
+::: content
+
+- Database Server Ram: 40gb
+- Database Server Disk Space: 80gb (keep in mind the ETL's use a staging database, so you need effectively 2x the disk space of the prod database.)
+- Server cores: 8
+  :::
+
+The website server requirements are much less. The website requires <1gb of disk space. On a shared webserver we would recommend 16gb ram and 8 cores.
+
 ## Install Requirements
 
 ::: content
