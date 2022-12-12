@@ -41,7 +41,7 @@ The metadata ETL is composed of multiple SSIS packages - basically one package p
 
 ::: content
 
-1. Configure and run the [supplementary ETLs](/docs/bi-library/etl/supplementary-etls/)
+1. Configure and run the [supplementary ETLs](/docs/bi-library/etl/)
 2. Configure and run Atlas ETL's (main ETL and run data)
 
    - Delete SSRS sections if not used

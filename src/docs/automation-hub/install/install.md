@@ -61,7 +61,7 @@ sudo apt install atlas-hub
 
 ## Next Steps
 
-Nice job installing! You can access the website with a default username of "admin" to try things out. Now it is time to configure the app. See the [configuration guide](docs/automation-hub/install/configuration/) for a complete list of options.
+Nice job installing! You can access the website with a default username of "admin" to try things out. Now it is time to configure the app. See the [configuration guide](/docs/automation-hub/install/configuration/) for a complete list of options.
 
 ## Tips
 
