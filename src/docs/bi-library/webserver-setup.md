@@ -45,12 +45,12 @@ The website server requirements are much less. The website requires <1gb of disk
 
 ::: content
 
-- IIS Webserver with [Microsoft .NET SDK 6 (Hosting Bundle)](https://dotnet.microsoft.com/download/dotnet/6.0) (6.0 after release 2022.03.1)
+- IIS Webserver with [Microsoft .NET SDK 7 (Hosting Bundle)](https://dotnet.microsoft.com/download/dotnet/7.0)
   {% image "./src/static/img/bi-library/requirements/dotnetversion.png", "Extension", "(min-width:400px) 50vw, 100vw", "boxed" %}
 - Ensure IIS has server roles needed for [web deploy and web management service](https://docs.microsoft.com/en-us/aspnet/web-forms/overview/deployment/visual-studio-web-deployment/deploying-to-iis) installed and started. Microsoft has a few [examples](https://docs.microsoft.com/en-us/aspnet/web-forms/overview/deployment/visual-studio-web-deployment/deploying-to-iis).
 
-  - IIS: ASPNET 4.7
-  - IIS: .NET Extensibility 4.5
+  - IIS: ASPNET
+  - IIS: .NET Extensibility
 
 - By default the Web Deploy seems to not install correctly. `Change` the install in `Control Panel > Programs > Programs and Features` and ensure the package is completely installed.
   {% image "./src/static/img/bi-library/requirements/install_web_deploy.png", "Extension", "(min-width:800px) 50vw, 100vw", "boxed" %}
