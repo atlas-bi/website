@@ -58,7 +58,7 @@ There are a few build tools required to get started. The .Net version of Atlas B
 - [Java](https://www.oracle.com/java/technologies/downloads/)
 - [SQL Server ODBC](https://learn.microsoft.com/en-us/sql/connect/odbc/download-odbc-driver-for-sql-server?view=sql-server-ver16)
 - [Node.js + NPM](https://nodejs.org/en/download/)
-- [Microsoft .NET SDK 6](https://dotnet.microsoft.com/download/dotnet/6.0)
+- [Microsoft .NET SDK 7](https://dotnet.microsoft.com/download/dotnet/7.0)
 - [Visual Studio Code](https://code.visualstudio.com) (For building the website)
 - [Visual Studio 2019] (For building the ETL's)(https://visualstudio.microsoft.com/vs/older-downloads/)
 - [Visual Studio SQL Server Integration Services](https://marketplace.visualstudio.com/items?itemName=SSIS.SqlServerIntegrationServicesProjects)
