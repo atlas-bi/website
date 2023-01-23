@@ -25,9 +25,9 @@ END:VTIMEZONE
 BEGIN:VEVENT
 DTSTAMP:20220615T152555Z
 UID:office_hours.atlas.bi
-DTSTART;TZID=America/Chicago:20220624T130000
+DTSTART;TZID=America/Chicago:20220624T090000
 RRULE:FREQ=WEEKLY;INTERVAL=2;BYDAY=FR
-DTEND;TZID=America/Chicago:20220624T140000
+DTEND;TZID=America/Chicago:20220624T100000
 SUMMARY:Atlas Office Hours
 URL:https://meet.goto.com/878914957
 DESCRIPTION:Atlas Office Hours\n\nhttps://meet.goto.com/878914957\n\nYou can also dial in using your phone.\n\nUnited States: +1 (872) 240-3212 \n\nAccess Code: 878-914-957\n\nGet the app now and be ready when your first meeting starts: https://meet.goto.com/install\n\n
