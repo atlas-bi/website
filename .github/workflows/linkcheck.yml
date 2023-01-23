@@ -15,6 +15,6 @@ jobs:
           npm install
           npm run build:ci
 
-      - uses: untitaker/hyperlink@0.1.26
+      - uses: untitaker/hyperlink@0.1.27
         with:
           args: _site/
