@@ -40,8 +40,8 @@ Install the project dependencies, update the database and build a production dep
 
 ```js
 npm install
-npm db:update
-npm dotnet:publish
+npm run db:update
+npm run dotnet:publish
 ```
 
 The built website is will be in the `/out` folder and is ready to be copied to your web server.
