@@ -1,24 +1,31 @@
-name: Lighthouse
+name: 🔦 Lighthouse
 on: [push]
 jobs:
   lhci:
-    name: Lighthouse
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-        with:
-          ref: ${{ github.event.pull_request.head.sha }}
-      - uses: actions/setup-node@v3
-        with:
-          node-version: 18.x
-      - name: npm install, build
-        run: |
-          npm install
-          npm run build:ci
-      - name: run Lighthouse CI
-        run: |
-          npm install -g @lhci/cli@0.9.x
-          lhci autorun
-        env:
-          LHCI_GITHUB_APP_TOKEN: ${{ secrets.LHCI_GITHUB_APP_TOKEN }}
-          LHCI_TOKEN: ${{ secrets.LHCI_TOKEN }}
+    - name: 💾 Checkout
+      uses: actions/checkout@v3
+      with:
+        ref: ${{ github.event.pull_request.head.sha }}
+
+    - name: ⎔ Setup node
+      uses: actions/setup-node@v3
+      with:
+        node-version: 18
+
+    - name: 📥 Download deps
+      uses: bahmutov/npm-install@v1
+      with:
+        useLockFile: false
+
+    - name: 🏗️ Build
+      run: npm run build:ci
+
+    - name: 🔦 Run Lighthouse
+      run: |
+        npm install -g @lhci/cli@0.9.x
+        lhci autorun
+      env:
+        LHCI_GITHUB_APP_TOKEN: ${{ secrets.LHCI_GITHUB_APP_TOKEN }}
+        LHCI_TOKEN: ${{ secrets.LHCI_TOKEN }}

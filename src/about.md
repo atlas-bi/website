@@ -14,11 +14,11 @@ eleventyComputed:
 
 <div class="container mt-5">
 
-# Credits
+# About
 
-Atlas tool are created and maintained by the Riverside Healthcare Analytics team.
+Atlas was originally created by the Riverside Healthcare Analytics team. In mid 2020 Riverside open sourced the project to allow other hospitals to take advantage of solution. Alternatives were pricey and we love collaboration. By open sourcing and working with other institutions we are able to together make something that alone we could not produce.
 
-## Contributors
+### Individual Contributors
 
 ::: content
 
@@ -32,16 +32,12 @@ Atlas tool are created and maintained by the Riverside Healthcare Analytics team
 - [Dan Ryan](https://github.com/danryan1011)
 - [Richard Schissler](https://github.com/schiss152)
 - [Eric Shultz](https://github.com/eshultz)
+- Cecil Jolley
+- [James Ward](https://www.linkedin.com/in/james-ward-b3819311/)
+- [Mark Brown](https://www.linkedin.com/in/mark-brown-2a736b2/)
+- [Samuel Martinez](https://www.linkedin.com/in/samuel-martinez-jr-a68a349b/)
   :::
 
-## Special Thanks
-
-Special to a few those who provide free service/support to Atlas Tools!
-
-::: content
-
-- atlas.bi bug tracking with TrackJs
-- atlas.bi search with Algolia
-  :::
+</div>
 
 </div>

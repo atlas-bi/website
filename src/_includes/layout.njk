@@ -36,10 +36,8 @@
               content="black-translucent">
         <meta name="generator" content="{{ eleventy.generator }}">
         <!-- critical css is inlined, so we can async the rest -->
-        <link rel="preload"
-              href="{{ css.stylesCss }}"
-              as="style"
-              onload="this.rel='stylesheet'"/>
+        <link rel="stylesheet"
+              href="{{ "/static/css/site.css" | rev }}"/>
         <link rel="preload"
               href="/static/font/inter/files/inter-latin-400-normal.woff2"
               as="font"
