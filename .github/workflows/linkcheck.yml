@@ -1,20 +1,26 @@
-name: Linkcheck
+name: 🔗 Linkcheck
 on: [push]
 jobs:
   linkcheck:
-    name: Linkcheck
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
-        with:
-          node-version: 18.x
+    - name: 💾 Checkout
+      uses: actions/checkout@v3
 
-      - name: npm install, build
-        run: |
-          npm install
-          npm run build:ci
+    - name: ⎔ Setup node
+      uses: actions/setup-node@v3
+      with:
+        node-version: 18
 
-      - uses: untitaker/hyperlink@0.1.27
+    - name: 📥 Download deps
+      uses: bahmutov/npm-install@v1
+      with:
+        useLockFile: false
+
+    - name: 🏗️ Build
+      run: npm run build:ci
+
+    - name: 🔗 Linkcheck
+      uses: untitaker/hyperlink@0.1.27
         with:
           args: _site/

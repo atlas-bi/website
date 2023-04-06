@@ -1,6 +1,6 @@
 const Image = require("@11ty/eleventy-img");
 const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
-const criticalCss = require("eleventy-critical-css");
+// const criticalCss = require("eleventy-critical-css");
 const slugify = require("slugify");
 const metagen = require("eleventy-plugin-metagen");
 const eleventyNavigationPlugin = require("@11ty/eleventy-navigation");
@@ -10,6 +10,11 @@ const schema = require("@quasibit/eleventy-plugin-schema");
 const readingTime = require('reading-time');
 const editOnGithub = require('eleventy-plugin-edit-on-github');
 const fetch = require('node-fetch');
+const eleventySass = require("eleventy-sass");
+const pluginRev = require("eleventy-plugin-rev");
+
+const purgecss = require('@fullhuman/postcss-purgecss');
+const postcss = require('postcss');
 
 const slugifyCustom = (s) =>
   slugify(s, { lower: true, remove: /[*+~.()'"!:@]/g });
@@ -76,14 +81,14 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addWatchTarget("./src/static/");
   eleventyConfig.addNunjucksAsyncShortcode("image", imageShortcode);
   eleventyConfig.addNunjucksAsyncShortcode("get_page", getPage);
-  eleventyConfig.addTransform("htmlmin", require("./src/_utils/minify-html.js"));
+
+  if (process.env.ELEVENTY_PRODUCTION == true){
+    eleventyConfig.addTransform("htmlmin", require("./src/_utils/minify-html.js"));
+  }
+
   eleventyConfig.addPlugin(syntaxHighlight);
   eleventyConfig.addPlugin(metagen);
-  eleventyConfig.addPlugin(criticalCss, {
-    penthouse: {
-      timeout:60000
-    }
-  });
+  eleventyConfig.setServerPassthroughCopyBehavior("passthrough");
   eleventyConfig.addPlugin(eleventyNavigationPlugin);
   eleventyConfig.addPlugin(schema);
   eleventyConfig.addPlugin(editOnGithub, {
@@ -176,6 +181,10 @@ module.exports = function(eleventyConfig) {
 
   });
 
+  eleventyConfig.addShortcode("year", () => {
+    return new Date().getFullYear();
+  });
+
   eleventyConfig.addFilter('flattenNavigationAndAddNextPrev', (nav) => {
     const flat = [];
     const visit = (items) => {
@@ -219,6 +228,55 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addFilter('markdown', value => {
     return `${markdownIt.render(value)}`;
   });
+
+  eleventyConfig.addPlugin(pluginRev);
+
+    eleventyConfig.addPlugin(eleventySass, [{
+    rev: true,
+    postcss: postcss([
+      require('postcss-nested'),
+      purgecss({
+        content: [
+          './src/**/*.njk',
+          './src/**/*.md',
+          './src/**/*.js',
+          '.eleventy.js',
+        ],
+        safelist: {
+          deep: [
+            /zoomIn/,
+            /fadeInUp/,
+            /pre/,
+            /code/,
+            /block/,
+            /box/,
+            /title/,
+            /is-\d/,
+            /table/,
+            /message/,
+            /message-header/,
+            /message-body/,
+            /panel-block/,
+            /p-3/,
+            /is-block/,
+            /is-justify-content-space-between/,
+            /is-light/,
+            /is-active/,
+            /is-info/,
+            /fa-pencil/,
+            /fa-question/,
+            /fa-triangle-exclamation/,
+            /has-text-info/,
+            /has-text-success/,
+            /has-text-danger/,
+          ],
+        },
+      }),
+      require('autoprefixer'),
+      require('cssnano'),
+    ])
+  }]);
+
 
   const { fontawesomeSubset } = require('fontawesome-subset');
   fontawesomeSubset({
