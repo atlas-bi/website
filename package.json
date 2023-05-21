@@ -8,7 +8,7 @@
     "@creativebulma/bulma-divider": "1.1.0",
     "@fontsource/rasa": "4.5.14",
     "@quasibit/eleventy-plugin-schema": "1.11.0",
-    "@sindresorhus/slugify": "2.2.0",
+    "@sindresorhus/slugify": "2.2.1",
     "eleventy-critical-css": "1.1.0",
     "eleventy-plugin-rev": "^1.1.1",
     "eleventy-sass": "^2.2.1",
