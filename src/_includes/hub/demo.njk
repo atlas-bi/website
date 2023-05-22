@@ -1,0 +1,18 @@
+{% set docsUrl = library.docs %}
+{% include 'src/_includes/components/openDocs.njk' %}
+<h2 class="text-slate-900 text-4xl tracking-tight font-extrabold sm:text-5xl dark:text-white text-center py-10">
+    Is there a demo? Yes!
+</h2>
+<p class="text-center font-light text-lg text-slate-800">
+    Atlas Hub has live demo, test it out and see if it works for you!
+</p>
+<div class=" animate-fade border border-slate-100 rounded-md transition-shadow shadow hover:shadow-lg mt-10 md:mt-20 w-fit mx-auto text-slate-600 align-right flex space-x-4 md:space-x-10 center-content">
+    <a href="{{ hub.demo }}"
+       class="flex grow space-x-3 p-3"
+       title="launch the demo"
+       target="_blank">
+        <span class="my-auto"><strong class="text-slate-800">Launch</strong>&nbsp;the demo</span>
+        {% set class = "w-4 h-4 m-auto shrink-0" %}
+        {% include 'src/_includes/svg/right.svg' %}
+    </a>
+</div>

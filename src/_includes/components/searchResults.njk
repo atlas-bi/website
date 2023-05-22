@@ -1,0 +1,27 @@
+<div class="ring ring-2 ring-offset-1 ring-offset-background ring-slate-400 rounded-lg border bg-card text-card-foreground shadow-sm fixed md:absolute mt-3 right-0 max-md:bottom-0 max-md:top-[50px] max-md:rounded-none min-w-[100vw] md:min-w-[50vw] max-w-[80vw] md:max-h-[80vh] overflow-auto z-40"
+     id="s-results">
+    <div class="grid gap-0 p-0">
+        {% for x in hits %}
+            <a href="{{ x.url }}" class="flex flex-col hover:bg-slate-50 px-4 py-2">
+                <div class="flex justify-start space-x-4 ">
+                    <div class="flex items-center justify-between space-x-4 grow">
+                        <span class="font-medium flex space-x-3 items-center">
+                            <span class="flex-shrink">{{ x.title }}</span>
+                        </span>
+                        <span class="flex flex-wrap justify-end space-x-1">
+                            {% for tag in x._tags %}
+                                <div class="block mb-1 text-green-900 border rounded-xl px-2 text-sm">{{ tag }}</div>
+                            {% endfor %}
+                        </span>
+                    </div>
+                </div>
+                <p class="mt-2 text-muted-foreground">{{ x._snippetResult.content.value | safe }}</p>
+            </a>
+            <div data-orientation="horizontal"
+                 role="none"
+                 class="shrink-0 bg-border h-[1px] w-full"></div>
+        {% else %}
+            <div class="px-4 py-2">no matches found.</div>
+        {% endfor %}
+    </div>
+</div>

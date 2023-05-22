@@ -1,5 +1,5 @@
 ---
-layout: layout.njk
+layout: siteLayout.njk
 date: git Last Modified
 eleventyComputed:
     meta:
@@ -26,35 +26,21 @@ eleventyComputed:
           postalCode: '60901'
           addressCountry: USA
 ---
-{% block body %}
-    <div class="hero-body">
-        <div class="container">
-            <div class="columns is-vcentered">
-                <div class="column animated fadeIn">
-                    <h1>
-                        it's called
-                        <strong>Atlas</strong>
-                    </h1>
-                    <h2 class="subtitle">
-                        Analytics solutions for healthcare
-                        <br />
-                        <br />
-                        By healthcare professionals, for healthcare professionals.
-                    </h2>
-                    <a class="button is-link is-large is-outlined is-light" href="/help" style="height:auto;">
-                        <span class="office-hours-countdown_title mr-1">Join office hours!</span>
-                    </a>
-                </div>
-                <div class="column">
-                    <figure class="image animated fadeInDown">
-                        {% image "./src/static/img/report_group.png", "atlas information sources", "(min-width:600px) 50vw, 100vw" , "asdf", "eager", "auto" %}
-                    </figure>
-                </div>
-            </div>
+
+<section class="grow">
+    <div class="mx-auto container space-y-6 ">
+        {% include 'src/_includes/components/connect.njk' %}
+        <div class="relative max-w-5xl mx-auto pt-10 pb-16 sm:pt-24">
+            <h1 class="text-slate-900 font-extrabold text-4xl sm:text-5xl lg:text-6xl tracking-tight text-center dark:text-white">
+                it's called Atlas
+            </h1>
+            <p class="mt-6 text-lg text-slate-600 text-center max-w-3xl mx-auto dark:text-slate-400">
+                Analytics solutions for healthcare. By healthcare professionals, for healthcare professionals.
+            </p>
+        </div>
+        <div class="grid auto-rows-auto grid-cols-1 gap-10">
+            {% include "home/library.njk" %}
+            {% include "home/hub.njk" %}
         </div>
     </div>
-    {%  include "home/bi-library.njk" %}
-    {%  include "home/community.njk" %}
-    {%  include "home/automation-hub.njk" %}
-    {%  include "home/download.njk" %}
-{% endblock body %}
+</section>

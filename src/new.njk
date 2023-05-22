@@ -1,0 +1,43 @@
+---
+layout: siteLayout.njk
+title: Coming Soon
+description: Find out what is coming next. Atlas tools are open source and continue to grow.
+date: git Last Modified
+eleventyComputed:
+  meta:
+    breadcrumbs:
+      - name: Atlas
+        url: "{{ site.url }}"
+        position: 1
+---
+
+<section class="grow">
+    <div class="mx-auto container space-y-6">
+        <div class="relative max-w-5xl mx-auto pt-10 sm:pt-24 lg:pt-32">
+            <h1 class="text-slate-900 font-extrabold text-4xl sm:text-5xl lg:text-6xl tracking-tight text-center dark:text-white">
+                Coming Soon
+            </h1>
+            <p class="mt-6 text-lg text-slate-600 text-center max-w-3xl mx-auto dark:text-slate-400">
+                Whats coming down the pipeline?
+            </p>
+        </div>
+        <div class="grid auto-rows-auto grid-cols-1 md:grid-cols-2 gap-4 mb-20">
+            <div class="ml-auto md:w-[500px] group animate-fade bg-white border rounded-lg shadow p-5 space-y-3 transition-colors hover:border-sky-400 hover:shadow-sky-400">
+                <div class="is-size-4">
+                    <h2 class="text-2xl font-medium transition-colors m-0 text-slate-600 group-hover:text-slate-900 ">
+                        <span class="mx-2 text-slate-300 group-hover:text-sky-400">/</span>
+                        Requests
+                    </h2>
+                </div>
+                <p class="font-light text-slate-600">IT Request Portal Revisited</p>
+                <p class="prose"></p>
+            </div>
+            <div class="mr-auto md:w-[500px] group animate-fade bg-white border rounded-lg shadow p-5 space-y-3 transition-colors hover:border-sky-400 hover:shadow-sky-400">
+                <div class="is-size-4">What else?</div>
+                <p class="prose">
+                    Do you have a tool that would be useful to the analytics community, or have an idea that should be built? <a href="/help">Reach out.</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,6 +1,6 @@
 ---
-layout: layout.njk
-title: Get Help | Atlas
+layout: siteLayout.njk
+title: Get Help
 description: Get help your Atlas install. There is a community of dedicated Atlas users to help you.
 keywords: atlas, atlas bi library, atlas automation hub, report library, data governance, contact, data governance help, atlas community
 date: git Last Modified
@@ -11,94 +11,73 @@ eleventyComputed:
         url: "{{ site.url }}"
         position: 1
 ---
-{% block body %}
-    <div class="hero-body">
-        <div class="container">
-            <div class="columns">
-                <div class="column is-half">
-                    <h1 class="mb-3">we can help.</h1>
-                    <h4 class="mb-5 pb-5 subtitle">
-                        There is a community of dedicated Atlas users to help you.
-                    </h4>
-                    <div class="content">
-                        <h2>Office Hours</h2>
-                        <div class="block">
-                            Join our bi-weekly office hours on Friday's at 9:00-10:00 AM CST.
 
-                            <br><a download href="/static/files/office_hours.ics">Add to Calendar</a>
-                        </div>
-
-                        <h2>Chat</h2>
-                        <div class="block">
-                            <a href="https://discord.gg/hdz2cpygQD">Join the chat on Discord</a>
-                        </div>
-
-                        <h2 class="pb-3">Send an email</h2>
-                        <div class="block">
-                            can I see a demo?
-                            <br />
-                            is Atlas right for me?
-                            <br />
-                            ask
-                            <a href="mailto:dan@atlas.bi">Dan Ryan</a>
-                            - dan@atlas.bi
-                        </div>
-                        <div class="block">
-                            need technical help?
-                            <br />
-                            want to contribute?
-                            <br />
-                            ask
-                            <a href="mailto:christopher@atlas.bi">Christopher Pickering</a>
-                            - christopher@atlas.bi
-                        </div>
-                    </div>
+<section class="grow">
+    <div class="mx-auto container space-y-6">
+        <div class="relative max-w-5xl mx-auto pt-10 sm:pt-24 lg:pt-32">
+            <h1 class="text-slate-900 font-extrabold text-4xl sm:text-5xl lg:text-6xl tracking-tight text-center dark:text-white">
+                we can help.
+            </h1>
+            <p class="mt-6 text-lg text-slate-600 text-center max-w-3xl mx-auto dark:text-slate-400">
+                There is a community of dedicated Atlas users to help you.
+            </p>
+        </div>
+        <div class="flex">
+            <div class="md:w-1/2">
+                <h2 class="font-semibold text-slate-900 dark:text-slate-100 pb-4">Office Hours</h2>
+                <div class="pt-4">Ask us about joining the bi-weekly office hours on Friday's at 9:00-10:00 AM CST.</div>
+                <h2>Chat</h2>
+                <div class="pt-4">
+                    <a class="text-sky-600" href="https://discord.gg/hdz2cpygQD">Join the chat on Discord</a>
                 </div>
-                <div class="column is-half box">
-                    <h2 class="pb-3">Send a message</h2>
-                    <form name="contact" method="post" data-netlify="true">
-                        <div class="columns is-desktop">
-                            <div class="column">
-                                <div class="field">
-                                    <label class="label" for="name">Name</label>
-                                    <div class="control">
-                                        <input class="input" type="text" name="name" id="name" />
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="column">
-                                <div class="field">
-                                    <label class="label" for="email">Email</label>
-                                    <div class="control">
-                                        <input class="input" type="text" name="email" id="email" />
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="field">
-                            <label class="label" for="subject">Subject</label>
-                            <div class="control">
-                                <input class="input" type="text" name="subject" id="subject" />
-                            </div>
-                        </div>
-                        <div class="field mb-5">
-                            <label class="label">Message</label>
-                            <div class="control">
-                                <textarea class="textarea" name="body" rows="5" cols="35"></textarea>
-                            </div>
-                        </div>
-                        <div class="field">
-                            <div class="control">
-                                <button type="button"
-                                        onclick="this.closest('form').submit();this.closest('form').reset();return !1;"
-                                        class="button is-info is-fullwidth">
-                                    Send
-                                </button>
-                            </div>
-                        </div>
-                    </form>
+                <h2 class="font-semibold text-slate-900 dark:text-slate-100 pt-4">Send an email</h2>
+                <div class="pt-4">
+                    <ul class="list-disc ml-4">
+                        <li>can I see a demo?</li>
+                        <li>is Atlas right for me?</li>
+                    </ul>
+                    ask
+                    <a class="text-sky-600" href="mailto:dan@atlas.bi">Dan Ryan</a>
+                    - dan@atlas.bi
                 </div>
+                <div class="pt-4">
+                    <ul class="list-disc ml-4">
+                        <li>need technical help?</li>
+                        <li>want to contribute?</li>
+                    </ul>
+                    ask
+                    <a class="text-sky-600" href="mailto:christopher@atlas.bi">Christopher Pickering</a>
+                    - christopher@atlas.bi
+                </div>
+            </div>
+            <div class="md:w-1/2 border rounded-lg outline outline-offset-2 outline-sky-400/50 bg-white p-4">
+                <h2 class="font-semibold text-slate-900 dark:text-slate-100 pb-4">Send a message</h2>
+                <form name="contact" method="post" data-netlify="true">
+                    <label class="text-gray-700" for="name">Name</label>
+                    <input class="mb-4 mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 "
+                           type="text"
+                           name="name"
+                           id="name" />
+                    <label class="text-gray-700" for="email">Email</label>
+                    <input class="mb-4 mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 "
+                           type="text"
+                           name="email"
+                           id="email" />
+                    <label class="text-gray-700" for="subject">Subject</label>
+                    <input class="mb-4 mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 "
+                           type="text"
+                           name="subject"
+                           id="subject" />
+                    <label class="text-gray-700">Message</label>
+                    <textarea class=" mb-4 mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 "
+                              name="body"
+                              rows="5"
+                              cols="35"></textarea>
+                    <button type="button"
+                            onclick="this.closest('form').submit();this.closest('form').reset();return !1;"
+                            class="rounded-md border py-1 px-4 mr-auto my-4">Send</button>
+                </form>
             </div>
         </div>
     </div>
-{% endblock body %}
+</section>

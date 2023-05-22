@@ -1,0 +1,48 @@
+{
+  "description": "Atlas business intelligence library plugs in to your existing reporting platforms, extracts useful metadata, and displays it in a unified report library where you can easily search for, document, and launch reports.",
+  "features": [
+    {
+      "heading": "The unified report library",
+      "message": "Have you found yourself switching between four or five different reporting tools finding and running reports? With the unified Atlas BI Library all your report metadata is in one place where you can document, tag, and group reports."
+    },
+    {
+      "heading": "Supercharged report search",
+      "message": "Capitalizing on a centralized metadata repository, Atlas BI Library makes it possible for you to quickly search for and find reports in any connected system! Most reports can be be launched directly from the search results. Powerful filters quickly narrow results down. Are you a report developer? You can even search for reports using a specific sql table or column!"
+    },
+    {
+      "heading": "Deep report sharing",
+      "message": "Have you even wanted to share a link to an Epic Hyperspace report? Now you can! With Atlas BI Library embedded in <a href='https://www.epic.com' target='_blank' rel='noopener'>Epic Hyperspace</a> you can easily share system reports with your colleagues."
+    },
+    {
+      "heading": "Define key terms",
+      "message": "Commonly used terms, such as 'LOS' for Length of Stay, can be defined in one place and shared across many reports."
+    },
+    {
+      "heading": "Track your library's key metrics",
+      "message": "Atlas BI Library includes reports to provide insights into your report library. Quickly find reports that are ready to be retired, reports that are past due for maintenance, or even unauthorized report creation."
+    },
+    {
+      "heading": "Group reports into collections",
+      "message": "Have you been working on a project involving a series of reports to gather data? Covid for example? Atlas BI Library has a unique feature allowing you to group reports, from any system, and terms together into a Collection with additional documentation. The collections are promoted in search so anyone else looking for 'Covid' reports will find your curated collection of reports first!"
+    },
+    {
+      "heading": "Report library's missing tool: The Report Profile",
+      "message": "Wonder how much your report is being used? Or who's using it? Its all possible with the click of a button! Atlas BI Library collects all report usage data and displays it on a clean chart or table. Find how often your reports are run, and who uses them. The inverse is also true! Search for you peer's and find what reports they are running!"
+    },
+    {
+      "heading": "Baked in report maintenance schedules",
+      "message": "Managing a large report library is tough. Baked in report maintenance schedules make it easy to stay on top of. Admin reports remind you when a report is coming up for maintenance before it is past due. Multiple schedule options are available.\n\n\n\nPerhaps one of your reporting tools requires you to update multiple reports right away? The powerful search options allow you to find reports using specific sql columns and tables."
+    },
+    {
+      "heading": "Who? What? When? Why?",
+      "message": "These questions are now all answered in your report documentation within the BI Library before your users can ask you! Many documentation options allow you to fully document your content, from images to terms, from report descriptions and assumptions to who requested the report to be made."
+    }
+  ],
+  "long_description": "Documenting your reporting content is easier than ever.\n\nAttach terms - a definition of a commonly used word or acronym, such as LOS (length of stay) - to your reports so users clearly know what definition is used in each report.\n\nView report relationships to other reports, and connected security groups.\n\nYou have the reports profile - all the run data, subscriptions, stars, and user data - at your fingertips.\n\nData governance strategies are easier to implement with the built in report maintenance system, and many report library status reports.\n\nA consolidated data catalog with report metadata is the best gift to data governance!",
+  "name": "Library",
+  "short_description": "The unified report library.",
+  "short_name": "Library",
+  "docs": "/docs/library/",
+  "info": "/library/",
+  "demo": "https://library.atlas.bi"
+}

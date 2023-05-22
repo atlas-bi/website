@@ -1,6 +1,6 @@
 ---
-layout: layout.njk
-title: Documentation | Atlas
+layout: siteLayout.njk
+title: Documentation
 description: Learn about how to install and configure Atlas BI Library and Atlas Automation Hub in the Atlas Documentation. Find answers for common questions.
 keywords: atlas, atlas bi library, atlas automation hub, atlas documentation, documentation database, report library documentation
 date: git Last Modified
@@ -11,45 +11,42 @@ eleventyComputed:
         url: "{{ site.url }}"
         position: 1
 ---
-{% block body %}
-    <section class="section is-flex-grow-1">
-        <div class="container">
-            <h1 class="title is-1">Documentation</h1>
-            Welcome to Atlas. well maintained and easy to setup. Get to know them by exploring our documentation.
-            <div class="columns pt-5">
-                <div class="column">
-                    <div class="card">
-                        <div class="card-content">
-                            <p class="title">
-                                <a title="Atlas BI Library" href="/docs/bi-library/" class="is-size-4">{{ bi_library.name }}</a>
-                            </p>
-                            <p class="subtitle">
-                                {{ bi_library.short_description }}
-                            </p>
-                            <p>
-                                {{ bi_library.description }}
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="column">
-                    <div class="card">
-                        <div class="card-content">
-                            <p class="title">
-                                <a title="Atlas BI Library"
-                                   href="/docs/automation-hub/"
-                                   class="is-size-4">{{ automation_hub.name }}</a>
-                            </p>
-                            <p class="subtitle">
-                                {{ automation_hub.short_description }}
-                            </p>
-                            <p class="block">
-                                {{ automation_hub.description }}
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+
+<section class="grow">
+    <div class="mx-auto container space-y-6">
+        <div class="relative max-w-5xl mx-auto pt-10 sm:pt-24 lg:pt-32">
+            <h1 class="text-slate-900 font-extrabold text-4xl sm:text-5xl lg:text-6xl tracking-tight text-center dark:text-white">
+                Documentation
+            </h1>
+            <p class="mt-6 text-lg text-slate-600 text-center max-w-3xl mx-auto dark:text-slate-400">
+                Welcome to Atlas. Well maintained and easy to setup. Get to know the tools by exploring our documentation.
+            </p>
         </div>
-    </section>
-{% endblock body %}
+        <div class="grid auto-rows-auto grid-cols-1 md:grid-cols-2 gap-4">
+            <a title="{{ library.name }}"
+               href="{{ library.docs }}"
+               class="group animate-fade  border rounded-lg shadow p-5 space-y-3 transition-colors hover:border-sky-400 hover:shadow-sky-400">
+                <div class="is-size-4">
+                    <h2 class="text-2xl font-medium transition-colors m-0 text-slate-600 group-hover:text-slate-900 ">
+                        <span class="mx-2 text-slate-300 group-hover:text-sky-400">/</span>
+                        {{ library.name }}
+                    </h2>
+                </div>
+                <p class="font-light text-slate-600">{{ library.short_description }}</p>
+                <p class="prose">{{ library.description }}</p>
+            </a>
+            <a title="{{ hub.name }}"
+               href="{{ hub.docs }}"
+               class="group animate-fade  border rounded-lg shadow p-5 space-y-3 transition-colors hover:border-sky-400 hover:shadow-sky-400">
+                <div class="is-size-4">
+                    <h2 class="text-2xl font-medium transition-colors m-0 text-slate-600 group-hover:text-slate-900 ">
+                        <span class="mx-2 text-slate-300  group-hover:text-sky-400">/</span>
+                        {{ hub.name }}
+                    </h2>
+                </div>
+                <p class="font-light text-slate-600">{{ hub.short_description }}</p>
+                <p class="prose">{{ hub.description }}</p>
+            </a>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,52 @@
+{% set docsUrl = library.docs %}
+{% include 'src/_includes/components/openDocs.njk' %}
+<h2 class="text-slate-900 text-4xl tracking-tight font-extrabold sm:text-5xl dark:text-white text-center py-10">
+    Key Integrations
+</h2>
+<p class="text-center font-light text-lg text-slate-800">
+    There are many integrations that work out of the box, here's a few examples.
+</p>
+{% set integrations = [
+    {
+        name: "SAP Crystal Reports",
+        img: "./src/static/img/sap.png",
+        description: "Crystal report metadata - including SQL queries - are loaded and fully searchable. Recent report run output can be downloaded directly!"
+    },
+    {
+        name: "Tableau Content",
+        img: "./src/static/img/Tableau.png",
+        description: "Dashboard, worksheets, user profiles, usage information and more make the Tableau integration fairly seamless."
+    },
+    {
+        name: "SSRS Reports",
+        img: "./src/static/img/SSRS.png",
+        description: "Atlas BI Library functionality take you directly into SSRS report runs, and even can directly launch the report editor or manager! Like other reports integrations, the usage data and raw queries are always loaded."
+    },
+    {
+        name: "Epic",
+        img: "./src/static/img/epic.png",
+        description: "Seamless integration with Epic, and Epic content, makes Atlas BI Library an excellent fit. Advanced report sharing and controls are huge."
+    },
+    {
+        name: "PowerBI",
+        img: "./src/static/img/powerbi.png",
+        description: "Connect to PowerBI Cloud instances to easily gather report usage data, use profiles, metadata, search for and launch report directly."
+    }
+] %}
+<div class="grid md:grid-cols-2 gap-4">
+    {% for i in integrations %}
+        <figure class="md:flex bg-slate-100 rounded-xl p-8 md:p-0 dark:bg-slate-800">
+            <div class="pl-0 pt-0 md:pt-8 md:pl-8 w-24 h-24 mx-auto">
+                {% image i.img, i.name, "(min-width:128px) 50vw, 100vw" %}
+            </div>
+            <div class="pt-6 md:p-8 text-center md:text-left space-y-4">
+                <blockquote>
+                    <p class="text-lg font-medium">{{ i.description }}</p>
+                </blockquote>
+                <figcaption class="font-medium">
+                    <div class="text-sky-500 dark:text-sky-400">{{ i.name }}</div>
+                </figcaption>
+            </div>
+        </figure>
+    {% endfor %}
+</div>

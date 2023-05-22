@@ -1,0 +1,33 @@
+---
+layout: siteLayout.njk
+title: Hub
+description: Atlas Automation Hub, A simple extract, batch job and script scheduler. Atlas Automation Hub is a task scheduling tool for getting data from a source and depositing it in a destination - sql servers to SFTP servers.
+keywords: atlas automation hub, job scheduler, etl scheduler, sql to sftp job, task runner
+date: git Last Modified
+eleventyComputed:
+    meta:
+        breadcrumbs:
+            - name: Atlas
+              url: "{{ site.url }}"
+              position: 1
+    type: page
+---
+
+<section class="grow">
+    <div class="mx-auto container space-y-6 ">
+        {% include 'src/_includes/components/connect.njk' %}
+        <h1 class="text-slate-900 font-extrabold text-4xl sm:text-5xl lg:text-6xl tracking-tight text-center dark:text-white">
+            {{ hub.name }}
+        </h1>
+        <p class="mt-6 text-lg text-slate-600 text-center max-w-3xl mx-auto dark:text-slate-400">
+            {{ hub.short_description }}
+        </p>
+        <div class="mx-auto prose text-center">{{ hub.description }}</div>
+        <figure class="animated-fade flex justify-center">
+            {% image "./src/static/img/hub/dashboard.png", "atlas hub home page", "(min-width:600px) 90vw, 100vw", "asdf", "eager", "auto" %}
+        </figure>
+        {% include "hub/features.njk" %}
+        {% include "hub/demo.njk" %}
+        {% include "hub/gallery.njk" %}
+    </div>
+</section>
