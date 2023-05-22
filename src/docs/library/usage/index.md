@@ -49,7 +49,7 @@ eleventyNavigation:
        <a href="{{ link.url }}" class="group animate-fade text-center border rounded-lg shadow p-5 space-y-3 transition-colors hover:border-sky-400 hover:shadow-sky-400 no-underline">
          <h2 class="text-2xl font-medium transition-colors m-0 text-slate-600 group-hover:text-slate-900 ">{{ link.title }}</h2>
          <p class="prose text-slate-600 group-hover:text-slate-900">{{ link.description }}</p>
-         <div class="no-underline text-sky-600" >Take me there!</div>
+         <div class="no-underline text-sky-600">Take me there!</div>
       </a>
     {%- endfor -%}
 </div>
@@ -58,7 +58,7 @@ eleventyNavigation:
 
 {% set links=[{
   title:"Access Control",
-  url:"Take me there!",
+  url:"/docs/library/usage/access-control/",
   description:"Learn how to secure your library by creating access groups and assigning permissions to users."
 },{
   title:"Parameters",
