@@ -3,6 +3,9 @@ on: [push]
 jobs:
   linkcheck:
     runs-on: ubuntu-latest
+    concurrency:
+      group: ${{ github.workflow }}-${{ github.ref }}
+      cancel-in-progress: true
     steps:
     - name: 💾 Checkout
       uses: actions/checkout@v3
@@ -22,5 +25,5 @@ jobs:
 
     - name: 🔗 Linkcheck
       uses: untitaker/hyperlink@0.1.27
-        with:
-          args: _site/
+      with:
+        args: _site/

@@ -6,6 +6,9 @@ on:
 jobs:
   master:
     runs-on: ubuntu-latest
+    concurrency:
+      group: ${{ github.workflow }}-${{ github.ref }}
+      cancel-in-progress: true
     if: github.ref_name == 'dev'
     steps:
     - name: 💾 Checkout

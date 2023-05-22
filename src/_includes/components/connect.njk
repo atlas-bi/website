@@ -1,0 +1,22 @@
+<div class=" animate-fade border border-slate-100 rounded-md transition-shadow shadow hover:shadow-lg mt-10 md:mt-20 w-fit mx-auto text-slate-600 align-right flex space-x-4 md:space-x-10 center-content">
+    <a href="/help" class="flex grow space-x-3 p-3" title="help">
+        <span class="my-auto"><strong class="text-slate-800">Connect with us</strong>&nbsp;for bi-weekly office hours</span>
+        {% set class = "w-4 h-4 m-auto shrink-0" %}
+        {% include 'src/_includes/svg/right.svg' %}
+    </a>
+    <div class="flex flex-wrap gap-2 border-l p-3 shrink">
+        <a href="{{ site.discord }}"
+           target="_blank"
+           title="chat on discord"
+           class="fill-violet-400 hover:fill-violet-500 border rounded p-1">
+            {% set class = "w-5 h-5 animate-pulse animate-infinite " %}
+            {% include 'src/_includes/svg/discord.svg' %}
+        </a>
+        <a href="mailto:christopher@atlas.bi"
+           title="send an email"
+           class="fill-violet-400 hover:fill-violet-500 border rounded p-1">
+            {% set class = "w-5 h-5 animate-pulse animate-infinite " %}
+            {% include 'src/_includes/svg/send.svg' %}
+        </a>
+    </div>
+</div>

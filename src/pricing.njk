@@ -1,0 +1,38 @@
+---
+layout: siteLayout.njk
+title: Pricing
+description: Discover the pricing for Atlas. Atlas tools are open source and free for all to install and use.
+date: git Last Modified
+eleventyComputed:
+  meta:
+    breadcrumbs:
+      - name: Atlas
+        url: "{{ site.url }}"
+        position: 1
+---
+
+<section class="grow">
+    <div class="mx-auto container space-y-6">
+        <div class="relative max-w-5xl mx-auto pt-10 sm:pt-24 lg:pt-32">
+            <h1 class="text-slate-900 font-extrabold text-4xl sm:text-5xl lg:text-6xl tracking-tight text-center dark:text-white">
+                Pricing
+            </h1>
+            <p class="mt-6 text-lg text-slate-600 text-center max-w-3xl mx-auto dark:text-slate-400">
+                Atlas. Analytics solutions for healthcare. By healthcare professionals, for healthcare professionals.
+            </p>
+        </div>
+        <div class="md:w-[500px] mx-auto group animate-fade bg-white border rounded-lg shadow p-5 space-y-3 transition-colors hover:border-sky-400 hover:shadow-sky-400">
+            <div class="is-size-4">
+                <h2 class="text-2xl font-medium transition-colors m-0 text-slate-600 group-hover:text-slate-900 ">Free.</h2>
+            </div>
+            <p class="font-light text-slate-600">Atlas tools are open source and free for all to use.</p>
+            <p class="prose">
+                Browse the code on <a href="{{ site. source }}" target="_blank">GitHub</a>.
+            </p>
+            <p class="prose">
+                Read the <a href="/docs">docs</a>.
+            </p>
+        </div>
+    </div>
+</div>
+</section>

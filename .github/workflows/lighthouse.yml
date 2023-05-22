@@ -3,6 +3,9 @@ on: [push]
 jobs:
   lhci:
     runs-on: ubuntu-latest
+    concurrency:
+      group: ${{ github.workflow }}-${{ github.ref }}
+      cancel-in-progress: true
     steps:
     - name: 💾 Checkout
       uses: actions/checkout@v3

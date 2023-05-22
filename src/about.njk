@@ -1,0 +1,97 @@
+---
+layout: siteLayout.njk
+title: About & Credits | Atlas
+description: Atlas BI Library and Atlas Automation Hub list of contributors and creator credits. Atlas Tools are created and maintained by the Riverside Healthcare Analytics team.
+date: Last Modified
+keywords: atlas, atlas bi library, unified report library, data governance, database, credits, contributors
+eleventyComputed:
+  meta:
+    breadcrumbs:
+      - name: Atlas
+        url: '{{ site.url }}'
+        position: 1
+---
+
+<section class="flex-grow">
+    <div class="mx-auto container">
+        <div class="relative max-w-5xl mx-auto pt-20 sm:pt-24 lg:pt-32">
+            <h1 class="text-slate-900 font-extrabold text-4xl sm:text-5xl lg:text-6xl tracking-tight text-center dark:text-white">
+                About
+            </h1>
+            <p class="mt-6 text-lg text-slate-600 text-left max-w-3xl mx-auto dark:text-slate-400">
+                Atlas was originally created by the Riverside Healthcare Analytics team. In mid 2020 Riverside open sourced the project to allow other hospitals to take advantage of solution. Alternatives were pricey and we love collaboration. By open sourcing and working with other institutions we are able to together make something that alone we could not produce.
+            </p>
+        </div>
+        <h2 class="text-lg text-center mt-16 mb-10">Individual Contributors</h2>
+        {% set contributers = [
+            {
+                name: "Paula Courville"
+            },
+            {
+                name: "Darrel Drake",
+                url: "https://www.linkedin.com/in/darrel-drake-57562529"
+            },
+            {
+                name: "Dee Anna Hillebrand",
+                url: "https://github.com/DHillebrand2016"
+            },
+            {
+                name: "Scott Manley",
+                url: "https://github.com/Scott-Manley"
+            },
+            {
+                name: "Madeline Matz",
+                url: "mailto:mmatz@RHC.net"
+            },
+            {
+                name: "Christopher Pickering",
+                url: "https://github.com/christopherpickering"
+            },
+            {
+                name: "Sean Pickering",
+                url: "https://github.com/Sean-Pickering"
+            },
+            {
+                name: "Dan Ryan",
+                url: "https://github.com/danryan1011"
+            },
+            {
+                name: "Richard Schissler",
+                url: "https://github.com/schiss152"
+            },
+            {
+                name: "Eric Shultz",
+                url: "https://github.com/eshultz"
+            },
+            {
+                name: "Cecil Jolley"
+            },
+            {
+                name: "James Ward",
+                url: "https://www.linkedin.com/in/james-ward-b3819311/"
+            },
+            {
+                name: "Mark Brown",
+                url: "https://www.linkedin.com/in/mark-brown-2a736b2/"
+            },
+            {
+                name: "Samuel Martinez",
+                url: "https://www.linkedin.com/in/samuel-martinez-jr-a68a349b/"
+            }
+        ] %}
+        <div class="text-center">
+            <ul>
+                {% for c in contributers %}
+                    <li>
+                        {% if c.url %}
+                            <a class="text-sky-600" href="{{ c.url }}" target="_blank">{{ c.name }}</a>
+                        {% else %}
+                            {{ c.name }}
+                        {% endif %}
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </ul>
+</div>
+</section>

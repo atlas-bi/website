@@ -1,0 +1,847 @@
+{% set docsUrl = library.docs %}
+{% include 'src/_includes/components/openDocs.njk' %}
+<h2 class="text-slate-900 text-4xl tracking-tight font-extrabold sm:text-5xl dark:text-white text-center py-10">
+    What other tools are available?
+</h2>
+{% set features = [
+    "Open Source",
+    "Search",
+    "Report Documentation",
+    "Auto-load Metadata via ETL",
+    "Certification Tags",
+    "Favorite Reports",
+    "Share Reports",
+    "Report Usage Metrics",
+    "Report Collections",
+    "Report Relationship ETL",
+    "Report Source Code ETL",
+    "Term Glossary",
+    "User Profiles",
+    "Maintenance Schedule"
+] %}
+{% set integrations = [
+    "Tableau Integration",
+    "Microsoft SSRS",
+    "SAP Crystal",
+    "PowerBI",
+    "Dashboards",
+    "Components",
+    "Workbench Reports",
+    "SlicerDicer",
+    "Usage Metrics"
+] %}
+<div class="border rounded-lg flex w-fit mx-auto max-w-full overflow-x-auto">
+    <div class="">
+        <div class="flex text-lg font-medium border-b px-5 h-12 bg-slate-100">
+            <span class="my-auto">Features</span>
+        </div>
+        <div>
+            {% for f in features %}
+                <div class="flex h-10 odd:bg-white even:bg-slate-50 px-5">
+                    <span class="my-auto w-max">{{ f }}</span>
+                </div>
+            {% endfor %}
+            <div class="flex text-lg font-medium h-12 px-5 bg-slate-100 border-y">
+                <span class="my-auto">Integrations</span>
+            </div>
+            {% for i in integrations %}
+                <div class="h-10 odd:bg-white even:bg-slate-50 px-5">
+                    <span class="my-auto w-max">{{ i }}</span>
+                </div>
+            {% endfor %}
+        </div>
+        <div class="plan-footer"></div>
+    </div>
+    {% set tools = [
+            {
+                name:library.name,
+                url: library.docs,
+                features:[
+                    {
+                        name:"Open Source",
+                        value:"y"
+                    },
+                    {
+                        name:"Search",
+                        value:"y"
+                    },
+                    {
+                        name:"Report Documentation",
+                        value:"y"
+                    },
+                    {
+                        name:"Auto-load Metadata via ETL",
+                        value:"y"
+                    },
+                    {
+                        name:"Certification Tags",
+                        value:"y"
+                    },
+                    {
+                        name:"Favorite Reports",
+                        value:"y"
+                    },
+                    {
+                        name:"Share Reports",
+                        value:"y"
+                    },
+                    {
+                        name:"Report Usage Metrics",
+                        value:"y"
+                    },
+                    {
+                        name:"Report Collections",
+                        value:"y"
+                    },
+                    {
+                        name:"Report Relationship ETL",
+                        value:"y"
+                    },
+                    {
+                        name:"Report Source Code ETL",
+                        value:"y"
+                    },
+                    {
+                        name:"Term Glossary",
+                        value:"y"
+                    },
+                    {
+                        name:"User Profiles",
+                        value:"y"
+                    },
+                    {
+                        name:"Maintenance Schedule",
+                        value:"y"
+                    }
+                ],
+                integrations:[
+                    {
+                        name:"Tableau Integration",
+                        value:"y"
+                    },
+                    {
+                        name:"Microsoft SSRS",
+                        value:"y"
+                    },
+                    {
+                        name:"SAP Crystal",
+                        value:"y"
+                    },
+                    {
+                        name:"PowerBI",
+                        value:"y"
+                    },
+                    {
+                        name:"Dashboards",
+                        value:"y"
+                    },
+                    {
+                        name:"Components",
+                        value:"y"
+                    },
+                    {
+                        name:"Workbench Reports",
+                        value:"y"
+                    },
+                    {
+                        name:"SlicerDicer",
+                        value:"y"
+                    },
+                    {
+                        name:"Usage Metrics",
+                        value:"y"
+                    }
+                ]
+            },
+            {
+                name:'SAP Analytic Hub',
+                url: 'https://help.sap.com/viewer/product/SAP_Analytics_Hub/1.0/en-US',
+                features:[
+                    {
+                        name:"Open Source",
+                        value:"n"
+                    },
+                    {
+                        name:"Search",
+                        value:"y"
+                    },
+                    {
+                        name:"Report Documentation",
+                        value:"y"
+                    },
+                    {
+                        name:"Auto-load Metadata via ETL",
+                        value:"n"
+                    },
+                    {
+                        name:"Certification Tags",
+                        value:"-"
+                    },
+                    {
+                        name:"Favorite Reports",
+                        value:"y"
+                    },
+                    {
+                        name:"Share Reports",
+                        value:"-"
+                    },
+                    {
+                        name:"Report Usage Metrics",
+                        value:"-"
+                    },
+                    {
+                        name:"Report Collections",
+                        value:"-"
+                    },
+                    {
+                        name:"Report Relationship ETL",
+                        value:"-"
+                    },
+                    {
+                        name:"Report Source Code ETL",
+                        value:"-"
+                    },
+                    {
+                        name:"Term Glossary",
+                        value:"-"
+                    },
+                    {
+                        name:"User Profiles",
+                        value:"y"
+                    },
+                    {
+                        name:"Maintenance Schedule",
+                        value:"-"
+                    }
+                ],
+                integrations:[
+                    {
+                        name:"Tableau Integration",
+                        value:"-"
+                    },
+                    {
+                        name:"Microsoft SSRS",
+                        value:"-"
+                    },
+                    {
+                        name:"SAP Crystal",
+                        value:"-"
+                    },
+                    {
+                        name:"PowerBI",
+                        value:"-"
+                    },
+                    {
+                        name:"Dashboards",
+                        value:"-"
+                    },
+                    {
+                        name:"Components",
+                        value:"-"
+                    },
+                    {
+                        name:"Workbench Reports",
+                        value:"-"
+                    },
+                    {
+                        name:"SlicerDicer",
+                        value:"-"
+                    },
+                    {
+                        name:"Usage Metrics",
+                        value:"-"
+                    }
+                ]
+            },
+            {
+                name:'Curator',
+                url: 'https://curator.interworks.com/',
+                features:[
+                    {
+                        name:"Open Source",
+                        value:"n"
+                    },
+                    {
+                        name:"Search",
+                        value:"y"
+                    },
+                    {
+                        name:"Report Documentation",
+                        value:"y"
+                    },
+                    {
+                        name:"Auto-load Metadata via ETL",
+                        value:"n"
+                    },
+                    {
+                        name:"Certification Tags",
+                        value:"-"
+                    },
+                    {
+                        name:"Favorite Reports",
+                        value:"y"
+                    },
+                    {
+                        name:"Share Reports",
+                        value:"-"
+                    },
+                    {
+                        name:"Report Usage Metrics",
+                        value:"-"
+                    },
+                    {
+                        name:"Report Collections",
+                        value:"-"
+                    },
+                    {
+                        name:"Report Relationship ETL",
+                        value:"-"
+                    },
+                    {
+                        name:"Report Source Code ETL",
+                        value:"-"
+                    },
+                    {
+                        name:"Term Glossary",
+                        value:"-"
+                    },
+                    {
+                        name:"User Profiles",
+                        value:"-"
+                    },
+                    {
+                        name:"Maintenance Schedule",
+                        value:"-"
+                    }
+                ],
+                integrations:[
+                    {
+                        name:"Tableau Integration",
+                        value:"y"
+                    },
+                    {
+                        name:"Microsoft SSRS",
+                        value:"-"
+                    },
+                    {
+                        name:"SAP Crystal",
+                        value:"-"
+                    },
+                    {
+                        name:"PowerBI",
+                        value:"y"
+                    },
+                    {
+                        name:"Dashboards",
+                        value:"-"
+                    },
+                    {
+                        name:"Components",
+                        value:"-"
+                    },
+                    {
+                        name:"Workbench Reports",
+                        value:"-"
+                    },
+                    {
+                        name:"SlicerDicer",
+                        value:"-"
+                    },
+                    {
+                        name:"Usage Metrics",
+                        value:"-"
+                    }
+                ]
+            },
+            {
+                name:'Informatica',
+                url: 'https://www.informatica.com/',
+                features:[
+                    {
+                        name:"Open Source",
+                        value:"n"
+                    },
+                    {
+                        name:"Search",
+                        value:"-"
+                    },
+                    {
+                        name:"Report Documentation",
+                        value:"-"
+                    },
+                    {
+                        name:"Auto-load Metadata via ETL",
+                        value:"n"
+                    },
+                    {
+                        name:"Certification Tags",
+                        value:"-"
+                    },
+                    {
+                        name:"Favorite Reports",
+                        value:"-"
+                    },
+                    {
+                        name:"Share Reports",
+                        value:"-"
+                    },
+                    {
+                        name:"Report Usage Metrics",
+                        value:"-"
+                    },
+                    {
+                        name:"Report Collections",
+                        value:"-"
+                    },
+                    {
+                        name:"Report Relationship ETL",
+                        value:"-"
+                    },
+                    {
+                        name:"Report Source Code ETL",
+                        value:"-"
+                    },
+                    {
+                        name:"Term Glossary",
+                        value:"-"
+                    },
+                    {
+                        name:"User Profiles",
+                        value:"-"
+                    },
+                    {
+                        name:"Maintenance Schedule",
+                        value:"-"
+                    }
+                ],
+                integrations:[
+                    {
+                        name:"Tableau Integration",
+                        value:"-"
+                    },
+                    {
+                        name:"Microsoft SSRS",
+                        value:"-"
+                    },
+                    {
+                        name:"SAP Crystal",
+                        value:"-"
+                    },
+                    {
+                        name:"PowerBI",
+                        value:"-"
+                    },
+                    {
+                        name:"Dashboards",
+                        value:"-"
+                    },
+                    {
+                        name:"Components",
+                        value:"-"
+                    },
+                    {
+                        name:"Workbench Reports",
+                        value:"-"
+                    },
+                    {
+                        name:"SlicerDicer",
+                        value:"-"
+                    },
+                    {
+                        name:"Usage Metrics",
+                        value:"-"
+                    }
+                ]
+            },{
+            name:'IBM InfoSphere',
+            url: 'https://www.ibm.com/analytics/information-server',
+            features:[
+                {
+                    name:"Open Source",
+                    value:"n"
+                },
+                {
+                    name:"Search",
+                    value:"y"
+                },
+                {
+                    name:"Report Documentation",
+                    value:"y"
+                },
+                {
+                    name:"Auto-load Metadata via ETL",
+                    value:"n"
+                },
+                {
+                    name:"Certification Tags",
+                    value:"-"
+                },
+                {
+                    name:"Favorite Reports",
+                    value:"-"
+                },
+                {
+                    name:"Share Reports",
+                    value:"-"
+                },
+                {
+                    name:"Report Usage Metrics",
+                    value:"-"
+                },
+                {
+                    name:"Report Collections",
+                    value:"-"
+                },
+                {
+                    name:"Report Relationship ETL",
+                    value:"-"
+                },
+                {
+                    name:"Report Source Code ETL",
+                    value:"-"
+                },
+                {
+                    name:"Term Glossary",
+                    value:"y"
+                },
+                {
+                    name:"User Profiles",
+                    value:"-"
+                },
+                {
+                    name:"Maintenance Schedule",
+                    value:"-"
+                }
+            ],
+            integrations:[
+                {
+                    name:"Tableau Integration",
+                    value:"-"
+                },
+                {
+                    name:"Microsoft SSRS",
+                    value:"-"
+                },
+                {
+                    name:"SAP Crystal",
+                    value:"-"
+                },
+                {
+                    name:"PowerBI",
+                    value:"-"
+                },
+                {
+                    name:"Dashboards",
+                    value:"-"
+                },
+                {
+                    name:"Components",
+                    value:"-"
+                },
+                {
+                    name:"Workbench Reports",
+                    value:"-"
+                },
+                {
+                    name:"SlicerDicer",
+                    value:"-"
+                },
+                {
+                    name:"Usage Metrics",
+                    value:"-"
+                }
+            ]
+        },
+        {
+            name:'Collibra',
+            url: 'https://www.collibra.com',
+            features:[
+                {
+                    name:"Open Source",
+                    value:"n"
+                },
+                {
+                    name:"Search",
+                    value:"y"
+                },
+                {
+                    name:"Report Documentation",
+                    value:"y"
+                },
+                {
+                    name:"Auto-load Metadata via ETL",
+                    value:"n"
+                },
+                {
+                    name:"Certification Tags",
+                    value:"y"
+                },
+                {
+                    name:"Favorite Reports",
+                    value:"-"
+                },
+                {
+                    name:"Share Reports",
+                    value:"-"
+                },
+                {
+                    name:"Report Usage Metrics",
+                    value:"y"
+                },
+                {
+                    name:"Report Collections",
+                    value:"-"
+                },
+                {
+                    name:"Report Relationship ETL",
+                    value:"-"
+                },
+                {
+                    name:"Report Source Code ETL",
+                    value:"-"
+                },
+                {
+                    name:"Term Glossary",
+                    value:"y"
+                },
+                {
+                    name:"User Profiles",
+                    value:"-"
+                },
+                {
+                    name:"Maintenance Schedule",
+                    value:"-"
+                }
+            ],
+            integrations:[
+                {
+                    name:"Tableau Integration",
+                    value:"-"
+                },
+                {
+                    name:"Microsoft SSRS",
+                    value:"-"
+                },
+                {
+                    name:"SAP Crystal",
+                    value:"-"
+                },
+                {
+                    name:"PowerBI",
+                    value:"-"
+                },
+                {
+                    name:"Dashboards",
+                    value:"-"
+                },
+                {
+                    name:"Components",
+                    value:"-"
+                },
+                {
+                    name:"Workbench Reports",
+                    value:"-"
+                },
+                {
+                    name:"SlicerDicer",
+                    value:"-"
+                },
+                {
+                    name:"Usage Metrics",
+                    value:"-"
+                }
+            ]
+        },{
+        name:'Other Tools',
+        url: '',
+        features:[
+            {
+                name:"Open Source",
+                value:"n"
+            },
+            {
+                name:"Search",
+                value:"y"
+            },
+            {
+                name:"Report Documentation",
+                value:"y"
+            },
+            {
+                name:"Auto-load Metadata via ETL",
+                value:"n"
+            },
+            {
+                name:"Certification Tags",
+                value:"y"
+            },
+            {
+                name:"Favorite Reports",
+                value:"y"
+            },
+            {
+                name:"Share Reports",
+                value:"-"
+            },
+            {
+                name:"Report Usage Metrics",
+                value:"y"
+            },
+            {
+                name:"Report Collections",
+                value:"-"
+            },
+            {
+                name:"Report Relationship ETL",
+                value:"-"
+            },
+            {
+                name:"Report Source Code ETL",
+                value:"-"
+            },
+            {
+                name:"Term Glossary",
+                value:"y"
+            },
+            {
+                name:"User Profiles",
+                value:"y"
+            },
+            {
+                name:"Maintenance Schedule",
+                value:"-"
+            }
+        ],
+        integrations:[
+            {
+                name:"Tableau Integration",
+                value:"y"
+            },
+            {
+                name:"Microsoft SSRS",
+                value:"-"
+            },
+            {
+                name:"SAP Crystal",
+                value:"-"
+            },
+            {
+                name:"PowerBI",
+                value:"y"
+            },
+            {
+                name:"Dashboards",
+                value:"-"
+            },
+            {
+                name:"Components",
+                value:"-"
+            },
+            {
+                name:"Workbench Reports",
+                value:"-"
+            },
+            {
+                name:"SlicerDicer",
+                value:"-"
+            },
+            {
+                name:"Usage Metrics",
+                value:"-"
+            }
+        ]
+    }
+    ] %}
+{% for t in tools %}
+    <div class="{% if loop.index == 1 %}rounded-lg outline -outline-offset-4 outline-cyan-500 outline-2 border z-10{% endif %}">
+        <div class="font-medium text-lg h-12 flex px-4 border-b bg-slate-100">
+            <span class="my-auto text-center w-max">{{ t.name }}</span>
+        </div>
+        <div class="text-center">
+            {% for f in t.features %}
+                <div class="flex h-10 odd:bg-white even:bg-slate-50 px-5 group"
+                     data-feature="{{ f.name }}">
+                    <span class="my-auto mx-auto">
+                        {% if f.value == "y" %}
+                            <svg xmlns="http://www.w3.org/2000/svg"
+                                 width="24"
+                                 height="24"
+                                 viewBox="0 0 24 24"
+                                 fill="none"
+                                 stroke="currentColor"
+                                 stroke-width="2"
+                                 stroke-linecap="round"
+                                 stroke-linejoin="round"
+                                 class="h-5 w-5 text-emerald-500 group-hover:text-emerald-600">
+                                <polyline points="9 11 12 14 22 4"></polyline>
+                                <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path>
+                            </svg>
+                        {% elif f.value == "n" %}
+                            <svg xmlns="http://www.w3.org/2000/svg"
+                                 width="24"
+                                 height="24"
+                                 viewBox="0 0 24 24"
+                                 fill="none"
+                                 stroke="currentColor"
+                                 stroke-width="2"
+                                 stroke-linecap="round"
+                                 stroke-linejoin="round"
+                                 class="h-5 w-5 text-pink-500 group-hover:pink-emerald-600">
+                                <rect width="18" height="18" x="3" y="3" rx="2" ry="2"></rect><line x1="9" x2="15" y1="9" y2="15"></line><line x1="15" x2="9" y1="9" y2="15"></line>
+                            </svg>
+                        {% else %}
+                            <span>-</span>
+                        {% endif %}
+                    </span>
+                </div>
+            {% endfor %}
+            <div class="h-12 bg-slate-100 border-y" data-group="Integrations">&nbsp;</div>
+            {% for i in t.integrations %}
+                <div class="flex h-10 odd:bg-white even:bg-slate-50 px-5 group"
+                     data-feature="{{ i.name }}">
+                    <span class="my-auto mx-auto">
+                        {% if i.value == "y" %}
+                            <svg xmlns="http://www.w3.org/2000/svg"
+                                 width="24"
+                                 height="24"
+                                 viewBox="0 0 24 24"
+                                 fill="none"
+                                 stroke="currentColor"
+                                 stroke-width="2"
+                                 stroke-linecap="round"
+                                 stroke-linejoin="round"
+                                 class="h-5 w-5 text-emerald-500 group-hover:text-emerald-600">
+                                <polyline points="9 11 12 14 22 4"></polyline>
+                                <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path>
+                            </svg>
+                        {% elif i.value == "n" %}
+                            <svg xmlns="http://www.w3.org/2000/svg"
+                                 width="24"
+                                 height="24"
+                                 viewBox="0 0 24 24"
+                                 fill="none"
+                                 stroke="currentColor"
+                                 stroke-width="2"
+                                 stroke-linecap="round"
+                                 stroke-linejoin="round"
+                                 class="h-5 w-5 text-pink-500 group-hover:pink-emerald-600">
+                                <rect width="18" height="18" x="3" y="3" rx="2" ry="2"></rect><line x1="9" x2="15" y1="9" y2="15"></line><line x1="15" x2="9" y1="9" y2="15"></line>
+                            </svg>
+                        {% else %}
+                            <span>-</span>
+                        {% endif %}
+                    </span>
+                </div>
+            {% endfor %}
+        </div>
+        {% if t.url %}
+            <div class="h-14 flex flex-row px-2 mx-2">
+                <a class="py-2 px-4 m-auto w-max rounded-md border hover:outline hover:outline-2 hover:outline-blue-500/50"
+                   href="{{ t.url }}"
+                   {% if t.url | startsWith("http") %}target="_blank"{% endif %}
+                   rel="noopener">Open Docs</a>
+            </div>
+        {% endif %}
+    </div>
+{% endfor %}
+</div>

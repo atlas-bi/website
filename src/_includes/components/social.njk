@@ -1,0 +1,15 @@
+<nav class="flex items-center space-x-2">
+    <a href="{{ site.github }}" target="_blank" rel="noreferrer">
+        <div class='w-9 h-9 px-0 hover:bg-slate-100 hover:text-slate-800 transition-colors text-muted-foreground  rounded flex'>
+            {% set class = "m-auto h-5 w-5" %}
+            {% include '../svg/github.svg' %}
+            <span class="sr-only">GitHub</span>
+        </div>
+    </a>
+    <a href="{{ site.discord }}" target="_blank" rel="noreferrer">
+        <div class='w-9 h-9 px-0 hover:bg-slate-100 transition-colors hover:fill-slate-800 fill-muted-foreground text-muted-foreground rounded flex'>
+            {% include '../svg/discord.svg' %}
+            <span class="sr-only">Discord</span>
+        </div>
+    </a>
+</nav>
