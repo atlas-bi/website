@@ -22,5 +22,5 @@ jobs:
 
     - name: 🔗 Linkcheck
       uses: untitaker/hyperlink@0.1.27
-        with:
-          args: _site/
+      with:
+        args: _site/
