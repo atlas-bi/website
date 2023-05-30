@@ -1,8 +1,8 @@
 ---
 title: Tableau Metadata Exporter
-tags: BI Library
-description: Atlas BI Library supplementary ETL to parse download Tableau report metadata and usage.
-keywords: atlas, atlas bi library, unified report library, data governance, database, etl, tableau, metadata
+tags: Library
+description: Atlas Library supplementary ETL to parse download Tableau report metadata and usage.
+keywords: atlas, atlas library, unified report library, data governance, database, etl, tableau, metadata
 layout: docs_library.njk
 date: Last Modified
 eleventyNavigation:
@@ -19,7 +19,7 @@ eleventyComputed:
       - name: Docs
         url: '{{ site.url }}/docs/'
         position: 2
-      - name: BI Library
+      - name: Library
         url: '{{ site.url }}/docs/library/'
         position: 3
 ---

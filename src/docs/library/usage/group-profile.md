@@ -1,8 +1,8 @@
 ---
 title: Group Profiles
-tags: BI Library
+tags: Library
 description: Group profiles identify users in groups from your various reporting systems or LDAP. Quickly find groups that use your reporting content.
-keywords: atlas, atlas bi library, unified report library, data governance, database, groups, group profile, users, report usage
+keywords: atlas, atlas library, unified report library, data governance, database, groups, group profile, users, report usage
 layout: docs_library.njk
 date: Last Modified
 eleventyNavigation:

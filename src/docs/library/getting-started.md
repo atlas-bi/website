@@ -1,8 +1,8 @@
 ---
 title: Getting Started
-tags: BI Library
-description: In just a few minutes you can have Atlas BI Library web app running on your computer.
-keywords: atlas, atlas bi library, unified report library, data governance, database, webserver, setup, iss, iis setup
+tags: Library
+description: In just a few minutes you can have Atlas Library web app running on your computer.
+keywords: atlas, atlas library, unified report library, data governance, database, webserver, setup, iss, iis setup
 layout: docs_library.njk
 date: Last Modified
 eleventyNavigation:
@@ -19,17 +19,17 @@ eleventyComputed:
       - name: Docs
         url: '{{ site.url }}/docs/'
         position: 2
-      - name: BI Library
+      - name: Library
         url: '{{ site.url }}/docs/library/'
         position: 3
 ---
 
 # Getting Started!
 
-In just a few minutes you can have Atlas BI Library web app running on your computer.
+In just a few minutes you can have Atlas Library web app running on your computer.
 
 <div class="-z-10" style="padding:56% 0 0 0;position:relative;">
-                <iframe title="Atlas BI Library - Getting Stated" 
+                <iframe title="Atlas Library - Getting Stated" 
                         src="https://video.atlas.bi/videos/embed/0233dd97-2f96-4750-a84e-7f7ec30bb8ef"
                         frameborder="0"
                         allowfullscreen=""
@@ -45,7 +45,7 @@ In just a few minutes you can have Atlas BI Library web app running on your comp
 
 ## Required Tools
 
-There are a few build tools required to get started. The .Net version of Atlas BI Library is intended to run on Windows PC's that are connected to a domain.
+There are a few build tools required to get started. The .Net version of Atlas Library is intended to run on Windows PC's that are connected to a domain.
 
 - [Git](https://git-scm.com/downloads)
 - [Python](https://www.python.org/downloads/)

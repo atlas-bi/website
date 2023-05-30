@@ -1,8 +1,8 @@
 ---
 title: Publish
-tags: BI Library
-description: Learn about how to deploy Atlas BI Library onto your web server. Atlas BI Library runs on .NET 5 and is easily deployed from Visual Studio.
-keywords: atlas, atlas bi library, unified report library, data governance, database, publishing, iis, deploy, visual studio
+tags: Library
+description: Learn about how to deploy Atlas Library onto your web server. Atlas Library runs on .NET 5 and is easily deployed from Visual Studio.
+keywords: atlas, atlas library, unified report library, data governance, database, publishing, iis, deploy, visual studio
 layout: docs_library.njk
 date: Last Modified
 eleventyNavigation:

@@ -1,4 +1,4 @@
-<div class="ring ring-2 ring-offset-1 ring-offset-background ring-slate-400 rounded-lg border bg-card text-card-foreground shadow-sm fixed md:absolute mt-3 right-0 max-md:bottom-0 max-md:top-[50px] max-md:rounded-none min-w-[100vw] md:min-w-[50vw] max-w-[80vw] md:max-h-[80vh] overflow-auto z-40"
+<div class="ring ring-2 ring-offset-1 ring-offset-background ring-slate-400 rounded-lg border bg-card text-card-foreground shadow-sm fixed md:absolute mt-3 right-0 max-md:bottom-0 max-md:top-[50px] max-md:rounded-none min-w-[100vw] md:min-w-[50vw] max-w-[80vw] md:max-h-[80vh] overflow-auto z-40 group"
      id="s-results">
     <div class="grid gap-0 p-0">
         {% for x in hits %}
@@ -10,7 +10,7 @@
                         </span>
                         <span class="flex flex-wrap justify-end space-x-1">
                             {% for tag in x._tags %}
-                                <div class="block mb-1 text-green-900 border rounded-xl px-2 text-sm">{{ tag }}</div>
+                                <div class="block mb-1 bg-slate-600 text-white border rounded-xl px-2 text-sm">{{ tag }}</div>
                             {% endfor %}
                         </span>
                     </div>

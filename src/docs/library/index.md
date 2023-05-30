@@ -2,7 +2,7 @@
 title: Welcome
 tags: Library
 description: Welcome to the Atlas Library documentation. Learn about how to install and configure your Atlas Library install.
-keywords: atlas, atlas bi library, unified report library, data governance, database, documetation
+keywords: atlas, atlas library, unified report library, data governance, database, documetation
 layout: docs_library.njk
 date: Last Modified
 eleventyNavigation:
@@ -35,7 +35,7 @@ eleventyComputed:
 },{
   title:"Webserver Setup Guide",
   url:"/docs/library/webserver-setup/",
-  description:"Find all the steps to prepare an IIS webserver for your Atlas BI Library install."
+  description:"Find all the steps to prepare an IIS webserver for your Atlas Library install."
 },{
   title:"ETL Setup Guide",
   url:"/docs/library/etl/",
@@ -43,7 +43,7 @@ eleventyComputed:
 },{
   title:"Publishing",
   url:"/docs/library/deploy/",
-  description:"Read about how to deploy Atlas BI Library onto your web server."
+  description:"Read about how to deploy Atlas Library onto your web server."
 }] %}
 
 <div class="grid md:grid-cols-2 gap-4 ">

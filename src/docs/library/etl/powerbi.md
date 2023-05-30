@@ -1,8 +1,8 @@
 ---
 title: Sqlize Crystal Reports
-tags: BI Library
-description: Atlas BI Library supplementary ETL to parse SAP Crystal report templates, and connect to APIs to gather report data.
-keywords: atlas, atlas bi library, unified report library, data governance, database, etl, crystal, sap reports, sql
+tags: Library
+description: Atlas Library supplementary ETL to parse SAP Crystal report templates, and connect to APIs to gather report data.
+keywords: atlas, atlas library, unified report library, data governance, database, etl, crystal, sap reports, sql
 date: Last Modified
 layout: docs_library.njk
 eleventyNavigation:
@@ -19,7 +19,7 @@ eleventyComputed:
       - name: Docs
         url: '{{ site.url }}/docs/'
         position: 2
-      - name: BI Library
+      - name: Library
         url: '{{ site.url }}/docs/library/'
         position: 3
 ---

@@ -1,8 +1,8 @@
 ---
 title: Supplementary ETLs
-tags: BI Library
-description: Atlas BI Library SSIS ETL guide. There are two SSIS ETL's used to collect all metadata and insert it into the Atlas database.
-keywords: atlas, atlas bi library, unified report library, data governance, database, etl, supplementary etl, ldap, solr, tableau, crystal, sap
+tags: Library
+description: Atlas Library SSIS ETL guide. There are two SSIS ETL's used to collect all metadata and insert it into the Atlas database.
+keywords: atlas, atlas library, unified report library, data governance, database, etl, supplementary etl, ldap, solr, tableau, crystal, sap
 layout: docs_library.njk
 date: Last Modified
 eleventyNavigation:
@@ -19,12 +19,9 @@ eleventyComputed:
       - name: Docs
         url: '{{ site.url }}/docs/'
         position: 2
-      - name: BI Library
+      - name: Library
         url: '{{ site.url }}/docs/library/'
         position: 3
-      - name: ETL Setup
-        url: '{{ site.url }}/docs/library/etl/'
-        position: 4
 ---
 
 # SSIS ETLs

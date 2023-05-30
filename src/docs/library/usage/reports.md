@@ -1,8 +1,8 @@
 ---
 title: Reports
-tags: BI Library
-description: Reports are the cornerstone of Atlas BI Library. System data is brought in through the ETLs and more documentation can be added in the app.
-keywords: atlas, atlas bi library, unified report library, data governance, database, reports, etl, metadata, profile, run data, ssrs, crystal
+tags: Library
+description: Reports are the cornerstone of Atlas Library. System data is brought in through the ETLs and more documentation can be added in the app.
+keywords: atlas, atlas library, unified report library, data governance, database, reports, etl, metadata, profile, run data, ssrs, crystal
 layout: docs_library.njk
 date: Last Modified
 eleventyNavigation:
@@ -14,7 +14,7 @@ eleventyNavigation:
 
 # Reports
 
-<p class="subtitle pb-5">Reports are the cornerstone of Atlas BI Library.</p>
+<p class="subtitle pb-5">Reports are the cornerstone of Atlas Library.</p>
 
 ## ETL Loaded Content
 
@@ -60,7 +60,7 @@ Additional documentation and metadata can now be added through the app. There ar
 
 ## Report Certification
 
-The ETL will add a `certification tag` to all reports each time it runs. There are several levels, a description can be found in the `About Analytics` page on your Atlas BI Library install. These tags range from `High Risk` to `Analytics Certified`. The top tag requires things such as image, descriptions, recent maintenance, etc, in order to achieve the top rank.
+The ETL will add a `certification tag` to all reports each time it runs. There are several levels, a description can be found in the `About Analytics` page on your Atlas Library install. These tags range from `High Risk` to `Analytics Certified`. The top tag requires things such as image, descriptions, recent maintenance, etc, in order to achieve the top rank.
 
 ## Report Maintenance
 

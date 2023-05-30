@@ -1,8 +1,8 @@
 ---
 title: Troubleshooting
-tags: BI Library
-description: Troubleshoot common problem with your Atla BI Library install.
-keywords: atlas, atlas bi library, unified report library, data governance, database, troubleshoot, setup, iss, iis setup
+tags: Library
+description: Troubleshoot common problem with your Atla Library install.
+keywords: atlas, atlas library, unified report library, data governance, database, troubleshoot, setup, iss, iis setup
 layout: docs_library.njk
 date: Last Modified
 eleventyNavigation:
@@ -19,7 +19,7 @@ eleventyComputed:
       - name: Docs
         url: '{{ site.url }}/docs/'
         position: 2
-      - name: BI Library
+      - name: Library
         url: '{{ site.url }}/docs/library/'
         position: 3
 ---

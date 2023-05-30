@@ -1,8 +1,8 @@
 ---
 title: License
-tags: BI Library
+tags: Library
 description: Atlas Automation Hub is licensed under the GNU License.
-keywords: atlas, atlas bi library, unified report library, data governance, database, license
+keywords: atlas, atlas library, unified report library, data governance, database, license
 layout: docs_library.njk
 date: Last Modified
 eleventyNavigation:
@@ -19,7 +19,7 @@ eleventyComputed:
       - name: Docs
         url: '{{ site.url }}/docs/'
         position: 2
-      - name: BI Library
+      - name: Library
         url: '{{ site.url }}/docs/library/'
         position: 3
 ---
