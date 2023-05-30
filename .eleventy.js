@@ -15,6 +15,7 @@ const { nodeResolve } = require('@rollup/plugin-node-resolve');
 const commonjs = require('@rollup/plugin-commonjs');
 const { babel } = require('@rollup/plugin-babel');
 const json = require('@rollup/plugin-json');
+const cleanup = require('rollup-plugin-cleanup');
 
 const slugifyCustom = (s) =>
   slugify(s, { lower: true, remove: /[*+~.()'"!:@]/g });
@@ -108,9 +109,11 @@ module.exports = function(eleventyConfig) {
   plugins: [
      nodeResolve({ browser: true }),
      commonjs({ sourceMap: false }),
+     cleanup(),
      babel({
        babelHelpers: 'bundled',
      }),
+
     json(),
   ],
 },
