@@ -1,8 +1,8 @@
 ---
 title: Access Control
-tags: BI Library
+tags: Library
 description: Learn how to secure your library by creating access groups and assigning permissions to users.
-keywords: atlas, atlas bi library, unified report library, data governance, database, usage, access control, roles, permissions
+keywords: atlas, atlas library, unified report library, data governance, database, usage, access control, roles, permissions
 layout: docs_library.njk
 date: Last Modified
 eleventyNavigation:
@@ -16,7 +16,7 @@ eleventyNavigation:
 
 <p class="subtitle pb-5">Secure your documentation.</p>
 
-Atlas BI Library relies on the security from your source reporting systems to define who has access to reporting content. Most of the features inside of Atlas BI Library can be turned on/off for different user groups in access control.
+Atlas Library relies on the security from your source reporting systems to define who has access to reporting content. Most of the features inside of Atlas Library can be turned on/off for different user groups in access control.
 
 ## Adding Roles
 

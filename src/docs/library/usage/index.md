@@ -1,8 +1,8 @@
 ---
 title: Usage
-tags: BI Library
-description: Discover how to use the Atlas BI Library app, configure basic settings, add report documentation and more!
-keywords: atlas, atlas bi library, unified report library, data governance, database, using atlas, usage guide
+tags: Library
+description: Discover how to use the Atlas Library app, configure basic settings, add report documentation and more!
+keywords: atlas, atlas library, unified report library, data governance, database, using atlas, usage guide
 layout: docs_library.njk
 date: Last Modified
 eleventyNavigation:
@@ -21,7 +21,7 @@ eleventyNavigation:
 {% set links=[{
   title:"Reports",
   url:"/docs/library/usage/reports/",
-  description:"Reports are the cornerstone of Atlas BI Library. System data is brought in through the ETLs and more documentation can be added in the app."
+  description:"Reports are the cornerstone of Atlas Library. System data is brought in through the ETLs and more documentation can be added in the app."
 },{
   title:"Terms",
   url:"/docs/library/usage/terms/",

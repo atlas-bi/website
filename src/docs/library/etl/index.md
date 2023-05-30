@@ -1,8 +1,8 @@
 ---
 title: Setup
-tags: BI Library
-description: Learn about the Atlas BI Library ETL, how it works, and the supplementary ETL's used to gather report metadata.
-keywords: atlas, atlas bi library, unified report library, data governance, database, etl, deploy, install, publish
+tags: Library
+description: Learn about the Atlas Library ETL, how it works, and the supplementary ETL's used to gather report metadata.
+keywords: atlas, atlas library, unified report library, data governance, database, etl, deploy, install, publish
 layout: docs_library.njk
 date: Last Modified
 eleventyNavigation:
@@ -19,7 +19,7 @@ eleventyComputed:
       - name: Docs
         url: '{{ site.url }}/docs/'
         position: 2
-      - name: BI Library
+      - name: Library
         url: '{{ site.url }}/docs/library/'
         position: 3
 ---

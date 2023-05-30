@@ -1,9 +1,9 @@
 ---
 title: Demo
 eleventyExcludeFromCollections: true
-tags: BI Library
-description: Watch a demo of the Atlas BI Library and learn about the features of the app. A live demo site is also available.
-keywords: atlas, atlas bi library, unified report library, data governance, database, demo, docker, run a demo, atlas demo
+tags: Library
+description: Watch a demo of the Atlas Library and learn about the features of the app. A live demo site is also available.
+keywords: atlas, atlas library, unified report library, data governance, database, demo, docker, run a demo, atlas demo
 layout: docs_library.njk
 date: Last Modified
 eleventyNavigation:
@@ -20,7 +20,7 @@ eleventyComputed:
       - name: Docs
         url: '{{ site.url }}/docs/'
         position: 2
-      - name: BI Library
+      - name: Library
         url: '{{ site.url }}/docs/library/'
         position: 3
 ---

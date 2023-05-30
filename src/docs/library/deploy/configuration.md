@@ -1,8 +1,8 @@
 ---
 title: Configuration
-tags: BI Library
-description: Learn about how to configure Atlas BI Library with settings for your organization and install requirements. Configuration is easly done through config files.
-keywords: atlas, atlas bi library, unified report library, data governance, database, configuration
+tags: Library
+description: Learn about how to configure Atlas Library with settings for your organization and install requirements. Configuration is easly done through config files.
+keywords: atlas, atlas library, unified report library, data governance, database, configuration
 layout: docs_library.njk
 date: Last Modified
 eleventyNavigation:

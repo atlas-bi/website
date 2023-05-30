@@ -1,8 +1,8 @@
 ---
 title: Deploy
-tags: BI Library
-description: Learn how to start Atlas BI Library locally and make changes to the codebase. Settings are kept in json files.
-keywords: atlas, atlas bi library, unified report library, data governance, database, deploy, running locally
+tags: Library
+description: Learn how to start Atlas Library locally and make changes to the codebase. Settings are kept in json files.
+keywords: atlas, atlas library, unified report library, data governance, database, deploy, running locally
 layout: docs_library.njk
 date: Last Modified
 eleventyNavigation:
@@ -19,16 +19,16 @@ eleventyComputed:
       - name: Docs
         url: '{{ site.url }}/docs/'
         position: 2
-      - name: BI Library
+      - name: Library
         url: '{{ site.url }}/docs/library/'
         position: 3
 ---
 
-# Deploying Atlas BI Library
+# Deploying Atlas Library
 
 ## Getting Started
 
-Download the [latest release](https://github.com/atlas-bi/Library/releases) of Atlas BI Library onto your workstation and getting running with the [getting started](/docs/library/getting-started/) guide.
+Download the [latest release](https://github.com/atlas-bi/Library/releases) of Atlas Library onto your workstation and getting running with the [getting started](/docs/library/getting-started/) guide.
 
 ## Update Settings
 

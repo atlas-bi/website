@@ -1,8 +1,8 @@
 ---
 title: Webserver Setup
-tags: BI Library
-description: Learn about how to setup a webserver for installing Atlas BI Library. Setup is quick and requirements minimal.
-keywords: atlas, atlas bi library, unified report library, data governance, database, webserver, setup, iss, iis setup
+tags: Library
+description: Learn about how to setup a webserver for installing Atlas Library. Setup is quick and requirements minimal.
+keywords: atlas, atlas library, unified report library, data governance, database, webserver, setup, iss, iis setup
 layout: docs_library.njk
 date: Last Modified
 eleventyNavigation:
@@ -19,14 +19,14 @@ eleventyComputed:
       - name: Docs
         url: '{{ site.url }}/docs/'
         position: 2
-      - name: BI Library
+      - name: Library
         url: '{{ site.url }}/docs/library/'
         position: 3
 ---
 
 # Webserver Setup
 
-Atlas BI Library is designed to run on **Windows Server 2016 or later**. There are a few installs to get the website running.
+Atlas Library is designed to run on **Windows Server 2016 or later**. There are a few installs to get the website running.
 
 ## Server Requirements
 

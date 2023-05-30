@@ -1,8 +1,8 @@
 ---
 title: Changelog
-tags: BI Library
-description: Atlas BI Library changelog. Find updates from recent releases and what feature you can expect on your next upgrade.
-keywords: atlas, atlas bi library, unified report library, data governance, database, changelog
+tags: Library
+description: Atlas Library changelog. Find updates from recent releases and what feature you can expect on your next upgrade.
+keywords: atlas, atlas library, unified report library, data governance, database, changelog
 layout: docs_library.njk
 date: Last Modified
 eleventyNavigation:
@@ -19,14 +19,18 @@ eleventyComputed:
       - name: Docs
         url: '{{ site.url }}/docs/'
         position: 2
-      - name: BI Library
+      - name: Library
         url: '{{ site.url }}/docs/library/'
         position: 3
 ---
 
 # Changelog
 
-Release notes have been moved into the [releases](https://github.com/atlas-bi/Library/releases).
+<a class="block border rounded-lg p-5 shadow bg-white no-underline group animate-fade transition-colors hover:border-sky-400 hover:shadow-sky-400" target="_blank" href="https://github.com/atlas-bi/Library/releases" title="github releases">
+  <div class="flex content-center space-x-2">
+<div class=" my-auto">{% include "src/_includes/svg/right.svg" %}</div><div class="my-auto">Release notes have been moved into the <span class="text-sky-600 ">releases</span>.</div>
+</div>
+</a>
 
 ## Version 2022.3.02
 

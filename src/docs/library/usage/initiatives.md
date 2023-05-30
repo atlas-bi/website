@@ -1,8 +1,8 @@
 ---
 title: Initiatives
-tags: BI Library
+tags: Library
 description: Initiatives are a tool used to combine collections together into a larger project with some additional documentation.
-keywords: atlas, atlas bi library, unified report library, data governance, database, initiatives, metadata, collection group
+keywords: atlas, atlas library, unified report library, data governance, database, initiatives, metadata, collection group
 layout: docs_library.njk
 date: Last Modified
 eleventyNavigation:

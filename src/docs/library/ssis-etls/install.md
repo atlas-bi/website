@@ -1,8 +1,8 @@
 ---
 title: Install
-tags: BI Library
-description: Lean about how to install the Atlas BI Library ETL on your SSIS server. Installation is done through Visual Studio.
-keywords: atlas, atlas bi library, unified report library, data governance, database, etl, install, ssis, visual studio
+tags: Library
+description: Lean about how to install the Atlas Library ETL on your SSIS server. Installation is done through Visual Studio.
+keywords: atlas, atlas library, unified report library, data governance, database, etl, install, ssis, visual studio
 layout: docs_library.njk
 date: Last Modified
 eleventyNavigation:
@@ -19,15 +19,12 @@ eleventyComputed:
       - name: Docs
         url: '{{ site.url }}/docs/'
         position: 2
-      - name: BI Library
+      - name: Library
         url: '{{ site.url }}/docs/library/'
         position: 3
-      - name: ETL Setup
-        url: '{{ site.url }}/docs/library/etl/'
-        position: 4
       - name: SSIS ETLs
-        url: '{{ site.url }}/docs/library/etl/ssis-etls/'
-        position: 5
+        url: '{{ site.url }}/docs/library/ssis-etls/'
+        position: 4
 ---
 
 # How to Install

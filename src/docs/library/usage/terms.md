@@ -1,8 +1,8 @@
 ---
 title: Terms
-tags: BI Library
+tags: Library
 description: A terms provides a definition that can be shared across many reports and collections. Terms are a powerful way to identify key concepts in your report library.
-keywords: atlas, atlas bi library, unified report library, data governance, database, terms, definition, define key terms
+keywords: atlas, atlas library, unified report library, data governance, database, terms, definition, define key terms
 layout: docs_library.njk
 date: Last Modified
 eleventyNavigation:

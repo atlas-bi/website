@@ -1,8 +1,8 @@
 ---
 title: Starting Search
-tags: BI Library
-description: Learn about how to start Atlas BI Library search after deploying onto your web server. Atlas BI Library runs on .NET 5 and is easily deployed from Visual Studio.
-keywords: atlas, atlas bi library, unified report library, data governance, database, publishing, iis, deploy, visual studio, solr, search
+tags: Library
+description: Learn about how to start Atlas Library search after deploying onto your web server. Atlas Library runs on .NET and is easily deployed from Visual Studio.
+keywords: atlas, atlas library, unified report library, data governance, database, publishing, iis, deploy, visual studio, solr, search
 layout: docs_library.njk
 date: Last Modified
 eleventyNavigation:
