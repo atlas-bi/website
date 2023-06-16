@@ -1,0 +1,25 @@
+<div class="block">
+    <div class='border-b'>
+        <nav class="flex mb-[-1px] space-x-6">
+            {%- for tab in tabData -%}
+                {%- if loop.index0 == 0 -%}
+                    <a data-tab="{{ tab.id }}"
+                       href="#"
+                       class="transition-colors tab-link px-1 py-2 border-b-2 border-b-sky-600 whitespace-nowrap no-underline text-sky-600 font-light hover:text-sky-700 hover:border-b-sky-700">{{ tab.name }}</a>
+                {%- else -%}
+                    <a data-tab="{{ tab.id }}"
+                       href="#"
+                       class="transition-colors tab-link px-1 py-2 border-b-2 border-b-transparent whitespace-nowrap no-underline text-slate-500 font-light hover:text-slate-600 hover:border-b-slate-300">{{ tab.name }}</a>
+                {%- endif -%}
+            {%- endfor -%}
+        </nav>
+    </div>
+    <div class="block">
+        {%- for tab in tabData -%}
+            <div data-tab="{{ tab.id }}"
+                 class="py-2 tab-block {% if loop.index0 == 0 %}block{% else %} hidden{% endif %}">
+                {{ tab.content | safe }}
+            </div>
+        {%- endfor -%}
+    </div>
+</div>
