@@ -16,6 +16,7 @@ const commonjs = require('@rollup/plugin-commonjs');
 const { babel } = require('@rollup/plugin-babel');
 const json = require('@rollup/plugin-json');
 const cleanup = require('rollup-plugin-cleanup');
+const nunjucks = require('nunjucks');
 
 const slugifyCustom = (s) =>
   slugify(s, { lower: true, remove: /[*+~.()'"!:@]/g });
@@ -87,6 +88,9 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addFilter("widont", widont);
   eleventyConfig.addWatchTarget("./src/static/");
   eleventyConfig.addWatchTarget("./styles/");
+  eleventyConfig.addExtension("sh", {
+    key: "njk",
+  });
   eleventyConfig.addNunjucksAsyncShortcode("image", imageShortcode);
   eleventyConfig.addNunjucksAsyncShortcode("get_page", getPage);
 
@@ -96,7 +100,7 @@ module.exports = function(eleventyConfig) {
 
   eleventyConfig.addPlugin(syntaxHighlight, {
     preAttributes: {
-      class: ({ language }) => `rounded-lg bg-slate-900/80 language-${language || 'plain'}`,
+      class: ({ language }) => `group/code animate-fade rounded-lg bg-slate-900/80 language-${language || 'plain'}`,
     },
   });
   eleventyConfig.addPlugin(metagen);
@@ -171,6 +175,10 @@ module.exports = function(eleventyConfig) {
     'src/_includes/components/searchResults.njk': 'static/searchResults.njk',
   });
 
+  // copy installers
+  // eleventyConfig.addPassthroughCopy({"src/installers": "installers"});
+
+
   eleventyConfig.addShortcode('version', function () {
     return String(Date.now());
   });
@@ -235,6 +243,10 @@ module.exports = function(eleventyConfig) {
       .substring(0, 8000);
   });
 
+  eleventyConfig.addFilter("render", (value, ctx) => {
+    return nunjucks.renderString(value, ctx).replace(/^\s*---(.*)---\s*$/gms,'')
+  })
+
   eleventyConfig.addCollection("algolia", function(collection) {
     return collection.getFilteredByGlob("**/*.md");
   });
@@ -267,7 +279,7 @@ module.exports = function(eleventyConfig) {
       data: "_data",
       output: "_site"
     },
-    templateFormats: ["md", "html", "njk", "11ty.js"],
+    templateFormats: ["md", "html", "njk", "11ty.js", "sh"],
     htmlTemplateEngine: "njk",
     markdownTemplateEngine: "njk",
     passthroughFileCopy: true

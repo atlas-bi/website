@@ -1,0 +1,28 @@
+<div data-state="closed" data-orientation="vertical" class="border-b">
+    <div data-orientation="vertical" class="flex">
+        <button type="button"
+                data-state="closed"
+                data-orientation="vertical"
+                class="flex flex-1 items-center font-normal justify-between py-4 transition-all hover:underline [&[data-state=open]>svg]:rotate-180">
+            {{ collapse.title | safe }}
+            <svg xmlns="http://www.w3.org/2000/svg"
+                 width="24"
+                 height="24"
+                 viewBox="0 0 24 24"
+                 fill="none"
+                 stroke="currentColor"
+                 stroke-width="2"
+                 stroke-linecap="round"
+                 stroke-linejoin="round"
+                 class="h-4 w-4 transition-transform duration-200">
+                <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+        </button>
+    </div>
+    <div data-state="closed"
+         role="region"
+         data-orientation="vertical"
+         class="overflow-hidden text-sm transition-all data-[state=closed]:h-0 data-[state=open]:h-full">
+        <div class="pb-4 pt-0">{{ collapse.contents | render | safe }}</div>
+    </div>
+</div>

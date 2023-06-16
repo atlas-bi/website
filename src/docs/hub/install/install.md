@@ -9,7 +9,7 @@ eleventyNavigation:
   key: AH Install
   title: Install Guide
   parent: Hub
-  order: 4
+  order: 6
 eleventyComputed:
   meta:
     breadcrumbs:
@@ -26,49 +26,62 @@ eleventyComputed:
 
 # Install Guide
 
-This is the recommended way to install Atlas Hub. The installed is designed for a dedicated Ubuntu 20 Server, is easy to install and upgrade.
-
-The primary server requirement is disk space - have enough space to hold 2x the data you plan to transfer. Atlas Hub streams all data, so the memory requirements are low.
-
-Install `curl` and `gnupg2`.
+## Setup the Project Directory
 
 ```bash
-sudo apt update;
-sudo apt install curl gnupg2
+mkdir -p /home/websites/atlas/hub
+cd /home/websites/atlas/hub
 ```
 
-Then, connect to the Atlas PPA Repository
+## Run the Installer
 
 ```bash
-curl -s "https://packages.atlas.bi/scripts/deb.sh" | sudo bash -
+curl https://atlas.bi/installers/hub.sh | bash -
 ```
 
-Finally, install Atlas Hub. The `EXTERNAL_URL` is an optional pram with the DNS you've set up. This can be configured after install.
+{% set collapse={
+title: 'Read the installer source code',
+contents: '
 
 ```bash
-# if you have already configured a dns:
-export EXTERNAL_URL='https://atlas-hub.me.com'; sudo apt install atlas-hub
-
-# if you plan to configure a dns after install:
-sudo apt install atlas-hub
+{% include "src/installers/hub.njk" %}
 ```
 
-{% admonition
-   "note",
-   "Note",
-   "If this is a new server you will be prompted to set the region and time zone."
-%}
+'
+} %}
+
+{% include "src/\_includes/components/collapse.njk" %}
 
 ## Next Steps
 
-Nice job installing! You can access the website with a default username of "admin" to try things out. Now it is time to configure the app. See the [configuration guide](/docs/hub/install/configuration/) for a complete list of options.
+Nice job installing! You can access the website with a default username of "admin" to try things out. Now it is time to fully configure the app. See the [configuration guide](/docs/hub/install/configuration/) for a complete list of options.
 
 ## Tips
 
 ### Making Connections to SQL Server Databases
 
-If you will be using SQL Server databases as a datasource you will need to [install the package from Microsoft](https://docs.microsoft.com/en-us/sql/connect/odbc/linux-mac/installing-the-microsoft-odbc-driver-for-sql-server?view=sql-server-ver15).
+If you will be using SQL Server databases as a data source you will need to [install the ODBC package from Microsoft](https://docs.microsoft.com/en-us/sql/connect/odbc/linux-mac/installing-the-microsoft-odbc-driver-for-sql-server?view=sql-server-ver15).
 
 ### Making Connections to a LAN
 
-If you use hostnames vs IP addresses in your config files be sure to update hosts file `nano /etc/hosts` to include the IP address of any internal domain hosts you will use. For example, LDAP server, GIT server, any databases you plan to query, etc.
+If you use host names vs IP addresses in your config files be sure to update hosts file `nano /etc/hosts` to include the IP address of any internal domain hosts you will use. For example, LDAP server, GIT server, any databases you plan to query, etc.
+
+## Authentication
+
+There are two primary authentication options -
+
+- SAML2
+- LDAP
+
+### SAML2
+
+The [PySAML2](https://pysaml2.readthedocs.io) library is used for SAML authentication, and all the `sp` configuration parameters are supported. The default config file includes an ADFS setup example.
+
+### LDAP
+
+LDAP login follows this basic process:
+
+1. `config_cust.py` file holds the general connection info. A connection to the ldap server is made with the service account credentials supplied in the config file.
+2. Once a connection is established and a user attempts to access the site the package first verifies that the user exists, by doing a search for the user. If the user exists we save their details and groups.
+3. If the user exists then we attempt to log them in.. this returns true if they had a valid username/pass.
+4. Finally, as this site can be restricted to users in a certain LDAP group, for example, we only allow users that have the "Analytics" group on their profile.
