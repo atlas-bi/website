@@ -71,7 +71,7 @@ export QUIRREL_API_URL=http://localhost:$QUIRREL_PORT
 npm run quirrel:ci
 
 # Add a few env vars to get meilisearch running
-export MEILI_DB_PAT=$pwd/$PORT/data.ms/
+export MEILI_DB_PAT=$(pwd)/$PORT/data.ms/
 export MEILI_ENV=production
 export MEILI_MASTER_KEY=$MEILI_PROCESS
 export MEILISEARCH_URL=http://localhost:$MEILI_PORT
@@ -117,7 +117,7 @@ done;
 
 fmt_blue "Finished cleaning up."
 echo ""
-echo ${YELLOW}Back folders can be manually removed. ${BLUE}rm -r $pwd/backup-*
+echo ${YELLOW}Back folders can be manually removed. ${BLUE}rm -r $(pwd)/backup-*
 echo ""
 fmt_green "Thanks for installing Atlas Service!"
 echo ""
@@ -128,8 +128,8 @@ fmt_blue "Next Steps"
 cat <<EOF
 ${CYAN}Updating App Settings
 
-${YELLOW}1. Update user configuration file ${BLUE}nano $pwd/.env
-${YELLOW}2. Copy config into app ${BLUE}cp $pwd/.env $pwd/$PORT/.env
+${YELLOW}1. Update user configuration file ${BLUE}nano $(pwd)/.env
+${YELLOW}2. Copy config into app ${BLUE}cp $(pwd)/.env $(pwd)/$PORT/.env
 ${YELLOW}3. Restart the apps:
 ${BLUE}   pm2 restart $APP_PROCESS
 ${BLUE}   pm2 restart $MEILI_PROCESS
