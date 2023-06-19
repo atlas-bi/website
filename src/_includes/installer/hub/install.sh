@@ -24,7 +24,7 @@ fmt_blue "Using scheduler port $SCHEDULER_PORT"
 fmt_yellow "Downloading latest version into $(pwd)/$PORT.."
 
 mkdir "$PORT"
-curl -sL "$SOURCE" | tar zxf - -C "$PORT" --strip-components=1
+curl -sSL "$SOURCE" | tar zxf - -C "$PORT" --strip-components=1
 cd "$PORT"
 
 fmt_blue "Downloaded version $(npm pkg get version | tr -d '"')"
@@ -99,7 +99,7 @@ pm2 list | grep -oP "$APP-((runner|scheduler)-)?\d+" | uniq | while IFS=$'\n' re
   if [[ $process != $APP_PROCESS && $process != $RUNNER_PROCESS && $process != $SCHEDULER_PROCESS ]];
   then
     fmt_yellow "Removing $process"
-    pm2 delete $process
+    pm2 delete $process || true
   fi
 done
 
@@ -132,12 +132,13 @@ cat <<EOF
 ${CYAN}Updating App Settings
 
 ${YELLOW}1. Update user configuration file ${BLUE}nano $(pwd)/config_cust.py
-${YELLOW}2. Reconfigure with ${BLUE}curl https://atlas.bi/installers/hub.sh | bash -s -- --configure
+${YELLOW}2. Reconfigure with ${BLUE}curl -sSL https://atlas.bi/installers/hub.sh | bash -s -- --configure
 
 ${CYAN}Updating Nginx Settings
 
 ${YELLOW}1. Update configuration file ${BLUE}nano $(find -L /etc/nginx -name "$APP.conf")
 ${YELLOW}2. Reload nginx ${BLUE}nginx -s reload
+
 
 ${CYAN}Monitoring and Viewing Logs
 
