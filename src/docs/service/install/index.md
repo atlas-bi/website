@@ -245,7 +245,7 @@ EOF
 ## Run the Installer
 
 ```bash
-curl https://atlas.bi/installers/service.sh | bash -
+curl -sSL https://atlas.bi/installers/service.sh | bash -
 ```
 
 {% set collapse={

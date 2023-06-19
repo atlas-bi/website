@@ -28,7 +28,7 @@ eleventyComputed:
 # Configure
 
 ```bash
-curl https://atlas.bi/installers/service.sh | bash -s -- --configure
+curl -sSL https://atlas.bi/installers/service.sh | bash -s -- --configure
 ```
 
 {% set collapse={
