@@ -54,7 +54,7 @@ Already have Atlas Hub installed and just making changes to your config? You can
 It will copy the configuration into the app and restart the services.
 
 ```bash
-curl https://atlas.bi/installers/hub.sh | bash -s -- --configure
+curl -sSL https://atlas.bi/installers/hub.sh | bash -s -- --configure
 ```
 
 {% set collapse={

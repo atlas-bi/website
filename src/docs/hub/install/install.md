@@ -36,7 +36,7 @@ cd /home/websites/atlas/hub
 ## Run the Installer
 
 ```bash
-curl https://atlas.bi/installers/hub.sh | bash -
+curl -sSL https://atlas.bi/installers/hub.sh | bash -
 ```
 
 {% set collapse={
