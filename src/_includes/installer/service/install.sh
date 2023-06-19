@@ -27,7 +27,7 @@ fmt_blue "Using meilsearch port $MEILI_PORT"
 fmt_yellow "Downloading latest version into $(pwd)/$PORT.."
 
 mkdir "$PORT"
-curl -sL "$SOURCE" | tar zxf - -C "$PORT" --strip-components=1
+curl -sSL $(curl -sSL "$SOURCE" | grep browser_download_url | cut -d : -f 2,3 | tr -d \") | tar zxf - -C "$PORT"
 cd "$PORT"
 
 fmt_blue "Downloaded version $(npm pkg get version | tr -d '"')"
@@ -37,7 +37,7 @@ fmt_yellow "Setting up website.."
 cp ../.env .
 
 # Install dependencies.
-npm i --omit=dev --loglevel silent --no-fund --no-audit
+npm i --omit=dev --loglevel error --no-fund --no-audit --legacy-peer-deps
 
 # Apply database migrations.
 fmt_yellow "Applying database migrations.."
@@ -71,6 +71,7 @@ export QUIRREL_API_URL=http://localhost:$QUIRREL_PORT
 npm run quirrel:ci
 
 # Add a few env vars to get meilisearch running
+export MEILI_NO_ANALYTICS=true
 export MEILI_DB_PAT=$(pwd)/$PORT/data.ms/
 export MEILI_ENV=production
 export MEILI_MASTER_KEY=$MEILI_PROCESS
@@ -99,7 +100,7 @@ pm2 list | grep -oP "$APP-((quirrel|meili)-)?\d+" | uniq | while IFS=$'\n' read 
   if [[ $process != $APP_PROCESS && $process != $QUIRREL_PROCESS && $process != $MEILI_PROCESS ]];
   then
     fmt_yellow "Removing $process"
-    pm2 delete $process
+    pm2 delete $process || true
   fi
 done
 
