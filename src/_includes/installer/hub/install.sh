@@ -6,6 +6,7 @@ check_command pm2
 check_command nginx
 check_command lsof
 check_command grep
+check_command poetry
 check_file config_cust.py
 check_file "/etc/nginx/**/$APP.conf"
 
@@ -50,7 +51,7 @@ export FLASK_ENV=production
 export FLASK_DEBUG=0
 
 fmt_yellow "Installing node packages and building static resources.."
-npm install --loglevel silent --no-fund --no-audit
+npm install --loglevel error --no-fund --no-audit
 .venv/bin/flask --app=web assets build
 
 
@@ -62,8 +63,6 @@ cp web/model.py scheduler/model.py
 .venv/bin/flask --app=web db upgrade
 .venv/bin/flask --app=web cli seed
 
-
-
 # Set a few process names.
 APP_PROCESS="$APP-$PORT"
 RUNNER_PROCESS="$APP-runner-$RUNNER_PORT"
@@ -72,9 +71,9 @@ SCHEDULER_PROCESS="$APP-scheduler-$SCHEDULER_PORT"
 
 fmt_yellow "Starting new services.."
 
-APP_CMD=".venv/bin/gunicorn --worker-class=gevent --workers 3 --threads 30 --timeout 999999999 --access-logfile $(pwd)/logs/access.log --error-logfile $(pwd)/logs/error.log --capture-output --bind  unix:web.sock --umask 007 web:app"
-SCHEDULER_CMD=".venv/bin/gunicorn --worker-class=gevent --workers 1 --threads 30 --timeout 999999999 --access-logfile $(pwd)/logs/access.log --error-logfile $(pwd)/logs/error.log --capture-output --bind  unix:scheduler.sock --umask 007 scheduler:app"
-RUNNER_CMD=".venv/bin/gunicorn --worker-class=gevent --worker-connections=1000 --workers $(nproc --all) --threads 30 --timeout 999999999 --access-logfile $(pwd)/logs/access.log --error-logfile $(pwd)/logs/error.log --capture-output --bind  unix:runner.sock --umask 007 runner:app"
+APP_CMD=".venv/bin/gunicorn --worker-class=gevent --workers 3 --threads 30 --timeout 999999999 --access-logfile $(pwd)/logs/access.log --error-logfile $(pwd)/logs/error.log --capture-output --bind 0.0.0.0:$PORT --umask 007 web:app"
+SCHEDULER_CMD=".venv/bin/gunicorn --worker-class=gevent --workers 1 --threads 30 --timeout 999999999 --access-logfile $(pwd)/logs/access.log --error-logfile $(pwd)/logs/error.log --capture-output --bind  0.0.0.0:$SCHEDULER_PORT --umask 007 scheduler:app"
+RUNNER_CMD=".venv/bin/gunicorn --worker-class=gevent --worker-connections=1000 --workers $(nproc --all) --threads 30 --timeout 999999999 --access-logfile $(pwd)/logs/access.log --error-logfile $(pwd)/logs/error.log --capture-output --bind 0.0.0.0:$RUNNER_PORT --umask 007 runner:app"
 
 echo $APP_CMD
 
@@ -129,6 +128,12 @@ echo ${YELLOW}Back folders can be manually removed. ${BLUE}rm -r $(pwd)/backup-*
 echo ""
 
 cat <<EOF
+${CYAN}Current Configuration
+
+${YELLOW}Web process was started with ${BLUE}pm2 start "$APP_CMD" --name="$APP_PROCESS"
+${YELLOW}Scheduler process was started with ${BLUE}pm2 start "$SCHEDULER_CMD" --name="$SCHEDULER_PROCESS"
+${YELLOW}Runner process was started with ${BLUE}pm2 start "$RUNNER_CMD" --name="$RUNNER_PROCESS"
+
 ${CYAN}Updating App Settings
 
 ${YELLOW}1. Update user configuration file ${BLUE}nano $(pwd)/config_cust.py
