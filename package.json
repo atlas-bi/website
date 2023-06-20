@@ -76,7 +76,7 @@
     "src/**/*.{ts,css,less,scss,js,json,md,yaml,html}": [
       "npm run format:prettier"
     ],
-    "src/**/*.{njk}": [
+    "src/**/*.njk": [
       "npm run format:djlint"
     ]
   },

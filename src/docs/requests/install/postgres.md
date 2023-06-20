@@ -1,15 +1,15 @@
 ---
 title: Postgres
-tags: Service
-description: How to install Atlas Service. Easily download and install with our ppa through apt!
-keywords: atlas, atlas service, extract scheduler, etl, install, guide, ubuntu server
-layout: docs_service.njk
+tags: Requests
+description: How to install Atlas Requests. Easily download and install with our ppa through apt!
+keywords: atlas, atlas requests, extract scheduler, etl, install, guide, ubuntu server
+layout: docs_requests.njk
 date: Last Modified
 eleventyNavigation:
   key: AS Postgres
   title: Postgres Install Guide
-  parent: Service
-  order: 2
+  parent: Requests
+  order: 3
 eleventyComputed:
   meta:
     breadcrumbs:
@@ -20,13 +20,13 @@ eleventyComputed:
         url: '{{ site.url }}/docs/'
         position: 2
       - name: Docs
-        url: '{{ site.url }}/docs/service/'
+        url: '{{ site.url }}/docs/requests/'
         position: 3
 ---
 
 # Setup Postgres
 
-Atlas Service uses a Postgres database. The database can be shared and on another server. Here's a short install guide if you would like to set everything on the same server.
+Atlas Requests uses a Postgres database. The database can be shared and on another server. Here's a short install guide if you would like to set everything on the same server.
 
 After setting up the database you should revisit the postgres config and tune it to work best on your server.
 
@@ -179,5 +179,5 @@ sudo -u postgres /usr/bin/pg_ctl start -D /var/lib/pgsql/data -s -o "-p 5432" -w
 su - postgres -c "psql --command \"CREATE USER web_user WITH PASSWORD '1234_with_single_quotes';\""
 
 # give user access to a db
-su - postgres -c "createdb -O web_user atlas-service"
+su - postgres -c "createdb -O web_user atlas-requests"
 ```

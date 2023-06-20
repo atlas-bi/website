@@ -7,7 +7,7 @@ configure(){
     check_file .env
 
     fmt_yellow "Update .env file in site.."
-    pm2 list | grep -oP "atlas-service-((quirrel|meili)-)?\d+" | uniq | grep -oP "\d+" | uniq  | while IFS=$'\n' read DIRECTORY; do
+    pm2 list | grep -oP "atlas-requests-((quirrel|meili)-)?\d+" | uniq | grep -oP "\d+" | uniq  | while IFS=$'\n' read DIRECTORY; do
       if [ -d "$DIRECTORY" ]; then
         cp .env $DIRECTORY
         cat .env.local >> .env
@@ -15,7 +15,7 @@ configure(){
     done
 
     fmt_yellow "Restarting processes.."
-    pm2 list | grep -oP "atlas-service-((quirrel|meili)-)?\d+" | uniq | while IFS=$'\n' read process; do
+    pm2 list | grep -oP "atlas-requests-((quirrel|meili)-)?\d+" | uniq | while IFS=$'\n' read process; do
       pm2 restart $process
     done
 }
@@ -25,22 +25,22 @@ usage() {
 
 ${BOLD}Usage: $(basename "${BASH_SOURCE[0]}") [-h, -b, -c, -u]
 
-${BLUE}Atlas Service Installer.${RESET}
+${BLUE}Atlas Requests Installer.${RESET}
 
 Available options:
 
     -h, --help               Print this help and exit
-    -c, --configure          Reconfigure Atlas Service
-    -i, --install [DEFAULT]  Install or Upgrade Atlas Service
+    -c, --configure          Reconfigure Atlas Requests
+    -i, --install [DEFAULT]  Install or Upgrade Atlas Requests
 
-Additional Altas Service Help at https://atlas.bi/docs/service
+Additional Altas Requests Help at https://atlas.bi/docs/requests
 
 EOF
   exit
 }
 
 install() {
-  {% include "src/_includes/installer/service/install.sh" %}
+  {% include "src/_includes/installer/requests/install.sh" %}
 }
 
 cleanup() {

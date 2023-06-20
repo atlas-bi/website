@@ -20,7 +20,7 @@ eleventyComputed:
         position: 2
 ---
 
-# {{ library.name }}
+# Welcome to Atlas {{ library.name }} Docs
 
 <p class="mt-6 text-lg text-slate-600 max-w-3xl mx-auto dark:text-slate-400">
             {{ library.short_description }}
