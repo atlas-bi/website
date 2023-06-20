@@ -1,0 +1,10 @@
+{
+  "description": "Requests short description",
+  "long_description": "Requests long description",
+  "name": "Requests",
+  "short_description": "Analytics department ticketing requests.",
+  "short_name": "Requests",
+  "docs": "/docs/requests/",
+  "info": "/requests/",
+  "demo": "https://requests.atlas.bi"
+}

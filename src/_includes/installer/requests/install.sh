@@ -49,6 +49,7 @@ APP_PROCESS="$APP-$PORT"
 QUIRREL_PROCESS="$APP-quirrel-$QUIRREL_PORT"
 MEILI_PROCESS="$APP-meili-$MEILI_PORT"
 
+exporter NODE_ENV=production
 exporter WEB_PORT=$PORT
 exporter QUIRREL_PORT=$QUIRREL_PORT
 exporter MEILI_PORT=$MEILI_PORT
@@ -86,7 +87,7 @@ exporter MEILISEARCH_URL=http://localhost:$MEILI_PORT
 exporter MEILI_HTTP_ADDR=localhost:$MEILI_PORT
 
 # Start web process.
-dotenv -v PORT=$PORT -- pm2 start npm -i -1 --name="$APP_PROCESS" -- run start
+dotenv -v PORT=$PORT -- pm2 start node -i -1 --name="$APP_PROCESS" --merge-logs -- ./build/server.js
 
 # Start meili process.
 dotenv -- pm2 start meilisearch --name="$MEILI_PROCESS"
@@ -127,9 +128,9 @@ fmt_blue "Finished cleaning up."
 echo ""
 echo ${YELLOW}Back folders can be manually removed. ${BLUE}rm -r $(pwd)/backup-*
 echo ""
-fmt_green "Thanks for installing Atlas Service!"
+fmt_green "Thanks for installing Atlas Requests!"
 echo ""
-fmt_green "Read the full install guide at https://atlas.bi/docs/service/"
+fmt_green "Read the full install guide at https://atlas.bi/docs/requests/"
 echo ""
 fmt_blue "Next Steps"
 
@@ -138,7 +139,7 @@ ${CYAN}Current Configuration
 
 ${YELLOW}$(cat $PORT/.env.local)
 
-${YELLOW}Web process was started with ${BLUE}dotenv -v PORT=$PORT -- pm2 start npm -i -1 --name="$APP_PROCESS" -- run start
+${YELLOW}Web process was started with ${BLUE}dotenv -v PORT=$PORT -- pm2 start node -i -1 --name="$APP_PROCESS" --merge-logs -- ./build/server.js
 ${YELLOW}Quirrel process was started with ${BLUE}dotenv -v PORT=$QUIRREL_PORT -- pm2 start node --name="$QUIRREL_PROCESS" -- node_modules/quirrel/dist/cjs/src/api/main.js
 ${YELLOW}Meilisearch process was started with ${BLUE}dotenv -- pm2 start meilisearch --name="$MEILI_PROCESS"
 

@@ -20,7 +20,7 @@ eleventyComputed:
         position: 2
 ---
 
-# Welcome
+# Welcome to Atlas {{ hub.name }} Docs
 
 Atlas Automation Hub is a task scheduling tool. It is designed to simplify routine data extraction and sending.
 
