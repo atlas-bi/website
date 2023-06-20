@@ -18,3 +18,7 @@ check_file() {
     exit 1
   fi
 }
+
+exporter() {
+  echo $1 | tee -a .env .env.local >/dev/null
+}

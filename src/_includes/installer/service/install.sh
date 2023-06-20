@@ -49,40 +49,47 @@ APP_PROCESS="$APP-$PORT"
 QUIRREL_PROCESS="$APP-quirrel-$QUIRREL_PORT"
 MEILI_PROCESS="$APP-meili-$MEILI_PORT"
 
+exporter WEB_PORT=$PORT
+exporter QUIRREL_PORT=$QUIRREL_PORT
+exporter MEILI_PORT=$MEILI_PORT
+
+exporter APP_PROCESS=$APP_PROCESS
+exporter QUIRREL_PROCESS=$QUIRREL_PROCESS
+exporter MEILI_PROCESS=$MEILI_PROCESS
+
 # Download meilisearch.
 fmt_yellow "Installing meilisearch.."
 curl -L https://install.meilisearch.com | sh
 
-
 fmt_yellow "Starting new services.."
 
-export PASSPHRASES=$QUIRREL_PROCESS
-export DISABLE_TELEMETRY=1
-export SESSION_SECRET=$APP_PROCESS
+exporter PASSPHRASES=$QUIRREL_PROCESS
+exporter DISABLE_TELEMETRY=1
+exporter SESSION_SECRET=$APP_PROCESS
 
 # Start quirrel and get a token.
-PORT=$QUIRREL_PORT pm2 start node --name="$QUIRREL_PROCESS" -- node_modules/quirrel/dist/cjs/src/api/main.js
+dotenv -v PORT=$QUIRREL_PORT -- pm2 start node --name="$QUIRREL_PROCESS" -- node_modules/quirrel/dist/cjs/src/api/main.js
 
 # Set quirrel env vars.
-export QUIRREL_TOKEN=$(curl --retry 5 --retry-delay 3 --retry-all-errors --connect-timeout 10 --user ignored:$QUIRREL_PROCESS -X PUT "localhost:$QUIRREL_PORT/tokens/prod")
-export QUIRREL_API_URL=http://localhost:$QUIRREL_PORT
+exporter QUIRREL_TOKEN=$(curl --retry 5 --retry-delay 3 --retry-all-errors --connect-timeout 10 --user ignored:$QUIRREL_PROCESS -X PUT "localhost:$QUIRREL_PORT/tokens/prod")
+exporter QUIRREL_API_URL=http://localhost:$QUIRREL_PORT
 
 # Load quirrel cron jobs.
 npm run quirrel:ci
 
 # Add a few env vars to get meilisearch running
-export MEILI_NO_ANALYTICS=true
-export MEILI_DB_PAT=$(pwd)/$PORT/data.ms/
-export MEILI_ENV=production
-export MEILI_MASTER_KEY=$MEILI_PROCESS
-export MEILISEARCH_URL=http://localhost:$MEILI_PORT
-export MEILI_HTTP_ADDR=localhost:$MEILI_PORT
+exporter MEILI_NO_ANALYTICS=true
+exporter MEILI_DB_PAT=$(pwd)/$PORT/data.ms/
+exporter MEILI_ENV=production
+exporter MEILI_MASTER_KEY=$MEILI_PROCESS
+exporter MEILISEARCH_URL=http://localhost:$MEILI_PORT
+exporter MEILI_HTTP_ADDR=localhost:$MEILI_PORT
 
 # Start web process.
-PORT=$PORT pm2 start npm -i -1 --name="$APP_PROCESS" -- run start
+dotenv -v PORT=$PORT -- pm2 start npm -i -1 --name="$APP_PROCESS" -- run start
 
 # Start meili process.
-pm2 start meilisearch --name="$MEILI_PROCESS"
+dotenv -- pm2 start meilisearch --name="$MEILI_PROCESS"
 
 fmt_blue "Done setting up."
 cd ..
@@ -127,6 +134,14 @@ echo ""
 fmt_blue "Next Steps"
 
 cat <<EOF
+${CYAN}Current Configuration
+
+${YELLOW}$(cat $PORT/.env.local)
+
+${YELLOW}Web process was started with ${BLUE}dotenv -v PORT=$PORT -- pm2 start npm -i -1 --name="$APP_PROCESS" -- run start
+${YELLOW}Quirrel process was started with ${BLUE}dotenv -v PORT=$QUIRREL_PORT -- pm2 start node --name="$QUIRREL_PROCESS" -- node_modules/quirrel/dist/cjs/src/api/main.js
+${YELLOW}Meilisearch process was started with ${BLUE}dotenv -- pm2 start meilisearch --name="$MEILI_PROCESS"
+
 ${CYAN}Updating App Settings
 
 ${YELLOW}1. Update user configuration file ${BLUE}nano $(pwd)/.env
