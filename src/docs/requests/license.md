@@ -1,14 +1,14 @@
 ---
 title: License
-tags: Service
-description: Atlas Service is licensed under the GNU License.
-keywords: atlas, atlas service, extract scheduler, etl, license
-layout: docs_service.njk
+tags: Requests
+description: Atlas Requests is licensed under the GNU License.
+keywords: atlas, atlas requests, extract scheduler, etl, license
+layout: docs_requests.njk
 date: Last Modified
 eleventyNavigation:
   key: AH License
   title: License
-  parent: Service
+  parent: Requests
   order: 99
 eleventyComputed:
   meta:
@@ -20,7 +20,7 @@ eleventyComputed:
         url: '{{ site.url }}/docs/'
         position: 2
       - name: Docs
-        url: '{{ site.url }}/docs/service/'
+        url: '{{ site.url }}/docs/requests/'
         position: 3
 ---
 
