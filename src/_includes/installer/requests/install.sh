@@ -87,7 +87,7 @@ exporter MEILISEARCH_URL=http://localhost:$MEILI_PORT
 exporter MEILI_HTTP_ADDR=localhost:$MEILI_PORT
 
 # Start web process.
-dotenv -v PORT=$PORT -- pm2 start node -i -1 --name="$APP_PROCESS" --merge-logs -- ./build/server.js
+dotenv -v PORT=$PORT -- pm2 start node --name="$APP_PROCESS" --merge-logs -- ./build/server.js
 
 # Start meili process.
 dotenv -- pm2 start meilisearch --name="$MEILI_PROCESS"
