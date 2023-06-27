@@ -52,6 +52,21 @@ contents: '
 
 {% include "src/\_includes/components/collapse.njk" %}
 
+## Advanced Installer Configuration
+
+Some items in the installer can be configured through an `installer.conf` file in the install directory. These settings are helpful if you are running multiple instances of Atlas Hub on the same server.
+
+| Key        | Definition                                                               |
+| ---------- | ------------------------------------------------------------------------ |
+| NGINX_FILE | Alternate name for the `nginx` config file. Default is `atlas-hub.conf`. |
+| PM2_PREFIX | Alternate prefix for `pm2` processes. Default is `atlas-hub`.            |
+
+The file format should be:
+
+```ini
+KEY=VALUE
+```
+
 ## Next Steps
 
 Nice job installing! You can access the website with a default username of "admin" to try things out. Now it is time to fully configure the app. See the [configuration guide](/docs/hub/install/configuration/) for a complete list of options.

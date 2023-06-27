@@ -8,7 +8,7 @@ check_command lsof
 check_command grep
 check_command poetry
 check_file config_cust.py
-check_file "/etc/nginx/**/$APP.conf"
+check_file "/etc/nginx/**/$NGINX_FILE"
 
 # Get free internal ports.
 fmt_yellow "Finding free ports.."
@@ -64,9 +64,9 @@ cp web/model.py scheduler/model.py
 .venv/bin/flask --app=web cli seed
 
 # Set a few process names.
-APP_PROCESS="$APP-$PORT"
-RUNNER_PROCESS="$APP-runner-$RUNNER_PORT"
-SCHEDULER_PROCESS="$APP-scheduler-$SCHEDULER_PORT"
+APP_PROCESS="$PM2_PREFIX-$PORT"
+RUNNER_PROCESS="$PM2_PREFIX-runner-$RUNNER_PORT"
+SCHEDULER_PROCESS="$PM2_PREFIX-scheduler-$SCHEDULER_PORT"
 
 
 fmt_yellow "Starting new services.."
@@ -86,7 +86,7 @@ fmt_blue "Done setting up."
 cd ..
 
 fmt_yellow "Updating nginx.."
-sed -i "s/localhost:3[0-9]*/localhost:${PORT}/" `find -L /etc/nginx -name "$APP.conf"`
+sed -i "s/localhost:3[0-9]*/localhost:${PORT}/" `find -L /etc/nginx -name "$NGINX_FILE"`
 
 fmt_yellow "Gracefully reloading nginx..."
 nginx_reload
@@ -94,7 +94,7 @@ nginx_reload
 fmt_yellow "Removing old pm2 processes.."
 
 # gnu grep
-pm2 list | grep -oP "$APP-((runner|scheduler)-)?\d+" | uniq | while IFS=$'\n' read process; do
+pm2 list | grep -oP "$PM2_PREFIX-((runner|scheduler)-)?\d+" | uniq | while IFS=$'\n' read process; do
   if [[ $process != $APP_PROCESS && $process != $RUNNER_PROCESS && $process != $SCHEDULER_PROCESS ]];
   then
     fmt_yellow "Removing $process"
@@ -141,9 +141,8 @@ ${YELLOW}2. Reconfigure with ${BLUE}curl -sSL https://atlas.bi/installers/hub.sh
 
 ${CYAN}Updating Nginx Settings
 
-${YELLOW}1. Update configuration file ${BLUE}nano $(find -L /etc/nginx -name "$APP.conf")
+${YELLOW}1. Update configuration file ${BLUE}nano $(find -L /etc/nginx -name "$NGINX_FILE")
 ${YELLOW}2. Reload nginx ${BLUE}nginx -s reload
-
 
 ${CYAN}Monitoring and Viewing Logs
 

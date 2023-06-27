@@ -1,5 +1,3 @@
-#!/usr/bin/env bash
-
 set -Eeuo pipefail
 trap cleanup SIGINT SIGTERM ERR EXIT
 
@@ -8,7 +6,7 @@ configure(){
 
     fmt_yellow "Update config_cust.py file in site.."
 
-    pm2 list | grep -oP "atlas-hub-((runner|scheduler)-)?\d+" | uniq | grep -oP "\d+" | uniq  | while IFS=$'\n' read DIRECTORY; do
+    pm2 list | grep -oP "$PM2_PREFIX-((runner|scheduler)-)?\d+" | uniq | grep -oP "\d+" | uniq  | while IFS=$'\n' read DIRECTORY; do
       if [ -d "$DIRECTORY" ]; then
 
         # get old ports
@@ -22,7 +20,7 @@ configure(){
     done
 
     fmt_yellow "Restarting processes.."
-    pm2 list | grep -oP "atlas-hub-((runner|scheduler)-)?\d+" | uniq | while IFS=$'\n' read process; do
+    pm2 list | grep -oP "$PM2_PREFIX-((runner|scheduler)-)?\d+" | uniq | while IFS=$'\n' read process; do
       pm2 restart $process
     done
 }

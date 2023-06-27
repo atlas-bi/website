@@ -1,4 +1,3 @@
-
 # Check if commands and files exist.
 check_command node
 check_command npm
