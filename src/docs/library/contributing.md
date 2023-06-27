@@ -29,3 +29,9 @@ eleventyComputed:
 Contributions to the Atlas tools are welcome! Contributions are best made through a [pull request](https://github.com/atlas-bi/Library/pulls) on the Github repository.
 
 When possible commit using `npm run commit` to help us create semantic change notes.
+
+## Database Updates
+
+Database changes are all done through `ef` migrations.
+
+After editing the model files a new migration can be added with `dotnet ef migrations add <DescriptiveText> --project web/web.csproj` and then applied to the database with `dotnet ef database update --project web/web.csproj -v`

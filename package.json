@@ -68,7 +68,7 @@
     "test:prettier": "prettier --check --config .prettierrc \"src/**/*.{ts,css,less,scss,js,json,md,yaml,html}\"",
     "format": "run-p format:*",
     "format:prettier": "prettier --config .prettierrc \"src/**/*.{ts,css,less,scss,js,json,md,yaml,html}\" --write",
-    "format:djlint": "djlint src -e njk --reformat --quiet",
+    "format:djlint": "djlint src -e njk --reformat --quiet --warn",
     "commit": "git add . && npm run pre-commit && cz --no-verify",
     "tailwind:process": "npx tailwindcss -i src/static/styles/global.css -c src/static/styles/tailwind.config.js -o _site/static/css/style.css --watch"
   },

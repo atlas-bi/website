@@ -1,5 +1,4 @@
 # Setup basic colors
-
 color() {
   YELLOW=$(printf '\033[1m\033[33m')
   BLUE=$(printf '\033[1m\033[34m')
