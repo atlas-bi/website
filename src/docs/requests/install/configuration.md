@@ -39,7 +39,7 @@ nano .env
 Here's a list of the config values that should be set.
 
 ```bash
-DATABASE_URL="postgresql://web_user:1234_with_single_quotes@locahost:5432/atlas-requests"
+DATABASE_URL="postgresql://web_user:1234_with_single_quotes@localhost:5432/atlas-requests"
 SESSION_SECRET="03efg9241c4fc6bc9b98529f69bfj5ce"
 
 # saml sso configuration.
