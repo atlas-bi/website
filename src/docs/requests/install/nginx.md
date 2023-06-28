@@ -92,7 +92,7 @@ server {
 EOF
 ```
 
-If you plan to use `https` you can add a cert:
+If you plan to use `https` you can add a cert (note that certs in nginx should be "full chain", not just the final cert.):
 
 ```bash
 cat > /etc/nginx/sites-enabled/atlas-requests.conf << EOF

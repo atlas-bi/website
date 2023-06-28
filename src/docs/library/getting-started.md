@@ -67,6 +67,12 @@ There are a few build tools required to get started. The .Net version of Atlas L
 
 Clone the project form GitHub into a new Visual Studio Code project using the clone url: https://github.com/atlas-bi/Library.git
 
+{% admonition
+  "note",
+  "IE11 Support",
+  "Versions of Atlas > 3.13 do not fully support Internet Explorer 11. If you plan to use IE11 you can install from the [dedicated IE11 branch](https://github.com/atlas-bi/Library/tree/ie11)"
+%}
+
 {% image "./src/static/img/library/getting_started/git_clone.png", "razor component", "(min-width:800px) 50vw, 100vw", "boxed" %}
 
 Create a file called `web/appsettings.cust.Development.json` with a database connection string. `Localdb` is an easy way to get started. For a production website you should use a database on a real instance of sql server.
