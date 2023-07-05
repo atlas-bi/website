@@ -1,15 +1,15 @@
 ---
 title: Configuring
-tags: Requests
-description: Atlas Requests upgrades can easily be installed using apt update and apt install commands. Take a backup before configuring.
-keywords: atlas, atlas requests, extract scheduler, etl, configuration, ubuntu server
-layout: docs_requests.njk
+tags: System
+description: Atlas System upgrades can easily be installed using apt update and apt install commands. Take a backup before configuring.
+keywords: atlas, atlas system, extract scheduler, etl, configuration, ubuntu server
+layout: docs_system.njk
 date: Last Modified
 eleventyNavigation:
   key: AH Configur
 
   title: Configuration Guide
-  parent: Requests
+  parent: System
   order: 5
 eleventyComputed:
   meta:
@@ -21,7 +21,7 @@ eleventyComputed:
         url: '{{ site.url }}/docs/'
         position: 2
       - name: Docs
-        url: '{{ site.url }}/docs/requests/'
+        url: '{{ site.url }}/docs/system/'
         position: 3
 ---
 
@@ -30,8 +30,8 @@ eleventyComputed:
 Create/edit the project `.env`
 
 ```bash
-mkdir -p /home/websites/atlas/requests
-cd /home/websites/atlas/requests
+mkdir -p /home/websites/atlas/system
+cd /home/websites/atlas/system
 
 nano .env
 ```
@@ -39,7 +39,7 @@ nano .env
 Here's a list of the config values that should be set.
 
 ```bash
-DATABASE_URL="postgresql://web_user:1234_with_single_quotes@localhost:5432/atlas-requests"
+DATABASE_URL="postgresql://web_user:1234_with_single_quotes@localhost:5432/atlas-system"
 SESSION_SECRET="03efg9241c4fc6bc9b98529f69bfj5ce"
 
 # saml sso configuration.
@@ -74,13 +74,13 @@ SMTP_PORT=25
 SMTP_USERNAME=
 SMTP_PASSWORD=
 SMTP_TLS=false
-SMTP_SENDER_NAME=Atlas Requests | Riverside Healthcare Analytics
-SMTP_SENDER_EMAIL=requests-no-reply@requests.atlas.bi
+SMTP_SENDER_NAME=Atlas System | Riverside Healthcare Analytics
+SMTP_SENDER_EMAIL=system-no-reply@system.atlas.bi
 IMAP_HOST=localhost
 IMAP_PORT=143
 
 # the URL your site will be accessed at.
-HOSTNAME=https://requests.atlas.bi
+HOSTNAME=https://system.atlas.bi
 ```
 
 # Configure
@@ -90,7 +90,7 @@ If this is a new install proceed to the install guide.
 Update the app with your new configuration by running:
 
 ```bash
-curl -sSL https://atlas.bi/installers/requests.sh | bash -s -- --configure
+curl -sSL https://atlas.bi/installers/system.sh | bash -s -- --configure
 ```
 
 {% set collapse={
@@ -98,7 +98,7 @@ title: 'Read the installer source code',
 contents: '
 
 ```bash
-{% include "src/installers/requests.njk" %}
+{% include "src/installers/system.njk" %}
 ```
 
 '

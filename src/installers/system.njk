@@ -1,0 +1,14 @@
+---
+permalink: /installers/system.sh
+eleventyExcludeFromCollections: true
+---
+
+#!/usr/bin/env bash
+# Setup global variables.
+APP=atlas-system
+SOURCE=https://api.github.com/repos/atlas-bi/System/releases/latest
+{% include "src/_includes/installer/colors.sh" %}
+{% include "src/_includes/installer/check_commands.sh" %}
+{% include "src/_includes/installer/port_tools.sh" %}
+{% include "src/_includes/installer/nginx_tools.sh" %}
+{% include "src/_includes/installer/system/cli.sh" %}

@@ -1,0 +1,10 @@
+{
+  "description": "System short description",
+  "long_description": "System long description",
+  "name": "System",
+  "short_description": "Server monitor.",
+  "short_name": "System",
+  "docs": "/docs/system/",
+  "info": "/system/",
+  "demo": "https://system.atlas.bi"
+}

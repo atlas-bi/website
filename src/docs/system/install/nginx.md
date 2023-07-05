@@ -1,14 +1,14 @@
 ---
 title: Nginx
-tags: Requests
-description: How to install Atlas Requests. Easily download and install with our ppa through apt!
-keywords: atlas, atlas requests, extract scheduler, etl, install, guide, ubuntu server
-layout: docs_requests.njk
+tags: System
+description: How to install Atlas System. Easily download and install with our ppa through apt!
+keywords: atlas, atlas system, extract scheduler, etl, install, guide, ubuntu server
+layout: docs_system.njk
 date: Last Modified
 eleventyNavigation:
   key: AS Nginx
   title: Nginx Install Guide
-  parent: Requests
+  parent: System
   order: 4
 eleventyComputed:
   meta:
@@ -20,7 +20,7 @@ eleventyComputed:
         url: '{{ site.url }}/docs/'
         position: 2
       - name: Docs
-        url: '{{ site.url }}/docs/requests/'
+        url: '{{ site.url }}/docs/system/'
         position: 3
 ---
 
@@ -76,13 +76,13 @@ nginx
 {% admonition
    "alert",
    "Attention",
-   "Ensure the name of the `nginx` file is as shown below or requests will not restart correctly."
+   "Ensure the name of the `nginx` file is as shown below or system will not restart correctly."
 %}
 
 Replace `example.com` with your URL
 
 ```bash
-cat > /etc/nginx/sites-enabled/atlas-requests.conf << EOF
+cat > /etc/nginx/sites-enabled/atlas-system.conf << EOF
 server {
   server_name example.com;
   location / {
@@ -95,7 +95,7 @@ EOF
 If you plan to use `https` you can add a cert (note that certs in nginx should be "full chain", not just the final cert.):
 
 ```bash
-cat > /etc/nginx/sites-enabled/atlas-requests.conf << EOF
+cat > /etc/nginx/sites-enabled/atlas-system.conf << EOF
 server {
   server_name example.com;
   location / {

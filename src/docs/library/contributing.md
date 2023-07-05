@@ -30,6 +30,51 @@ Contributions to the Atlas tools are welcome! Contributions are best made throug
 
 When possible commit using `npm run commit` to help us create semantic change notes.
 
+## Saml Server
+
+When developing it is handy to have a dev `saml` server available. We include the `saml-idp` project here so you can quickly test out SSO features.
+
+First, update the git submodules:
+
+```bash
+git submodule update --init --rebase --remote; cd idp/; npm install
+```
+
+Next, create a certificate (only works on linux/gitbash)
+
+```bash
+cd ..
+openssl req -x509 -new -newkey rsa:2048 -nodes -subj '/C=US/ST=California/L=San Francisco/O=JankyCo/CN=Test Identity Provider' -keyout idp/idp-private-key.pem -out idp/idp-public-cert.pem -days 7300
+```
+
+Convert the cert/key pair to a pfx (only works on linux/gitbash). When prompted for a password you can use "password".
+
+```bash
+cd idp
+openssl pkcs12 -export -in idp-public-cert.pem -inkey idp-private-key.pem -out idp.pfx
+```
+
+The following config can be added to the `appsettings.cust.Development.json` file.
+
+```json
+"Saml2": {
+  "IdPMetadata": "http://localhost:7000/metadata",
+  "Issuer": "atlas-library",
+  "SignatureAlgorithm": "http://www.w3.org/2001/04/xmldsig-more#rsa-sha256",
+  "SigningCertificateFile": "C:\\user\\me\\Documents\\projects\\atlas\\idp\\idp.pfx",
+  "SigningCertificatePassword": "password",
+  "SignatureValidationCertificateFile": "C:\\Users\\me\\Documents\\projects\\atlas\\idp\\idp.pfx",
+  "CertificateValidationMode": "None", // "ChainTrust"
+  "RevocationMode": "NoCheck"
+}
+```
+
+Finally, start the `idp` and the library.
+
+```bash
+npm run start:saml
+```
+
 ## Database Updates
 
 Database changes are all done through `ef` migrations.
