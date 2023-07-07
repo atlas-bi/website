@@ -38,7 +38,7 @@ npm i --omit=dev --loglevel error --no-fund --no-audit --legacy-peer-deps
 
 # Apply database migrations.
 fmt_yellow "Applying database migrations.."
-npx prisma migrate deploy
+npm run db
 
 
 # Set a few process names.
@@ -84,7 +84,7 @@ fmt_yellow "Removing old pm2 processes.."
 
 # gnu grep
 pm2 list | grep -oP "$APP-((quirrel|meili)-)?\d+" | uniq | while IFS=$'\n' read process; do
-  if [[ $process != $APP_PROCESS && $process != $QUIRREL_PROCESS && $process != $MEILI_PROCESS ]];
+  if [[ $process != $APP_PROCESS && $process != $QUIRREL_PROCESS ]];
   then
     fmt_yellow "Removing $process"
     pm2 delete $process || true

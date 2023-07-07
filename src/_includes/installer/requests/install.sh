@@ -41,6 +41,7 @@ npm i --omit=dev --loglevel error --no-fund --no-audit --legacy-peer-deps
 # Apply database migrations.
 fmt_yellow "Applying database migrations.."
 npx prisma migrate deploy
+npx prisma generate
 
 
 # Set a few process names.
