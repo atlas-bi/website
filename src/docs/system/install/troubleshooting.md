@@ -19,7 +19,7 @@ eleventyComputed:
       - name: Docs
         url: '{{ site.url }}/docs/'
         position: 2
-      - name: Docs
+      - name: System
         url: '{{ site.url }}/docs/system/'
         position: 3
 ---
@@ -58,22 +58,3 @@ Reload `nginx` after config changes by running `nginx -s reload`.
 tail -f /var/log/nginx/access.log
 tail -f /var/log/nginx/error.log
 ```
-
-Windows:
-need powershell version > 5.1 for commands to work
-
-Follow these directions:
-https://hostadvice.com/how-to/how-to-install-an-openssh-server-client-on-a-windows-2016-server/
-
-Download link:
-https://github.com/PowerShell/Win32-OpenSSH/releases/
-
-Error 1297: https://github.com/PowerShell/Win32-OpenSSH/issues/1824
-
-Once that is completed we need to change the service login accounts to an account that has access to the LDAP directory.
-Open services (run services.msc). Find the SSH services. There should be two.. probably called "Open SSH ...".
-Right click on each service > properties > logon > change the login account to one that can access the LDAP server and is also part of the administrator group on the server.
-The services will most likely fail to restart.
-Open security (secpool.msc) as recommended and add administrator group as needed to Security Settings > Local Policies > User Rights Assignment.
-After adding the admin group here you can go back and restart both services. Services should start without error.
-Errors can be found in the Event Log application > Windows > Security, and also in Event Log > Application > Open SSH.

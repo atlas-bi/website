@@ -20,7 +20,7 @@ eleventyComputed:
       - name: Docs
         url: '{{ site.url }}/docs/'
         position: 2
-      - name: Docs
+      - name: Requests
         url: '{{ site.url }}/docs/requests/'
         position: 3
 ---
