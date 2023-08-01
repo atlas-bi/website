@@ -199,6 +199,13 @@ rm -fr Python-3.10.12
 {% include 'src/\_includes/components/tabs.njk' %}
 You can check your python version by running `python3.10 --version`.
 
+### Install virtualenv
+
+```bash
+curl -sS https://bootstrap.pypa.io/get-pip.py | python3.10
+python3.10 -m pip install virtualenv
+```
+
 ### Install Poetry
 
 Poetry is used as the python package manager.
