@@ -62,3 +62,7 @@ tail -f /var/log/nginx/error.log
 ## Errors
 
 `sudo: poetry: command not found`: If you have installed poetry and are running the scripts with use you may need to add the path to poetry to your sudo path. Run `sudo visudo` and add `/root/.local/bin:` to the secure path.
+
+## No `pm2` services after a reboot
+
+Most likely `pm2` is not set to load after a reboot. You can run `pm2 resurrect; pm2 save` to get the jobs back, then run `pm2 startup` to make them reload after a reboot.

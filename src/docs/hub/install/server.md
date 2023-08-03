@@ -72,6 +72,9 @@ apt-get -y install curl nginx lsof build-essential git gnupg2 \\
 curl -fsSL https://deb.nodesource.com/setup_18.x | bash -
 apt-get install -y nodejs
 npm i -g pm2
+
+# allow pm2 to start on reboot (need sudo if you are not running as root)
+pm2 startup
 ```
 
 '
@@ -88,6 +91,9 @@ apk add --no-cache curl nginx nodejs npm grep gnupg redis \\
                    nano openldap-dev python3-dev wget \\
                    libffi-dev unixodbc unixodbc-dev libpq-dev
 npm i -g pm2
+
+# allow pm2 to start on reboot (need sudo if you are not running as root)
+pm2 startup
 ```
 
 '
@@ -135,6 +141,9 @@ yum -y install nodejs nginx lsof git gcc gcc-c++ make gnupg2 \\
 yum groupinstall "Development tools"
 yum install -y openldap-devel python-devel
 npm i -g pm2
+
+# allow pm2 to start on reboot (need sudo if you are not running as root)
+pm2 startup
 ```
 
 '
