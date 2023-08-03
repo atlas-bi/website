@@ -58,3 +58,7 @@ Reload `nginx` after config changes by running `nginx -s reload`.
 tail -f /var/log/nginx/access.log
 tail -f /var/log/nginx/error.log
 ```
+
+## No `pm2` services after a reboot
+
+Most likely `pm2` is not set to load after a reboot. You can run `pm2 resurrect; pm2 save` to get the jobs back, then run `pm2 startup` to make them reload after a reboot.
