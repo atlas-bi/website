@@ -92,6 +92,8 @@ There are two primary authentication options -
 
 The [PySAML2](https://pysaml2.readthedocs.io) library is used for SAML authentication, and all the `sp` configuration parameters are supported. The default config file includes an ADFS setup example.
 
+Saml metadata is accessible at `/saml2/metadata/`.
+
 ### LDAP
 
 LDAP login follows this basic process:
