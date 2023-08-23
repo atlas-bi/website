@@ -8,7 +8,7 @@ configure(){
     pm2 list | grep -oP "atlas-requests-((quirrel|meili)-)?\d+" | uniq | grep -oP "\d+" | uniq  | while IFS=$'\n' read DIRECTORY; do
       if [ -d "$DIRECTORY" ]; then
         cp .env $DIRECTORY
-        cat .env.local >> .env
+        cat .env.local >> .env 2>&1 >/dev/null
       fi
     done
 
