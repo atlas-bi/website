@@ -59,7 +59,10 @@ exporter DISABLE_TELEMETRY=1
 exporter SESSION_SECRET=$APP_PROCESS
 
 # Start quirrel and get a token.
-dotenv -v PORT=$QUIRREL_PORT -- pm2 start node --name="$QUIRREL_PROCESS" -- node_modules/quirrel/dist/cjs/src/api/main.js
+# Start quirrel and get a token.
+# this is now down in the app's server.js file
+# so that the correct token can be used on a restart.
+# dotenv -v PORT=$QUIRREL_PORT -- pm2 start node --name="$QUIRREL_PROCESS" -- node_modules/quirrel/dist/cjs/src/api/main.js
 
 # Set quirrel env vars.
 exporter QUIRREL_TOKEN=$(curl --retry 5 --retry-delay 3 --retry-all-errors --connect-timeout 10 --user ignored:$QUIRREL_PROCESS -X PUT "localhost:$QUIRREL_PORT/tokens/prod")
@@ -67,7 +70,8 @@ exporter QUIRREL_API_URL=http://localhost:$QUIRREL_PORT
 exporter QUIRREL_BASE_URL=http://localhost:$PORT
 
 # Load quirrel cron jobs.
-npm run quirrel:ci
+# now done in server.js
+# npm run quirrel:ci
 
 # Start web process.
 dotenv -v PORT=$PORT -- pm2 start node --name="$APP_PROCESS" --merge-logs -- ./build/server.js
