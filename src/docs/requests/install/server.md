@@ -58,6 +58,7 @@ apt-get -y install curl nginx lsof build-essential git
 curl -fsSL https://deb.nodesource.com/setup_18.x | bash -
 apt-get install -y nodejs
 npm i -g pm2 dotenv-cli
+pm2 install pm2-logrotate
 
 # allow pm2 to start on reboot (need sudo if you are not running as root)
 pm2 startup
@@ -72,6 +73,7 @@ content: '
 ```bash
 apk add --no-cache curl nginx nodejs npm grep
 npm i -g pm2 dotenv-cli
+pm2 install pm2-logrotate
 
 # allow pm2 to start on reboot (need sudo if you are not running as root)
 pm2 startup
@@ -106,6 +108,7 @@ yum install -y curl
 curl -fsSL https://rpm.nodesource.com/setup_18.x | bash -
 yum -y install nodejs nginx lsof git gcc gcc-c++ make
 npm i -g pm2 dotenv-cli
+pm2 install pm2-logrotate
 
 # allow pm2 to start on reboot (need sudo if you are not running as root)
 pm2 startup
