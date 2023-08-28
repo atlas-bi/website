@@ -74,7 +74,8 @@ exporter SESSION_SECRET=$APP_PROCESS
 # dotenv -v PORT=$QUIRREL_PORT -- pm2 start node --name="$QUIRREL_PROCESS" -- node_modules/quirrel/dist/cjs/src/api/main.js
 
 # Set quirrel env vars.
-exporter QUIRREL_TOKEN=$(curl --retry 5 --retry-delay 3 --retry-all-errors --connect-timeout 10 --user ignored:$QUIRREL_PROCESS -X PUT "localhost:$QUIRREL_PORT/tokens/prod")
+# set in server.ts now.
+# exporter QUIRREL_TOKEN=$(curl --retry 5 --retry-delay 3 --retry-all-errors --connect-timeout 10 --user ignored:$QUIRREL_PROCESS -X PUT "localhost:$QUIRREL_PORT/tokens/prod")
 exporter QUIRREL_API_URL=http://localhost:$QUIRREL_PORT
 exporter QUIRREL_BASE_URL=http://localhost:$PORT
 
