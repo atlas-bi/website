@@ -119,7 +119,7 @@ ${CYAN}Current Configuration
 
 ${YELLOW}$(cat $PORT/.env.local)
 
-${YELLOW}Web process was started with ${BLUE}dotenv -v PORT=$PORT -- pm2 start node -i -1 --name="$APP_PROCESS" --merge-logs -- ./build/server.js
+${YELLOW}Web process was started with ${BLUE}dotenv -v PORT=$PORT -- pm2 start node --name="$APP_PROCESS" --merge-logs -- ./build/server.js
 ${YELLOW}Quirrel process was started with ${BLUE}dotenv -v PORT=$QUIRREL_PORT -- pm2 start node --name="$QUIRREL_PROCESS" -- node_modules/quirrel/dist/cjs/src/api/main.js
 
 ${CYAN}Updating App Settings
