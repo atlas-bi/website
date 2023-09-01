@@ -1,8 +1,8 @@
 {
-  "description": "System short description",
-  "long_description": "System long description",
+  "description": "Track uptime and receive alerts when the system is not working as planned. Atlas System monitors SQL Server, Windows, Ubuntu, websites, and tcp connections. Supposed LDAP and SAML sso authentication.",
+  "long_description": "Track uptime and receive alerts when the system is not working as planned. Atlas System monitors SQL Server, Windows, Ubuntu, websites, and tcp connections. Supposed LDAP and SAML sso authentication.",
   "name": "System",
-  "short_description": "Server monitor.",
+  "short_description": "Simple system monitor for servers, databases, and websites.",
   "short_name": "System",
   "docs": "/docs/system/",
   "info": "/system/",

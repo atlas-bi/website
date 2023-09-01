@@ -5,7 +5,7 @@ configure(){
     check_file .env
 
     fmt_yellow "Update .env file in site.."
-    pm2 list | grep -oP "atlas-requests-((quirrel|meili)-)?\d+" | uniq | grep -oP "\d+" | uniq  | while IFS=$'\n' read DIRECTORY; do
+    pm2 list | grep -oP "$PM2_PREFIX-((quirrel|meili)-)?\d+" | uniq | grep -oP "\d+" | uniq  | while IFS=$'\n' read DIRECTORY; do
       if [ -d "$DIRECTORY" ]; then
         cp .env $DIRECTORY
         cat .env.local >> .env 2>&1 >/dev/null
@@ -13,7 +13,7 @@ configure(){
     done
 
     fmt_yellow "Restarting processes.."
-    pm2 list | grep -oP "atlas-requests-((quirrel|meili)-)?\d+" | uniq | while IFS=$'\n' read process; do
+    pm2 list | grep -oP "$PM2_PREFIX-((quirrel|meili)-)?\d+" | uniq | while IFS=$'\n' read process; do
       pm2 restart $process
     done
 }

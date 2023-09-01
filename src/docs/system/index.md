@@ -22,7 +22,7 @@ eleventyComputed:
 
 # Welcome to Atlas {{ system.name }} Docs
 
-**Coming soon!**
+**Available for testing now!**
 
 <p class="mt-6 text-lg text-slate-600 max-w-3xl mx-auto dark:text-slate-400">
     {{ system.short_description }}

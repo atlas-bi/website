@@ -259,7 +259,7 @@ module.exports = function(eleventyConfig) {
 
   eleventyConfig.addShortcode("admonition", function(icon, title, text) {
     return outdent`
-    <div class="relative w-full rounded-lg border p-4 [&>svg]:absolute [&>svg]:text-foreground [&>svg]:left-4 [&>svg]:top-4 [&>svg+div]:translate-y-[-3px] [&:has(svg)]:pl-11 bg-background text-foreground ${icon}">
+    <div class="mt-8 relative w-full rounded-lg border p-4 [&>svg]:absolute [&>svg]:text-foreground [&>svg]:left-4 [&>svg]:top-4 [&>svg+div]:translate-y-[-3px] [&:has(svg)]:pl-11 bg-background text-foreground ${icon}">
     ${icons[icon]} 
     <h5 class="mb-1 font-medium leading-none tracking-tight">${title}</h5>
       <div class="text-sm [&amp;_p]:leading-relaxed mt-0">${unwrapper(markdownIt.render(text))}</div>
