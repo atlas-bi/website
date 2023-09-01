@@ -8,7 +8,7 @@ check_command lsof
 check_command dotenv
 check_command grep
 check_file .env
-check_file "/etc/nginx/**/$APP.conf"
+check_file "/etc/nginx/**/$NGINX_FILE"
 
 
 # Get free internal ports.
@@ -101,7 +101,7 @@ fmt_blue "Done setting up."
 cd ..
 
 fmt_yellow "Updating nginx.."
-sed -i "s/localhost:3[0-9]*/localhost:${PORT}/" `find -L /etc/nginx -name "$APP.conf"`
+sed -i "s/localhost:3[0-9]*/localhost:${PORT}/" `find -L /etc/nginx -name "$NGINX_FILE"`
 
 fmt_yellow "Gracefully reloading nginx..."
 nginx_reload
@@ -159,7 +159,7 @@ ${BLUE}   pm2 restart $QUIRREL_PROCESS
 
 ${CYAN}Updating Nginx Settings
 
-${YELLOW}1. Update configuration file ${BLUE}nano $(find -L /etc/nginx -name "$APP.conf")
+${YELLOW}1. Update configuration file ${BLUE}nano $(find -L /etc/nginx -name "$NGINX_FILE")
 ${YELLOW}2. Reload nginx ${BLUE}nginx -s reload
 
 

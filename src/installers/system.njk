@@ -6,6 +6,11 @@ eleventyExcludeFromCollections: true
 # Setup global variables.
 APP=atlas-system
 SOURCE=https://api.github.com/repos/atlas-bi/System/releases/latest
+NGINX_FILE="$APP.conf"
+PM2_PREFIX="$APP"
+if [[ -f "installer.conf" ]]; then
+. installer.conf
+fi
 {% include "src/_includes/installer/colors.sh" %}
 {% include "src/_includes/installer/check_commands.sh" %}
 {% include "src/_includes/installer/port_tools.sh" %}
