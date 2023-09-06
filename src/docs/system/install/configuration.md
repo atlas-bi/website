@@ -6,7 +6,7 @@ keywords: atlas, atlas system, extract scheduler, etl, configuration, ubuntu ser
 layout: docs_system.njk
 date: Last Modified
 eleventyNavigation:
-  key: AH Configur
+  key: AH Configuration
 
   title: Configuration Guide
   parent: System
@@ -26,6 +26,23 @@ eleventyComputed:
 ---
 
 # Configuration Options
+
+## Installer Configuration
+
+Some items in the installer can be configured through an `installer.conf` file in the install directory. These settings are helpful if you are running multiple instances of Atlas Hub on the same server.
+
+| Key        | Definition                                                               |
+| ---------- | ------------------------------------------------------------------------ |
+| NGINX_FILE | Alternate name for the `nginx` config file. Default is `atlas-hub.conf`. |
+| PM2_PREFIX | Alternate prefix for `pm2` processes. Default is `atlas-hub`.            |
+
+The file format should be:
+
+```ini
+KEY=VALUE
+```
+
+## App Configuration
 
 Create/edit the project `.env`
 

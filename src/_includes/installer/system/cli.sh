@@ -4,10 +4,11 @@ trap cleanup SIGINT SIGTERM ERR EXIT
 configure(){
     check_file .env
 
-    fmt_yellow "Update .env file in site.."
+    fmt_yellow "Updating .env file in site.."
     pm2 list | grep -oP "$PM2_PREFIX-((quirrel|meili)-)?\d+" | uniq | grep -oP "\d+" | uniq  | while IFS=$'\n' read DIRECTORY; do
       if [ -d "$DIRECTORY" ]; then
         cp .env $DIRECTORY
+        {% include "src/_includes/installer/system/build.sh" %}
       fi
     done
 
