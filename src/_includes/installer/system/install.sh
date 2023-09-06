@@ -16,9 +16,11 @@ fmt_yellow "Finding a free port.."
 
 PORT=$(get_port)
 QUIRREL_PORT=$(get_port)
+MEILI_PORT=$(get_port)
 
 fmt_blue "Using web port $PORT"
 fmt_blue "Using quirrel port $QUIRREL_PORT"
+fmt_blue "Using meili port $MEILI_PORT"
 
 # Download the latest release.
 fmt_yellow "Downloading latest version into $(pwd)/$PORT.."
@@ -29,50 +31,36 @@ cd "$PORT"
 
 fmt_blue "Downloaded version $(npm pkg get version | tr -d '"')"
 
+fmt_yellow "Installing meilisearch.."
+curl -L https://install.meilisearch.com | sh
+
 # Copy in the .env file.
 fmt_yellow "Setting up website.."
 cp ../.env .
 
-# Install dependencies.
-npm i --omit=dev --loglevel error --no-fund --no-audit --legacy-peer-deps
-
-# Apply database migrations.
-fmt_yellow "Applying database migrations.."
-npm run db
-
+{% include "src/_includes/installer/system/build.sh" %}
 
 # Set a few process names.
 APP_PROCESS="$APP-$PORT"
 QUIRREL_PROCESS="$APP-quirrel-$QUIRREL_PORT"
+MEILI_PROCESS="$APP-meili-$MEILI_PORT"
 
 exporter NODE_ENV=production
 exporter WEB_PORT=$PORT
 exporter QUIRREL_PORT=$QUIRREL_PORT
-
 exporter APP_PROCESS=$APP_PROCESS
 exporter QUIRREL_PROCESS=$QUIRREL_PROCESS
-
-fmt_yellow "Starting new services.."
-
 exporter PASSPHRASES=$QUIRREL_PROCESS
 exporter DISABLE_TELEMETRY=1
 exporter SESSION_SECRET=$APP_PROCESS
-
-# Start quirrel and get a token.
-# Start quirrel and get a token.
-# this is now down in the app's server.js file
-# so that the correct token can be used on a restart.
-# dotenv -v PORT=$QUIRREL_PORT -- pm2 start node --name="$QUIRREL_PROCESS" -- node_modules/quirrel/dist/cjs/src/api/main.js
-
-# Set quirrel env vars.
-# set in server.ts now.
-# exporter QUIRREL_TOKEN=$(curl --retry 5 --retry-delay 3 --retry-all-errors --connect-timeout 10 --user ignored:$QUIRREL_PROCESS -X PUT "localhost:$QUIRREL_PORT/tokens/prod")
 exporter QUIRREL_API_URL=http://localhost:$QUIRREL_PORT
 exporter QUIRREL_BASE_URL=http://localhost:$PORT
+exporter MEILISEARCH_URL=http://localhost:$MEILI_PORT
+exporter MEILI_MASTER_KEY=$MEILI_PROCESS
 
-# Load quirrel cron jobs.
-# now done in server.js
-# npm run quirrel:ci
+exporter MEILI_NO_ANALYTICS=true
+
+fmt_yellow "Starting new services.."
 
 # Start web process.
 dotenv -v PORT=$PORT -- pm2 start node --name="$APP_PROCESS" --merge-logs -- ./build/server.js
@@ -120,23 +108,22 @@ echo ""
 fmt_blue "Next Steps"
 
 cat <<EOF
-${CYAN}Current Configuration
+${CYAN}View Current Configuration
 
-${YELLOW}$(cat $PORT/.env.local)
+${BLUE}cat $PORT/.env
 
 ${YELLOW}Web process was started with ${BLUE}dotenv -v PORT=$PORT -- pm2 start node --name="$APP_PROCESS" --merge-logs -- ./build/server.js
 
 ${CYAN}Updating App Settings
 
 ${YELLOW}1. Update user configuration file ${BLUE}nano $(pwd)/.env
-${YELLOW}2. Copy config into app ${BLUE}cp $(pwd)/.env $(pwd)/$PORT/.env
-${YELLOW}3. Restart the apps:
-${BLUE}   pm2 restart $APP_PROCESS
-${BLUE}   pm2 restart $QUIRREL_PROCESS
+${YELLOW}2. Reconfigure the app
+${BLUE}   curl -sSL https://atlas.bi/installers/system.sh | bash -s -- --configure
 
 ${CYAN}Updating Nginx Settings
 
 ${YELLOW}1. Update configuration file ${BLUE}nano $(find -L /etc/nginx -name "$NGINX_FILE")
+${YELLOW}2. Test nginx config ${BLUE}nginx -t
 ${YELLOW}2. Reload nginx ${BLUE}nginx -s reload
 
 

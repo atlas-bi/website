@@ -70,6 +70,11 @@ The available settings are:
       "external_link": "GitLab Project Link"
     }
   },
+  "nav": {
+    "links": {
+      "Docs": "https://somewhere"
+    }
+  },
   "footer": {
     "links": {
       "Group One": {

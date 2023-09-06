@@ -3,20 +3,21 @@ const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 const slugify = require("slugify");
 const metagen = require("eleventy-plugin-metagen");
 const eleventyNavigationPlugin = require("@11ty/eleventy-navigation");
-const fs = require('fs');
 const outdent = require('outdent');
 const schema = require("@quasibit/eleventy-plugin-schema");
 const readingTime = require('reading-time');
 const editOnGithub = require('eleventy-plugin-edit-on-github');
 const fetch = require('node-fetch');
-const postcss = require('postcss');
 const rollupPlugin = require('eleventy-plugin-rollup');
 const { nodeResolve } = require('@rollup/plugin-node-resolve');
 const commonjs = require('@rollup/plugin-commonjs');
 const { babel } = require('@rollup/plugin-babel');
 const json = require('@rollup/plugin-json');
 const cleanup = require('rollup-plugin-cleanup');
-const nunjucks = require('nunjucks');
+
+const { EleventyRenderPlugin } = require("@11ty/eleventy");
+
+const RenderManager = EleventyRenderPlugin.RenderManager;
 
 const slugifyCustom = (s) =>
   slugify(s, { lower: true, remove: /[*+~.()'"!:@]/g });
@@ -82,6 +83,7 @@ async function getPage(url){
   fixed = fixed.replace(/```sh/g, '```bash')
   return fixed
 }
+
 module.exports = function(eleventyConfig) {
 
   eleventyConfig.setUseGitIgnore(false);
@@ -243,8 +245,11 @@ module.exports = function(eleventyConfig) {
       .substring(0, 8000);
   });
 
-  eleventyConfig.addFilter("render", (value, ctx) => {
-    return nunjucks.renderString(value, ctx).replace(/^\s*---(.*)---\s*$/gms,'')
+  eleventyConfig.addAsyncFilter("render", async(value, ctx) => {
+  let renderMgr = new RenderManager();
+  const t = await renderMgr.compile(value, 'njk')
+  const h = (await t()).replace(/^\s*---(.*)---\s*$/gms,'')
+  return h
   })
 
   eleventyConfig.addCollection("algolia", function(collection) {
@@ -279,7 +284,7 @@ module.exports = function(eleventyConfig) {
       data: "_data",
       output: "_site"
     },
-    templateFormats: ["md", "html", "njk", "11ty.js", "sh"],
+    templateFormats: ["md", "html", "njk", "11ty.js"],
     htmlTemplateEngine: "njk",
     markdownTemplateEngine: "njk",
     passthroughFileCopy: true
