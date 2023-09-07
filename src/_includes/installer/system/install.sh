@@ -44,28 +44,17 @@ cp ../.env .
 
 # Set a few process names.
 APP_PROCESS="$APP-$PORT"
-QUIRREL_PROCESS="$APP-quirrel-$QUIRREL_PORT"
-MEILI_PROCESS="$APP-meili-$MEILI_PORT"
+
 
 exporter NODE_ENV=production
 exporter WEB_PORT=$PORT
 exporter QUIRREL_PORT=$QUIRREL_PORT
-exporter APP_PROCESS=$APP_PROCESS
-exporter QUIRREL_PROCESS=$QUIRREL_PROCESS
-exporter PASSPHRASES=$QUIRREL_PROCESS
-exporter DISABLE_TELEMETRY=1
-exporter SESSION_SECRET=$APP_PROCESS
-exporter QUIRREL_API_URL=http://localhost:$QUIRREL_PORT
-exporter QUIRREL_BASE_URL=http://localhost:$PORT
-exporter MEILISEARCH_URL=http://localhost:$MEILI_PORT
-exporter MEILI_MASTER_KEY=$MEILI_PROCESS
-
-exporter MEILI_NO_ANALYTICS=true
+exporter MEILI_PORT=$MEILI_PORT
 
 fmt_yellow "Starting new services.."
 
 # Start web process.
-dotenv -v PORT=$PORT -- pm2 start node --name="$APP_PROCESS" --merge-logs -- ./build/server.js
+pm2 start node --name="$APP_PROCESS" --merge-logs -- ./build/server.js
 
 fmt_blue "Done setting up."
 cd ..
@@ -80,7 +69,7 @@ fmt_yellow "Removing old pm2 processes.."
 
 # gnu grep
 pm2 list | grep -oP "$APP-((quirrel|meili)-)?\d+" | uniq | while IFS=$'\n' read process; do
-  if [[ $process != $APP_PROCESS && $process != $QUIRREL_PROCESS ]];
+  if [[ $process != $APP_PROCESS ]];
   then
     fmt_yellow "Removing $process"
     pm2 delete $process || true
