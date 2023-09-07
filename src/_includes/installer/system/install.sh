@@ -32,7 +32,9 @@ cd "$PORT"
 fmt_blue "Downloaded version $(npm pkg get version | tr -d '"')"
 
 fmt_yellow "Installing meilisearch.."
+mkdir etc; cd etc;
 curl -L https://install.meilisearch.com | sh
+cd ..
 
 # Copy in the .env file.
 fmt_yellow "Setting up website.."
