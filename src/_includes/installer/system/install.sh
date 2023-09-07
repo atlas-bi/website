@@ -54,7 +54,7 @@ exporter MEILI_PORT=$MEILI_PORT
 fmt_yellow "Starting new services.."
 
 # Start web process.
-pm2 start node --name="$APP_PROCESS" --merge-logs -- ./build/server.js
+dotenv -- pm2 start node --name="$APP_PROCESS" --merge-logs -- ./build/server.js
 
 fmt_blue "Done setting up."
 cd ..
