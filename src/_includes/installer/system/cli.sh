@@ -8,7 +8,9 @@ configure(){
     pm2 list | grep -oP "$PM2_PREFIX-((quirrel|meili)-)?\d+" | uniq | grep -oP "\d+" | uniq  | while IFS=$'\n' read DIRECTORY; do
       if [ -d "$DIRECTORY" ]; then
         cp .env $DIRECTORY
+        cd $DIRECTORY
         {% include "src/_includes/installer/system/build.sh" %}
+        cd ..
       fi
     done
 
