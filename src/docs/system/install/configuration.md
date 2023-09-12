@@ -7,7 +7,6 @@ layout: docs_system.njk
 date: Last Modified
 eleventyNavigation:
   key: AH Configuration
-
   title: Configuration Guide
   parent: System
   order: 5
@@ -69,6 +68,8 @@ SAML_PRIVATE_KEY="/etc/certs/idp-private-key.pem"
 SAML_PRIVATE_KEY_PASS=""
 SAML_ENC_PRIVATE_KEY="/etc/certs/idp-private-key.pem"
 SAML_SP_ISASSERTIONENCRYPTED=false
+SAML_SIGNING_CERT="/etc/certs/idp-private-key.crt"
+SAML_ENC_CERT="/etc/certs/idp-private-key.crt"
 
 # ldap settings.
 LDAP_HOST=ldap://localhost

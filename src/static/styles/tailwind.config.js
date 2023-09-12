@@ -129,6 +129,7 @@ module.exports = {
   },
   plugins: [
     require('tailwindcss-animated'),
+    require('tailwindcss-animate'),
     require('@tailwindcss/typography'),
   ],
 };

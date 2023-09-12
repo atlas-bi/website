@@ -25,3 +25,9 @@ eleventyComputed:
 ---
 
 # Development
+
+<a class="block border rounded-lg p-5 shadow bg-white no-underline group animate-fade transition-colors hover:border-sky-400 hover:shadow-sky-400" target="_blank" href="https://github.com/atlas-bi/System" title="github">
+  <div class="flex content-center space-x-2">
+<div class=" my-auto">{% include "src/_includes/svg/right.svg" %}</div><div class="my-auto">Contribute to the project on <span class="text-sky-600 ">github</span>.</div>
+</div>
+</a>

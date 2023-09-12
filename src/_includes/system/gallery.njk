@@ -1,0 +1,91 @@
+<h2 class="text-slate-900 text-4xl tracking-tight font-extrabold sm:text-5xl dark:text-white text-center py-10">
+    What does it look like?
+</h2>
+{% set images = [
+    {
+        "url": "./src/static/img/system/windows.png",
+        "alt": "Windows Server"
+    },
+    {
+        "url": "./src/static/img/system/windows_drive.png",
+        "alt": "Drive Storage Utilization"
+    },
+    {
+        "url": "./src/static/img/system/windows_memory.png",
+        "alt": "Windows Memory Utilization"
+    },
+    {
+        "url": "./src/static/img/system/cpu.png",
+        "alt": "CPU Consumption Per Unit"
+    },
+    {
+        "url": "./src/static/img/system/http.png",
+        "alt": "HTTP Uptime"
+    },
+    {
+        "url": "./src/static/img/system/http_notifications.png",
+        "alt": "HTTP Notifications"
+    },
+    {
+        "url": "./src/static/img/system/notifications.png",
+        "alt": "Notifications"
+    },
+    {
+        "url": "./src/static/img/system/search.png",
+        "alt": "Search"
+    },
+    {
+        "url": "./src/static/img/system/sqlserver.png",
+        "alt": "SQL Server Monitor"
+    },
+    {
+        "url": "./src/static/img/system/sqlserver_files.png",
+        "alt": "SQL Database Files"
+    },
+    {
+        "url": "./src/static/img/system/sqlserver_file.png",
+        "alt": "SQL Database File Size"
+    },
+    {
+        "url": "./src/static/img/system/sqlserver_memory.png",
+        "alt": "SQL Server Memory Utilization"
+    },
+    {
+        "url": "./src/static/img/system/sqlserver_notifications.png",
+        "alt": "SQL Server Notification Options"
+    },
+    {
+        "url": "./src/static/img/system/ubuntu.png",
+        "alt": "Ubuntu Server"
+    },
+    {
+        "url": "./src/static/img/system/ubuntu_memory.png",
+        "alt": "Ubuntu Server Memory Usage"
+    }
+] %}
+<div class="grid grid-cols-1 gap-6 lg:gap-8 md:grid-cols-2 lg:grid-cols-3 max-lg:hidden">
+    <ul class="space-y-8">
+        {% set group = "1" %}
+        {% asyncEach img in images %}
+        <li class="text-sm leading-6">{% include 'src/_includes/components/imageSmall.njk' %}</li>
+        {% if  loop.index % ((images.length / 3) | round)  == 0 %}
+        </ul>
+        <ul class="space-y-8">
+        {% endif %}
+    {% endeach %}
+</ul>
+</div>
+<div class="grid grid-cols-1 gap-6 lg:gap-8 md:grid-cols-2 lg:grid-cols-2 lg:hidden">
+    <ul class="space-y-8">
+        {% set group = "2" %}
+        {% asyncEach img in images %}
+        <li class="text-sm leading-6">{% include 'src/_includes/components/imageSmall.njk' %}</li>
+        {% if  loop.index % ((images.length / 2) | round)  == 0 %}
+        </ul>
+        <ul class="space-y-8">
+        {% endif %}
+    {% endeach %}
+</ul>
+</div>
+{% set docsUrl = system.docs %}
+{% include 'src/_includes/components/openDocs.njk' %}

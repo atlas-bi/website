@@ -8,15 +8,12 @@ configure(){
     pm2 list | grep -oP "$PM2_PREFIX-((quirrel|meili)-)?\d+" | uniq | grep -oP "\d+" | uniq  | while IFS=$'\n' read DIRECTORY; do
       if [ -d "$DIRECTORY" ]; then
         cp .env $DIRECTORY
-        cd $DIRECTORY
-        {% include "src/_includes/installer/system/build.sh" %}
-        cd ..
       fi
     done
 
     fmt_yellow "Restarting processes.."
     pm2 list | grep -oP "$PM2_PREFIX-((quirrel|meili)-)?\d+" | uniq | while IFS=$'\n' read process; do
-      pm2 restart $process
+      dotenv -- pm2 restart $process --update-env
     done
 }
 

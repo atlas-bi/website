@@ -1,0 +1,23 @@
+<figure class="bg-slate-100 rounded-xl p-8 dark:bg-slate-800 image-popout"
+        data-target="{{ group }}-{{ img.url | slugify }}">
+    <div class="p-0 w-fit h-auto mx-auto">{% image img.url, img.alt, "(max-width:600px) 80vw, 100vw" %}</div>
+    <div class="pt-6 w-full text-center md:text-left space-y-4">
+        <blockquote>
+            <p class="text-lg font-medium">{{ img.alt }}</p>
+        </blockquote>
+    </div>
+    <div role="dialog"
+         id="{{ group }}-{{ img.url | slugify }}"
+         aria-describedby="radix-:r5f:"
+         aria-labelledby="radix-:r5e:"
+         data-state="closed"
+         class="fixed left-[50%] top-[50%] z-50 grid min-w-[70vw] w-auto h-auto max-w-[90vw] max-h-[90vh] translate-x-[-50%] translate-y-[-50%] gap-4 border bg-background p-6 shadow-lg duration-200 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[state=closed]:slide-out-to-left-1/2 data-[state=closed]:slide-out-to-top-[48%] data-[state=open]:slide-in-from-left-1/2 data-[state=open]:slide-in-from-top-[48%] sm:rounded-lg image-popout"
+         tabindex="-1"
+         style="pointer-events: auto;
+                display:none">
+        <div class="flex flex-col space-y-2 text-center sm:text-left w-full h-full">
+            <p id="radix-:r5f:" class="text-sm text-muted-foreground">{{ img.alt }}</p>
+            {% image img.url, img.alt, "100vw" %}
+        </div>
+    </div>
+</figure>

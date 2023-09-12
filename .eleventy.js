@@ -204,6 +204,10 @@ module.exports = function(eleventyConfig) {
     return JSON.stringify(text).replace(/(?:\\n\s*){2,}/g, "\\n");
   });
 
+  eleventyConfig.addFilter("noSrc", (text) => {
+    return text.replace(/\.?\/src/, '')
+  });
+
   eleventyConfig.addFilter("readingTime", (text) => {
     return stats = readingTime(text).text;
   })

@@ -1,10 +1,32 @@
 {
   "description": "Track uptime and receive alerts when the system is not working as planned. Atlas System monitors SQL Server, Windows, Ubuntu, websites, and tcp connections. Supposed LDAP and SAML sso authentication.",
-  "long_description": "Track uptime and receive alerts when the system is not working as planned. Atlas System monitors SQL Server, Windows, Ubuntu, websites, and tcp connections. Supposed LDAP and SAML sso authentication.",
+  "long_description": "Easily review cpu, memory, and storage utilization across Ubuntu and Windows servers.\n\nTrack SQL Server file usage, database ram consumption, and server cpu consumption.\n\nTrack website response time.\n\nGet alerts when your system is not performing up to spec.",
   "name": "System",
-  "short_description": "Simple system monitor for servers, databases, and websites.",
+  "short_description": "Update and resource monitor for servers, databases, and websites.",
   "short_name": "System",
   "docs": "/docs/system/",
   "info": "/system/",
-  "demo": "https://system.atlas.bi"
+  "demo": "https://system.atlas.bi",
+  "features": [
+    {
+      "heading": "SQL Server",
+      "message": "Keep a history of your SQL Server's uptime, cpu and memory utilization, as well as memory by database, file sizes, and alerts to notify you when something is out of spec. "
+    },
+    {
+      "heading": "Secure SAML2 authentication",
+      "message": "Atlas System uses secure SAML2 authentication for single sign one. With SAML2 you can easily use two factor authentication, and give website access to specific user groups."
+    },
+    {
+      "heading": "Windows and Ubuntu Servers",
+      "message": "Get notified when servers reboot, go offline, track cpu and memory usage over time, receive alerts when drives are running out of space."
+    },
+    {
+      "heading": "HTTP Monitor",
+      "message": "Track uptime on your key websites and receive notifications when they go offline. Auto login to sites that require authentication."
+    },
+    {
+      "heading": "TCP Ping",
+      "message": "Track ping time on other tcp services such as SSAS (Analysis services) and more."
+    }
+  ]
 }

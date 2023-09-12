@@ -8,12 +8,8 @@
         "name": "Hub"
     },
     {
-        "href": "/docs",
-        "name": "Docs"
-    },
-    {
-        "href": "/pricing",
-        "name": "Pricing"
+        "href": "/system",
+        "name": "System"
     }
 ] %}
 <div class="sticky top-0 backdrop-blur-md bg-white/60 z-20" id="nav">
@@ -26,8 +22,32 @@
                     atlas
                 </h2>
             </a>
-            <div class="max-lg:hidden">{% include './components/links.njk' %}</div>
+            <div class="max-lg:hidden border rounded-md">{% include './components/links.njk' %}</div>
+            {% set links = [{"href": "/docs", "name": "Docs"}, {"href": "/pricing", "name": "Pricing"}, {"href": "/new"}] %}
+            {% set mobileLinks = [
+                {
+                    "href": "/library",
+                    "name": "Library"
+                },
+                {
+                    "href": "/hub",
+                    "name": "Hub"
+                },
+                {
+                    "href": "/system",
+                    "name": "System"
+                },
+                {
+                    "href": "/docs",
+                    "name": "Docs"
+                },
+                {
+                    "href": "/pricing",
+                    "name": "Pricing"
+                }
+            ] %}
             <div class="ml-auto flex items-center space-x-4 max-lg:grow max-lg:shrink">
+                <div class="max-lg:hidden">{% include './components/links.njk' %}</div>
                 {% include './components/search.njk' %}
                 <div class="max-lg:hidden">{% include './components/social.njk' %}</div>
                 <div class="lg:hidden">{% include './components/mobile.njk' %}</div>

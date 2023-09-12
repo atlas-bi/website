@@ -1,0 +1,53 @@
+{% set docsUrl = system.docs %}
+{% include 'src/_includes/components/openDocs.njk' %}
+<h2 class="text-slate-900 text-4xl tracking-tight font-extrabold sm:text-5xl dark:text-white text-center py-10">
+    What do we love?
+</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 lg:grid-cols-3 max-lg:hidden">
+    <ul class="space-y-8">
+        {% for feature in system.features %}
+            <li class="text-sm leading-6">
+                <figure class="relative flex flex-col-reverse bg-slate-50 rounded-lg p-6 dark:bg-slate-800 dark:highlight-white/5">
+                    <blockquote class="mt-6 text-slate-700 dark:text-slate-300">
+                        <p>{{ feature.message|safe }}</p>
+                    </blockquote>
+                    <figcaption class="flex items-center space-x-4">
+                        <div class="flex-auto">
+                            <div class="text-base text-slate-900 font-semibold dark:text-slate-300">
+                                <span class="absolute inset-0"></span>{{ feature.heading }}
+                            </div>
+                        </div>
+                    </figcaption>
+                </figure>
+            </li>
+            {% if  loop.index % ((system.features.length / 3) | round)  == 0 %}
+            </ul>
+            <ul class="space-y-8">
+            {% endif %}
+        {% endfor %}
+    </ul>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:hidden">
+    <ul class="space-y-8">
+        {% for feature in system.features %}
+            <li class="text-sm leading-6">
+                <figure class="relative flex flex-col-reverse bg-slate-50 rounded-lg p-6 dark:bg-slate-800 dark:highlight-white/5">
+                    <blockquote class="mt-6 text-slate-700 dark:text-slate-300">
+                        <p>{{ feature.message|safe }}</p>
+                    </blockquote>
+                    <figcaption class="flex items-center space-x-4">
+                        <div class="flex-auto">
+                            <div class="text-base text-slate-900 font-semibold dark:text-slate-300">
+                                <span class="absolute inset-0"></span>{{ feature.heading }}
+                            </div>
+                        </div>
+                    </figcaption>
+                </figure>
+            </li>
+            {% if  loop.index % ((system.features.length / 2) | round)  == 0 %}
+            </ul>
+            <ul class="space-y-8">
+            {% endif %}
+        {% endfor %}
+    </ul>
+</div>
