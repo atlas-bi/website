@@ -1,17 +1,21 @@
 <a title="{{ system.name }}"
    href="{{ system.info }}"
    class="group animate-fade  border rounded-lg shadow p-5 space-y-3 transition-colors hover:border-sky-400 hover:shadow-sky-400">
-    <div class="is-size-4">
+    <div class="is-size-4 flex justify-between">
         <h2 class="text-2xl font-medium transition-colors m-0 text-slate-600 group-hover:text-slate-900 ">
             <span class="mx-2 text-slate-300 group-hover:text-sky-400">/</span>
             {{ system.name }}
         </h2>
+        <button type="button"
+                class="opacity-0 group-hover:opacity-100 inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-secondary text-secondary-foreground hover:bg-secondary/80 h-10 px-4 py-2">
+            read more
+        </button>
     </div>
     <p class="font-light text-slate-600 text-lg border-b">{{ system.short_description }}</p>
     <div class="flex max-md:flex-col">
         <div class="md:w-1/3">
             <figure>
-                {% image "./src/static/img/hub.png", "atlas home page", "(min-width:800px) 70vw, 100vw" %}
+                {% image "./src/static/img/system/home_framed.png", "system home page", "(min-width:800px) 70vw, 100vw" %}
             </figure>
         </div>
         <div class="md:w-2/3 space-y-4 text-slate-700">

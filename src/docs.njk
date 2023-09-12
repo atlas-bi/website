@@ -46,18 +46,6 @@ eleventyComputed:
                 <p class="font-light text-slate-600">{{ hub.short_description }}</p>
                 <p class="prose">{{ hub.description }}</p>
             </a>
-            <a title="{{ requests.name }}"
-               href="{{ requests.docs }}"
-               class="col-span-2 group animate-fade  border rounded-lg shadow p-5 space-y-3 transition-colors hover:border-sky-400 hover:shadow-sky-400">
-                <div class="is-size-4">
-                    <h2 class="text-2xl font-medium transition-colors m-0 text-slate-600 group-hover:text-slate-900 ">
-                        <span class="mx-2 text-slate-300  group-hover:text-sky-400">/</span>
-                        {{ requests.name }}
-                    </h2>
-                </div>
-                <p class="font-light text-slate-600">{{ requests.short_description }}</p>
-                <p class="prose">{{ requests.description }}</p>
-            </a>
             <a title="{{ system.name }}"
                href="{{ system.docs }}"
                class="col-span-2 group animate-fade  border rounded-lg shadow p-5 space-y-3 transition-colors hover:border-sky-400 hover:shadow-sky-400">
@@ -70,6 +58,18 @@ eleventyComputed:
                 <p class="font-light text-slate-600">{{ system.short_description }}</p>
                 <p class="prose">{{ system.description }}</p>
             </a>
+            {# <a title="{{ requests.name }}"
+               href="{{ requests.docs }}"
+               class="col-span-2 group animate-fade  border rounded-lg shadow p-5 space-y-3 transition-colors hover:border-sky-400 hover:shadow-sky-400">
+                <div class="is-size-4">
+                    <h2 class="text-2xl font-medium transition-colors m-0 text-slate-600 group-hover:text-slate-900 ">
+                        <span class="mx-2 text-slate-300  group-hover:text-sky-400">/</span>
+                        {{ requests.name }}
+                    </h2>
+                </div>
+                <p class="font-light text-slate-600">{{ requests.short_description }}</p>
+                <p class="prose">{{ requests.description }}</p>
+</a> #}
         </div>
     </div>
 </section>

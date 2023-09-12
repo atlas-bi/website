@@ -7,7 +7,7 @@
     },
     {
       "heading": "Secure SAML2 authentication",
-      "message": "Atlas Hub using secure SAML2 authentication for single sign one. With SAML2 you can easily use two factor authentication, and give website access to specific user groups."
+      "message": "Atlas Hub uses secure SAML2 authentication for single sign one. With SAML2 you can easily use two factor authentication, and give website access to specific user groups."
     },
     {
       "heading": "Run .bat jobs on Window Server",

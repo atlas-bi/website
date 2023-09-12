@@ -1,0 +1,32 @@
+---
+layout: siteLayout.njk
+title: System
+description: Update and resource monitor for servers, databases, and websites. Track uptime and receive alerts when the system is not working as planned. Atlas System monitors SQL Server, Windows, Ubuntu, websites, and tcp connections. Supposed LDAP and SAML sso authentication.
+keywords: atlas system, uptime, server monitor, ldap, saml, saml2, uptime monitor
+date: git Last Modified
+eleventyComputed:
+    meta:
+        breadcrumbs:
+            - name: Atlas
+              url: "{{ site.url }}"
+              position: 1
+    type: page
+---
+<section class="grow">
+    <div class="mx-auto container space-y-6 ">
+        {% include 'src/_includes/components/connect.njk' %}
+        <h1 class="text-slate-900 font-extrabold text-4xl sm:text-5xl lg:text-6xl tracking-tight text-center dark:text-white">
+            {{ system.name }}
+        </h1>
+        <p class="mt-6 text-lg text-slate-600 text-center max-w-3xl mx-auto dark:text-slate-400">
+            {{ system.short_description }}
+        </p>
+        <div class="mx-auto prose text-center">{{ system.description }}</div>
+        <figure class="animated-fade flex justify-center">
+            {% image "./src/static/img/system/home_framed.png", "atlas system home page", "(min-width:800px) 90vw, 100vw", "asdf", "eager", "auto" %}
+        </figure>
+        {% include "system/features.njk" %}
+        {% include "system/demo.njk" %}
+        {% include "system/gallery.njk" %}
+    </div>
+</section>
