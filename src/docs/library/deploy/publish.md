@@ -125,7 +125,7 @@ build_web:
   script:
     - npm run dotnet:publish
   artifacts:
-    paths: ['/builds/atlas/library/web/atlas-prod-net-deploy/out/']
+    paths: [\'/builds/atlas/library/web/atlas-prod-net-deploy/out/\']
     expire_in: 1 week
 
 # Run database migrations.
@@ -133,7 +133,7 @@ migrate:
   image: mcr.microsoft.com/dotnet/sdk:7.0-alpine
   stage: build
   variables:
-    ASPNETCORE_ENVIRONMENT: 'Production'
+    ASPNETCORE_ENVIRONMENT: \'Production\'
   only:
     - build
   when: manual
