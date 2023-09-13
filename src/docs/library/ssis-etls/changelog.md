@@ -29,6 +29,48 @@ eleventyComputed:
 
 # Changelog
 
+## Version 2023-09-1
+
+- clarity: fixed data size on paf and hrx column file imports
+- slicer: ignore truncation warning on slicer dicer session description
+- hyperdrive/ssrs: updated ssrs links to allow embedding in hyperdrive
+
+## Version 2023-06-1
+
+- atlas hub: fixed max length issue on description
+
+## Version 2023-03-3
+
+- tableau: fixed tableau hierarchy for reports with 4 digit ids
+
+## Version 2023-03-2
+
+- run data: fixed bug where hrx's with no run time would result in null instead of 0
+
+## Version 2023-03-1
+
+- fixed bug in RPT_RUN_DATA
+- added atlas hub projects and task: added etl for atlas hub
+- added stage.reportobjecttypefromprd: updated rundata being pushed up and down
+- improved performance for clarity bridge
+
+## Version 2022-11-1
+
+- clarity: fixed sql encoding on blank lines
+- hierarchy: added distinct
+
+## Version 2022-10-1
+
+- column sync: fixed out of sync column in ssis clarity
+- query: preventing inserting queries for reports that do not exist
+- ssrs2: fixed datatype conversion problem on subscription report_ooid
+
+## Version 2022.07.1
+
+- hide reports: fixed update statement alias in hide reports step
+- ssrs2: fixed datatype on subscriptionid
+- ssrs2: fixed ssrs2 subscription mapping
+
 ## Version 2022.03.1
 
 - Fixed RW report group id's

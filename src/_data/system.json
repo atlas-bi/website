@@ -2,7 +2,7 @@
   "description": "Track uptime and receive alerts when the system is not working as planned. Atlas System monitors SQL Server, Windows, Ubuntu, websites, and tcp connections. Supposed LDAP and SAML sso authentication.",
   "long_description": "Easily review cpu, memory, and storage utilization across Ubuntu and Windows servers.\n\nTrack SQL Server file usage, database ram consumption, and server cpu consumption.\n\nTrack website response time.\n\nGet alerts when your system is not performing up to spec.",
   "name": "System",
-  "short_description": "Update and resource monitor for servers, databases, and websites.",
+  "short_description": "Uptime and resource monitor for servers, databases, and websites.",
   "short_name": "System",
   "docs": "/docs/system/",
   "info": "/system/",

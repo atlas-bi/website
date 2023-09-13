@@ -89,3 +89,27 @@ The available settings are:
   }
 }
 ```
+
+## Authentication
+
+By default Atlas Library will use windows authentication from IIS. If you prefer, SAMl is a available with the following configuration options. Adding the configuration will automatically enable SAML.
+
+```json
+"Saml2": {
+  "IdPMetadata": "http://localhost:7000/metadata",
+  "Issuer": "atlas-library",
+  "SignatureAlgorithm": "http://www.w3.org/2001/04/xmldsig-more#rsa-sha256",
+  "SigningCertificateFile": "C:\\user\\me\\Documents\\projects\\atlas\\idp\\idp.pfx",
+  "SigningCertificatePassword": "password",
+  "SignatureValidationCertificateFile": "C:\\Users\\me\\Documents\\projects\\atlas\\idp\\idp.pfx",
+  "CertificateValidationMode": "None", // "ChainTrust"
+  "RevocationMode": "NoCheck"
+}
+```
+
+SAML endpoints will be available:
+
+- `Metadata` > this url can be given to the IDP.
+- `/Auth/Login` > Unauthenticated users will automatically be directed to this page.
+- `/Logout` > Url can be called to end the SAML session if needed.
+- `/Auth/Asc` > Callback url for the IPD
