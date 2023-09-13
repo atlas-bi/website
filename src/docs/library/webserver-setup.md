@@ -30,13 +30,13 @@ Atlas Library is designed to run on **Windows Server 2016 or later**. There are 
 
 ## Server Requirements
 
-A single hospital install will generally have <40gb of data. A majority of the data is report usage data. Here is a rule of thumb sizing for a single hospital. You can scale the numbers to your size -
+A single hospital install will generally have ~50gb of data. A majority of the data is report usage data. Here is a rule of thumb sizing for a single hospital. You can scale the numbers to your size -
 
-- Database Server Ram: 40gb
-- Database Server Disk Space: 80gb (keep in mind the ETL's use a staging database, so you need effectively 2x the disk space of the prod database.)
+- Database Server Ram: 50gb
+- Database Server Disk Space: 120gb (keep in mind the ETL's use a staging database, so you need effectively 2x the disk space of the prod database.)
 - Server cores: 8
 
-The website server requirements are much less. The website requires <1gb of disk space. On a shared webserver we would recommend 16gb ram and 8 cores.
+The website server requirements are much less. The website requires <5gb of disk space. On a shared webserver we would recommend 16gb ram and 8 cores.
 
 ## Install Requirements
 
@@ -56,8 +56,6 @@ The website server requirements are much less. The website requires <1gb of disk
 
 - Java JRE. You can check your current install by running `java --version` in command prompt. Java can be downloaded [here](https://www.oracle.com/java/technologies/downloads/#jdk17-windows).
   - Add a system environment variable "JAVA_HOME" that points to the install path of java. Most likely something close to `C:\Program Files\Java\jdk-17.0.1`
-
-After installing the server should be rebooted, or the web services restarted (`Web Deployment Agent Service` and `Web Management Service`).
 
 ## Setup IIS
 

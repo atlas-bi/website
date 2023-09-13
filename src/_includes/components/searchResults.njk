@@ -21,7 +21,7 @@
                         <path d="m16 12 2 2 4-4" />
                         <path d="M22 6V3h-6c-2.2 0-4 1.8-4 4v14c0-1.7 1.3-3 3-3h7v-2.3" />
                     </svg>
-                    <strong>{{ x.title }}</strong><span>Atlas Solr Test</span>
+                    <strong>{{ x.title }}</strong>
                 </div>
                 <div class="flex">
                     {% for tag in x._tags %}
@@ -31,7 +31,7 @@
                     {% endfor %}
                 </div>
             </div>
-            <div>{{ x._snippetResult.content.value | safe }}</div>
+            <div>{{ x._snippetResult.content.value | safe | replace('\n', ' ') | replace("  ", " ") }}</div>
         </div>
     </div>
 {% else %}

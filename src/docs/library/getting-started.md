@@ -70,7 +70,7 @@ Clone the project form GitHub into a new Visual Studio Code project using the cl
 {% admonition
   "note",
   "IE11 Support",
-  "Versions of Atlas > 3.13 do not fully support Internet Explorer 11. If you plan to use IE11 you can install from the [dedicated IE11 branch](https://github.com/atlas-bi/Library/tree/ie11)"
+  "Versions of Atlas > 3.14 do not fully support Internet Explorer 11. If you plan to use IE11 you can install from the [dedicated IE11 branch](https://github.com/atlas-bi/Library/tree/ie11)"
 %}
 
 {% image "./src/static/img/library/getting_started/git_clone.png", "razor component", "(min-width:800px) 50vw, 100vw", "boxed" %}
@@ -107,6 +107,9 @@ Finally, start the website. This command will build all the resources needed to 
 
 ```js
 npm start
+
+# alternatively, if you would like to run a a dev saml and solr instance
+npm run dev
 ```
 
 {% image "./src/static/img/library/getting_started/npm_start.png", "razor component", "(min-width:800px) 50vw, 100vw", "boxed" %}

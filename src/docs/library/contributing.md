@@ -72,7 +72,7 @@ The following config can be added to the `appsettings.cust.Development.json` fil
 Finally, start the `idp` and the library.
 
 ```bash
-npm run start:saml
+npm run dev
 ```
 
 ## Database Updates
