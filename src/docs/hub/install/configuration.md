@@ -1,8 +1,8 @@
 ---
-title: Configuration
+title: Configuration | Configure Atlas Hub, set authentication method, custom logos and more
 tags: Hub
 description: Configuring Atlas Hub is done through an ini file installed in /etc/atlas-hub/config.ini. Defaults are preset.
-keywords: atlas, atlas hub, extract scheduler, etl, configuration
+keywords: atlas, atlas hub, extract scheduler, etl, configuration, logo, saml
 layout: docs_hub.njk
 date: Last Modified
 eleventyNavigation:

@@ -1,7 +1,7 @@
 ---
-title: Publish
+title: Publish | Learn about how to deploy Atlas Library onto your web server
 tags: Library
-description: Learn about how to deploy Atlas Library onto your web server. Atlas Library runs on .NET 5 and is easily deployed from Visual Studio.
+description: Deploying the build of Atlas from your /out directory is simple. If you are doing an update or redeploying, a few services should be stopped before copying in the new build. In window services, find and stop "solr", or use this command in your cmd terminal.
 keywords: atlas, atlas library, unified report library, data governance, database, publishing, iis, deploy, visual studio
 layout: docs_library.njk
 date: Last Modified

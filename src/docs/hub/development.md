@@ -1,7 +1,7 @@
 ---
-title: Development
+title: Development | Learn about the Atlas Hub development process, and how to test the code.
 tags: Hub
-description: Learn about the Atlas Hub development process, and how to test the code.
+description: Atlas Hub is developed using python and a few helpful tools, Pyenv, Poetry, Precommit, Tox. Running Pytests. Testing. Precommit setup.
 keywords: atlas, atlas hub, extract scheduler, etl, development, tools
 layout: docs_hub.njk
 date: Last Modified

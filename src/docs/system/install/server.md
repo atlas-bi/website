@@ -1,7 +1,7 @@
 ---
-title: Server Setup
+title: Server Setup | Setup a server for Atlas System with Ubuntu/CentOS/Alpine
 tags: System
-description: How to install Atlas System. Easily download and install with our ppa through apt!
+description: Server setup for Ubuntu/CentOS/Alpine servers in preparation for an Atlas System installation.
 keywords: atlas, atlas system, extract scheduler, etl, install, guide, ubuntu server
 layout: docs_system.njk
 date: Last Modified

@@ -1,7 +1,7 @@
 ---
-title: Deploy
+title: Deploy | Learn how to start Atlas Library locally and make changes to the codebase
 tags: Library
-description: Learn how to start Atlas Library locally and make changes to the codebase. Settings are kept in json files.
+description: Download the latest release of Atlas Library onto your workstation and getting running with the getting started guide. Update Settings. Settings are kept in json files. Update the website configuration files as specified in configuration.
 keywords: atlas, atlas library, unified report library, data governance, database, deploy, running locally
 layout: docs_library.njk
 date: Last Modified

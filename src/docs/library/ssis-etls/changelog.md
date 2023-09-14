@@ -1,5 +1,5 @@
 ---
-title: Changelog
+title: Changelog | Atlas Library ETL changelog
 tags: Library
 description: Atlas Library ETL changelog. Find updates from recent releases and what feature you can expect on your next upgrade.
 keywords: atlas, atlas library, unified report library, data governance, database, etl, changelog

@@ -1,5 +1,5 @@
 ---
-title: License
+title: License | Atlas Automation Hub
 tags: Library
 description: Atlas Automation Hub is licensed under the GNU License.
 keywords: atlas, atlas library, unified report library, data governance, database, license

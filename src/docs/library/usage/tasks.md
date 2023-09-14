@@ -1,7 +1,7 @@
 ---
-title: Tasks
+title: Tasks | Tasks are a combination of prebuilt reports to help govern your report library. Quickly identify areas where attention is needed.
 tags: Library
-description: Tasks are a combination of prebuilt reports to help govern your report library. Quickly identify areas where attention is needed.
+description: Keep your report library in top condition. There are a few tasks included in you Atlas Library install to help you stay on top of your library maintenance. Show reports where your Analysts have added a maintenance log of To Retire. If they should be retired, take action, otherwise, add a new maintenance log showing that the report is still in service.
 keywords: atlas, atlas library, unified report library, data governance, database, tasks, maintenance, todo
 layout: docs_library.njk
 date: Last Modified

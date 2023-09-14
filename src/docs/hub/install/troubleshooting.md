@@ -1,5 +1,5 @@
 ---
-title: Troubleshooting
+title: Troubleshooting | Troubleshoot an Atlas Hub installation
 tags: Hub
 description: How to troublshoot Atlas Hub. Find logs, restart services and debug.
 keywords: atlas, atlas hub, extract scheduler, etl, install, guide, ubuntu server, troubleshooting

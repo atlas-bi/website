@@ -1,7 +1,7 @@
 ---
-title: Webserver Setup
+title: Webserver Setup | Learn about how to setup a webserver for installing Atlas Library
 tags: Library
-description: Learn about how to setup a webserver for installing Atlas Library. Setup is quick and requirements minimal.
+description: Atlas Library is designed to run on Windows Server 2016 or later. There are a few installs to get the website running. Setup is quick and requirements minimal. A single hospital install will generally have ~50gb of data. A majority of the data is report usage data. Here is a rule of thumb sizing for a single hospital. You can scale the numbers to your size.
 keywords: atlas, atlas library, unified report library, data governance, database, webserver, setup, iss, iis setup
 layout: docs_library.njk
 date: Last Modified

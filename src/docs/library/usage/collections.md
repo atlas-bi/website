@@ -1,7 +1,7 @@
 ---
-title: Collections
+title: Collections | Collections are a tool used to group similar terms and reports together with summary documentation.
 tags: Library
-description: Collections are a tool used to group similar terms and reports together with summary documentation.
+description: Collections come with a few useful options to make this a very flexible tool, from just a group of several reports, to a full out project manager with scheduled recurring tasks lists. The editor options include. Search summary and a detailed description. Option to hide the collection from search. Upload file attachments. Create agreements with start/end dates, and users who are a part of it. Create milestones and recurring tasks lists and detailed description. Link reports and terms.
 keywords: atlas, atlas library, unified report library, data governance, database, collections, metadata, report groups, sharing, report feedback
 layout: docs_library.njk
 date: Last Modified

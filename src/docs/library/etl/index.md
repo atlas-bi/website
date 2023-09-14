@@ -1,7 +1,7 @@
 ---
-title: Setup
+title: Setup | Learn about the Atlas Library ETL, how it works, and the supplementary ETL's used to gather report metadata
 tags: Library
-description: Learn about the Atlas Library ETL, how it works, and the supplementary ETL's used to gather report metadata.
+description: ETL Setup. The Atlas ETL's are used to collect metadata from a variety of sources and merge it into a common database. There are several ETLs - LDAP Loads user information from an LDAP server. Sqlize Crystal Reports ETL to extract sql queries from Crystal Reports. Tableau Metadata ETL to extract Tableau metadata, sql queries and run data. PowerBI Metadata ETL to extract PowerBI metadata and run data. Report Metadata Collects metadata from over five different reporting tools. Report Run Data Collects run data from various reporting tools. Solr Search ETL to keep the search results fresh.
 keywords: atlas, atlas library, unified report library, data governance, database, etl, deploy, install, publish
 layout: docs_library.njk
 date: Last Modified

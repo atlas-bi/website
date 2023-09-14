@@ -1,5 +1,5 @@
 ---
-title: Changelog
+title: Changelog - Atlas Hub
 tags: Hub
 description: Atlas Hub changelog. Find updates from recent releases and what feature you can expect on your next upgrade.
 keywords: atlas, atlas automation hub, extract scheduler, etl, changelog

@@ -1,7 +1,7 @@
 ---
-title: Changelog
+title: Changelog | Atlas Library Changelog.
 tags: Library
-description: Atlas Library changelog. Find updates from recent releases and what feature you can expect on your next upgrade.
+description: Find updates from recent releases and what feature you can expect on your next upgrade.
 keywords: atlas, atlas library, unified report library, data governance, database, changelog
 layout: docs_library.njk
 date: Last Modified

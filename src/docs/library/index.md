@@ -1,7 +1,7 @@
 ---
-title: Welcome
+title: Welcome | Welcome to the Atlas Library documentation. Learn about how to install and configure your Atlas Library install.
 tags: Library
-description: Welcome to the Atlas Library documentation. Learn about how to install and configure your Atlas Library install.
+description: Atlas business intelligence library plugs in to your existing reporting platforms, extracts useful metadata, and displays it in a unified report library where you can easily search for, document, and launch reports.
 keywords: atlas, atlas library, unified report library, data governance, database, documetation
 layout: docs_library.njk
 date: Last Modified

@@ -1,7 +1,7 @@
 ---
-title: Access Control
+title: Access Control | Learn how to secure your library by creating access groups and assigning permissions to users.
 tags: Library
-description: Learn how to secure your library by creating access groups and assigning permissions to users.
+description: Atlas Library relies on the security from your source reporting systems to define who has access to reporting content. Most of the features inside of Atlas Library can be turned on/off for different user groups in access control.
 keywords: atlas, atlas library, unified report library, data governance, database, usage, access control, roles, permissions
 layout: docs_library.njk
 date: Last Modified

@@ -1,7 +1,7 @@
 ---
-title: Reports
+title: Reports | Reports are the cornerstone of Atlas Library. System data is brought in through the ETLs and more documentation can be added in the app.
 tags: Library
-description: Reports are the cornerstone of Atlas Library. System data is brought in through the ETLs and more documentation can be added in the app.
+description: ETL Loaded Content Reports are added to the library through the ETL processes. A report general will include several sets of data or actions.Title, Description, basic meta details such as last updated, report type, author, etc. Usage information include report run data by person, in some cases also report failed runs, subscription information etc. Links to run, edit, or manage the report in its source system Source SQL queries uses in the report. Report security groups. Report hierarchy structure (sub-reports, parent reports etc).
 keywords: atlas, atlas library, unified report library, data governance, database, reports, etl, metadata, profile, run data, ssrs, crystal
 layout: docs_library.njk
 date: Last Modified

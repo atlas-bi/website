@@ -1,7 +1,7 @@
 ---
-title: Configuring
+title: Configuration | Configure Atlas System, set authentication method, email setup and more
 tags: System
-description: Atlas System upgrades can easily be installed using apt update and apt install commands. Take a backup before configuring.
+description: Some items in the installer can be configured through an installer.conf file in the install directory. These settings are helpful if you are running multiple instances of Atlas Hub on the same server.
 keywords: atlas, atlas system, extract scheduler, etl, configuration, ubuntu server
 layout: docs_system.njk
 date: Last Modified

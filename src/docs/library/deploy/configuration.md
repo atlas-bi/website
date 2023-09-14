@@ -1,7 +1,7 @@
 ---
-title: Configuration
+title: Configuration | Configuring the Atlas Library web application
 tags: Library
-description: Learn about how to configure Atlas Library with settings for your organization and install requirements. Configuration is easly done through config files.
+description: Learn about how to configure Atlas Library with settings for your organization and install requirements. Configuration is easly done through config files. Set custom logo, mail server, and enabled/disable app features.
 keywords: atlas, atlas library, unified report library, data governance, database, configuration
 layout: docs_library.njk
 date: Last Modified

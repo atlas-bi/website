@@ -1,7 +1,7 @@
 ---
-title: Special Considerations
+title: Special Considerations | Special considerations when using the Atlas Library development.
 tags: Library
-description: Special considerations when using the Atlas Library development.
+description: Hyperspace Integration. Linking to Atlas from a Dashboard. Addition integration guides are included in the Clarity ETL which can be downloaded from the data handbook. Adding Banner Messages. Adding Site Title for Dev Environments.
 keywords: atlas, atlas library, unified report library, data governance, database, considerations, using the library
 layout: docs_library.njk
 date: Last Modified
