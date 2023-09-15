@@ -1,7 +1,7 @@
 ---
-title: Initiatives
+title: Initiatives | Initiatives are a tool used to combine collections together into a larger project with some additional documentation.
 tags: Library
-description: Initiatives are a tool used to combine collections together into a larger project with some additional documentation.
+description: Combine collections together into an organizational initiative. Description & Meta. There are several documentation fields available. Description of the initiative. External contacts that are connected. Owners from various departments. Financial impact to the organization. Strategic importance to the organization. Linked collections.
 keywords: atlas, atlas library, unified report library, data governance, database, initiatives, metadata, collection group
 layout: docs_library.njk
 date: Last Modified

@@ -1,7 +1,7 @@
 ---
-title: Parameters
+title: Parameters | Customize you install by setting parameters to configure search, add global site messages, set documentation options and more!
 tags: Library
-description: Customize you install by setting parameters to configure search, add global site messages, set documentation options and more!
+description: Configure documentation drop downs, site messages and default search configuration. From the parameters screen you are able to add additional fields for all the documentation drop down fields, for example you may need additional fragility tags in your organization.
 keywords: atlas, atlas library, unified report library, data governance, database, parameters, configuration, configure, setup, search settings
 layout: docs_library.njk
 date: Last Modified

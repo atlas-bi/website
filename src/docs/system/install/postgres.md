@@ -1,7 +1,7 @@
 ---
-title: Postgres
+title: PostgreSQL | Setup PostgreSQL for Atlas Hub on Ubuntu/CentOS/Alpine servers
 tags: System
-description: How to install Atlas System. Easily download and install with our ppa through apt!
+description: Install PostgreSQL on Ubuntu/CentOS/Alpine servers in preparation for an Atlas Hub installation.
 keywords: atlas, atlas system, extract scheduler, etl, install, guide, ubuntu server
 layout: docs_system.njk
 date: Last Modified

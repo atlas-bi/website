@@ -1,7 +1,7 @@
 ---
-title: Starting Search
+title: Starting Search | Learn about how to start Atlas Library search after deploying onto your web server
 tags: Library
-description: Learn about how to start Atlas Library search after deploying onto your web server. Atlas Library runs on .NET and is easily deployed from Visual Studio.
+description: After publishing for the first time you will need to start Solr. This is done in command prompt. Navigate to the published site, then /solr/bin folder and running solr start -p 8983. The output will let you know Solr has started on port 8983.
 keywords: atlas, atlas library, unified report library, data governance, database, publishing, iis, deploy, visual studio, solr, search
 layout: docs_library.njk
 date: Last Modified

@@ -1,7 +1,7 @@
 ---
-title: Troubleshooting
+title: Troubleshooting | Troubleshoot common problem with your Atla Library install.
 tags: Library
-description: Troubleshoot common problem with your Atla Library install.
+description: Blank Search Results. Check that solr is running. Check that solr ETL's are running.
 keywords: atlas, atlas library, unified report library, data governance, database, troubleshoot, setup, iss, iis setup
 layout: docs_library.njk
 date: Last Modified

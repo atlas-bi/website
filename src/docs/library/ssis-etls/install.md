@@ -1,7 +1,7 @@
 ---
-title: Install
+title: Install | Lean about how to install the Atlas Library ETL on your SSIS server
 tags: Library
-description: Lean about how to install the Atlas Library ETL on your SSIS server. Installation is done through Visual Studio.
+description: How to Install. There are two user accounts needed to make the ETL's work. A domain account with read access to all source databases, and write access to the staging database. A local sql login with full access to the two databases atlas and atlas-staging.
 keywords: atlas, atlas library, unified report library, data governance, database, etl, install, ssis, visual studio
 layout: docs_library.njk
 date: Last Modified

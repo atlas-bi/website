@@ -1,7 +1,7 @@
 ---
-title: Schedule
+title: Schedule | Learn about how to schedule the Atlas Library ETL to run periodically on your SSIS server.
 tags: Library
-description: Learn about how to schedule the Atlas Library ETL to run periodically on your SSIS server.
+description: Once the ETL's are published to SSRS they can easily be scheduled to run on intervals. Create a new job. Give the job a name. Add a step to the ETL. The first step must be Setup and the last two steps must be Merge and Post Processing. When multiple steps, be sure to end the last step with 'Quit the job reporting success'.
 keywords: atlas, atlas library, unified report library, data governance, database, etl, schedule, run, ssis
 layout: docs_library.njk
 date: Last Modified

@@ -1,7 +1,7 @@
 ---
-title: Welcome
+title: Welcome | Welcome to the Atlas System documentation
 tags: System
-description: Welcome to the Atlas System documentation. Learn about how to install and configure your Atlas system install.
+description: Track uptime and receive alerts when the system is not working as planned. Atlas System monitors SQL Server, Windows, Ubuntu, websites, and tcp connections. Supposed LDAP and SAML sso authentication.
 keywords: atlas, atlas system, unified report system, data governance, database, documetation
 layout: docs_system.njk
 date: Last Modified

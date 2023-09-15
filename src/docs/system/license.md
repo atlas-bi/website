@@ -1,5 +1,5 @@
 ---
-title: License
+title: License | Atlas System License
 tags: System
 description: Atlas System is licensed under the GNU License.
 keywords: atlas, atlas system, extract scheduler, etl, license

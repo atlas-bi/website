@@ -1,7 +1,7 @@
 ---
-title: Configuration
+title: Configuration | Configuring the Atlas Library web application
 tags: Library
-description: Learn about how to configure Atlas Library with settings for your organization and install requirements. Configuration is easly done through config files.
+description: Learn about how to configure Atlas Library with settings for your organization and install requirements. Configuration is easly done through config files. Set custom logo, mail server, and enabled/disable app features.
 keywords: atlas, atlas library, unified report library, data governance, database, configuration
 layout: docs_library.njk
 date: Last Modified
@@ -18,18 +18,23 @@ Copy the file `/web/appsettings.json` to a new file called `appsettings.cust.jso
 
 Development settings for debugging can also be added. Copy the file `/web/appsettings.Development.json` to a new file called `appsettings.cust.Development.json`.
 
-The available settings are:
+The available settings are as follows. Remove comments when you create your configuration.
 
 ```json
 {
   "AllowedHosts": "*",
   "AppSettings": {
     "base_url": "https://atlas.example.org",
+
+    // Optional config for Manage Engine ticket system integration
     "manage_engine_server": "http://manage engine server for manage engine integration",
     "manage_engine_tech_key": "api key for manage engine",
+
     "org_ad_domain": "org domain should match the ETl setting for org domain",
     "org_domain": "web domain (example.com)",
     "org_name": "My Organization Name",
+
+    // Outgoing email settings for share notifications
     "smtp_port": 465,
     "smtp_server": "your smtp email server",
     "smtp_use_ssl": true,
@@ -38,6 +43,8 @@ The available settings are:
     "smtp_username": "this is an option value, only use if your smtp requires auth.",
     "smtp_password": "this is an option value, only use if your smtp requires auth."
   },
+
+  // Connection string. Newer sql tools will required the ";TrustServerCertificate=Yes" param.
   "ConnectionStrings": {
     "AtlasDatabase": "Server=server_name;Database=atlas;User Id=datagov; Password=<password>; MultipleActiveResultSets=true"
   },
@@ -46,17 +53,25 @@ The available settings are:
       "Default": "Warning"
     }
   },
+
+  // Configuration for static files (css/js). No changes needed.
   "webOptimizer": {
     "enableCaching": true,
     "enableDiskCache": false,
     "enableMemoryCache": true,
     "enableTagHelperBundling": true
   },
+
+  // URL's for solr. If you followed the default install guide no change is needed.
   "solr": {
     "atlas_address": "http://localhost:8983/solr/atlas",
     "atlas_lookup_address": "http://localhost:8983/solr/atlas_lookups"
   },
+
+  // Optional path to a custom logo.
   "logo": "path/to/override_logo.png",
+
+  // Enable or disable portions of the app.
   "features": {
     "enable_initiatives": true,
     "enable_request_access": true,
@@ -65,16 +80,22 @@ The available settings are:
     "enable_user_profile": true,
     "enable_breadcrumbs": true
   },
+
+  // Optional custom text for the report documentation external link field
   "text": {
     "reports": {
       "external_link": "GitLab Project Link"
     }
   },
+
+  // Optional custom links in the navbar dropdown menu
   "nav": {
     "links": {
       "Docs": "https://somewhere"
     }
   },
+
+  // Optional custom link groups in the website footer
   "footer": {
     "links": {
       "Group One": {

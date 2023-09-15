@@ -1,7 +1,7 @@
 ---
-title: Install
+title: Install | How to install Atlas System in minutes with a few copy/paste commands
 tags: System
-description: How to install Atlas System. Easily download and install with our ppa through apt!
+description: Install Guide. Setup the Project Directory. mkdir -p /home/websites/atlas/system. Run the Installer curl -sSL https://atlas.bi/installers/system.sh | bash -. See Configuration for installer configuration options.
 keywords: atlas, atlas system, extract scheduler, etl, install, guide, ubuntu server
 layout: docs_system.njk
 date: Last Modified

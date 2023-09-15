@@ -1,7 +1,7 @@
 ---
-title: Changelog
+title: Changelog | Atlas System Changelog.
 tags: System
-description: Atlas System changelog. Find updates from recent releases and what feature you can expect on your next upgrade.
+description: Find updates from recent releases and what feature you can expect on your next upgrade.
 keywords: atlas, atlas system, extract scheduler, etl, changelog
 layout: docs_system.njk
 date: Last Modified

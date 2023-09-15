@@ -1,7 +1,7 @@
 ---
-title: PowerBI ETL
+title: PowerBI ETL | Atlas Library supplementary ETL to load PowerBI reports, queries, and connect to APIs to gather report data
 tags: Library
-description: Atlas Library supplementary ETL to load PowerBI reports, queries, and connect to APIs to gather report data.
+description: This is a user contributed ETL that can be used with the Atlas Metadata ETL. It is specifically made to use a cloud PowerBI. The SSIS package in /etl can be added in with the other ETL SSIS packages in Visual Studio. The SISS package will run various powershell scripts which are in the /powershell folder. See the notes.txt and /modified_sql to see modifications you may need to make for this ETL to work with your PowerBI install.
 keywords: atlas, atlas library, unified report library, data governance, database, etl, powerBI, reports, sql
 date: Last Modified
 layout: docs_library.njk

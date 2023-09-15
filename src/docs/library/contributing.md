@@ -1,7 +1,7 @@
 ---
-title: Contributing
+title: Contributing | Learn about how you can contribute to the Atlas Library project.
 tags: Library
-description: Learn about how you can contribute to the Atlas Library project. Contributions are welcome.
+description: Contributions are welcome. Contributions are best made through a pull request. When possible commit using npm run commit to help us create semantic change notes.
 keywords: atlas, atlas library, unified report library, data governance, database, congributing, useful tools
 layout: docs_library.njk
 date: Last Modified

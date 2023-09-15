@@ -1,7 +1,7 @@
 ---
-title: Welcome
+title: Welcome to the Atlas Hub documentation. Here you'll learn about how to install, configure and update the app.
 tags: Hub
-description: Welcome to the Atlas Hub documentation. Here you'll learn about how to install, configure and update the app.
+description: Atlas Automation Hub is a task scheduling tool. It is designed to simplify routine data extraction and sending. The tool easily connects to databases, SFTP, FTP, SMB and SSH servers and GIT servers/web URL's, to pull data, run queries, and load data back.
 keywords: atlas, atlas hub, extract scheduler, etl, documentation, install, configure, update
 layout: docs_hub.njk
 date: Last Modified

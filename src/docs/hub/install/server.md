@@ -1,8 +1,8 @@
 ---
-title: Server Setup
+title: Server Setup | Setup a server for Atlas Hub with Ubuntu/CentOS/Alpine
 tags: Hub
-description: How to install Atlas Hub. Easily download and install with our ppa through apt!
-keywords: atlas, atlas hub, extract scheduler, etl, install, guide, ubuntu server
+description: Server setup for Ubuntu/CentOS/Alpine servers in preparation for an Atlas Hub installation.
+keywords: atlas, atlas hub, extract scheduler, etl, install, guide, ubuntu server, centos, alpine
 layout: docs_hub.njk
 date: Last Modified
 eleventyNavigation:

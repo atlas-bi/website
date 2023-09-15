@@ -1,5 +1,5 @@
 ---
-title: License
+title: License | Atlas Hub is licensed under the GNU License.
 tags: Hub
 description: Atlas Hub is licensed under the GNU License.
 keywords: atlas, atlas hub, extract scheduler, etl, license

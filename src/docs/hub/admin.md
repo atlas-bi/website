@@ -1,7 +1,7 @@
 ---
-title: Admin
+title: Admin | Learn about how to use the controls on the Atlas Hub Admin page.
 tags: Hub
-description: Learn about how to use the controls on the Atlas Hub Admin page.
+description: Reset all tasks to completed, Reschedule Enabled Jobs, Pause All Jobs, Resume Enabled Jobs, Kill Scheduler
 keywords: atlas, atlas hub, extract scheduler, etl, usage, admin
 layout: docs_hub.njk
 date: Last Modified

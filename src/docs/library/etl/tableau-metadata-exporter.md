@@ -1,7 +1,7 @@
 ---
-title: Tableau Metadata Exporter
+title: Tableau Metadata Exporter | Atlas Library supplementary ETL to parse download Tableau report metadata and usage
 tags: Library
-description: Atlas Library supplementary ETL to parse download Tableau report metadata and usage.
+description: A Python script pulls and parses XML data from PSQL readonly Tableau database. This data, along with data pulled from Tableau's database, is inserted into a SQL database and is able to be run daily and inserted into Atlas.
 keywords: atlas, atlas library, unified report library, data governance, database, etl, tableau, metadata
 layout: docs_library.njk
 date: Last Modified

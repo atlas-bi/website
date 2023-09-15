@@ -1,7 +1,7 @@
 ---
-title: Usage
+title: Usage | Discover how to use the Atlas Library app, configure basic settings, add report documentation and more!
 tags: Library
-description: Discover how to use the Atlas Library app, configure basic settings, add report documentation and more!
+description: Discover how to navigate and take full advantage of all the features! Report Library Objects, Administrator Tools
 keywords: atlas, atlas library, unified report library, data governance, database, using atlas, usage guide
 layout: docs_library.njk
 date: Last Modified

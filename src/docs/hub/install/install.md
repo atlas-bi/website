@@ -1,7 +1,7 @@
 ---
-title: Install
+title: Install | Install Atlas Hub on Ubuntu or CentOS servers, advanced installer configuration
 tags: Hub
-description: How to install Atlas Hub. Easily download and install with our ppa through apt!
+description: How to install Atlas Hub. Easily download and install in minutes with a few simple copy/paste commands.
 keywords: atlas, atlas hub, extract scheduler, etl, install, guide, ubuntu server
 layout: docs_hub.njk
 date: Last Modified

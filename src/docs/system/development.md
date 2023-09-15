@@ -1,7 +1,7 @@
 ---
-title: Development
+title: Development | Learn about the Atlas System development process, and how to test the code.
 tags: System
-description: Learn about the Atlas System development process, and how to test the code.
+description: Contribute to the project on github.
 keywords: atlas, atlas system, extract scheduler, etl, development, tools
 layout: docs_system.njk
 date: Last Modified

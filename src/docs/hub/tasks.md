@@ -1,7 +1,7 @@
 ---
-title: Tasks
+title: Tasks | Learn about creating and editing Atlas Hub tasks.
 tags: Hub
-description: Learn about creating and editing Atlas Hub tasks.
+description: A task is child to a project and contains the details of the job to be run. A typical task will run a sql query, format the results and upload them as a file into a SFTP server. Tasks include three primary pages. All Tasks, My Tasks, Task Details, New Task.
 keywords: atlas, atlas hub, extract scheduler, etl, tasks, retry, rank, database, sftp, smb, ftp, gpg, email, csv, output
 layout: docs_hub.njk
 date: Last Modified

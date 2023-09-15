@@ -1,7 +1,7 @@
 ---
-title: Getting Started
+title: Getting Started | In just a few minutes you can have Atlas Library web app running on your computer.
 tags: Library
-description: In just a few minutes you can have Atlas Library web app running on your computer.
+description: Required Tools There are a few build tools required to get started. The .Net version of Atlas Library is intended to run on Windows PC's that are connected to a domain. Clone the project form GitHub into a new Visual Studio Code project using the clone url.
 keywords: atlas, atlas library, unified report library, data governance, database, webserver, setup, iss, iis setup
 layout: docs_library.njk
 date: Last Modified

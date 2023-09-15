@@ -1,7 +1,7 @@
 ---
-title: Supplementary ETLs
+title: Supplementary ETLs | Atlas Library SSIS ETL guide
 tags: Library
-description: Atlas Library SSIS ETL guide. There are two SSIS ETL's used to collect all metadata and insert it into the Atlas database.
+description: The Report Metadata and Run Data ETL's are SSIS packages and can be scheduled to run as jobs on a Microsoft SQL Server. The metadata ETL can be scheduled to run at a fairly frequent interval - every hour or few hours for example - while the run data ETL can be run daily.
 keywords: atlas, atlas library, unified report library, data governance, database, etl, supplementary etl, ldap, solr, tableau, crystal, sap
 layout: docs_library.njk
 date: Last Modified

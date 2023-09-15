@@ -1,7 +1,7 @@
 ---
-title: Nginx
+title: Nginx | Setup Nginx for Atlas System on Ubuntu/CentOS/Alpine servers
 tags: System
-description: How to install Atlas System. Easily download and install with our ppa through apt!
+description: Install Nginx on Ubuntu/CentOS/Alpine servers in preparation for an Atlas System installation.
 keywords: atlas, atlas system, extract scheduler, etl, install, guide, ubuntu server
 layout: docs_system.njk
 date: Last Modified

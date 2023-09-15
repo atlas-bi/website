@@ -1,7 +1,7 @@
 ---
-title: Terms
+title: Terms | A terms provides a definition that can be shared across many reports and collections. Terms are a powerful way to identify key concepts in your report library.
 tags: Library
-description: A terms provides a definition that can be shared across many reports and collections. Terms are a powerful way to identify key concepts in your report library.
+description: Terms give you the powers to share common definitions between reports. For example, perhaps you have multiple LOS (length of stay) definitions, depending on who you are reporting for. This is the ideal tool to keep those definitions clearly defined and assigned to the correct reports. Your users can know what LOS definition is being used, without needing to call the poor Analyst every time they are in doubt.
 keywords: atlas, atlas library, unified report library, data governance, database, terms, definition, define key terms
 layout: docs_library.njk
 date: Last Modified

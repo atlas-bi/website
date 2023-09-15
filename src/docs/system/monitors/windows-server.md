@@ -1,5 +1,5 @@
 ---
-title: Configuring
+title: Monitoring Windows servers - how to install and enable SSH
 tags: System
 description: Atlas System upgrades can easily be installed using apt update and apt install commands. Take a backup before configuring.
 keywords: atlas, atlas system, extract scheduler, etl, configuration, ubuntu server

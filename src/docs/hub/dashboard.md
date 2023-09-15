@@ -1,7 +1,7 @@
 ---
-title: Dashboard
+title: Dashboard | Learn about the various sections on the Atlas Hub Dashboard.
 tags: Hub
-description: Learn about the various sections on the Atlas Hub Dashboard.
+description: The dashboard is designed to give an admin a quick overview of the upcoming run schedule, show any failed jobs, and give a listing of what runs are coming up. The run plan shows the upcoming schedule for the next 24 hours.
 keywords: atlas, atlas hub, extract scheduler, etl, dashboard
 layout: docs_hub.njk
 date: Last Modified

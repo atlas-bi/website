@@ -1,7 +1,7 @@
 ---
-title: Parameters
+title: Parameters | Learn about how to create project and task level parameters for Atlas Hub.
 tags: Hub
-description: Learn about how to create project and task level parameters for Atlas Hub. Parameters are a powerful way to make your tasks flexible.
+description: Parameters are a powerful way to make tasks and project flexible. Parameters can be added at the project and task level. Project parameters are passed down to all child tasks, task parameters will override project parameters with the same name.
 keywords: atlas, atlas hub, extract scheduler, etl, parameters
 layout: docs_hub.njk
 date: Last Modified
@@ -46,6 +46,15 @@ Parameters can include date/time variables, wrapped in a `parse(...)` tag.
 ```
 
 Values using inside a `parse` tag should be a [strftime pattern](https://strftime.org).
+
+## Parameters in Python
+
+Parameters can be accessed in python scripts as environment variables:
+
+```py
+import os
+print(os.environ)
+```
 
 ## Parameters in SQL
 

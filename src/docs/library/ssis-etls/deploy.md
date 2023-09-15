@@ -1,7 +1,7 @@
 ---
-title: Deploy
+title: Deploy | Learn about how to deploy Atlas Library to your web server
 tags: Library
-description: Learn about how to deploy Atlas Library to your web server from Visual Studio.
+description: Once the ETL performs to your satisfaction in Visual Studio it can be deployed to an SSRS server and scheduled as a job. Open ETL solution (ETL.sln) in Visual Studio. Highlight all the packages to deploy, right click on the ETL > deploy.
 keywords: atlas, atlas library, unified report library, data governance, database, etl, deploy, visual studio
 layout: docs_library.njk
 date: Last Modified

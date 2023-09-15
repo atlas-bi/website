@@ -1,7 +1,7 @@
 ---
-title: Projects
+title: Projects | Learn about creating and editing Atlas Hub projects.
 tags: Hub
-description: Learn about creating and editing Atlas Hub projects.
+description: A project is a group of tasks that run on the same schedule. The tasks can be set to run in parallel or series. Projects include three primary pages. All Projects, My Projects, Project Details, New Project.
 keywords: atlas, atlas hub, extract scheduler, etl, projects, task group, schedule, cron
 layout: docs_hub.njk
 date: Last Modified

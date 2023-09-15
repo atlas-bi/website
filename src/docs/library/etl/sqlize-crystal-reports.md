@@ -1,7 +1,7 @@
 ---
-title: Sqlize Crystal Reports
+title: Sqlize Crystal Reports | Atlas Library supplementary ETL to parse SAP Crystal report templates, and connect to APIs to gather report data
 tags: Library
-description: Atlas Library supplementary ETL to parse SAP Crystal report templates, and connect to APIs to gather report data.
+description: Sqlize Crystal Reports runs Aidan Ryan's RptToXml converter to convert a directory of SAP Crystal Reports into XLM files, and then makes a strong attempt at parsing that XML out into a somewhat readable and potentially runnable t-sql statement. The results are saved into a database table along with the reports.
 keywords: atlas, atlas library, unified report library, data governance, database, etl, crystal, sap reports, sql
 date: Last Modified
 layout: docs_library.njk

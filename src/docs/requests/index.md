@@ -1,5 +1,5 @@
 ---
-title: Welcome
+title: Welcome! Atlas Requests - documentation for how to install and use
 tags: Requests
 description: Welcome to the Atlas Requests documentation. Learn about how to install and configure your Atlas requests install.
 keywords: atlas, atlas requests, unified report requests, data governance, database, documetation
