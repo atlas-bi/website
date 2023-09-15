@@ -47,6 +47,15 @@ Parameters can include date/time variables, wrapped in a `parse(...)` tag.
 
 Values using inside a `parse` tag should be a [strftime pattern](https://strftime.org).
 
+## Parameters in Python
+
+Parameters can be accessed in python scripts as environment variables:
+
+```py
+import os
+print(os.environ)
+```
+
 ## Parameters in SQL
 
 Parameters are inserted into sql queries in the `DECLARE` or `SET` statements. For example, if you have a query to print the date:

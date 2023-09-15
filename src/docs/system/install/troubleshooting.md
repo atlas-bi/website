@@ -1,5 +1,5 @@
 ---
-title: Troubleshooting
+title: Troubleshooting | Troubleshoot an Atlas System installation
 tags: System
 description: How to troublshoot Atlas System. Find logs, restart services and debug.
 keywords: atlas, atlas system, extract scheduler, etl, install, guide, ubuntu server, troubleshooting
