@@ -120,13 +120,18 @@ The commands can be loaded from an external script (through SFTP, FTP, SMB, Gitl
 
 ## Processing Script
 
-Data from the source is passed into a local file and can be modified with a python script.
+Data from the source is passed into a local file and can be modified with a python script. Also, if you choose `Python Script` you can run a python script without input.
 
-Also, if you choose `Python Script` you can run a python script without input.
+Python scripts have access to task and project metadata, including parameters and any connection strings used. They are passed in through environment variables. Access them through `os.environ`:
 
-If there is a data source selected it will be passed into your python script as parameter 1.
+```python
+import os
+print(os.environ)
+```
 
-A script like this will pick up that file.
+If there is a data source selected it will be passed into your python script as an argument.
+
+Source files names can be picked up like this:
 
 ```python
 import sys
@@ -137,7 +142,48 @@ All processing scripts are run in their own environment and dependencies are aut
 
 The Processing Script can be loaded from a multitude of places. You can load a multi file package and choose what file to run as well.
 
-A processing script can also return a new file name, or file names. The format must be a list of full paths. ex: `[Path(name_one),Path(name_two)]`
+A processing script can also return a new file name, or file names. The format must be a list of full paths as strings. Here's an example script that splits the output from a sql job into multiple files.
+
+Assume a sql query of:
+
+```sql
+select 1
+union all
+select 2
+```
+
+It will produce an output with two rows.
+
+Assume a python script of:
+
+```py
+import sys
+import csv
+from pathlib import Path
+
+outPaths = []
+input_file = sys.argv[1]
+
+# this is where any new files should be placed
+baseDir = Path(input_file).parent
+
+# ...do something here with input...
+# example write something into several files
+with open(Path(input_file), 'r') as source:
+  r = csv.reader(source)
+
+  for x, row in enumerate(r):
+    currentFile = Path(baseDir / f'test-{x}.txt')
+    outPaths.append(str(currentFile))
+
+    with open(currentFile, 'w') as fp:
+      fp.write(str(row))
+
+# print the new paths back
+print(outPaths)
+```
+
+This will produce two files (test-0.txt and test-2.txt). These files are what would be backed up or sent to a vendor. They would also be available for download on the file page.
 
 ## Data Destination
 
