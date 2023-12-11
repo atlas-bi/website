@@ -168,7 +168,7 @@ module.exports = function(eleventyConfig) {
       .use(require("markdown-it-imsize"), { autofill: true })
       .use(require('@toycode/markdown-it-class'), mapping)
       .use(require('markdown-it-div'), 'div', {})
-      .use(require('markdown-it-emoji'));
+      .use(require('markdown-it-emoji').full);
 
   eleventyConfig.setLibrary("md", markdownIt);
 
