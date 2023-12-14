@@ -6,7 +6,6 @@
   "short_name": "System",
   "docs": "/docs/system/",
   "info": "/system/",
-  "demo": "https://system.atlas.bi",
   "features": [
     {
       "heading": "SQL Server",

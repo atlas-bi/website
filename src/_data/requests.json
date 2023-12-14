@@ -5,6 +5,5 @@
   "short_description": "Analytics department ticketing requests.",
   "short_name": "Requests",
   "docs": "/docs/requests/",
-  "info": "/requests/",
-  "demo": "https://requests.atlas.bi"
+  "info": "/requests/"
 }

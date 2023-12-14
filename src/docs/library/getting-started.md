@@ -30,7 +30,7 @@ In just a few minutes you can have Atlas Library web app running on your compute
 
 <div class="-z-10" style="padding:56% 0 0 0;position:relative;">
                 <iframe title="Atlas Library - Getting Stated" 
-                        src="https://video.atlas.bi/videos/embed/0233dd97-2f96-4750-a84e-7f7ec30bb8ef"
+                        src="https://www.youtube.com/embed/AfCkE5JzkhY?si=qh2kuFtMwPRzWhvL&rel=0"
                         frameborder="0"
                         allowfullscreen=""
                         allow="autoplay; fullscreen; picture-in-picture"

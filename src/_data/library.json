@@ -43,6 +43,5 @@
   "short_description": "The unified report library.",
   "short_name": "Library",
   "docs": "/docs/library/",
-  "info": "/library/",
-  "demo": "https://library.atlas.bi"
+  "info": "/library/"
 }

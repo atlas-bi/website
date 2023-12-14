@@ -26,7 +26,7 @@ eleventyComputed:
 
 # Solr Search Loader
 
-{% set data={download:"https://github.com/atlas-bi/Solr-Search-ETL/releases",source:"https://github.com/atlas-bi/Solr-Search-ETL", vidTitle:"Atlas Solr Search ETL", vidUrl:"https://video.atlas.bi/videos/embed/0beefee6-f054-4640-aeef-73818f4c28d9"} %}
+{% set data={download:"https://github.com/atlas-bi/Solr-Search-ETL/releases",source:"https://github.com/atlas-bi/Solr-Search-ETL", vidTitle:"Atlas Solr Search ETL", vidUrl:"https://www.youtube.com/embed/d6_yLl6svbw?si=Zxcf_f7FoURYbI7m&rel=0"} %}
 
 {% include 'src/_includes/components/download.njk' %}
 {% get_page "https://raw.githubusercontent.com/atlas-bi/Solr-Search-ETL/master/readme.md" %}

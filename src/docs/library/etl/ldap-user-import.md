@@ -26,7 +26,7 @@ eleventyComputed:
 
 # LDAP User Import
 
-{% set data={download:"https://github.com/atlas-bi/LDAP-ETL/releases",source:"", vidTitle:"LDAP ETL", vidUrl:"https://video.atlas.bi/videos/embed/81a60ee2-14a3-4368-b8be-9ad6ceb3f065"} %}
+{% set data={download:"https://github.com/atlas-bi/LDAP-ETL/releases",source:"", vidTitle:"LDAP ETL", vidUrl:"https://www.youtube.com/embed/aRJeXutU-eY?si=q1RD6q1oPOtqYMLv&rel=0"} %}
 
 {% include 'src/_includes/components/download.njk' %}
 {% get_page "https://raw.githubusercontent.com/atlas-bi/LDAP-ETL/master/README.md" %}

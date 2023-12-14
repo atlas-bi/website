@@ -51,6 +51,5 @@
   "short_description": "A simple extract, batch job and script scheduler.",
   "short_name": "Hub",
   "docs": "/docs/hub/",
-  "info": "/hub/",
-  "demo": "https://hub.atlas.bi"
+  "info": "/hub/"
 }
