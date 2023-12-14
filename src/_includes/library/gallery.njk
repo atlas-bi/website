@@ -51,25 +51,25 @@
     <ul class="space-y-8">
         {% set group = "1" %}
         {% asyncEach img in images %}
-        <li class="text-sm leading-6">{% include 'src/_includes/components/imageSmall.njk' %}</li>
-        {% if  loop.index % ((images.length / 3) | round)  == 0 %}
-        </ul>
-        <ul class="space-y-8">
-        {% endif %}
-    {% endeach %}
-</ul>
+            <li class="text-sm leading-6">{% include 'src/_includes/components/imageSmall.njk' %}</li>
+            {% if  loop.index % ((images.length / 3) | round)  == 0 %}
+            </ul>
+            <ul class="space-y-8">
+            {% endif %}
+        {% endeach %}
+    </ul>
 </div>
 <div class="grid grid-cols-1 gap-6 lg:gap-8 md:grid-cols-2 lg:grid-cols-2 lg:hidden">
     <ul class="space-y-8">
         {% set group = "2" %}
         {% asyncEach img in images %}
-        <li class="text-sm leading-6">{% include 'src/_includes/components/imageSmall.njk' %}</li>
-        {% if  loop.index % ((images.length / 2) | round)  == 0 %}
-        </ul>
-        <ul class="space-y-8">
-        {% endif %}
-    {% endeach %}
-</ul>
+            <li class="text-sm leading-6">{% include 'src/_includes/components/imageSmall.njk' %}</li>
+            {% if  loop.index % ((images.length / 2) | round)  == 0 %}
+            </ul>
+            <ul class="space-y-8">
+            {% endif %}
+        {% endeach %}
+    </ul>
 </div>
 {% set docsUrl = library.docs %}
 {% include 'src/_includes/components/openDocs.njk' %}
