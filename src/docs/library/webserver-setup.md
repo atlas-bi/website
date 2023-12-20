@@ -40,7 +40,7 @@ The website server requirements are much less. The website requires <5gb of disk
 
 ## Install Requirements
 
-- IIS Webserver with [Microsoft .NET SDK 7 (Hosting Bundle)](https://dotnet.microsoft.com/download/dotnet/7.0)
+- IIS Webserver with [Microsoft .NET SDK 8 (Hosting Bundle)](https://dotnet.microsoft.com/download/dotnet/8.0)
   {% image "./src/static/img/library/requirements/dotnetversion.png", "Extension", "(min-width:400px) 50vw, 100vw", "boxed" %}
 - Ensure the following tools are installed via `Server Manager` > `Manage` > `Add Roles and Features` > `IIS`:
 
