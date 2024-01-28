@@ -38,7 +38,7 @@
     "markdown-it-emoji": "3.0.0",
     "markdown-it-imsize": "2.0.1",
     "netlify-lambda": "2.0.16",
-    "npm-run-all2": "^5.0.0",
+    "npm-run-all2": "^6.0.0",
     "nunjucks": "^3.2.4",
     "outdent": "0.8.0",
     "postcss-cli": "11.0.0",
