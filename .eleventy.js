@@ -15,10 +15,6 @@ const { babel } = require('@rollup/plugin-babel');
 const json = require('@rollup/plugin-json');
 const cleanup = require('rollup-plugin-cleanup');
 
-const { EleventyRenderPlugin } = require("@11ty/eleventy");
-
-const RenderManager = EleventyRenderPlugin.RenderManager;
-
 const slugifyCustom = (s) =>
   slugify(s, { lower: true, remove: /[*+~.()'"!:@]/g });
 
@@ -84,7 +80,10 @@ async function getPage(url){
   return fixed
 }
 
-module.exports = function(eleventyConfig) {
+module.exports = async function(eleventyConfig) {
+
+  const { EleventyRenderPlugin } = await import("@11ty/eleventy");
+  const RenderManager = EleventyRenderPlugin.RenderManager;
 
   eleventyConfig.setUseGitIgnore(false);
   eleventyConfig.addFilter("widont", widont);
