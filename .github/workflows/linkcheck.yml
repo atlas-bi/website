@@ -8,15 +8,15 @@ jobs:
       cancel-in-progress: true
     steps:
     - name: 💾 Checkout
-      uses: actions/checkout@v4
+      uses: actions/checkout@v5
 
     - name: ⎔ Setup node
-      uses: actions/setup-node@v4
+      uses: actions/setup-node@v5
       with:
-        node-version: 18
+        node-version: 22
 
     - name: 📥 Download deps
-      uses: bahmutov/npm-install@v1
+      uses: bahmutov/npm-install@3e063b974f0d209807684aa23e534b3dde517fd9
       with:
         useLockFile: false
 
@@ -24,6 +24,6 @@ jobs:
       run: npm run build:ci
 
     - name: 🔗 Linkcheck
-      uses: untitaker/hyperlink@0.1.32
+      uses: untitaker/hyperlink@e66bb17cc9ae341677431edec3b893a0aa6ac747
       with:
         args: _site/

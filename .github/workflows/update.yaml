@@ -12,7 +12,7 @@ jobs:
     if: github.ref_name == 'dev'
     steps:
     - name: 💾 Checkout
-      uses: actions/checkout@v4
+      uses: actions/checkout@v5
       with:
         ref: master
 
@@ -22,7 +22,7 @@ jobs:
         git reset --hard ${{github.ref_name}}
 
     - name: 🆕 Create Pull Request
-      uses: peter-evans/create-pull-request@v5.0.2
+      uses: peter-evans/create-pull-request@4e1beaa7521e8b457b572c090b25bd3db56bf1c5
       with:
         labels: automated pr
         branch: ${{github.ref_name}}
