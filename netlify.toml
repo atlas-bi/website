@@ -1,2 +1,5 @@
 [build]
   functions = "lambda"
+
+[build.environment]
+  NODE_VERSION = "18"
