@@ -59,8 +59,8 @@
     "url": "github:atlas-bi/website"
   },
   "scripts": {
-    "build": "ELEVENTY_PRODUCTION=true eleventy && NODE_ENV=production npx @tailwindcss/cli -i src/static/styles/global.css -c tailwind.config.js -o _site/static/css/style.css --minify && npm run updateSearch",
-    "build:ci": "ELEVENTY_PRODUCTION=true eleventy && NODE_ENV=production npx @tailwindcss/cli -i src/static/styles/global.css -c tailwind.config.js -o _site/static/css/style.css --minify",
+    "build": "ELEVENTY_PRODUCTION=true eleventy && NODE_ENV=production tailwindcss -i src/static/styles/global.css -o _site/static/css/style.css --minify && npm run updateSearch",
+    "build:ci": "ELEVENTY_PRODUCTION=true eleventy && NODE_ENV=production tailwindcss -i src/static/styles/global.css -o _site/static/css/style.css --minify",
     "start": "run-p 11ty:start tailwind:process",
     "11ty:start": "ELEVENTY_PRODUCTION=true  eleventy --serve --watch",
     "updateSearch": "dotenv node ./src/search/update-algolia-index.js",
@@ -72,7 +72,7 @@
     "format:prettier": "prettier --config .prettierrc \"src/**/*.{ts,css,less,scss,js,json,md,yaml,html}\" --write",
     "format:djlint": "djlint src -e njk --reformat --quiet --warn",
     "commit": "git add . && npm run pre-commit && cz --no-verify",
-    "tailwind:process": "npx @tailwindcss/cli -i src/static/styles/global.css -c tailwind.config.js -o _site/static/css/style.css --watch"
+    "tailwind:process": "tailwindcss -i src/static/styles/global.css -o _site/static/css/style.css --watch"
   },
   "lint-staged": {
     "src/**/*.{ts,css,less,scss,js,json,md,yaml,html}": [
