@@ -24,6 +24,6 @@ jobs:
       run: npm run build:ci
 
     - name: 🔗 Linkcheck
-      uses: untitaker/hyperlink@d72fd9923d8a82394e29ac630a92a4c3617b714f
+      uses: untitaker/hyperlink@a3c5f96830515ee0621f21c7b7579f20b9faddcc
       with:
         args: _site/
