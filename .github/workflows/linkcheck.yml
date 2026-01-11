@@ -16,7 +16,7 @@ jobs:
         node-version: 22
 
     - name: 📥 Download deps
-      uses: bahmutov/npm-install@1a205a079a5a87cbf2753b117699494c5ea05169
+      uses: bahmutov/npm-install@b48f414ce7305a74320973d70601b894eb29c241
       with:
         useLockFile: false
 
