@@ -8,7 +8,12 @@ jobs:
       cancel-in-progress: true
     steps:
     - name: 💾 Checkout
-      uses: actions/checkout@v5
+      uses: actions/checkout@v6
+
+    - name: 🧰 Setup pnpm
+      uses: pnpm/action-setup@41ff72655975bd51cab0327fa583b6e92b6d3061
+      with:
+        version: 9.15.4
 
     - name: 🧰 Setup pnpm
       uses: pnpm/action-setup@41ff72655975bd51cab0327fa583b6e92b6d3061
@@ -16,7 +21,7 @@ jobs:
         version: 9.15.4
 
     - name: ⎔ Setup node
-      uses: actions/setup-node@v5
+      uses: actions/setup-node@v6
       with:
         node-version: 22
         cache: pnpm
@@ -29,6 +34,6 @@ jobs:
       run: pnpm run build:ci
 
     - name: 🔗 Linkcheck
-      uses: untitaker/hyperlink@e66bb17cc9ae341677431edec3b893a0aa6ac747
+      uses: untitaker/hyperlink@a3c5f96830515ee0621f21c7b7579f20b9faddcc
       with:
         args: _site/

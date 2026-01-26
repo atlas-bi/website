@@ -8,7 +8,7 @@ jobs:
       cancel-in-progress: true
     steps:
     - name: 💾 Checkout
-      uses: actions/checkout@v5
+      uses: actions/checkout@v6
       with:
         ref: ${{ github.event.pull_request.head.sha }}
 
@@ -18,7 +18,7 @@ jobs:
         version: 9.15.4
 
     - name: ⎔ Setup node
-      uses: actions/setup-node@v5
+      uses: actions/setup-node@v6
       with:
         node-version: 22
         cache: pnpm
