@@ -15,8 +15,10 @@ jobs:
       with:
         node-version: 22
 
-    - name: 🧰 Enable pnpm
-      run: corepack enable
+    - name: 🧰 Setup pnpm
+      uses: pnpm/action-setup@v4
+      with:
+        version: 9.15.4
 
     - name: 📥 Download deps
 <<<<<<< HEAD
