@@ -17,18 +17,24 @@ jobs:
       with:
         node-version: 22
 
+    - name: 🧰 Enable pnpm
+      run: corepack enable
+
     - name: 📥 Download deps
+<<<<<<< HEAD
       uses: bahmutov/npm-install@20216767ca67f0f7b4d095dc5859c5700a6581cb
       with:
         useLockFile: false
+=======
+      run: pnpm install --frozen-lockfile
+>>>>>>> 8af99b8 (chore: migrate to pnpm)
 
     - name: 🏗️ Build
-      run: npm run build:ci
+      run: pnpm run build:ci
 
     - name: 🔦 Run Lighthouse
       run: |
-        npm install -g @lhci/cli@0.9.x
-        lhci autorun
+        pnpm dlx @lhci/cli@0.9.x lhci autorun
       env:
         LHCI_GITHUB_APP_TOKEN: ${{ secrets.LHCI_GITHUB_APP_TOKEN }}
         LHCI_TOKEN: ${{ secrets.LHCI_TOKEN }}
