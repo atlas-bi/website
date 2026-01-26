@@ -13,7 +13,7 @@ jobs:
         ref: ${{ github.event.pull_request.head.sha }}
 
     - name: 🧰 Setup pnpm
-      uses: pnpm/action-setup@v4
+      uses: pnpm/action-setup@41ff72655975bd51cab0327fa583b6e92b6d3061
       with:
         version: 9.15.4
 
@@ -32,7 +32,7 @@ jobs:
 
     - name: 🔦 Run Lighthouse
       run: |
-        pnpm dlx @lhci/cli@0.9.x lhci autorun
+        pnpm dlx @lhci/cli@0.9.x autorun
       env:
         LHCI_GITHUB_APP_TOKEN: ${{ secrets.LHCI_GITHUB_APP_TOKEN }}
         LHCI_TOKEN: ${{ secrets.LHCI_TOKEN }}
