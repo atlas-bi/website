@@ -7,19 +7,19 @@ Website is built using 11ty static site generator.
 ## Run for development
 
 ```bash
-npm install
-npm start
+pnpm install
+pnpm start
 ```
 
 ## Build for publishing
 
 ```bash
-npm install
+pnpm install
 ```
 
 ## Update Search
 
 ```bash
 export ALGOLIA_SEARCH=<key>
-npm run updateSearch
+pnpm run updateSearch
 ```

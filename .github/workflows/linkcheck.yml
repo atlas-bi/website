@@ -15,13 +15,14 @@ jobs:
       with:
         node-version: 22
 
+    - name: 🧰 Enable pnpm
+      run: corepack enable
+
     - name: 📥 Download deps
-      uses: bahmutov/npm-install@3e063b974f0d209807684aa23e534b3dde517fd9
-      with:
-        useLockFile: false
+      run: pnpm install --frozen-lockfile
 
     - name: 🏗️ Build
-      run: npm run build:ci
+      run: pnpm run build:ci
 
     - name: 🔗 Linkcheck
       uses: untitaker/hyperlink@e66bb17cc9ae341677431edec3b893a0aa6ac747
