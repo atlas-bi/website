@@ -10,24 +10,20 @@ jobs:
     - name: 💾 Checkout
       uses: actions/checkout@v6
 
-    - name: ⎔ Setup node
-      uses: actions/setup-node@v6
-      with:
-        node-version: 22
-
     - name: 🧰 Setup pnpm
       uses: pnpm/action-setup@v4
       with:
         version: 9.15.4
 
-    - name: 📥 Download deps
-<<<<<<< HEAD
-      uses: bahmutov/npm-install@20216767ca67f0f7b4d095dc5859c5700a6581cb
+    - name: ⎔ Setup node
+      uses: actions/setup-node@v5
       with:
-        useLockFile: false
-=======
+        node-version: 22
+        cache: pnpm
+        cache-dependency-path: pnpm-lock.yaml
+
+    - name: 📥 Download deps
       run: pnpm install --frozen-lockfile
->>>>>>> 8af99b8 (chore: migrate to pnpm)
 
     - name: 🏗️ Build
       run: pnpm run build:ci
