@@ -22,7 +22,7 @@ jobs:
         git reset --hard ${{github.ref_name}}
 
     - name: 🆕 Create Pull Request
-      uses: peter-evans/create-pull-request@6699836a213cf8b28c4f0408a404a6ac79d4458a
+      uses: peter-evans/create-pull-request@3499eb61835cc0015c0b786e203d74b1e8f55e43
       with:
         labels: automated pr
         branch: ${{github.ref_name}}
