@@ -94,7 +94,8 @@ apk add --no-cache curl nginx nodejs npm grep gnupg redis \\
                    libxml2-dev xmlsec-dev xmlsec \\
                    nano openldap-dev python3-dev wget \\
                    libffi-dev unixodbc unixodbc-dev libpq-dev
-npm i -g pnpm
+corepack enable
+corepack prepare pnpm@latest --activate
 pnpm i -g pm2
 pm2 install pm2-logrotate
 

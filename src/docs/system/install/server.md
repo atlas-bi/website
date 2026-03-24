@@ -75,7 +75,8 @@ content: '
 
 ```bash
 apk add --no-cache curl nginx nodejs npm grep
-npm i -g pnpm
+corepack enable
+corepack prepare pnpm@latest --activate
 pnpm i -g pm2 dotenv-cli
 pm2 install pm2-logrotate
 
