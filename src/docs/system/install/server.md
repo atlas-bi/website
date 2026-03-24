@@ -59,7 +59,7 @@ apt-get -y install curl nginx lsof build-essential git
 curl -fsSL https://deb.nodesource.com/setup_18.x | bash -
 apt-get install -y nodejs
 corepack enable
-corepack prepare pnpm@latest --activate
+corepack prepare "pnpm@9.15.4+sha512.stwg4vxys+GISEWbNzWaMgZGY+VielHkx0ssKd2OjgSRSDw6u0B4nP1Xi/Ni+2uoJhsF8Dh9dnku1uI+o7G2oA==" --activate
 pnpm i -g pm2 dotenv-cli
 pm2 install pm2-logrotate
 
@@ -76,7 +76,7 @@ content: '
 ```bash
 apk add --no-cache curl nginx nodejs npm grep
 corepack enable
-corepack prepare pnpm@latest --activate
+corepack prepare "pnpm@9.15.4+sha512.stwg4vxys+GISEWbNzWaMgZGY+VielHkx0ssKd2OjgSRSDw6u0B4nP1Xi/Ni+2uoJhsF8Dh9dnku1uI+o7G2oA==" --activate
 pnpm i -g pm2 dotenv-cli
 pm2 install pm2-logrotate
 
@@ -113,7 +113,7 @@ yum install -y curl
 curl -fsSL https://rpm.nodesource.com/setup_18.x | bash -
 yum -y install nodejs nginx lsof git gcc gcc-c++ make
 corepack enable
-corepack prepare pnpm@latest --activate
+corepack prepare "pnpm@9.15.4+sha512.stwg4vxys+GISEWbNzWaMgZGY+VielHkx0ssKd2OjgSRSDw6u0B4nP1Xi/Ni+2uoJhsF8Dh9dnku1uI+o7G2oA==" --activate
 pnpm i -g pm2 dotenv-cli
 pm2 install pm2-logrotate
 
