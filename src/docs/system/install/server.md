@@ -32,6 +32,7 @@ A few system packages are needed:
 - Nginx: used as a webserver proxy
 - Pm2: used as the system runner
 - Node 18: the website is build in node
+- Pnpm: used to install node packages
 - Dotnev: used to pass variables into the site
 - Lsof: (ubuntu, centos); needed to check open ports
 - Git: (ubuntu, centos); needed for installs
@@ -57,7 +58,9 @@ apt-get update
 apt-get -y install curl nginx lsof build-essential git
 curl -fsSL https://deb.nodesource.com/setup_18.x | bash -
 apt-get install -y nodejs
-npm i -g pm2 dotenv-cli
+corepack enable
+corepack prepare pnpm@latest --activate
+pnpm i -g pm2 dotenv-cli
 pm2 install pm2-logrotate
 
 # allow pm2 to start on reboot (need sudo if you are not running as root)
@@ -72,7 +75,8 @@ content: '
 
 ```bash
 apk add --no-cache curl nginx nodejs npm grep
-npm i -g pm2 dotenv-cli
+npm i -g pnpm
+pnpm i -g pm2 dotenv-cli
 pm2 install pm2-logrotate
 
 # allow pm2 to start on reboot (need sudo if you are not running as root)
@@ -107,7 +111,9 @@ yum install -y curl
 
 curl -fsSL https://rpm.nodesource.com/setup_18.x | bash -
 yum -y install nodejs nginx lsof git gcc gcc-c++ make
-npm i -g pm2 dotenv-cli
+corepack enable
+corepack prepare pnpm@latest --activate
+pnpm i -g pm2 dotenv-cli
 pm2 install pm2-logrotate
 
 # allow pm2 to start on reboot (need sudo if you are not running as root)

@@ -1,6 +1,6 @@
 # Check if commands and files exist.
 check_command node
-check_command npm
+check_command pnpm
 check_command curl
 check_command pm2
 check_command nginx
@@ -29,7 +29,7 @@ mkdir "$PORT"
 curl -sSL $(curl -sSL "$SOURCE" | grep browser_download_url | cut -d : -f 2,3 | tr -d \") | tar zxf - -C "$PORT"
 cd "$PORT"
 
-fmt_blue "Downloaded version $(npm pkg get version | tr -d '"')"
+fmt_blue "Downloaded version $(pnpm pkg get version | tr -d '\"')"
 
 fmt_yellow "Installing meilisearch.."
 mkdir etc; cd etc;
