@@ -73,7 +73,7 @@ apt-get -y install curl nginx lsof build-essential git gnupg2 \\
 curl -fsSL https://deb.nodesource.com/setup_18.x | bash -
 apt-get install -y nodejs
 corepack enable
-corepack prepare pnpm@latest --activate
+corepack prepare "pnpm@9.15.4+sha512.stwg4vxys+GISEWbNzWaMgZGY+VielHkx0ssKd2OjgSRSDw6u0B4nP1Xi/Ni+2uoJhsF8Dh9dnku1uI+o7G2oA==" --activate
 pnpm i -g pm2
 pm2 install pm2-logrotate
 
@@ -94,7 +94,8 @@ apk add --no-cache curl nginx nodejs npm grep gnupg redis \\
                    libxml2-dev xmlsec-dev xmlsec \\
                    nano openldap-dev python3-dev wget \\
                    libffi-dev unixodbc unixodbc-dev libpq-dev
-npm i -g pnpm
+corepack enable
+corepack prepare pnpm@latest --activate
 pnpm i -g pm2
 pm2 install pm2-logrotate
 
