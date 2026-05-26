@@ -86,7 +86,7 @@ fmt_blue "Done setting up."
 cd ..
 
 fmt_yellow "Updating nginx.."
-sed -i "s/localhost:3[0-9]*/localhost:${PORT}/" `find -L /etc/nginx -name "$NGINX_FILE"`
+sudo sed -i "s/localhost:3[0-9]*/localhost:${PORT}/" `find -L /etc/nginx -name "$NGINX_FILE"`
 
 fmt_yellow "Gracefully reloading nginx..."
 nginx_reload
