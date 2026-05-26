@@ -5,7 +5,7 @@ nginx_workers() {
 
 nginx_reload() {
   numWorkerProcesses=$(nginx_workers)
-  nginx -s reload
+  sudo nginx -s reload
 
   # Wait for the old nginx workers to be retired before we kill the old server.
   while [ $(nginx_workers) -ne $numWorkerProcesses ]

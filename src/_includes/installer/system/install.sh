@@ -63,7 +63,7 @@ fmt_yellow "Updating nginx.."
 sudo sed -i "s/localhost:3[0-9]*/localhost:${PORT}/" `find -L /etc/nginx -name "$NGINX_FILE"`
 
 fmt_yellow "Gracefully reloading nginx..."
-sudo nginx_reload
+nginx_reload
 
 fmt_yellow "Removing old pm2 processes.."
 
