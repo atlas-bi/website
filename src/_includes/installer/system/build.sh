@@ -1,8 +1,8 @@
-npm i --omit=dev --loglevel error --no-fund --no-audit --legacy-peer-deps
+pnpm i --prod --loglevel error
 
 fmt_yellow "Building app.."
-npm run build:remix
-npm run build:server
+pnpm run build:remix
+pnpm run build:server
 
 fmt_yellow "Applying database migrations.."
-npm run db
+pnpm run db

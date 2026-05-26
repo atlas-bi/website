@@ -33,6 +33,7 @@ A few system packages are needed:
 - Curl: used to downloading the install
 - Nginx: used as a webserver proxy
 - Node 18: used for building assets
+- Pnpm: used to install node packages
 - Dotnev: used to pass variables into the site
 - Lsof: (ubuntu, centos); needed to check open ports
 - Git: (ubuntu, centos); needed for installs
@@ -71,7 +72,9 @@ apt-get -y install curl nginx lsof build-essential git gnupg2 \\
 
 curl -fsSL https://deb.nodesource.com/setup_18.x | bash -
 apt-get install -y nodejs
-npm i -g pm2
+corepack enable
+corepack prepare "pnpm@9.15.4+sha512.stwg4vxys+GISEWbNzWaMgZGY+VielHkx0ssKd2OjgSRSDw6u0B4nP1Xi/Ni+2uoJhsF8Dh9dnku1uI+o7G2oA==" --activate
+pnpm i -g pm2
 pm2 install pm2-logrotate
 
 # allow pm2 to start on reboot (need sudo if you are not running as root)
@@ -91,7 +94,9 @@ apk add --no-cache curl nginx nodejs npm grep gnupg redis \\
                    libxml2-dev xmlsec-dev xmlsec \\
                    nano openldap-dev python3-dev wget \\
                    libffi-dev unixodbc unixodbc-dev libpq-dev
-npm i -g pm2
+corepack enable
+corepack prepare pnpm@latest --activate
+pnpm i -g pm2
 pm2 install pm2-logrotate
 
 # allow pm2 to start on reboot (need sudo if you are not running as root)
@@ -142,7 +147,9 @@ yum -y install nodejs nginx lsof git gcc gcc-c++ make gnupg2 \\
 
 yum groupinstall "Development tools"
 yum install -y openldap-devel python-devel
-npm i -g pm2
+corepack enable
+corepack prepare pnpm@latest --activate
+pnpm i -g pm2
 pm2 install pm2-logrotate
 
 # allow pm2 to start on reboot (need sudo if you are not running as root)

@@ -1,6 +1,6 @@
 # Check if commands and files exist.
 check_command node
-check_command npm
+check_command pnpm
 check_command curl
 check_command pm2
 check_command nginx
@@ -29,19 +29,19 @@ mkdir "$PORT"
 curl -sSL $(curl -sSL "$SOURCE" | grep browser_download_url | cut -d : -f 2,3 | tr -d \") | tar zxf - -C "$PORT"
 cd "$PORT"
 
-fmt_blue "Downloaded version $(npm pkg get version | tr -d '"')"
+fmt_blue "Downloaded version $(pnpm pkg get version | tr -d '\"')"
 
 # Copy in the .env file.
 fmt_yellow "Setting up website.."
 cp ../.env .
 
 # Install dependencies.
-npm i --omit=dev --loglevel error --no-fund --no-audit --legacy-peer-deps
+pnpm i --prod --loglevel error
 
 # Apply database migrations.
 fmt_yellow "Applying database migrations.."
-npx prisma migrate deploy
-npx prisma generate
+pnpm exec prisma migrate deploy
+pnpm exec prisma generate
 
 
 # Set a few process names.
