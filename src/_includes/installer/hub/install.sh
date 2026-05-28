@@ -6,7 +6,7 @@ check_command pm2
 check_command nginx
 check_command lsof
 check_command grep
-check_command poetry
+check_command uv
 check_file config_cust.py
 check_file "/etc/nginx/**/$NGINX_FILE"
 
@@ -43,9 +43,7 @@ mkdir -p logs
 
 
 fmt_yellow "Installing python packages.."
-poetry config --local virtualenvs.in-project true
-poetry config --local virtualenvs.create true
-poetry install --only main
+uv sync --frozen --no-dev
 
 export FLASK_ENV=production
 export FLASK_DEBUG=0
