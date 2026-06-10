@@ -26,15 +26,16 @@ if [[ -n "${RELEASE_VERSION:-}" ]]; then
   if [[ "$RELEASE_TAG" != v* ]]; then
     RELEASE_TAG="v$RELEASE_TAG"
   fi
-  RELEASE_SOURCE="$SOURCE/$RELEASE_TAG"
+  RELEASE_SOURCE="$SOURCE/tags/$RELEASE_TAG"
   fmt_yellow "Downloading version $RELEASE_VERSION into $(pwd)/$PORT.."
 else
-  RELEASE_SOURCE="$SOURCE"
+  RELEASE_SOURCE="$SOURCE/latest"
   fmt_yellow "Downloading latest version into $(pwd)/$PORT.."
 fi
 
 mkdir "$PORT"
-curl -sSL "$RELEASE_SOURCE" | tar zxf - -C "$PORT" --strip-components=1
+DOWNLOAD_URL=$(curl -sSL "$RELEASE_SOURCE" | grep tarball_url | cut -d : -f 2,3 | tr -d \",)
+curl -sSL "$DOWNLOAD_URL" | tar zxf - -C "$PORT" --strip-components=1
 cd "$PORT"
 
 DOWNLOADED_VERSION=$(npm pkg get version | tr -d '"')
