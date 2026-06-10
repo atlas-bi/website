@@ -27,10 +27,10 @@ if [[ -n "${RELEASE_VERSION:-}" ]]; then
   if [[ "$RELEASE_TAG" != v* ]]; then
     RELEASE_TAG="v$RELEASE_TAG"
   fi
-  RELEASE_SOURCE="https://api.github.com/repos/atlas-bi/System/releases/tags/$RELEASE_TAG"
+  RELEASE_SOURCE="$SOURCE/tags/$RELEASE_TAG"
   fmt_yellow "Downloading version $RELEASE_VERSION into $(pwd)/$PORT.."
 else
-  RELEASE_SOURCE="$SOURCE"
+  RELEASE_SOURCE="$SOURCE/latest"
   fmt_yellow "Downloading latest version into $(pwd)/$PORT.."
 fi
 

@@ -27,10 +27,10 @@ if [[ -n "${RELEASE_VERSION:-}" ]]; then
   if [[ "$RELEASE_TAG" != v* ]]; then
     RELEASE_TAG="v$RELEASE_TAG"
   fi
-  RELEASE_SOURCE="https://api.github.com/repos/atlas-bi/Requests/releases/tags/$RELEASE_TAG"
+  RELEASE_SOURCE="$SOURCE/tags/$RELEASE_TAG"
   fmt_yellow "Downloading version $RELEASE_VERSION into $(pwd)/$PORT.."
 else
-  RELEASE_SOURCE="$SOURCE"
+  RELEASE_SOURCE="$SOURCE/latest"
   fmt_yellow "Downloading latest version into $(pwd)/$PORT.."
 fi
 
@@ -53,6 +53,10 @@ pnpm i --prod --loglevel error
 fmt_yellow "Applying database migrations.."
 pnpm exec prisma migrate deploy
 pnpm exec prisma generate
+
+fmt_yellow "Cleaning package manager caches.."
+pnpm store prune || true
+rm -rf "$HOME/.cache/Cypress" || true
 
 
 # Set a few process names.
