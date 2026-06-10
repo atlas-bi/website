@@ -6,3 +6,5 @@ pnpm run build:server
 
 fmt_yellow "Applying database migrations.."
 pnpm run db
+
+pnpm store prune || true
