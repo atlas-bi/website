@@ -218,6 +218,15 @@ rm -fr Python-3.12.13
 {% include 'src/\_includes/components/tabs.njk' %}
 You can check your python version by running `python3.12 --version`.
 
+### Install virtualenv
+
+The Hub installer still uses `virtualenv` when preparing Python services.
+
+```bash
+curl -sS https://bootstrap.pypa.io/get-pip.py | python3.12
+python3.12 -m pip install virtualenv
+```
+
 ### Install Uv
 
 ```bash
