@@ -85,9 +85,9 @@ SCHEDULER_PROCESS="$PM2_PREFIX-scheduler-$SCHEDULER_PORT"
 
 fmt_yellow "Starting new services.."
 
-APP_CMD=".venv/bin/gunicorn --worker-class=gevent --workers 3 --threads 30 --timeout 999999999 --access-logfile $(pwd)/logs/access.log --error-logfile $(pwd)/logs/error.log --capture-output --bind 0.0.0.0:$PORT --umask 007 web:app"
-SCHEDULER_CMD=".venv/bin/gunicorn --worker-class=gevent --workers 1 --threads 30 --timeout 999999999 --access-logfile $(pwd)/logs/access.log --error-logfile $(pwd)/logs/error.log --capture-output --bind  0.0.0.0:$SCHEDULER_PORT --umask 007 scheduler:app"
-RUNNER_CMD=".venv/bin/gunicorn --worker-class=gevent --worker-connections=1000 --workers $(nproc --all) --threads 30 --timeout 999999999 --access-logfile $(pwd)/logs/access.log --error-logfile $(pwd)/logs/error.log --capture-output --bind 0.0.0.0:$RUNNER_PORT --umask 007 runner:app"
+APP_CMD=".venv/bin/gunicorn --worker-class=gevent --workers 3 --threads 30 --timeout 999999999 --access-logfile - --error-logfile - --capture-output --bind 0.0.0.0:$PORT --umask 007 web:app"
+SCHEDULER_CMD=".venv/bin/gunicorn --worker-class=gevent --workers 1 --threads 30 --timeout 999999999 --access-logfile - --error-logfile - --capture-output --bind  0.0.0.0:$SCHEDULER_PORT --umask 007 scheduler:app"
+RUNNER_CMD=".venv/bin/gunicorn --worker-class=gevent --worker-connections=1000 --workers $(nproc --all) --threads 30 --timeout 999999999 --access-logfile - --error-logfile - --capture-output --bind 0.0.0.0:$RUNNER_PORT --umask 007 runner:app"
 
 echo $APP_CMD
 
