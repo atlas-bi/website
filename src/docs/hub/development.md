@@ -1,7 +1,7 @@
 ---
 title: Development | Learn about the Atlas Hub development process, and how to test the code.
 tags: Hub
-description: Atlas Hub is developed using python and a few helpful tools, Pyenv, Poetry, Precommit, Tox. Running Pytests. Testing. Precommit setup.
+description: Atlas Hub is developed using python and a few helpful tools, Pyenv, uv, Precommit, Tox. Running Pytests. Testing. Precommit setup.
 keywords: atlas, atlas hub, extract scheduler, etl, development, tools
 layout: docs_hub.njk
 date: Last Modified
@@ -33,7 +33,7 @@ Atlas Hub is developed using python and a few helpful tools:
 :::content
 
 - `Pyenv <https://github.com/pyenv/pyenv>`\_ for managing python environments
-- `Poetry <https://python-poetry.org>`\_ for managing dependencies
+- `uv <https://docs.astral.sh/uv/>`\_ for managing dependencies
 - `Precommit <https://pre-commit.com>`\_ for reformating code before committing
 - `Tox <https://tox.readthedocs.io/en/latest/index.html>`\_ running tests, verifying code
   :::
@@ -56,18 +56,18 @@ tox
 
 ### Running Pytests
 
-With Poetry:
+With uv:
 
 ```bash
-export FLASK_APP=em_web; export FLASK_ENV=test; poetry run python -m pytest --disable-warnings
+export FLASK_APP=em_web; export FLASK_ENV=test; uv run python -m pytest --disable-warnings
 ```
 
 With tox:
 
 ```bash
-tox -e clean,py39,cov
+tox -e test,cov
 
 # or
 
-poetry run tox -e clean,py39,cov
+uv run tox -e test,cov
 ```
