@@ -28,7 +28,7 @@ configure(){
 usage() {
   cat << EOF
 
-${BOLD}Usage: $(basename "${BASH_SOURCE[0]}") [-h, -b, -c, -u]
+${BOLD}Usage: $(basename "${BASH_SOURCE[0]}") [-h, -c, -i, --version VERSION]
 
 ${BLUE}Atlas Hub Installer.${RESET}
 
@@ -37,6 +37,7 @@ Available options:
     -h, --help               Print this help and exit
     -c, --configure          Reconfigure Atlas Hub
     -i, --install [DEFAULT]  Install or Upgrade Atlas Hub
+    -v, --version VERSION    Install a specific release, for example 3.1.25
 
 Additional Altas Hub Help at https://atlas.bi/docs/hub
 
@@ -65,6 +66,12 @@ parse_params() {
 
     -c | --configure) configure;break ;;
     -i | --install) install;break ;;
+    -v | --version)
+      [[ -n "${2-}" ]] || die "${RED}Missing value for $1.${RESET}"
+      RELEASE_VERSION="$2"
+      shift
+      ;;
+    --version=*) RELEASE_VERSION="${1#*=}" ;;
     -?*) die "${RED}Unknown option: $1. Run $(basename "${BASH_SOURCE[0]}") -h for help.${RESET}";break ;;
     *)  install;break ;;
     esac

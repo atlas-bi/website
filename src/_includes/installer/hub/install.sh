@@ -21,14 +21,24 @@ fmt_blue "Using web port $PORT"
 fmt_blue "Using runner port $RUNNER_PORT"
 fmt_blue "Using scheduler port $SCHEDULER_PORT"
 
-# Download the latest release.
-fmt_yellow "Downloading latest version into $(pwd)/$PORT.."
+if [[ -n "${RELEASE_VERSION:-}" ]]; then
+  RELEASE_TAG="$RELEASE_VERSION"
+  if [[ "$RELEASE_TAG" != v* ]]; then
+    RELEASE_TAG="v$RELEASE_TAG"
+  fi
+  RELEASE_SOURCE="$SOURCE/$RELEASE_TAG"
+  fmt_yellow "Downloading version $RELEASE_VERSION into $(pwd)/$PORT.."
+else
+  RELEASE_SOURCE="$SOURCE"
+  fmt_yellow "Downloading latest version into $(pwd)/$PORT.."
+fi
 
 mkdir "$PORT"
-curl -sSL "$SOURCE" | tar zxf - -C "$PORT" --strip-components=1
+curl -sSL "$RELEASE_SOURCE" | tar zxf - -C "$PORT" --strip-components=1
 cd "$PORT"
 
-fmt_blue "Downloaded version $(npm pkg get version | tr -d '"')"
+DOWNLOADED_VERSION=$(npm pkg get version | tr -d '"')
+fmt_blue "Downloaded version $DOWNLOADED_VERSION"
 
 # Copy in the .env file.
 fmt_yellow "Setting up configuration.."
@@ -60,6 +70,11 @@ cp web/model.py scheduler/model.py
 
 .venv/bin/flask --app=web db upgrade
 .venv/bin/flask --app=web cli seed
+
+fmt_yellow "Cleaning package manager caches.."
+uv cache prune || true
+npm cache clean --force || true
+rm -rf "$HOME/.cache/Cypress" || true
 
 # Set a few process names.
 APP_PROCESS="$PM2_PREFIX-$PORT"
