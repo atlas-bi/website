@@ -6,7 +6,7 @@ check_command pm2
 check_command nginx
 check_command lsof
 check_command grep
-check_command poetry
+check_command uv
 check_file config_cust.py
 check_file "/etc/nginx/**/$NGINX_FILE"
 
@@ -21,14 +21,25 @@ fmt_blue "Using web port $PORT"
 fmt_blue "Using runner port $RUNNER_PORT"
 fmt_blue "Using scheduler port $SCHEDULER_PORT"
 
-# Download the latest release.
-fmt_yellow "Downloading latest version into $(pwd)/$PORT.."
+if [[ -n "${RELEASE_VERSION:-}" ]]; then
+  RELEASE_TAG="$RELEASE_VERSION"
+  if [[ "$RELEASE_TAG" != v* ]]; then
+    RELEASE_TAG="v$RELEASE_TAG"
+  fi
+  RELEASE_SOURCE="$SOURCE/tags/$RELEASE_TAG"
+  fmt_yellow "Downloading version $RELEASE_VERSION into $(pwd)/$PORT.."
+else
+  RELEASE_SOURCE="$SOURCE/latest"
+  fmt_yellow "Downloading latest version into $(pwd)/$PORT.."
+fi
 
 mkdir "$PORT"
-curl -sSL "$SOURCE" | tar zxf - -C "$PORT" --strip-components=1
+DOWNLOAD_URL=$(curl -sSL "$RELEASE_SOURCE" | grep tarball_url | cut -d : -f 2,3 | tr -d \",)
+curl -sSL "$DOWNLOAD_URL" | tar zxf - -C "$PORT" --strip-components=1
 cd "$PORT"
 
-fmt_blue "Downloaded version $(npm pkg get version | tr -d '"')"
+DOWNLOADED_VERSION=$(npm pkg get version | tr -d '"')
+fmt_blue "Downloaded version $DOWNLOADED_VERSION"
 
 # Copy in the .env file.
 fmt_yellow "Setting up configuration.."
@@ -43,9 +54,7 @@ mkdir -p logs
 
 
 fmt_yellow "Installing python packages.."
-poetry config --local virtualenvs.in-project true
-poetry config --local virtualenvs.create true
-poetry install --only main
+uv sync --frozen --no-dev
 
 export FLASK_ENV=production
 export FLASK_DEBUG=0
@@ -63,6 +72,11 @@ cp web/model.py scheduler/model.py
 .venv/bin/flask --app=web db upgrade
 .venv/bin/flask --app=web cli seed
 
+fmt_yellow "Cleaning package manager caches.."
+uv cache prune || true
+npm cache clean --force || true
+rm -rf "$HOME/.cache/Cypress" || true
+
 # Set a few process names.
 APP_PROCESS="$PM2_PREFIX-$PORT"
 RUNNER_PROCESS="$PM2_PREFIX-runner-$RUNNER_PORT"
@@ -71,9 +85,9 @@ SCHEDULER_PROCESS="$PM2_PREFIX-scheduler-$SCHEDULER_PORT"
 
 fmt_yellow "Starting new services.."
 
-APP_CMD=".venv/bin/gunicorn --worker-class=gevent --workers 3 --threads 30 --timeout 999999999 --access-logfile $(pwd)/logs/access.log --error-logfile $(pwd)/logs/error.log --capture-output --bind 0.0.0.0:$PORT --umask 007 web:app"
-SCHEDULER_CMD=".venv/bin/gunicorn --worker-class=gevent --workers 1 --threads 30 --timeout 999999999 --access-logfile $(pwd)/logs/access.log --error-logfile $(pwd)/logs/error.log --capture-output --bind  0.0.0.0:$SCHEDULER_PORT --umask 007 scheduler:app"
-RUNNER_CMD=".venv/bin/gunicorn --worker-class=gevent --worker-connections=1000 --workers $(nproc --all) --threads 30 --timeout 999999999 --access-logfile $(pwd)/logs/access.log --error-logfile $(pwd)/logs/error.log --capture-output --bind 0.0.0.0:$RUNNER_PORT --umask 007 runner:app"
+APP_CMD=".venv/bin/gunicorn --worker-class=gevent --workers 3 --threads 30 --timeout 999999999 --access-logfile - --error-logfile - --capture-output --bind 0.0.0.0:$PORT --umask 007 web:app"
+SCHEDULER_CMD=".venv/bin/gunicorn --worker-class=gevent --workers 1 --threads 30 --timeout 999999999 --access-logfile - --error-logfile - --capture-output --bind  0.0.0.0:$SCHEDULER_PORT --umask 007 scheduler:app"
+RUNNER_CMD=".venv/bin/gunicorn --worker-class=gevent --worker-connections=1000 --workers $(nproc --all) --threads 30 --timeout 999999999 --access-logfile - --error-logfile - --capture-output --bind 0.0.0.0:$RUNNER_PORT --umask 007 runner:app"
 
 echo $APP_CMD
 

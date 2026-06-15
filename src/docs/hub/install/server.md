@@ -44,8 +44,8 @@ A few system packages are needed:
 - Xmlsec: used for SAML request validation
 - libldap2-dev: used for LDAP authentication
 - unixodbc: used for database connections
-- Python 3.10: use to run the website, runner and scheduler
-- Poetry: used as the python package manager
+- Python 3.12: used to run the website, runner and scheduler
+- Uv: used as the python package manager
 - System build tools
 
 {% admonition
@@ -173,7 +173,7 @@ content: '
 ```bash
 apt install software-properties-common -y
 add-apt-repository ppa:deadsnakes/ppa
-apt install python3.10
+apt install python3.12 python3.12-dev
 ```
 
 '
@@ -183,14 +183,14 @@ id: 'alpine',
 content: '
 
 ```bash
-wget https://www.python.org/ftp/python/3.10.12/Python-3.10.12.tgz
-tar xzf Python-3.10.12.tgz
-rm -f Python-3.10.12.tgz
-cd Python-3.10.12
+wget https://www.python.org/ftp/python/3.12.13/Python-3.12.13.tgz
+tar xzf Python-3.12.13.tgz
+rm -f Python-3.12.13.tgz
+cd Python-3.12.13
 ./configure --with-system-ffi --enable-optimizations --with-computed-gotos --enable-loadable-sqlite-extensions
 make install
 cd ..
-rm -fr Python-3.10.12
+rm -fr Python-3.12.13
 ```
 
 '
@@ -201,45 +201,45 @@ id: 'centos',
 content: '
 
 ```bash
-wget https://www.python.org/ftp/python/3.10.12/Python-3.10.12.tgz
-tar xzf Python-3.10.12.tgz
-rm -f Python-3.10.12.tgz
-cd Python-3.10.12
+wget https://www.python.org/ftp/python/3.12.13/Python-3.12.13.tgz
+tar xzf Python-3.12.13.tgz
+rm -f Python-3.12.13.tgz
+cd Python-3.12.13
 ./configure --with-system-ffi --enable-optimizations --with-computed-gotos --enable-loadable-sqlite-extensions
 make -j ${nproc}
 make altinstall
 cd ..
-rm -fr Python-3.10.12
+rm -fr Python-3.12.13
 ```
 
 '
 }] %}
 
 {% include 'src/\_includes/components/tabs.njk' %}
-You can check your python version by running `python3.10 --version`.
+You can check your python version by running `python3.12 --version`.
 
 ### Install virtualenv
 
-```bash
-curl -sS https://bootstrap.pypa.io/get-pip.py | python3.10
-python3.10 -m pip install virtualenv
-```
-
-### Install Poetry
-
-Poetry is used as the python package manager.
+The Hub installer still uses `virtualenv` when preparing Python services.
 
 ```bash
-curl -sSL https://install.python-poetry.org | python3.10 -
+curl -sS https://bootstrap.pypa.io/get-pip.py | python3.12
+python3.12 -m pip install virtualenv
 ```
 
-In the installer output will be a command you can run to add poetry to your path. Run it now.
+### Install Uv
+
+```bash
+curl -LsSf https://astral.sh/uv/install.sh | sh
+```
+
+In the installer output will be a command you can run to add uv to your path. Run it now.
 
 ```bash
 export PATH="/root/.local/bin:$PATH"
 ```
 
-Check if it is installed correctly by running `poetry --version`.
+Check if it is installed correctly by running `uv --version`.
 
 ### Start Redis
 

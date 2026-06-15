@@ -61,7 +61,7 @@ tail -f /var/log/nginx/error.log
 
 ## Errors
 
-`sudo: poetry: command not found`: If you have installed poetry and are running the scripts with use you may need to add the path to poetry to your sudo path. Run `sudo visudo` and add `/root/.local/bin:` to the secure path.
+`sudo: uv: command not found`: If you have installed uv and are running the scripts with sudo you may need to add the path to uv to your sudo path. Run `sudo visudo` and add `/root/.local/bin:` to the secure path.
 
 ## No `pm2` services after a reboot
 

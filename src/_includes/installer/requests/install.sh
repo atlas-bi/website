@@ -22,14 +22,25 @@ fmt_blue "Using web port $PORT"
 fmt_blue "Using quirrel port $QUIRREL_PORT"
 fmt_blue "Using meilsearch port $MEILI_PORT"
 
-# Download the latest release.
-fmt_yellow "Downloading latest version into $(pwd)/$PORT.."
+if [[ -n "${RELEASE_VERSION:-}" ]]; then
+  RELEASE_TAG="$RELEASE_VERSION"
+  if [[ "$RELEASE_TAG" != v* ]]; then
+    RELEASE_TAG="v$RELEASE_TAG"
+  fi
+  RELEASE_SOURCE="$SOURCE/tags/$RELEASE_TAG"
+  fmt_yellow "Downloading version $RELEASE_VERSION into $(pwd)/$PORT.."
+else
+  RELEASE_SOURCE="$SOURCE/latest"
+  fmt_yellow "Downloading latest version into $(pwd)/$PORT.."
+fi
 
 mkdir "$PORT"
-curl -sSL $(curl -sSL "$SOURCE" | grep browser_download_url | cut -d : -f 2,3 | tr -d \") | tar zxf - -C "$PORT"
+DOWNLOAD_URL=$(curl -sSL "$RELEASE_SOURCE" | grep browser_download_url | cut -d : -f 2,3 | tr -d \")
+curl -sSL "$DOWNLOAD_URL" | tar zxf - -C "$PORT"
 cd "$PORT"
 
-fmt_blue "Downloaded version $(pnpm pkg get version | tr -d '\"')"
+DOWNLOADED_VERSION=$(pnpm pkg get version | tr -d '"')
+fmt_blue "Downloaded version $DOWNLOADED_VERSION"
 
 # Copy in the .env file.
 fmt_yellow "Setting up website.."
@@ -42,6 +53,10 @@ pnpm i --prod --loglevel error
 fmt_yellow "Applying database migrations.."
 pnpm exec prisma migrate deploy
 pnpm exec prisma generate
+
+fmt_yellow "Cleaning package manager caches.."
+pnpm store prune || true
+rm -rf "$HOME/.cache/Cypress" || true
 
 
 # Set a few process names.
