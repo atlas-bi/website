@@ -34,7 +34,7 @@ else
 fi
 
 mkdir "$PORT"
-DOWNLOAD_URL=$(curl -sSL "$RELEASE_SOURCE" | grep tarball_url | cut -d : -f 2,3 | tr -d \",)
+DOWNLOAD_URL=$(curl -sSL "$RELEASE_SOURCE" | grep tarball_url | cut -d : -f 2,3 | tr -d '",' | xargs)
 curl -sSL "$DOWNLOAD_URL" | tar zxf - -C "$PORT" --strip-components=1
 cd "$PORT"
 
