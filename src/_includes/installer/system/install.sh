@@ -39,7 +39,7 @@ DOWNLOAD_URL=$(curl -sSL "$RELEASE_SOURCE" | grep -m 1 browser_download_url | cu
 curl -sSL "$DOWNLOAD_URL" | tar zxf - -C "$PORT"
 cd "$PORT"
 
-DOWNLOADED_VERSION=$(pnpm pkg get version | tr -d '"')
+DOWNLOADED_VERSION=$(npm pkg get version | tr -d '"')
 fmt_blue "Downloaded version $DOWNLOADED_VERSION"
 
 fmt_yellow "Installing meilisearch.."
