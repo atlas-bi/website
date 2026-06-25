@@ -67,6 +67,8 @@ fmt_yellow "Starting new services.."
 # Start web process.
 dotenv -- pm2 start node --name="$APP_PROCESS" --merge-logs -- ./build/server.js
 
+wait_for_url "http://127.0.0.1:$PORT"
+
 fmt_blue "Done setting up."
 cd ..
 
