@@ -7,7 +7,7 @@ wait_for_url() {
 
   fmt_yellow "Checking $url (timeout: ${timeout}s)..."
 
-  while [ "$elapsed" -lt "$timeout" ]; do
+  while [[ "$elapsed" -lt "$timeout" ]]; do
     status=$(curl -s -o /dev/null -w "%{http_code}" --max-time 3 "$url" 2>/dev/null || true)
 
     if [[ "$status" =~ ^[23] ]]; then
