@@ -47,6 +47,16 @@ nano config_cust.py
 
 Scroll about half way down and change `SQLALCHEMY_DATABASE_URI` password to `1234_with_single_quotes`, the username to `web_user`, the database to `atlas-hub`, and the url to `127.0.0.1`.
 
+## Configure the runner temp path
+
+Atlas Hub stores task working files under `runner/temp` by default. To use a separate data drive, set `RUNNER_TEMP_PATH` in `config_cust.py` to an absolute path:
+
+```python
+RUNNER_TEMP_PATH = "/data/atlas-hub/temp"
+```
+
+The configured directory is shared by the runner and scheduler. Ensure it exists and is writable by the Atlas Hub processes.
+
 ## Update old installs with the new config
 
 Already have Atlas Hub installed and just making changes to your config? You can update your install by running the following command.
@@ -68,4 +78,4 @@ contents: '
 '
 } %}
 
-{% include "src/\_includes/components/collapse.njk" %}
+{% include "src/_includes/components/collapse.njk" %}
