@@ -1,3 +1,4 @@
+.pnpm-store
 _site
 build/
 poetry.lock

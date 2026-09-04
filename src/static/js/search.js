@@ -1,5 +1,5 @@
 import { renderString } from 'nunjucks';
-import algoliasearch from 'algoliasearch/lite';
+import { liteClient as algoliasearch } from 'algoliasearch/lite';
 Function.prototype.debounce = function (delay) {
   var outter = this,
     timer;
@@ -22,7 +22,7 @@ if (typeof String.prototype.trim === 'undefined') {
 }
 
 const client = algoliasearch('QFXNLHI6NP', '6b5ccc86ead48e79e587963eeb2d83e8');
-const searchIndex = client.initIndex('dev_atlas');
+const searchIndexName = 'dev_atlas';
 const searchInput = document.getElementById('search');
 const searchResults = document.getElementById('search-results');
 
@@ -53,10 +53,15 @@ const runSearch = (e) => {
   const searchString = e.target.value.trim();
 
   if (searchString && window.open) {
-    searchIndex.search(searchString, alogliaArgs).then((e) => {
-      const data = renderString(window.template, { hits: e.hits });
-      searchResults.innerHTML = data;
-    });
+    client
+      .searchSingleIndex({
+        indexName: searchIndexName,
+        searchParams: { query: searchString, ...alogliaArgs },
+      })
+      .then((e) => {
+        const data = renderString(window.template, { hits: e.hits });
+        searchResults.innerHTML = data;
+      });
   }
 };
 

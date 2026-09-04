@@ -1,13 +1,14 @@
-const algoliasearch = require('algoliasearch');
+const { algoliasearch } = require('algoliasearch');
 
 const objects = require('../../_site/search/all.json');
 
 const client = algoliasearch('QFXNLHI6NP', process.env.ALGOLIA_SEARCH);
 
-const index = client.initIndex('dev_atlas');
-
-index
-  .replaceAllObjects(objects, { autoGenerateObjectIDIfNotExist: true })
+client
+  .replaceAllObjects({
+    indexName: 'dev_atlas',
+    objects,
+  })
   .then(() => {
     console.log('updated');
   })
