@@ -7,7 +7,6 @@ const outdent = require('outdent');
 const schema = require("@quasibit/eleventy-plugin-schema");
 const readingTime = require('reading-time');
 const editOnGithub = require('eleventy-plugin-edit-on-github');
-const fetch = require('node-fetch');
 const rollupPlugin = require('eleventy-plugin-rollup');
 const { nodeResolve } = require('@rollup/plugin-node-resolve');
 const commonjs = require('@rollup/plugin-commonjs');
