@@ -1,6 +1,6 @@
 # Check if commands and files exist.
 check_command node
-check_command npm
+check_command pnpm
 check_command curl
 check_command pm2
 check_command nginx
@@ -60,7 +60,7 @@ export FLASK_ENV=production
 export FLASK_DEBUG=0
 
 fmt_yellow "Installing node packages and building static resources.."
-npm install --loglevel error --no-fund --no-audit
+pnpm install --frozen-lockfile
 .venv/bin/flask --app=web assets build
 
 
@@ -74,7 +74,7 @@ cp web/model.py scheduler/model.py
 
 fmt_yellow "Cleaning package manager caches.."
 uv cache prune || true
-npm cache clean --force || true
+pnpm store prune || true
 rm -rf "$HOME/.cache/Cypress" || true
 
 # Set a few process names.
