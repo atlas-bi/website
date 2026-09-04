@@ -6,6 +6,7 @@ eleventyExcludeFromCollections: true
 [
 {%- for post in posts -%}
     {
+    "objectID": "{{ post.url }}",
     "title": "{{ post.data.eleventyNavigation.title or post.data.title | default(" ") }}",
     "date": "{{ page.date }}",
     "url": "{{ post.url }}",
