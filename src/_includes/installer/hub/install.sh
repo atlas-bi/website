@@ -38,7 +38,7 @@ DOWNLOAD_URL=$(curl -sSL "$RELEASE_SOURCE" | grep -m 1 tarball_url | cut -d : -f
 curl -sSL "$DOWNLOAD_URL" | tar zxf - -C "$PORT" --strip-components=1
 cd "$PORT"
 
-DOWNLOADED_VERSION=$(npm pkg get version | tr -d '"')
+DOWNLOADED_VERSION=$(node -p 'require("./package.json").version')
 fmt_blue "Downloaded version $DOWNLOADED_VERSION"
 
 # Copy in the .env file.
