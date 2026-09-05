@@ -33,3 +33,11 @@ Connections are saved in organization groups which can also store contact inform
 A connection group can have any number of different connections.
 
 Password/ssh key/gpg key fields are all encrypted before being saved into the database.
+
+## Generate an SSH key for SFTP
+
+On the New or Edit SFTP Connection form, click **Generate SSH key pair** beside the SSH Key field. To protect the private key with a passphrase, fill in **Key Password** before generating the pair.
+
+Copy the generated **Public key** to the SFTP account's `authorized_keys` file on the server. Then click **Add SFTP Connection** or **Save SFTP Connection** to store the private key using Hub's existing encrypted storage. Generating a pair alone does not save the connection.
+
+If the form already contains a key, Hub asks before replacing it. Keep the key password unchanged after generation unless you generate a new pair with the new password. This feature is on the SFTP form; the SSH command connection form uses password authentication.
