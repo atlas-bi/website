@@ -40,6 +40,12 @@ Tasks include three primary pages:
 
 {% image "./src/static/img/hub/my_tasks.png", "my tasks", "(min-width:800px) 50vw, 100vw", "boxed" %}
 
+## Table sorting
+
+Click a column heading to sort the visible rows, or use **Sort by** on a paginated table to sort the full result set. Hub remembers your choice separately for each page and table within the browser tab, including when you open a link and return or refresh the table. Clicking the same heading again reverses the order.
+
+Sorting preferences are not saved to your account. If browser storage is unavailable, sorting still works, but the choice will not be remembered.
+
 ## Task Details
 
 From the task details a task can be
