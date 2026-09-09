@@ -288,9 +288,13 @@ module.exports = async (eleventyConfig) => {
   });
 
   eleventyConfig.addFilter('algExcerpt', (text) => {
-    return text
-      .replace(/<code class="language-.*?">.*?<\/code>/gs, '')
-      .replace(/<.*?>/g, '')
+    // Strip tags; attribute values may contain ">" (e.g. Tailwind [&>svg]).
+    return String(text || '')
+      .replace(/<script[\s\S]*?<\/script>/gi, ' ')
+      .replace(/<style[\s\S]*?<\/style>/gi, ' ')
+      .replace(/<(?:[^>"']|"[^"]*"|'[^']*')*>/g, ' ')
+      .replace(/\s+/g, ' ')
+      .trim()
       .substring(0, 8000);
   });
 
