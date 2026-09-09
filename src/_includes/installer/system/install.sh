@@ -107,7 +107,7 @@ echo ${YELLOW}Back folders can be manually removed. ${BLUE}rm -r $(pwd)/backup-*
 echo ""
 fmt_green "Thanks for installing Atlas System!"
 echo ""
-fmt_green "Read the full install guide at https://atlas.bi/docs/system/"
+fmt_green "Read the full install guide at {{ site.url }}/docs/system/"
 echo ""
 fmt_blue "Next Steps"
 
@@ -122,7 +122,7 @@ ${CYAN}Updating App Settings
 
 ${YELLOW}1. Update user configuration file ${BLUE}nano $(pwd)/.env
 ${YELLOW}2. Reconfigure the app
-${BLUE}   curl -sSL https://atlas.bi/installers/system.sh | bash -s -- --configure
+${BLUE}   curl -sSL {{ site.url }}/installers/system.sh | bash -s -- --configure
 
 ${CYAN}Updating Nginx Settings
 

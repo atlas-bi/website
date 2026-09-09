@@ -7,7 +7,6 @@
 @source "../../**/*.{html,njk,md,svg,js}";
 
 @theme {
-
   --color-border: hsl(var(--border));
   --color-input: hsl(var(--input));
   --color-ring: hsl(var(--ring));
@@ -43,12 +42,20 @@
   --animate-accordion-up: accordion-up 0.2s ease-out;
 
   @keyframes accordion-down {
-    from { height: 0; }
-    to { height: var(--radix-accordion-content-height); }
+    from {
+      height: 0;
+    }
+    to {
+      height: var(--radix-accordion-content-height);
+    }
   }
   @keyframes accordion-up {
-    from { height: var(--radix-accordion-content-height); }
-    to { height: 0; }
+    from {
+      height: var(--radix-accordion-content-height);
+    }
+    to {
+      height: 0;
+    }
   }
 }
 
@@ -65,7 +72,7 @@
     --foreground: 222.2 47.4% 11.2%;
 
     --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted-foreground: 215.4 16.3% 38%;
 
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 47.4% 11.2%;
@@ -134,7 +141,9 @@
   body {
     background-color: hsl(var(--background));
     color: hsl(var(--foreground));
-    font-feature-settings: 'rlig' 1, 'calt' 1;
+    font-feature-settings:
+      "rlig" 1,
+      "calt" 1;
   }
 }
 
@@ -144,11 +153,11 @@
  * @author Rose Pritchard
  */
 
-code[class*='language-'],
-pre[class*='language-'] {
+code[class*="language-"],
+pre[class*="language-"] {
   color: #ccc;
   /*  background: none;*/
-  font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
   font-size: 1em;
   text-align: left;
   white-space: pre;
@@ -169,7 +178,7 @@ pre[class*='language-'] {
 
 /* purgcss start ignore */
 /* Code blocks */
-pre[class*='language-'] {
+pre[class*="language-"] {
   padding: 1em;
   margin: 0.5em 0;
   overflow: auto;
@@ -181,7 +190,7 @@ pre[class*="language-"] {
 }*/
 
 /* Inline code */
-:not(pre) > code[class*='language-'] {
+:not(pre) > code[class*="language-"] {
   padding: 0.1em;
   border-radius: 0.3em;
   white-space: normal;
@@ -192,7 +201,7 @@ pre[class*="language-"] {
 .token.prolog,
 .token.doctype,
 .token.cdata {
-  color: #999;
+  color: #c6c6c6;
 }
 
 .token.punctuation {
@@ -203,7 +212,7 @@ pre[class*="language-"] {
 .token.attr-name,
 .token.namespace,
 .token.deleted {
-  color: #e2777a;
+  color: #f0a0a2;
 }
 
 .token.function-name {
@@ -213,7 +222,7 @@ pre[class*="language-"] {
 .token.boolean,
 .token.number,
 .token.function {
-  color: #f08d49;
+  color: #ffc07a;
 }
 
 .token.property,
@@ -228,7 +237,7 @@ pre[class*="language-"] {
 .token.atrule,
 .token.keyword,
 .token.builtin {
-  color: #cc99cd;
+  color: #e4b6e5;
 }
 
 .token.string,
@@ -273,4 +282,25 @@ pre[class*="language-"] {
 .prose p a > img {
   margin: 2px;
   display: inline-block;
+}
+
+/* Hide the native search cancel so it does not stack on the dialog close button. */
+#search::-webkit-search-cancel-button,
+#search::-webkit-search-decoration {
+  -webkit-appearance: none;
+  appearance: none;
+  display: none;
+}
+
+.search-result + .search-result {
+  margin-top: 0.125rem;
+}
+
+.search-result em {
+  font-style: normal;
+  font-weight: 600;
+  color: rgb(3 105 161);
+  background-color: rgb(224 242 254);
+  border-radius: 0.125rem;
+  padding: 0 0.125rem;
 }

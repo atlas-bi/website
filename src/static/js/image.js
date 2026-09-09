@@ -24,7 +24,9 @@ const setOpen = (value, el = undefined) => {
     if (!el) {
       document
         .querySelectorAll('.image-popout[data-state="open"]')
-        .forEach((x) => setOpen(false, x));
+        .forEach((x) => {
+          setOpen(false, x);
+        });
     } else {
       setTimeout(() => (el.style.display = 'none'), 150);
       el.dataset.state = 'closed';

@@ -1,0 +1,6 @@
+packages:
+  - "."
+
+# Skip djlint postinstall (needs pip). Used by local/Coolify installs.
+neverBuiltDependencies:
+  - djlint

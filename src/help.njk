@@ -21,61 +21,41 @@ eleventyComputed:
                 There is a community of dedicated Atlas users to help you.
             </p>
         </div>
-        <div class="flex">
-            <div class="md:w-1/2">
-                <h2 class="font-semibold text-slate-900 dark:text-slate-100 pb-4">Office Hours</h2>
-                <div class="pt-4">Ask us about joining the bi-weekly office hours on Friday's at 9:00-10:00 AM CST.</div>
-                <h2>Chat</h2>
-                <div class="pt-4">
-                    <a class="text-sky-600" href="https://discord.gg/hdz2cpygQD">Join the chat on Discord</a>
-                </div>
-                <h2 class="font-semibold text-slate-900 dark:text-slate-100 pt-4">Send an email</h2>
-                <div class="pt-4">
+        <div class="max-w-2xl mx-auto space-y-6 pb-10">
+            <div>
+                <h2 class="font-semibold text-slate-900 dark:text-slate-100">Office Hours</h2>
+                <p class="mt-3">Ask us about joining the bi-weekly office hours on Friday's at 9:00-10:00 AM CST.</p>
+            </div>
+            <div>
+                <h2 class="font-semibold text-slate-900 dark:text-slate-100">Chat</h2>
+                <p class="mt-3">
+                    <a class="text-sky-700 underline" href="https://discord.gg/hdz2cpygQD">Join the chat on Discord</a>
+                </p>
+            </div>
+            <div class="space-y-4">
+                <h2 class="font-semibold text-slate-900 dark:text-slate-100">Send an email</h2>
+                {% if site.emails.dan %}
+                <div>
                     <ul class="list-disc ml-4">
                         <li>can I see a demo?</li>
                         <li>is Atlas right for me?</li>
                     </ul>
                     ask
-                    <a class="text-sky-600" href="mailto:dan@atlas.bi">Dan Ryan</a>
-                    - dan@atlas.bi
+                    <a class="text-sky-700 underline" href="mailto:{{ site.emails.dan }}">Dan Ryan</a>
+                    - {{ site.emails.dan }}
                 </div>
-                <div class="pt-4">
+                {% endif %}
+                {% if site.emails.christopher %}
+                <div>
                     <ul class="list-disc ml-4">
                         <li>need technical help?</li>
                         <li>want to contribute?</li>
                     </ul>
                     ask
-                    <a class="text-sky-600" href="mailto:christopher@atlas.bi">Christopher Pickering</a>
-                    - christopher@atlas.bi
+                    <a class="text-sky-700 underline" href="mailto:{{ site.emails.christopher }}">Christopher Pickering</a>
+                    - {{ site.emails.christopher }}
                 </div>
-            </div>
-            <div class="md:w-1/2 border rounded-lg outline outline-offset-2 outline-sky-400/50 bg-white p-4">
-                <h2 class="font-semibold text-slate-900 dark:text-slate-100 pb-4">Send a message</h2>
-                <form name="contact" method="post" data-netlify="true">
-                    <label class="text-slate-700" for="name">Name</label>
-                    <input class="mb-4 mt-1 block w-full rounded-md border-slate-300 shadow-sm focus:border-sky-300 focus:ring focus:ring-sky-200/50 "
-                           type="text"
-                           name="name"
-                           id="name" />
-                    <label class="text-slate-700" for="email">Email</label>
-                    <input class="mb-4 mt-1 block w-full rounded-md border-slate-300 shadow-sm focus:border-sky-300 focus:ring focus:ring-sky-200/50 "
-                           type="text"
-                           name="email"
-                           id="email" />
-                    <label class="text-slate-700" for="subject">Subject</label>
-                    <input class="mb-4 mt-1 block w-full rounded-md border-slate-300 shadow-sm focus:border-sky-300 focus:ring focus:ring-sky-200/50 "
-                           type="text"
-                           name="subject"
-                           id="subject" />
-                    <label class="text-slate-700">Message</label>
-                    <textarea class=" mb-4 mt-1 block w-full rounded-md border-slate-300 shadow-sm focus:border-sky-300 focus:ring focus:ring-sky-200/50 "
-                              name="body"
-                              rows="5"
-                              cols="35"></textarea>
-                    <button type="button"
-                            onclick="this.closest('form').submit();this.closest('form').reset();return !1;"
-                            class="rounded-md border py-1 px-4 mr-auto my-4">Send</button>
-                </form>
+                {% endif %}
             </div>
         </div>
     </div>

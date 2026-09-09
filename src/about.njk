@@ -78,12 +78,12 @@ eleventyComputed:
                 "url": "https://www.linkedin.com/in/samuel-martinez-jr-a68a349b/"
             }
         ] %}
-        <div class="text-center">
-            <ul>
+        <div class="text-center pb-10">
+            <ul class="space-y-2">
                 {% for c in contributers %}
                     <li>
                         {% if c.url %}
-                            <a class="text-sky-600" href="{{ c.url }}" target="_blank">{{ c.name }}</a>
+                            <a class="text-sky-700" href="{{ c.url }}" target="_blank" rel="noopener noreferrer">{{ c.name }}</a>
                         {% else %}
                             {{ c.name }}
                         {% endif %}
@@ -91,6 +91,5 @@ eleventyComputed:
                 {% endfor %}
             </ul>
         </div>
-    </ul>
-</div>
+    </div>
 </section>

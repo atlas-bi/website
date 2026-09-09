@@ -75,12 +75,12 @@ SMTP_USERNAME=
 SMTP_PASSWORD=
 SMTP_TLS=false
 SMTP_SENDER_NAME=Atlas Requests | Riverside Healthcare Analytics
-SMTP_SENDER_EMAIL=requests-no-reply@requests.atlas.bi
+SMTP_SENDER_EMAIL=requests-no-reply@example.com
 IMAP_HOST=localhost
 IMAP_PORT=143
 
 # the URL your site will be accessed at.
-HOSTNAME=https://requests.atlas.bi
+HOSTNAME=https://requests.example.com
 ```
 
 # Configure
@@ -90,7 +90,7 @@ If this is a new install proceed to the install guide.
 Update the app with your new configuration by running:
 
 ```bash
-curl -sSL https://atlas.bi/installers/requests.sh | bash -s -- --configure
+curl -sSL {{ site.url }}/installers/requests.sh | bash -s -- --configure
 ```
 
 {% set collapse={

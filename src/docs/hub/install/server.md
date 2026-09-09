@@ -54,7 +54,7 @@ A few system packages are needed:
    "Many of the commands below require root access. If you are not a root user, run them with `sudo`."
 %}
 
-### Install Deps
+## Install Deps
 
 {% set tabData = [
 {
@@ -110,7 +110,7 @@ name:'CentOS',
 id: 'centos',
 content: '
 
-### Update Report Lists
+## Update Report Lists
 
 ```bash
 # mirror streams may need to be updated.
@@ -133,7 +133,7 @@ yum config-manager --set-enabled powertools
 yum clean all
 ```
 
-### Install Deps
+## Install Deps
 
 ```bash
 yum install -y curl
@@ -162,7 +162,7 @@ pm2 startup
 {% include 'src/\_includes/components/tabs.njk' %}
 You can check the node version by running `node --version`.
 
-### Install Python
+## Install Python
 
 {% set tabData = [
 {
@@ -218,7 +218,7 @@ rm -fr Python-3.12.13
 {% include 'src/\_includes/components/tabs.njk' %}
 You can check your python version by running `python3.12 --version`.
 
-### Install virtualenv
+## Install virtualenv
 
 The Hub installer still uses `virtualenv` when preparing Python services.
 
@@ -241,7 +241,7 @@ export PATH="/root/.local/bin:$PATH"
 
 Check if it is installed correctly by running `uv --version`.
 
-### Start Redis
+## Start Redis
 
 Start up redis if this is the first time you are using redis on the server.
 

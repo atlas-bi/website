@@ -1,9 +1,5 @@
 module.exports = {
   ci: {
-    upload: {
-      target: 'lhci',
-      serverBaseUrl: 'https://lighthouse.atlas.bi',
-    },
     // "assert": {
     //   "preset": "lighthouse:no-pwa",
     //   "assertions": {
@@ -27,10 +23,10 @@ module.exports = {
     //   },
     // },
     collect: {
-      staticDistDir: "_site",
+      staticDistDir: '_site',
       maxAutodiscoverUrls: 10,
       settings: {
-        hostname: '127.0.0.1'
+        hostname: '127.0.0.1',
       },
     },
   },
