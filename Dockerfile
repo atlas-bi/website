@@ -41,6 +41,10 @@ RUN pnpm run build:ci
 
 FROM node:22-bookworm-slim AS runtime
 WORKDIR /app
+# Coolify healthchecks require curl/wget inside the image.
+RUN apt-get update \
+  && apt-get install -y --no-install-recommends curl \
+  && rm -rf /var/lib/apt/lists/*
 ENV NODE_ENV=production
 ENV SITE_STATIC_DIR=/app/_site
 # Non-root cannot bind privileged port 80.
@@ -51,4 +55,6 @@ COPY --from=build --chown=node:node /app/scripts /app/scripts
 
 USER node
 EXPOSE 8080
+HEALTHCHECK --interval=5s --timeout=3s --start-period=5s --retries=5 \
+  CMD curl -fsS "http://127.0.0.1:${PORT}/health" || exit 1
 CMD ["node", "./scripts/site-proxy.js"]

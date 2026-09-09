@@ -22,7 +22,7 @@ Copy `.env.example` to `.env` and set:
 | `ANALYTICS_WEBSITE_ID` | No | Build-time: emits the Umami script tag. |
 | `ANALYTICS_SCRIPT_SRC` | No | Default `/analytics/script.js`. |
 | `ANALYTICS_HOST_URL` | No | Default `/analytics`. |
-| `PORT` | No | Origin listen port. Default `80`. |
+| `PORT` | No | Origin listen port. Default `8080` in Docker. |
 | `SITE_STATIC_DIR` | No | Directory of built HTML. Default `_site`. |
 
 ## Coolify
@@ -30,8 +30,8 @@ Copy `.env.example` to `.env` and set:
 Prefer a **Dockerfile** (not Railpack). Railpack’s Node image has no Python/`pip`, so `djlint`’s postinstall fails — and `pnpm start` is for local dev, not production.
 
 1. Coolify → Build Pack → **Dockerfile**
-2. Port **80**
-3. Set the env vars above (Meili / GlitchTip / analytics)
+2. Ports / healthcheck → **8080** (path `/health`)
+3. Set the env vars above (Meili / GlitchTip / analytics). Keep `MEILI_*` keys as **runtime** only, not build args.
 4. After deploy, run `pnpm run updateSearch` against intranet Meilisearch
 
 If you stay on Railpack temporarily: `djlint` is listed in `pnpm-workspace.yaml` `neverBuiltDependencies`, and set start command to `pnpm run start:prod` (not `pnpm start`).
