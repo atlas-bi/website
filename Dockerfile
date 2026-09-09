@@ -11,6 +11,27 @@ RUN pnpm install --frozen-lockfile --ignore-scripts \
   && pnpm rebuild sharp @parcel/watcher esbuild
 
 COPY . .
+# Bake public client config into HTML at build time (set these in Coolify build env).
+ARG SITE_URL=https://atlas.bi
+ARG ANALYTICS_WEBSITE_ID
+ARG ANALYTICS_SCRIPT_SRC=/analytics/script.js
+ARG ANALYTICS_HOST_URL=/analytics
+ARG GLITCHTIP_DSN
+ARG GLITCHTIP_TUNNEL=/glitchtip
+ARG GLITCHTIP_SECURITY_ENDPOINT=/glitchtip/security
+ARG GLITCHTIP_TRACES_SAMPLE_RATE=0.01
+ARG GLITCHTIP_ENVIRONMENT=production
+ARG GLITCHTIP_RELEASE
+ENV SITE_URL=$SITE_URL \
+    ANALYTICS_WEBSITE_ID=$ANALYTICS_WEBSITE_ID \
+    ANALYTICS_SCRIPT_SRC=$ANALYTICS_SCRIPT_SRC \
+    ANALYTICS_HOST_URL=$ANALYTICS_HOST_URL \
+    GLITCHTIP_DSN=$GLITCHTIP_DSN \
+    GLITCHTIP_TUNNEL=$GLITCHTIP_TUNNEL \
+    GLITCHTIP_SECURITY_ENDPOINT=$GLITCHTIP_SECURITY_ENDPOINT \
+    GLITCHTIP_TRACES_SAMPLE_RATE=$GLITCHTIP_TRACES_SAMPLE_RATE \
+    GLITCHTIP_ENVIRONMENT=$GLITCHTIP_ENVIRONMENT \
+    GLITCHTIP_RELEASE=$GLITCHTIP_RELEASE
 # Static build only; index Meilisearch after deploy (or set MEILI_* and change to `pnpm run build`)
 RUN pnpm run build:ci
 

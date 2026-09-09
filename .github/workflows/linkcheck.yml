@@ -15,11 +15,6 @@ jobs:
       with:
         version: 9.15.4
 
-    - name: 🧰 Setup pnpm
-      uses: pnpm/action-setup@41ff72655975bd51cab0327fa583b6e92b6d3061
-      with:
-        version: 9.15.4
-
     - name: ⎔ Setup node
       uses: actions/setup-node@v5
       with:
@@ -36,4 +31,5 @@ jobs:
     - name: 🔗 Linkcheck
       uses: untitaker/hyperlink@a3c5f96830515ee0621f21c7b7579f20b9faddcc
       with:
-        args: _site/
+        # /analytics/script.js is proxied at runtime, not a static file in _site.
+        args: --skip /analytics/script.js _site/

@@ -1,8 +1,7 @@
 module.exports = {
   // Public client key (safe in the browser). Ingest host stays private; SDK uses `tunnel`.
-  dsn:
-    process.env.GLITCHTIP_DSN ||
-    'https://4454dcba6e7f4c8790eae6ab2b8ec230@bugs.landandsea.dev/5',
+  // Only emit the SDK when set at build time (Coolify build env).
+  dsn: process.env.GLITCHTIP_DSN || '',
   tunnel: process.env.GLITCHTIP_TUNNEL || '/glitchtip',
   securityEndpoint:
     process.env.GLITCHTIP_SECURITY_ENDPOINT || '/glitchtip/security',
