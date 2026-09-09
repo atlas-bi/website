@@ -1,6 +1,6 @@
 /**
  * Permanent redirect www.example.com → example.com.
- * Uses X-Forwarded-Host / X-Forwarded-Proto when present (Cloudflare Tunnel).
+ * Redirect Location is built only from SITE_URL (trusted) plus a sanitized path.
  */
 function forwardedHostHeader(req) {
   const forwarded = req.headers['x-forwarded-host'];
@@ -17,23 +17,58 @@ function requestProto(req) {
   return req.socket?.encrypted ? 'https' : 'http';
 }
 
+function configuredApex() {
+  const siteUrl = process.env.SITE_URL;
+  if (!siteUrl) return null;
+  try {
+    return new URL(siteUrl);
+  } catch {
+    return null;
+  }
+}
+
+/** Relative path only; drops query/hash and rejects absolute / protocol-relative URLs. */
+function safeRequestPath(url) {
+  const pathOnly = (url || '/').split('?')[0].split('#')[0];
+  if (
+    !pathOnly.startsWith('/') ||
+    pathOnly.startsWith('//') ||
+    pathOnly.includes('\\') ||
+    /[^a-zA-Z0-9._~!$&'()*+,;=:@/%-]/.test(pathOnly)
+  ) {
+    return '/';
+  }
+  return pathOnly;
+}
+
 function apexLocation(req) {
-  const raw = forwardedHostHeader(req);
-  const [hostname, port] = raw.split(':');
-  const proto = requestProto(req);
-  const apex = hostname.replace(/^www\./i, '');
-  const dropPort =
-    !port ||
-    (proto === 'https' && port === '443') ||
-    (proto === 'http' && port === '80');
-  const host = dropPort ? apex : `${apex}:${port}`;
-  return `${proto}://${host}${req.url || '/'}`;
+  const apex = configuredApex();
+  if (!apex) return null;
+  return new URL(safeRequestPath(req.url), apex.origin).toString();
 }
 
 function createWwwRedirectMiddleware() {
   return function wwwRedirectMiddleware(req, res, next) {
     const host = requestHost(req);
-    if (!/^www\./i.test(host)) {
+    const apex = configuredApex();
+
+    if (!apex || !/^www\./i.test(host)) {
+      if (typeof next === 'function') return next();
+      res.statusCode = 404;
+      res.end('Not found');
+      return;
+    }
+
+    const expectedWww = `www.${apex.hostname}`;
+    if (host.toLowerCase() !== expectedWww.toLowerCase()) {
+      if (typeof next === 'function') return next();
+      res.statusCode = 404;
+      res.end('Not found');
+      return;
+    }
+
+    const location = apexLocation(req);
+    if (!location || !location.startsWith(apex.origin)) {
       if (typeof next === 'function') return next();
       res.statusCode = 404;
       res.end('Not found');
@@ -41,7 +76,7 @@ function createWwwRedirectMiddleware() {
     }
 
     res.statusCode = 301;
-    res.setHeader('Location', apexLocation(req));
+    res.setHeader('Location', location);
     res.end();
   };
 }

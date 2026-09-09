@@ -97,13 +97,16 @@ function createGlitchtipMiddleware(dsn = process.env.GLITCHTIP_DSN) {
       const upstream = await forward(
         target,
         body,
-        req.headers['content-type'] || 'application/x-sentry-envelope',
+        'application/x-sentry-envelope',
       );
-      res.statusCode = upstream.status;
-      if (upstream.contentType) {
-        res.setHeader('Content-Type', upstream.contentType);
-      }
-      res.end(upstream.text);
+      // Fixed responses only — never echo upstream status/body or request headers.
+      res.statusCode =
+        Number(upstream.status) >= 200 && Number(upstream.status) < 300
+          ? 204
+          : 502;
+      res.setHeader('Content-Type', 'text/plain; charset=utf-8');
+      res.setHeader('X-Content-Type-Options', 'nosniff');
+      res.end();
     } catch (error) {
       console.error('GlitchTip proxy failed', error);
       res.statusCode = 502;

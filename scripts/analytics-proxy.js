@@ -29,6 +29,50 @@ function upstreamPath(path) {
   return null;
 }
 
+function allowedMethodFor(targetPath, method) {
+  if (targetPath === '/script.js') return method === 'GET';
+  return method === 'POST';
+}
+
+function allowHeaderFor(targetPath) {
+  return targetPath === '/script.js' ? 'GET, OPTIONS' : 'POST, OPTIONS';
+}
+
+function buildUpstreamHeaders(req) {
+  const headers = {
+    'User-Agent': req.headers['user-agent'] || 'atlas-bi-analytics-proxy',
+    'X-Forwarded-For':
+      req.headers['x-forwarded-for'] || req.socket?.remoteAddress || '',
+    'X-Forwarded-Proto':
+      req.headers['x-forwarded-proto'] ||
+      (req.socket?.encrypted ? 'https' : 'http'),
+  };
+  if (req.headers['content-type']) {
+    headers['Content-Type'] = req.headers['content-type'];
+  }
+  return headers;
+}
+
+async function proxyUpstream(upstreamHost, targetPath, req, res) {
+  const body = req.method === 'POST' ? await readRequestBody(req) : undefined;
+  const upstream = await fetch(`${upstreamHost}${targetPath}`, {
+    method: req.method,
+    headers: buildUpstreamHeaders(req),
+    body,
+  });
+  const buffer = Buffer.from(await upstream.arrayBuffer());
+  res.statusCode = upstream.status;
+  const contentType = upstream.headers.get('content-type');
+  if (contentType) {
+    res.setHeader('Content-Type', contentType);
+  }
+  const cacheControl = upstream.headers.get('cache-control');
+  if (cacheControl && targetPath === '/script.js') {
+    res.setHeader('Cache-Control', cacheControl);
+  }
+  res.end(buffer);
+}
+
 function createAnalyticsMiddleware(host = analyticsUpstream()) {
   const upstreamHost = host.replace(/\/$/, '');
   let upstreamOrigin;
@@ -62,51 +106,15 @@ function createAnalyticsMiddleware(host = analyticsUpstream()) {
       return;
     }
 
-    const allowedMethod =
-      targetPath === '/script.js'
-        ? req.method === 'GET'
-        : req.method === 'POST';
-    if (!allowedMethod) {
+    if (!allowedMethodFor(targetPath, req.method)) {
       res.statusCode = 405;
-      res.setHeader(
-        'Allow',
-        targetPath === '/script.js' ? 'GET, OPTIONS' : 'POST, OPTIONS',
-      );
+      res.setHeader('Allow', allowHeaderFor(targetPath));
       res.end('Method not allowed');
       return;
     }
 
     try {
-      const body =
-        req.method === 'POST' ? await readRequestBody(req) : undefined;
-      const headers = {
-        'User-Agent': req.headers['user-agent'] || 'atlas-bi-analytics-proxy',
-        'X-Forwarded-For':
-          req.headers['x-forwarded-for'] || req.socket?.remoteAddress || '',
-        'X-Forwarded-Proto':
-          req.headers['x-forwarded-proto'] ||
-          (req.socket?.encrypted ? 'https' : 'http'),
-      };
-      if (req.headers['content-type']) {
-        headers['Content-Type'] = req.headers['content-type'];
-      }
-
-      const upstream = await fetch(`${upstreamHost}${targetPath}`, {
-        method: req.method,
-        headers,
-        body,
-      });
-      const buffer = Buffer.from(await upstream.arrayBuffer());
-      res.statusCode = upstream.status;
-      const contentType = upstream.headers.get('content-type');
-      if (contentType) {
-        res.setHeader('Content-Type', contentType);
-      }
-      const cacheControl = upstream.headers.get('cache-control');
-      if (cacheControl && targetPath === '/script.js') {
-        res.setHeader('Cache-Control', cacheControl);
-      }
-      res.end(buffer);
+      await proxyUpstream(upstreamHost, targetPath, req, res);
     } catch (error) {
       console.error('Analytics proxy failed', error);
       res.statusCode = 502;

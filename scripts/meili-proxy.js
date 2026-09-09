@@ -91,33 +91,48 @@ function createMeiliSearchMiddleware() {
         query = typeof parsed.q === 'string' ? parsed.q.trim() : '';
       } catch {
         res.statusCode = 400;
-        res.setHeader('Content-Type', 'application/json');
+        res.setHeader('Content-Type', 'application/json; charset=utf-8');
+        res.setHeader('X-Content-Type-Options', 'nosniff');
         res.end(JSON.stringify({ message: 'Invalid JSON body' }));
         return;
       }
 
       if (!query) {
         res.statusCode = 200;
-        res.setHeader('Content-Type', 'application/json');
+        res.setHeader('Content-Type', 'application/json; charset=utf-8');
+        res.setHeader('X-Content-Type-Options', 'nosniff');
         res.end(JSON.stringify({ hits: [] }));
         return;
       }
 
       if (query.length > 200) {
         res.statusCode = 400;
-        res.setHeader('Content-Type', 'application/json');
+        res.setHeader('Content-Type', 'application/json; charset=utf-8');
+        res.setHeader('X-Content-Type-Options', 'nosniff');
         res.end(JSON.stringify({ message: 'Query too long' }));
         return;
       }
 
       const upstream = await searchMeili(query);
+      let payload;
+      try {
+        payload = JSON.parse(upstream.text);
+      } catch {
+        res.statusCode = 502;
+        res.setHeader('Content-Type', 'application/json; charset=utf-8');
+        res.setHeader('X-Content-Type-Options', 'nosniff');
+        res.end(JSON.stringify({ message: 'Search unavailable' }));
+        return;
+      }
       res.statusCode = upstream.status;
-      res.setHeader('Content-Type', upstream.contentType);
-      res.end(upstream.text);
+      res.setHeader('Content-Type', 'application/json; charset=utf-8');
+      res.setHeader('X-Content-Type-Options', 'nosniff');
+      res.end(JSON.stringify(payload));
     } catch (error) {
       console.error('Meilisearch proxy failed', error);
       res.statusCode = 502;
-      res.setHeader('Content-Type', 'application/json');
+      res.setHeader('Content-Type', 'application/json; charset=utf-8');
+      res.setHeader('X-Content-Type-Options', 'nosniff');
       res.end(JSON.stringify({ message: 'Search unavailable' }));
     }
   };

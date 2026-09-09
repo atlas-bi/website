@@ -27,7 +27,7 @@
     const element = event.target.closest('button[data-state]');
     if (!element) return;
 
-    if (element.getAttribute('data-state') === 'open') {
+    if (element.dataset.state === 'open') {
       close(element);
     } else {
       open(element);

@@ -41,8 +41,9 @@ ENV NODE_ENV=production
 ENV SITE_STATIC_DIR=/app/_site
 ENV PORT=80
 
-COPY --from=build /app/_site /app/_site
-COPY --from=build /app/scripts /app/scripts
+COPY --from=build --chown=node:node /app/_site /app/_site
+COPY --from=build --chown=node:node /app/scripts /app/scripts
 
+USER node
 EXPOSE 80
 CMD ["node", "./scripts/site-proxy.js"]

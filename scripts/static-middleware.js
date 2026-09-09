@@ -35,12 +35,56 @@ function staticRoot() {
   return dir;
 }
 
+function notFound(res, next) {
+  if (typeof next === 'function') return next();
+  res.statusCode = 404;
+  res.end('Not found');
+}
+
+function decodeUrlPath(req) {
+  let urlPath = (req.url || '/').split('?')[0];
+  try {
+    return decodeURIComponent(urlPath);
+  } catch {
+    return null;
+  }
+}
+
+function candidateFiles(root, urlPath) {
+  const relative =
+    urlPath === '/' ? 'index.html' : urlPath.replace(/^\/+/, '');
+  const direct = path.resolve(root, relative);
+  if (path.extname(direct)) {
+    return [direct];
+  }
+  return [direct, `${direct}.html`, path.join(direct, 'index.html')];
+}
+
+function isInsideRoot(file, root) {
+  return file === root || file.startsWith(root + path.sep);
+}
+
+async function trySendFile(file, req, res) {
+  const stat = await fs.promises.stat(file);
+  if (!stat.isFile()) return false;
+  res.statusCode = 200;
+  res.setHeader(
+    'Content-Type',
+    MIME[path.extname(file).toLowerCase()] || 'application/octet-stream',
+  );
+  res.setHeader('Content-Length', String(stat.size));
+  if (req.method === 'HEAD') {
+    res.end();
+    return true;
+  }
+  fs.createReadStream(file).pipe(res);
+  return true;
+}
+
 function createStaticMiddleware(rootDir = staticRoot()) {
   if (!rootDir) {
     return function skipStatic(_req, res, next) {
-      if (typeof next === 'function') return next();
-      res.statusCode = 404;
-      res.end('Not found');
+      return notFound(res, next);
     };
   }
 
@@ -48,58 +92,26 @@ function createStaticMiddleware(rootDir = staticRoot()) {
 
   return async function staticMiddleware(req, res, next) {
     if (req.method !== 'GET' && req.method !== 'HEAD') {
-      if (typeof next === 'function') return next();
-      res.statusCode = 404;
-      res.end('Not found');
-      return;
+      return notFound(res, next);
     }
 
-    let urlPath = (req.url || '/').split('?')[0];
-    try {
-      urlPath = decodeURIComponent(urlPath);
-    } catch {
+    const urlPath = decodeUrlPath(req);
+    if (urlPath === null) {
       res.statusCode = 400;
       res.end('Bad request');
       return;
     }
 
-    const relative =
-      urlPath === '/' ? 'index.html' : urlPath.replace(/^\/+/, '');
-    const candidates = [];
-    const direct = path.resolve(root, relative);
-    candidates.push(direct);
-    if (!path.extname(direct)) {
-      candidates.push(`${direct}.html`);
-      candidates.push(path.join(direct, 'index.html'));
-    }
-
-    for (const file of candidates) {
-      if (file !== root && !file.startsWith(root + path.sep)) {
-        continue;
-      }
+    for (const file of candidateFiles(root, urlPath)) {
+      if (!isInsideRoot(file, root)) continue;
       try {
-        const stat = await fs.promises.stat(file);
-        if (!stat.isFile()) continue;
-        res.statusCode = 200;
-        res.setHeader(
-          'Content-Type',
-          MIME[path.extname(file).toLowerCase()] || 'application/octet-stream',
-        );
-        res.setHeader('Content-Length', String(stat.size));
-        if (req.method === 'HEAD') {
-          res.end();
-          return;
-        }
-        fs.createReadStream(file).pipe(res);
-        return;
+        if (await trySendFile(file, req, res)) return;
       } catch {
         // try next candidate
       }
     }
 
-    if (typeof next === 'function') return next();
-    res.statusCode = 404;
-    res.end('Not found');
+    return notFound(res, next);
   };
 }
 

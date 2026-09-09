@@ -2,7 +2,8 @@
 /**
  * Start a local Meilisearch binary for development.
  */
-const { spawn, execFileSync } = require('node:child_process');
+const { spawn } = require('node:child_process');
+const fs = require('node:fs');
 const http = require('node:http');
 const path = require('node:path');
 
@@ -10,6 +11,13 @@ const ROOT = path.join(__dirname, '..');
 const HOST = process.env.MEILI_HOST || 'http://127.0.0.1:7700';
 const PORT = process.env.MEILI_PORT || '7700';
 const MASTER_KEY = process.env.MEILI_MASTER_KEY || 'atlas-dev-master-key';
+// Fixed directories only (no process.env.PATH).
+const MEILI_BIN_DIRS = [
+  '/opt/homebrew/bin',
+  '/usr/local/bin',
+  '/usr/bin',
+  '/bin',
+];
 
 function healthCheck() {
   return new Promise((resolve) => {
@@ -38,13 +46,17 @@ async function waitForHealthy(timeoutMs = 30000) {
   throw new Error(`Meilisearch did not become healthy at ${HOST}`);
 }
 
-function hasMeiliBinary() {
-  try {
-    execFileSync('meilisearch', ['--version'], { stdio: 'ignore' });
-    return true;
-  } catch {
-    return false;
+function resolveMeiliBinary() {
+  for (const dir of MEILI_BIN_DIRS) {
+    const candidate = path.join(dir, 'meilisearch');
+    try {
+      fs.accessSync(candidate, fs.constants.X_OK);
+      return candidate;
+    } catch {
+      // try next
+    }
   }
+  return null;
 }
 
 (async () => {
@@ -55,7 +67,8 @@ function hasMeiliBinary() {
     return;
   }
 
-  if (!hasMeiliBinary()) {
+  const meiliBin = resolveMeiliBinary();
+  if (!meiliBin) {
     console.error(
       'meilisearch binary not found. Install it (`brew install meilisearch`) and retry.',
     );
@@ -76,9 +89,9 @@ function hasMeiliBinary() {
     args.push('--master-key', MASTER_KEY);
   }
 
-  const child = spawn('meilisearch', args, {
+  const child = spawn(meiliBin, args, {
     cwd: ROOT,
-    env: process.env,
+    env: { MEILI_MASTER_KEY: MASTER_KEY },
     stdio: 'inherit',
   });
   child.on('spawn', async () => {

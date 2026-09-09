@@ -29,6 +29,31 @@ const glitchtipInfo = parseDsn(glitchtipDsn);
 const analyticsHost = analyticsUpstream();
 const siteDir = staticRoot();
 
+function compose(...middlewares) {
+  return function runStack(req, res) {
+    let index = 0;
+    function next() {
+      const middleware = middlewares[index];
+      index += 1;
+      if (!middleware) {
+        res.statusCode = 404;
+        res.end('Not found');
+        return;
+      }
+      middleware(req, res, next);
+    }
+    next();
+  };
+}
+
+const handleRequest = compose(
+  wwwRedirect,
+  meili,
+  glitchtip,
+  analytics,
+  staticFiles,
+);
+
 const server = http.createServer((req, res) => {
   const path = (req.url || '').split('?')[0];
 
@@ -47,18 +72,7 @@ const server = http.createServer((req, res) => {
     return;
   }
 
-  wwwRedirect(req, res, () => {
-    meili(req, res, () => {
-      glitchtip(req, res, () => {
-        analytics(req, res, () => {
-          staticFiles(req, res, () => {
-            res.statusCode = 404;
-            res.end('Not found');
-          });
-        });
-      });
-    });
-  });
+  handleRequest(req, res);
 });
 
 server.listen(port, '0.0.0.0', () => {

@@ -41,12 +41,12 @@
     if (!trigger) return;
 
     const root = trigger.closest('[data-tabs]') || document;
-    const thisTab = trigger.getAttribute('data-tab');
+    const thisTab = trigger.dataset.tab;
     const links = root.querySelectorAll('.tab-link');
     const panels = root.querySelectorAll('.tab-block');
 
     links.forEach((link) => {
-      if (link.getAttribute('data-tab') === thisTab) {
+      if (link.dataset.tab === thisTab) {
         setActiveLink(link);
       } else {
         setInactiveLink(link);
@@ -54,7 +54,7 @@
     });
 
     panels.forEach((tab) => {
-      if (tab.getAttribute('data-tab') === thisTab) {
+      if (tab.dataset.tab === thisTab) {
         setActiveTab(tab);
       } else {
         setInactiveTab(tab);

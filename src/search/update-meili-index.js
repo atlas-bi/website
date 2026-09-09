@@ -13,7 +13,8 @@ const indexUid = process.env.MEILI_INDEX || 'atlas';
 function toDocumentId(value) {
   return (
     String(value || '')
-      .replace(/^\/+|\/+$/g, '')
+      .replace(/^\//, '')
+      .replace(/\/$/, '')
       .replace(/[^a-zA-Z0-9_-]+/g, '_')
       .slice(0, 511) || 'root'
   );
