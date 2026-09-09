@@ -2,6 +2,8 @@
  * Same-origin Meilisearch proxy.
  * Browser posts to /api/search; host forwards to private/intranet Meilisearch.
  */
+const { upstreamFetch } = require('./upstream-fetch');
+
 async function readRequestBody(req) {
   const chunks = [];
   for await (const chunk of req) {
@@ -39,7 +41,7 @@ function buildSearchPayload(query) {
 
 async function searchMeili(query) {
   const { host, apiKey, indexUid } = meiliConfig();
-  const response = await fetch(
+  const response = await upstreamFetch(
     `${host}/indexes/${encodeURIComponent(indexUid)}/search`,
     {
       method: 'POST',

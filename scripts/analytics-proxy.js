@@ -3,6 +3,8 @@
  * Browser loads /analytics/script.js and POSTs /analytics/api/send;
  * the host forwards to the private analytics server.
  */
+const { upstreamFetch } = require('./upstream-fetch');
+
 async function readRequestBody(req) {
   const chunks = [];
   for await (const chunk of req) {
@@ -55,7 +57,7 @@ function buildUpstreamHeaders(req) {
 
 async function proxyUpstream(upstreamHost, targetPath, req, res) {
   const body = req.method === 'POST' ? await readRequestBody(req) : undefined;
-  const upstream = await fetch(`${upstreamHost}${targetPath}`, {
+  const upstream = await upstreamFetch(`${upstreamHost}${targetPath}`, {
     method: req.method,
     headers: buildUpstreamHeaders(req),
     body,

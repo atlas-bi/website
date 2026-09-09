@@ -7,10 +7,10 @@ Copy `.env.example` to `.env` and set:
 | `SITE_URL` | Yes (build) | Public apex origin, no `www`. Used for canonical URLs, sitemap, and installer links. |
 | `SITE_EMAIL_DAN` | No | Help / contact mailto. |
 | `SITE_EMAIL_CHRISTOPHER` | No | Help / contact mailto. |
-| `MEILI_HOST` | Yes (search) | Private Meilisearch URL. Do not expose it publicly. |
+| `MEILI_HOST` | Yes (search) | **Internal** Meilisearch URL on the Coolify network (prefer `http://…`, not public HTTPS). |
 | `MEILI_PORT` | No | Local Meilisearch listen port. Default `7700`. |
 | `MEILI_INDEX` | No | Index name. Default `atlas`. |
-| `MEILI_MASTER_KEY` | Yes (index) | Used by `updateSearch`. |
+| `MEILI_MASTER_KEY` | Yes (index) | Used by `updateSearch` / startup indexing. |
 | `MEILI_SEARCH_KEY` | No | Used by `/api/search`. Falls back to `MEILI_MASTER_KEY`. |
 | `GLITCHTIP_DSN` | No | Build-time: enables the browser SDK. Runtime: `/glitchtip` proxy. |
 | `GLITCHTIP_TUNNEL` | No | Browser tunnel path. Default `/glitchtip`. |
@@ -18,10 +18,11 @@ Copy `.env.example` to `.env` and set:
 | `GLITCHTIP_TRACES_SAMPLE_RATE` | No | Default `0.01`. |
 | `GLITCHTIP_ENVIRONMENT` | No | Default `NODE_ENV` or `development`. Set at **build** time. |
 | `GLITCHTIP_RELEASE` | No | Optional release id. Set at **build** time. |
-| `ANALYTICS_HOST` | Yes (analytics) | Private Umami origin. Browser uses `/analytics/*` on this site. |
+| `ANALYTICS_HOST` | Yes (analytics) | **Internal** Umami origin (`http://…` on Coolify network). |
 | `ANALYTICS_WEBSITE_ID` | No | Build-time: emits the Umami script tag. |
 | `ANALYTICS_SCRIPT_SRC` | No | Default `/analytics/script.js`. |
 | `ANALYTICS_HOST_URL` | No | Default `/analytics`. |
+| `UPSTREAM_TLS_INSECURE` | No | Set `true` only if Meili/Umami must be reached over HTTPS with a self-signed cert. |
 | `PORT` | No | Origin listen port. Default `8080` in Docker. |
 | `SITE_STATIC_DIR` | No | Directory of built HTML. Default `_site`. |
 

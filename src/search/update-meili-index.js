@@ -21,7 +21,10 @@ function toDocumentId(value) {
 }
 
 async function waitForTask(client, taskUid) {
-  const task = await client.tasks.waitForTask(taskUid);
+  const task = await client.tasks.waitForTask(taskUid, {
+    timeout: Number(process.env.MEILI_TASK_TIMEOUT_MS || 120000),
+    interval: 100,
+  });
   if (task.status === 'failed') {
     const message =
       task.error?.message || JSON.stringify(task.error) || 'unknown error';
