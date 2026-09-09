@@ -52,9 +52,11 @@ ENV PORT=8080
 
 COPY --from=build --chown=node:node /app/_site /app/_site
 COPY --from=build --chown=node:node /app/scripts /app/scripts
+COPY --from=build --chown=node:node /app/src/search/update-meili-index.js /app/src/search/update-meili-index.js
+COPY --from=build --chown=node:node /app/node_modules/meilisearch /app/node_modules/meilisearch
 
 USER node
 EXPOSE 8080
-HEALTHCHECK --interval=5s --timeout=3s --start-period=5s --retries=5 \
+HEALTHCHECK --interval=5s --timeout=3s --start-period=45s --retries=5 \
   CMD curl -fsS "http://127.0.0.1:${PORT}/health" || exit 1
-CMD ["node", "./scripts/site-proxy.js"]
+CMD ["node", "./scripts/docker-entrypoint.js"]

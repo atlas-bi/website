@@ -32,6 +32,6 @@ Prefer a **Dockerfile** (not Railpack). Railpack’s Node image has no Python/`p
 1. Coolify → Build Pack → **Dockerfile**
 2. Ports / healthcheck → **8080** (path `/health`)
 3. Set the env vars above (Meili / GlitchTip / analytics). Keep `MEILI_*` keys as **runtime** only, not build args.
-4. After deploy, run `pnpm run updateSearch` against intranet Meilisearch
+4. On container start the entrypoint loads `_site/search/all.json` into Meilisearch (`MEILI_HOST` + `MEILI_MASTER_KEY` required). Search still works if indexing fails; check logs for `Indexed N documents`.
 
 If you stay on Railpack temporarily: `djlint` is listed in `pnpm-workspace.yaml` `neverBuiltDependencies`, and set start command to `pnpm run start:prod` (not `pnpm start`).
