@@ -1,7 +1,9 @@
 .pnpm-store
 _site
 build/
+lambda/
 poetry.lock
+.meilisearch/
 **/static/css/*.min.css
 **/static/js/*.min.js
 .webassets-manifest

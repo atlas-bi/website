@@ -16,11 +16,12 @@
     <div class="flex h-16 items-center px-4 container mx-auto">
         <nav class="flex grow shrink items-center justify-between space-x-4 lg:space-x-6 md:mx-6">
             <a href="/" class="flex shrink-0 items-center group">
-                {% image "./src/static/img/logo.svg", "atlas icon", "(min-width:10px) 50vw, 100vw" , "", "eager", "auto", 'h-9 w-9' %}
-                <h2 class="max-lg:hidden scroll-m-20 text-2xl font-medium transition-colors m-0 hover:text-slate-900 text-slate-700">
-                    <span class="mx-2 text-slate-300  group-hover:text-sky-400">/</span>
+                {% set class = "h-9 w-9" %}
+                <span class="h-9 w-9 shrink-0" aria-hidden="true">{% include "src/static/img/logo.svg" %}</span>
+                <span class="max-lg:hidden scroll-m-20 text-2xl font-medium transition-colors m-0 hover:text-slate-900 text-slate-700">
+                    <span class="mx-2 text-slate-500 group-hover:text-sky-700">/</span>
                     atlas
-                </h2>
+                </span>
             </a>
             <div class="max-lg:hidden border rounded-md">{% include './components/links.njk' %}</div>
             {% set links = [{"href": "/docs", "name": "Docs"}, {"href": "/pricing", "name": "Pricing"}, {"href": "/new"}] %}

@@ -36,7 +36,7 @@ cd /home/websites/atlas/requests
 ## Run the Installer
 
 ```bash
-curl -sSL https://atlas.bi/installers/requests.sh | bash -
+curl -sSL {{ site.url }}/installers/requests.sh | bash -
 ```
 
 {% set collapse={

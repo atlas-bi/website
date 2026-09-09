@@ -1,7 +1,5 @@
 {
-  "baseBranches": [
-    "dev"
-  ],
+  "baseBranches": ["dev"],
   "extends": [
     "config:base",
     "group:allNonMajor",
@@ -14,13 +12,10 @@
   ],
   "bumpVersion": "patch",
   "commitMessagePrefix": "chore(deps)",
-  "labels": [
-    "maintenance",
-    "renovate"
-  ],
+  "labels": ["maintenance", "renovate"],
   "packageRules": [
     {
-      "matchUpdateTypes": ["pin","digest", "minor", "patch"],
+      "matchUpdateTypes": ["pin", "digest", "minor", "patch"],
       "automerge": true
     },
     {

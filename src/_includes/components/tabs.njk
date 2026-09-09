@@ -1,22 +1,19 @@
-<div class="block">
+<div data-tabs>
     <div class='border-b'>
-        <nav class="flex mb-[-1px] space-x-6">
+        <div role="tablist" class="flex mb-[-1px] space-x-6">
             {%- for tab in tabData -%}
-                {%- if loop.index0 == 0 -%}
-                    <a data-tab="{{ tab.id }}"
-                       href="#"
-                       class="transition-colors tab-link px-1 py-2 border-b-2 border-b-sky-600 whitespace-nowrap no-underline text-sky-600 font-light hover:text-sky-700 hover:border-b-sky-700">{{ tab.name }}</a>
-                {%- else -%}
-                    <a data-tab="{{ tab.id }}"
-                       href="#"
-                       class="transition-colors tab-link px-1 py-2 border-b-2 border-b-transparent whitespace-nowrap no-underline text-slate-500 font-light hover:text-slate-600 hover:border-b-slate-300">{{ tab.name }}</a>
-                {%- endif -%}
+                <button type="button"
+                        role="tab"
+                        data-tab="{{ tab.id }}"
+                        aria-selected="{% if loop.index0 == 0 %}true{% else %}false{% endif %}"
+                        class="transition-colors tab-link px-1 py-2 border-b-2 whitespace-nowrap font-light {% if loop.index0 == 0 %}border-b-sky-700 text-sky-700 hover:text-sky-800 hover:border-b-sky-800{% else %}border-b-transparent text-slate-600 hover:text-slate-700 hover:border-b-slate-300{% endif %}">{{ tab.name }}</button>
             {%- endfor -%}
-        </nav>
+        </div>
     </div>
-    <div class="block">
+    <div>
         {%- for tab in tabData -%}
             <div data-tab="{{ tab.id }}"
+                 role="tabpanel"
                  class="py-2 tab-block {% if loop.index0 == 0 %}block{% else %} hidden{% endif %}">
                 {{ tab.content | safe }}
             </div>

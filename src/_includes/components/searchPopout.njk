@@ -1,34 +1,19 @@
 <div data-state="closed"
      class="fixed inset-0 z-50 bg-background/80 backdrop-blur-sm data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 "
-     style="display:none"
-     style="pointer-events: auto"
-     data-aria-hidden="true"
+     style="display:none; pointer-events: auto"
      aria-hidden="true"
      id="search-backdrop"></div>
 <div id="search-dialog"
      role="dialog"
-     aria-describedby="radix-:r5a3:"
-     aria-labelledby="radix-:r5a2:"
+     aria-modal="true"
+     aria-labelledby="search-dialog-title"
      data-state="closed"
-     style="display:none"
-     class="fixed left-[50%] top-[50%] z-50 grid w-full max-w-lg translate-x-[-50%] translate-y-[-50%] gap-4 border bg-background duration-200 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[state=closed]:slide-out-to-left-1/2 data-[state=closed]:slide-out-to-top-[48%] data-[state=open]:slide-in-from-left-1/2 data-[state=open]:slide-in-from-top-[48%] sm:rounded-lg md:w-full overflow-hidden p-0 shadow-lg"
-     tabindex="-1"
-     style="pointer-events: auto">
-    <div class="flex h-full w-full flex-col overflow-hidden rounded-md bg-popover text-popover-foreground [&amp;_[cmdk-group-heading]]:px-2 [&amp;_[cmdk-group-heading]]:font-medium [&amp;_[cmdk-group-heading]]:text-muted-foreground [&amp;_[cmdk-group]:not([hidden])_~[cmdk-group]]:pt-0 [&amp;_[cmdk-group]]:px-2 [&amp;_[cmdk-input-wrapper]_svg]:h-5 [&amp;_[cmdk-input-wrapper]_svg]:w-5 [&amp;_[cmdk-input]]:h-12 [&amp;_[cmdk-item]]:px-2 [&amp;_[cmdk-item]]:py-3 [&amp;_[cmdk-item]_svg]:h-5 [&amp;_[cmdk-item]_svg]:w-5"
-         cmdk-root="">
-        <label cmdk-label=""
-               for=":r5qn:"
-               id=":r5qm:"
-               style="position: absolute;
-                      width: 1px;
-                      height: 1px;
-                      padding: 0px;
-                      margin: -1px;
-                      overflow: hidden;
-                      clip: rect(0px, 0px, 0px, 0px);
-                      white-space: nowrap;
-                      border-width: 0px"></label>
-        <div class="flex items-center border-b px-3" cmdk-input-wrapper="">
+     style="display:none; pointer-events: auto"
+     class="fixed left-[50%] top-[50%] z-50 grid w-[min(42rem,calc(100%-1.5rem))] max-w-2xl translate-x-[-50%] translate-y-[-50%] gap-4 border bg-background duration-200 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[state=closed]:slide-out-to-left-1/2 data-[state=closed]:slide-out-to-top-[48%] data-[state=open]:slide-in-from-left-1/2 data-[state=open]:slide-in-from-top-[48%] rounded-lg overflow-hidden p-0 shadow-lg"
+     tabindex="-1">
+    <div class="flex h-full w-full flex-col overflow-hidden rounded-md bg-popover text-popover-foreground">
+        <h2 id="search-dialog-title" class="sr-only">Search the site</h2>
+        <div class="flex items-center px-3">
             <svg xmlns="http://www.w3.org/2000/svg"
                  width="24"
                  height="24"
@@ -38,11 +23,13 @@
                  stroke-width="2"
                  stroke-linecap="round"
                  stroke-linejoin="round"
-                 class="mr-2 h-4 w-4 shrink-0 opacity-50">
+                 class="mr-2 h-4 w-4 shrink-0 opacity-50"
+                 aria-hidden="true">
                 <circle cx="11" cy="11" r="8"></circle>
                 <path d="m21 21-4.3-4.3"></path>
             </svg>
-            <input class="flex h-11 w-full rounded-md bg-transparent py-3 text-sm outline-none placeholder:text-muted-foreground disabled:cursor-not-allowed disabled:opacity-50"
+            <label for="search" class="sr-only">Search</label>
+            <input class="flex h-11 w-full rounded-md bg-transparent py-3 pr-8 text-sm outline-none appearance-none placeholder:text-muted-foreground disabled:cursor-not-allowed disabled:opacity-50 [&::-webkit-search-cancel-button]:hidden [&::-webkit-search-decoration]:hidden"
                    id="search"
                    placeholder="Type to search..."
                    autocomplete="off"
@@ -50,22 +37,19 @@
                    spellcheck="false"
                    aria-autocomplete="list"
                    role="combobox"
-                   aria-expanded="true"
-                   aria-controls=":r5ql:"
-                   aria-labelledby=":r5qm:"
-                   type="text">
+                   aria-expanded="false"
+                   aria-controls="s-results"
+                   type="search">
         </div>
-        <div class="max-h-[300px] overflow-y-auto overflow-x-hidden"
-             cmdk-list=""
+        <div class="hidden max-h-[min(28rem,70vh)] overflow-y-auto overflow-x-hidden border-t"
              role="listbox"
-             aria-label="Suggestions"
-             id=":r5ql:"
-             aria-labelledby=":r5qn:"
-             style="--cmdk-list-height: 552px"
-             id="s-results">
-            <div cmdk-list-sizer="" id='search-results'></div>
+             aria-label="Search suggestions"
+             id="s-results"
+             aria-busy="false">
+            <div id="search-results"></div>
         </div>
     </div>
+    <script type="text/template" id="search-results-template">{% searchResultsTemplate %}</script>
     <button type="button"
             class="absolute right-4 top-4 rounded-sm opacity-70 ring-offset-background transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:pointer-events-none data-[state=open]:bg-accent data-[state=open]:text-muted-foreground"
             id="search-close">
@@ -78,10 +62,11 @@
              stroke-width="2"
              stroke-linecap="round"
              stroke-linejoin="round"
-             class="h-4 w-4">
+             class="h-4 w-4"
+             aria-hidden="true">
             <path d="M18 6 6 18"></path>
             <path d="m6 6 12 12"></path>
         </svg>
-        <span class="sr-only">Close</span>
+        <span class="sr-only">Close search</span>
     </button>
 </div>

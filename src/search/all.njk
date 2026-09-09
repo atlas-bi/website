@@ -2,11 +2,11 @@
 permalink: search/all.json
 eleventyExcludeFromCollections: true
 ---
-{%- set posts = collections.algolia -%}
+{%- set posts = collections.search -%}
 [
 {%- for post in posts -%}
     {
-    "objectID": "{{ post.url }}",
+    "objectID": "{{ post.url | replace('/', '_') | replace('.', '_') }}",
     "title": "{{ post.data.eleventyNavigation.title or post.data.title | default(" ") }}",
     "date": "{{ page.date }}",
     "url": "{{ post.url }}",
