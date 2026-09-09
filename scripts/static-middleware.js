@@ -25,6 +25,33 @@ const MIME = {
   '.xml': 'application/xml; charset=utf-8',
 };
 
+/** Origin Cache-Control so Cloudflare / browsers can cache static docs. */
+function cacheControlFor(ext) {
+  switch (ext) {
+    case '.html':
+      // Short browser TTL; longer edge TTL (purge or wait after deploys).
+      return 'public, max-age=300, s-maxage=86400';
+    case '.css':
+    case '.js':
+    case '.mjs':
+    case '.map':
+      // Not content-hashed; CSS is busted via ?v= build stamp.
+      return 'public, max-age=86400, s-maxage=604800';
+    case '.woff':
+    case '.woff2':
+    case '.png':
+    case '.jpg':
+    case '.jpeg':
+    case '.gif':
+    case '.webp':
+    case '.svg':
+    case '.ico':
+      return 'public, max-age=2592000, s-maxage=2592000';
+    default:
+      return 'public, max-age=3600, s-maxage=86400';
+  }
+}
+
 function staticRoot() {
   const dir = path.resolve(process.env.SITE_STATIC_DIR || '_site');
   try {
@@ -66,12 +93,12 @@ function isInsideRoot(file, root) {
 async function trySendFile(file, req, res) {
   const stat = await fs.promises.stat(file);
   if (!stat.isFile()) return false;
+  const ext = path.extname(file).toLowerCase();
   res.statusCode = 200;
-  res.setHeader(
-    'Content-Type',
-    MIME[path.extname(file).toLowerCase()] || 'application/octet-stream',
-  );
+  res.setHeader('Content-Type', MIME[ext] || 'application/octet-stream');
   res.setHeader('Content-Length', String(stat.size));
+  res.setHeader('Cache-Control', cacheControlFor(ext));
+  res.setHeader('Last-Modified', stat.mtime.toUTCString());
   if (req.method === 'HEAD') {
     res.end();
     return true;
@@ -115,6 +142,7 @@ function createStaticMiddleware(rootDir = staticRoot()) {
 }
 
 module.exports = {
+  cacheControlFor,
   createStaticMiddleware,
   staticRoot,
 };
