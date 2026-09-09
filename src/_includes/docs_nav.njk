@@ -435,7 +435,10 @@ pages: [
 {% endif %}
 <nav class="lg:text-sm lg:leading-6 relative mt-5 lg:mt-10">
     <div class='lg:hidden flex justify-end'>
-        <button id="nav-menu-close" class="border p-1 rounded-md shadow">
+        <button type="button"
+                id="nav-menu-close"
+                class="border p-1 rounded-md shadow"
+                aria-label="Close documentation menu">
             <svg xmlns="http://www.w3.org/2000/svg"
                  width="24"
                  height="24"
@@ -452,11 +455,10 @@ pages: [
     </div>
     <ul>
         {% for link in data.links %}
-            {% if link.title == "Source Code" %}<div class="pb-5"></div>{% endif %}
-            <li>
-                <a class="group flex items-center justify-between lg:text-sm lg:leading-6 mb-4 font-medium {% if link.url | startsWith(data.baseUrl) -%}text-sky-500 dark:text-sky-400{% else %}text-slate-700 hover:text-slate-900 dark:text-slate-400 {% endif %}"
+            <li{% if link.title == "Source Code" %} class="mt-8"{% endif %}>
+                <a class="group flex items-center justify-between lg:text-sm lg:leading-6 mb-4 font-medium {% if link.url | startsWith(data.baseUrl) -%}text-sky-700 dark:text-sky-400{% else %}text-slate-700 hover:text-slate-900 dark:text-slate-400 {% endif %}"
                    href="{{ link.url }}"
-                   {% if link.url | startsWith('http') %}target="_blank"{% endif %}>
+                   {% if link.url | startsWith('http') %}target="_blank" rel="noopener noreferrer"{% endif %}>
                     <div class="flex">
                         <div class="mr-4 rounded-md ring-1 ring-slate-900/5 shadow-sm group-hover:shadow group-hover:ring-slate-900/10 dark:ring-0 dark:shadow-none dark:group-hover:shadow-none dark:group-hover:highlight-white/10 group-hover:shadow-{{ link.outline }}-200 dark:group-hover:bg-sky-500 dark:bg-sky-500 dark:highlight-white/10 p-1">
                             {{ link.icon | safe }}
@@ -483,13 +485,13 @@ pages: [
         {% endfor %}
         {% for section in data.sections %}
             <li class="mt-12 lg:mt-8">
-                <h5 class="mb-8 lg:mb-3 font-semibold text-slate-900 dark:text-slate-200">{{ section.title }}</h5>
+                <p class="mb-8 lg:mb-3 font-semibold text-slate-900 dark:text-slate-200">{{ section.title }}</p>
                 <ul class="space-y-6 lg:space-y-2 border-l border-slate-100 dark:border-slate-800">
                     {% for link in section.pages %}
                         <li data-active="true">
-                            <a class="block border-l pl-4 -ml-px {% if page.url == link.url -%}text-sky-500 border-current font-semibold dark:text-sky-400{% else %}border-transparent hover:border-slate-400 dark:hover:border-slate-500 text-slate-700 hover:text-slate-900 dark:text-slate-400 dark:hover:text-slate-300{%- endif %} "
+                            <a class="block border-l pl-4 -ml-px {% if page.url == link.url -%}text-sky-700 border-current font-semibold dark:text-sky-400{% else %}border-transparent hover:border-slate-400 dark:hover:border-slate-500 text-slate-700 hover:text-slate-900 dark:text-slate-400 dark:hover:text-slate-300{%- endif %} "
                                href="{{ link.url }}"
-                               {% if link.url | startsWith('http') %}target="_blank"{% endif %}>{{ link.title }}</a>
+                               {% if link.url | startsWith('http') %}target="_blank" rel="noopener noreferrer"{% endif %}>{{ link.title }}</a>
                         </li>
                     {% endfor %}
                 </ul>

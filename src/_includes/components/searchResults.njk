@@ -1,39 +1,38 @@
 {% for x in hits %}
-    <div class="relative flex cursor-default select-none items-center rounded-sm px-2 py-1.5 text-sm outline-none aria-selected:bg-accent hover:bg-accent aria-selected:text-accent-foreground data-[disabled]:pointer-events-none data-[disabled]:opacity-50 group search-result"
+    {% set formatted = x._formatted or {} %}
+    <div class="search-result group flex cursor-pointer gap-3 rounded-lg px-3 py-2.5 text-left outline-none transition-colors hover:bg-slate-100 aria-selected:bg-slate-100"
          role="option"
          data-value="{{ x.url }}"
          aria-selected="false"
          data-selected="false">
-        <div class="flex-col w-full">
-            <div class="flex justify-between w-full">
-                <div class="flex space-x-2">
-                    <svg xmlns="http://www.w3.org/2000/svg"
-                         width="14"
-                         height="14"
-                         viewBox="0 0 24 24"
-                         fill="none"
-                         stroke="currentColor"
-                         stroke-width="2"
-                         stroke-linecap="round"
-                         stroke-linejoin="round"
-                         class="my-auto">
-                        <path d="M8 3H2v15h7c1.7 0 3 1.3 3 3V7c0-2.2-1.8-4-4-4Z" />
-                        <path d="m16 12 2 2 4-4" />
-                        <path d="M22 6V3h-6c-2.2 0-4 1.8-4 4v14c0-1.7 1.3-3 3-3h7v-2.3" />
-                    </svg>
-                    <strong>{{ x.title }}</strong>
-                </div>
-                <div class="flex">
+        <div class="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-md bg-slate-100 text-slate-500 group-hover:bg-white group-hover:text-sky-700">
+            <svg xmlns="http://www.w3.org/2000/svg"
+                 width="16"
+                 height="16"
+                 viewBox="0 0 24 24"
+                 fill="none"
+                 stroke="currentColor"
+                 stroke-width="2"
+                 stroke-linecap="round"
+                 stroke-linejoin="round"
+                 aria-hidden="true">
+                <path d="M8 3H2v15h7c1.7 0 3 1.3 3 3V7c0-2.2-1.8-4-4-4Z" />
+                <path d="m16 12 2 2 4-4" />
+                <path d="M22 6V3h-6c-2.2 0-4 1.8-4 4v14c0-1.7 1.3-3 3-3h7v-2.3" />
+            </svg>
+        </div>
+        <div class="min-w-0 flex-1">
+            <div class="flex items-start justify-between gap-3">
+                <div class="truncate font-medium text-slate-900">{{ (formatted.title or x.title) | safe }}</div>
+                <div class="flex shrink-0 flex-wrap justify-end gap-1">
                     {% for tag in x._tags %}
-                        <div class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent hover:bg-primary/80 bg-slate-200 group-hover:bg-slate-300 group-hover:cursor-default text-slate-900">
-                            {{ tag }}
-                        </div>
+                        <span class="inline-flex items-center rounded-full bg-slate-200 px-2 py-0.5 text-[11px] font-medium text-slate-700 group-hover:bg-white">{{ tag }}</span>
                     {% endfor %}
                 </div>
             </div>
-            <div>{{ x._snippetResult.content.value | safe | replace('\n', ' ') | replace("  ", " ") }}</div>
+            <p class="search-result-snippet mt-0.5 line-clamp-2 text-sm text-slate-500">{{ formatted.content | replace('∞', '') | replace('\n', ' ') | replace('  ', ' ') | safe }}</p>
         </div>
     </div>
 {% else %}
-    <div class="py-6 text-center text-sm" cmdk-empty="" role="presentation">No results found.</div>
+    <div class="px-3 py-6 text-center text-sm text-slate-500" role="status">No results found.</div>
 {% endfor %}

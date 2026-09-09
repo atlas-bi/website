@@ -132,7 +132,7 @@ fmt_blue "Finished cleaning up."
 
 fmt_green "Thanks for installing Atlas Hub!"
 echo ""
-fmt_green "Read the full install guide at https://atlas.bi/docs/hub/"
+fmt_green "Read the full install guide at {{ site.url }}/docs/hub/"
 echo ""
 fmt_blue "Next Steps"
 echo ""
@@ -151,7 +151,7 @@ ${YELLOW}Runner process was started with ${BLUE}pm2 start "$RUNNER_CMD" --name="
 ${CYAN}Updating App Settings
 
 ${YELLOW}1. Update user configuration file ${BLUE}nano $(pwd)/config_cust.py
-${YELLOW}2. Reconfigure with ${BLUE}curl -sSL https://atlas.bi/installers/hub.sh | bash -s -- --configure
+${YELLOW}2. Reconfigure with ${BLUE}curl -sSL {{ site.url }}/installers/hub.sh | bash -s -- --configure
 
 ${CYAN}Updating Nginx Settings
 

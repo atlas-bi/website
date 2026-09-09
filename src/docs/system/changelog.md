@@ -28,6 +28,6 @@ eleventyComputed:
 
 <a class="block border rounded-lg p-5 shadow bg-white no-underline group animate-fade transition-colors hover:border-sky-400 hover:shadow-sky-400" target="_blank" href="https://gitservice.com/atlas-bi/System/releases" title="gitservice releases">
   <div class="flex content-center space-x-2">
-<div class=" my-auto">{% include "src/_includes/svg/right.svg" %}</div><div class="my-auto">Release notes are kept in the <span class="text-sky-600 ">releases</span>.</div>
+<div class=" my-auto">{% include "src/_includes/svg/right.svg" %}</div><div class="my-auto">Release notes are kept in the <span class="text-sky-700 ">releases</span>.</div>
 </div>
 </a>

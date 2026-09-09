@@ -1,0 +1,10 @@
+# Coolify / Docker context
+.git
+.meilisearch
+.pnpm-store
+node_modules
+_site
+*.md
+!README.md
+.env
+.DS_Store

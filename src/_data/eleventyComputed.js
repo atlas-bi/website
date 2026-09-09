@@ -1,5 +1,5 @@
 module.exports = {
-  type: (data) => 'page',
+  type: (_data) => 'page',
   meta: {
     site: {
       name: (data) => data.site.title,
@@ -9,7 +9,7 @@ module.exports = {
         src: (data) => data.site.url + data.site.image,
       },
     },
-    language: (data) => 'en-US',
+    language: (_data) => 'en-US',
     url: (data) => data.site.url + data.page.url,
     title: (data) => data.title || data.site.title,
     description: (data) => data.description || data.site.description,
@@ -22,7 +22,7 @@ module.exports = {
     keywords: (data) => data.keywords,
     potentialAction: {
       type: 'SearchAction',
-      url: (data) => data.site.url + '?search={search_term_string}',
+      url: (data) => `${data.site.url}?search={search_term_string}`,
     },
   },
 };

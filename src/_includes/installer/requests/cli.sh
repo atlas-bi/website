@@ -32,7 +32,7 @@ Available options:
     -i, --install [DEFAULT]  Install or Upgrade Atlas Requests
     -v, --version VERSION    Install a specific release, for example 3.1.25
 
-Additional Altas Requests Help at https://atlas.bi/docs/requests
+Additional Altas Requests Help at {{ site.url }}/docs/requests
 
 EOF
   exit

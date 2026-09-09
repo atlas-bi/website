@@ -31,7 +31,7 @@ Available options:
     -i, --install [DEFAULT]  Install or Upgrade Atlas System
     -v, --version VERSION    Install a specific release, for example 3.1.25
 
-Additional Altas System Help at https://atlas.bi/docs/system
+Additional Altas System Help at {{ site.url }}/docs/system
 
 EOF
   exit

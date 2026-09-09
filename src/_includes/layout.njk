@@ -36,17 +36,29 @@
               content="black-translucent">
         <meta name="generator" content="{{ eleventy.generator }}">
         <link rel="stylesheet" href="/static/css/style.css?v={% version %}" />
+        {% if glitchtip.dsn %}
+            <script type="application/json" id="glitchtip-config">{{ glitchtip | jsonify | safe }}</script>
+            {% rollup "src/static/js/glitchtip.js" | url %}
+        {% endif %}
+        {% if analytics.websiteId %}
+            <script defer
+                    src="{{ analytics.scriptSrc }}"
+                    data-website-id="{{ analytics.websiteId }}"
+                    data-host-url="{{ analytics.hostUrl }}"></script>
+        {% endif %}
         {% jsonLdScript meta, type, tags %}
     </head>
     <body class="min-h-[100vh] flex flex-col">
+        <a href="#main-content"
+           class="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-50 focus:rounded-md focus:bg-white focus:px-4 focus:py-2 focus:text-slate-900 focus:outline focus:outline-2 focus:outline-sky-700">Skip to content</a>
         {% include "src/_includes/components/imagePopout.njk" %}
-        <div class="min-h-[100%] flex-grow">
-            {% include "src/_includes/nav.njk" %}
+        {% include "src/_includes/nav.njk" %}
+        <main id="main-content" class="min-h-[100%] flex-grow">
             {{ content | safe }}
-        </div>
+        </main>
         {% set class = "h-[90vh]" %}
-        <div class="fixed w-2/3 mt-[4.1rem] top-0 -left-1/2 md:left-1/4 -z-50">{% include 'src/static/img/logo.svg' %}</div>
-        <div class="fixed top-0 left-0 right-0 bottom-0 -z-40 bg-white/95 backdrop-blur-lg"></div>
+        <div class="fixed w-2/3 mt-[4.1rem] top-0 -left-1/2 md:left-1/4 -z-50" aria-hidden="true">{% include 'src/static/img/logo.svg' %}</div>
+        <div class="fixed top-0 left-0 right-0 bottom-0 -z-40 bg-white/95 backdrop-blur-lg" aria-hidden="true"></div>
         {% include "src/_includes/components/searchPopout.njk" %}
         {% rollup "src/static/js/search.js" | url %}
         {% rollup "src/static/js/menu.js" | url %}

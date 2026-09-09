@@ -3,6 +3,7 @@
 
   const close = (element) => {
     element.setAttribute('data-state', 'closed');
+    element.setAttribute('aria-expanded', 'false');
     element.closest('h3[data-state]')?.setAttribute('data-state', 'closed');
     element.closest('div[data-state]')?.setAttribute('data-state', 'closed');
     element
@@ -12,6 +13,7 @@
   };
   const open = (element) => {
     element.setAttribute('data-state', 'open');
+    element.setAttribute('aria-expanded', 'true');
     element.closest('h3[data-state]')?.setAttribute('data-state', 'open');
     element.closest('div[data-state]')?.setAttribute('data-state', 'open');
     element
@@ -22,11 +24,13 @@
 
   const toggle = (event) => {
     event.preventDefault();
+    const element = event.target.closest('button[data-state]');
+    if (!element) return;
 
-    if (event.target.getAttribute('data-state') == 'open') {
-      close(event.target);
+    if (element.dataset.state === 'open') {
+      close(element);
     } else {
-      open(event.target);
+      open(element);
     }
   };
 

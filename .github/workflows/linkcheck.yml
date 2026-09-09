@@ -15,11 +15,6 @@ jobs:
       with:
         version: 9.15.4
 
-    - name: 🧰 Setup pnpm
-      uses: pnpm/action-setup@41ff72655975bd51cab0327fa583b6e92b6d3061
-      with:
-        version: 9.15.4
-
     - name: ⎔ Setup node
       uses: actions/setup-node@v5
       with:
@@ -32,6 +27,10 @@ jobs:
 
     - name: 🏗️ Build
       run: pnpm run build:ci
+
+    # /analytics/script.js is served by site-proxy at runtime, not as a static file.
+    - name: Stub proxied analytics script
+      run: mkdir -p _site/analytics && printf '%s\n' '// proxied at runtime' > _site/analytics/script.js
 
     - name: 🔗 Linkcheck
       uses: untitaker/hyperlink@a3c5f96830515ee0621f21c7b7579f20b9faddcc

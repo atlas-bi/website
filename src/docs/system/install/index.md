@@ -1,7 +1,7 @@
 ---
 title: Install | How to install Atlas System in minutes with a few copy/paste commands
 tags: System
-description: Install Guide. Setup the Project Directory. mkdir -p /home/websites/atlas/system. Run the Installer curl -sSL https://atlas.bi/installers/system.sh | bash -. See Configuration for installer configuration options.
+description: How to install Atlas System. Setup the project directory and run the installer. See Configuration for installer options.
 keywords: atlas, atlas system, extract scheduler, etl, install, guide, ubuntu server
 layout: docs_system.njk
 date: Last Modified
@@ -36,7 +36,7 @@ cd /home/websites/atlas/system
 ## Run the Installer
 
 ```bash
-curl -sSL https://atlas.bi/installers/system.sh | bash -
+curl -sSL {{ site.url }}/installers/system.sh | bash -
 ```
 
 {% set collapse={

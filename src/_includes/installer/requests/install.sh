@@ -150,7 +150,7 @@ echo ${YELLOW}Back folders can be manually removed. ${BLUE}rm -r $(pwd)/backup-*
 echo ""
 fmt_green "Thanks for installing Atlas Requests!"
 echo ""
-fmt_green "Read the full install guide at https://atlas.bi/docs/requests/"
+fmt_green "Read the full install guide at {{ site.url }}/docs/requests/"
 echo ""
 fmt_blue "Next Steps"
 
