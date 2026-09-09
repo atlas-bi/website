@@ -3,6 +3,10 @@
 
 FROM node:22-bookworm-slim AS build
 WORKDIR /app
+# Eleventy `date: git Last Modified` needs git + a .git directory in the build context.
+RUN apt-get update \
+  && apt-get install -y --no-install-recommends git \
+  && rm -rf /var/lib/apt/lists/*
 RUN corepack enable
 
 COPY package.json pnpm-lock.yaml ./
@@ -39,11 +43,12 @@ FROM node:22-bookworm-slim AS runtime
 WORKDIR /app
 ENV NODE_ENV=production
 ENV SITE_STATIC_DIR=/app/_site
-ENV PORT=80
+# Non-root cannot bind privileged port 80.
+ENV PORT=8080
 
 COPY --from=build --chown=node:node /app/_site /app/_site
 COPY --from=build --chown=node:node /app/scripts /app/scripts
 
 USER node
-EXPOSE 80
+EXPOSE 8080
 CMD ["node", "./scripts/site-proxy.js"]

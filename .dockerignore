@@ -1,5 +1,5 @@
 # Coolify / Docker context
-.git
+# Keep .git — Eleventy uses `date: git Last Modified`.
 .meilisearch
 .pnpm-store
 node_modules
