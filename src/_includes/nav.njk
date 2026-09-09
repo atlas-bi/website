@@ -15,10 +15,10 @@
 <div class="sticky top-0 backdrop-blur-md bg-white/60 z-20" id="nav">
     <div class="flex h-16 items-center px-4 container mx-auto">
         <nav class="flex grow shrink items-center justify-between space-x-4 lg:space-x-6 md:mx-6">
-            <a href="/" class="flex shrink-0 items-center group">
+            <a href="/" class="flex shrink-0 items-center group" aria-label="Atlas home">
                 {% set class = "h-9 w-9" %}
                 <span class="h-9 w-9 shrink-0" aria-hidden="true">{% include "src/static/img/logo.svg" %}</span>
-                <span class="max-lg:hidden scroll-m-20 text-2xl font-medium transition-colors m-0 hover:text-slate-900 text-slate-700">
+                <span class="max-lg:hidden scroll-m-20 text-2xl font-medium transition-colors m-0 hover:text-slate-900 text-slate-700" aria-hidden="true">
                     <span class="mx-2 text-slate-500 group-hover:text-sky-700">/</span>
                     atlas
                 </span>

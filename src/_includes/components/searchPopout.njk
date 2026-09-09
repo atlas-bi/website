@@ -41,12 +41,28 @@
                    aria-controls="s-results"
                    type="search">
         </div>
-        <div class="hidden max-h-[min(28rem,70vh)] overflow-y-auto overflow-x-hidden border-t"
+        <div class="hidden max-h-[min(28rem,70vh)] overflow-y-auto overflow-x-hidden overscroll-contain border-t relative"
              role="listbox"
              aria-label="Search suggestions"
              id="s-results"
              aria-busy="false">
-            <div id="search-results"></div>
+            <div id="search-results" class="flex flex-col gap-0.5 p-2"></div>
+            <div id="search-updating"
+                 class="pointer-events-none absolute inset-0 z-10 hidden items-start justify-center bg-white/50 pt-6"
+                 aria-hidden="true">
+                <div class="flex items-center gap-2 rounded-full border border-slate-200 bg-white/95 px-3 py-1.5 text-sm text-slate-500 shadow-sm"
+                     role="status">
+                    <svg class="h-4 w-4 animate-spin text-slate-400"
+                         xmlns="http://www.w3.org/2000/svg"
+                         fill="none"
+                         viewBox="0 0 24 24"
+                         aria-hidden="true">
+                        <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                        <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z"></path>
+                    </svg>
+                    <span>Updating…</span>
+                </div>
+            </div>
         </div>
     </div>
     <script type="text/template" id="search-results-template">{% searchResultsTemplate %}</script>

@@ -292,8 +292,27 @@ pre[class*="language-"] {
   display: none;
 }
 
+.search-result {
+  display: flex;
+  width: 100%;
+  flex-shrink: 0;
+}
+
 .search-result + .search-result {
   margin-top: 0.125rem;
+}
+
+#s-results.is-searching #search-results {
+  opacity: 0.4;
+  pointer-events: none;
+}
+
+#s-results.is-searching #search-updating {
+  display: flex;
+}
+
+#s-results {
+  overscroll-behavior: contain;
 }
 
 .search-result em {

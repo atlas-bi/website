@@ -42,7 +42,7 @@ function notFound(res, next) {
 }
 
 function decodeUrlPath(req) {
-  let urlPath = (req.url || '/').split('?')[0];
+  const urlPath = (req.url || '/').split('?')[0];
   try {
     return decodeURIComponent(urlPath);
   } catch {
@@ -51,8 +51,7 @@ function decodeUrlPath(req) {
 }
 
 function candidateFiles(root, urlPath) {
-  const relative =
-    urlPath === '/' ? 'index.html' : urlPath.replace(/^\/+/, '');
+  const relative = urlPath === '/' ? 'index.html' : urlPath.replace(/^\/+/, '');
   const direct = path.resolve(root, relative);
   if (path.extname(direct)) {
     return [direct];

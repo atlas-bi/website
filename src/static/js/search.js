@@ -1,17 +1,5 @@
 import { renderString } from 'nunjucks';
 
-Function.prototype.debounce = function (delay) {
-  var outter = this,
-    timer;
-
-  return function (...args) {
-    clearTimeout(timer);
-    timer = setTimeout(() => {
-      outter.apply(this, args);
-    }, delay);
-  };
-};
-
 const searchEndpoint = '/api/search';
 const searchInput = document.getElementById('search');
 const searchResults = document.getElementById('search-results');
@@ -22,37 +10,117 @@ const searchBackdrop = document.querySelector('#search-backdrop');
 const searchOpen = document.querySelector('#open-search');
 const searchDialog = document.querySelector('#search-dialog');
 const searchClose = document.querySelector('#search-close');
+const searchUpdating = document.getElementById('search-updating');
+const pageBody = document.body;
 
 let searchRequest = 0;
+let activeAbort = null;
+let debounceTimer = null;
+
+const loadingSpinner = `
+  <svg class="h-4 w-4 animate-spin text-slate-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" aria-hidden="true">
+    <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+    <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z"></path>
+  </svg>`;
+
+const setBodyScrollLocked = (locked) => {
+  pageBody?.classList.toggle('overflow-hidden', locked);
+};
 
 const setResultsPanel = (visible, busy = false) => {
   searchResultsPanel?.classList.toggle('hidden', !visible);
+  searchResultsPanel?.classList.toggle('is-searching', busy);
   searchResultsPanel?.setAttribute('aria-busy', busy ? 'true' : 'false');
+  searchUpdating?.setAttribute('aria-hidden', busy ? 'false' : 'true');
   searchInput?.setAttribute('aria-expanded', visible ? 'true' : 'false');
 };
 
-const showLoading = () => {
+const hasRenderedResults = () =>
+  Boolean(searchResults?.querySelector('.search-result, [data-search-empty]'));
+
+const clearResults = () => {
+  if (!searchResults) return;
+  searchResults.innerHTML = '';
+};
+
+const abortActive = () => {
+  if (!activeAbort) return;
+  activeAbort.abort();
+  activeAbort = null;
+};
+
+const showFullLoading = () => {
   setResultsPanel(true, true);
-  if (searchResults) {
-    searchResults.className = '';
-    searchResults.innerHTML = `
-      <div class="flex items-center justify-center gap-2 px-3 py-6 text-sm text-slate-500" role="status" aria-live="polite">
-        <svg class="h-4 w-4 animate-spin text-slate-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" aria-hidden="true">
-          <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
-          <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z"></path>
-        </svg>
-        <span>Searching…</span>
-      </div>`;
+  if (!searchResults) return;
+  searchResults.innerHTML = `
+    <div data-search-loading="full" class="flex items-center justify-center gap-2 px-3 py-6 text-sm text-slate-500" role="status" aria-live="polite">
+      ${loadingSpinner}
+      <span>Searching…</span>
+    </div>`;
+};
+
+const showStaleLoading = () => {
+  // Keep existing results visible; CSS dims them via #s-results.is-searching
+  setResultsPanel(true, true);
+};
+
+/** Only allow Meilisearch <em> highlights — strip other HTML that breaks the result list. */
+const sanitizeHighlight = (value) => {
+  if (value == null) return '';
+  return String(value)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/&lt;em&gt;/gi, '<em>')
+    .replace(/&lt;\/em&gt;/gi, '</em>')
+    .replace(/∞/g, '')
+    .replace(/\s+/g, ' ')
+    .trim();
+};
+
+const prepareHits = (hits) =>
+  (hits || []).map((hit) => {
+    const formatted = hit._formatted || {};
+    return {
+      ...hit,
+      title: sanitizeHighlight(hit.title),
+      _formatted: {
+        ...formatted,
+        title: sanitizeHighlight(formatted.title || hit.title),
+        content: sanitizeHighlight(formatted.content || ''),
+      },
+    };
+  });
+
+const renderHits = (hits) => {
+  if (!searchResults || !searchTemplate) return;
+  const list = prepareHits(hits);
+  searchResults.innerHTML = renderString(searchTemplate, { hits: list });
+  if (!list.length) {
+    const empty = searchResults.querySelector('[role="status"]');
+    empty?.setAttribute('data-search-empty', '');
   }
 };
 
 const fetchHits = (searchString, requestId) => {
   if (!searchTemplate) return;
+  if (requestId !== searchRequest) return;
+
+  if (!hasRenderedResults()) {
+    showFullLoading();
+  } else {
+    showStaleLoading();
+  }
+
+  abortActive();
+  const controller = new AbortController();
+  activeAbort = controller;
 
   fetch(searchEndpoint, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ q: searchString }),
+    signal: controller.signal,
   })
     .then((response) => {
       if (!response.ok) {
@@ -62,48 +130,46 @@ const fetchHits = (searchString, requestId) => {
     })
     .then(({ hits }) => {
       if (requestId !== searchRequest || !window.open) return;
-      if (searchResults) {
-        searchResults.className = hits?.length ? 'p-2' : '';
-        searchResults.innerHTML = renderString(searchTemplate, {
-          hits: hits || [],
-        });
-      }
+      renderHits(hits || []);
       setResultsPanel(true, false);
     })
     .catch((error) => {
+      if (error?.name === 'AbortError') return;
       console.error('Search failed', error);
       if (requestId !== searchRequest || !window.open) return;
-      if (searchResults) {
-        searchResults.className = '';
-        searchResults.innerHTML = renderString(searchTemplate, { hits: [] });
-      }
+      renderHits([]);
       setResultsPanel(true, false);
+    })
+    .finally(() => {
+      if (activeAbort === controller) activeAbort = null;
     });
 };
 
-const debouncedFetchHits = fetchHits.debounce(250);
-
 const onQueryInput = (e) => {
   const searchString = e.target.value.trim();
+
   searchRequest += 1;
   const requestId = searchRequest;
+  abortActive();
+  clearTimeout(debounceTimer);
 
   if (!searchString || !window.open) {
     setResultsPanel(false);
-    if (searchResults) {
-      searchResults.className = '';
-      searchResults.innerHTML = '';
-    }
+    clearResults();
     return;
   }
 
-  showLoading();
-  debouncedFetchHits(searchString, requestId);
+  if (hasRenderedResults()) {
+    showStaleLoading();
+  }
+
+  debounceTimer = setTimeout(() => {
+    fetchHits(searchString, requestId);
+  }, 200);
 };
 
 const loadSearch = () => {
   if (!searchInput) return;
-
   searchInput.addEventListener('input', onQueryInput);
 
   document.addEventListener('click', ({ target }) => {
@@ -127,12 +193,16 @@ const setOpen = (value) => {
     }
     searchOpen?.setAttribute('aria-expanded', 'true');
     searchInput?.setAttribute('aria-expanded', 'true');
+    setBodyScrollLocked(true);
     searchInput?.focus();
     window.open = true;
     setResultsPanel(false);
   } else {
     searchRequest += 1;
+    abortActive();
+    clearTimeout(debounceTimer);
     setResultsPanel(false);
+    setBodyScrollLocked(false);
     if (searchBackdrop) {
       setTimeout(() => (searchBackdrop.style.display = 'none'), 150);
       searchBackdrop.dataset.state = 'closed';
@@ -144,13 +214,8 @@ const setOpen = (value) => {
     window.open = false;
     searchOpen?.setAttribute('aria-expanded', 'false');
     searchInput?.setAttribute('aria-expanded', 'false');
-    if (searchInput) {
-      searchInput.value = '';
-    }
-    if (searchResults) {
-      searchResults.className = '';
-      searchResults.innerHTML = '';
-    }
+    if (searchInput) searchInput.value = '';
+    clearResults();
   }
 };
 
