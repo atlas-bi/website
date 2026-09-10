@@ -306,9 +306,43 @@ html.search-open body {
   touch-action: none;
 }
 
+/* Desktop: keep the centered modal capped. */
 #search-dialog {
   overscroll-behavior: none;
-  max-height: min(90dvh, 40rem);
+}
+
+@media (min-width: 640px) {
+  #search-dialog {
+    max-height: min(90dvh, 40rem);
+  }
+
+  #s-results:not(.hidden) {
+    max-height: min(28rem, 70vh);
+  }
+}
+
+/*
+ * Phones: dock under the status bar / visual viewport top so the keyboard
+ * shrinks available height instead of covering a centered dialog.
+ */
+@media (max-width: 639px) {
+  #search-dialog {
+    top: calc(var(--search-vv-top, 0px) + 0.5rem);
+    left: 0.75rem;
+    right: 0.75rem;
+    width: auto;
+    max-width: none;
+    max-height: calc(var(--search-vv-height, 100dvh) - 1rem);
+    transform: none;
+  }
+
+  #search-dialog .search-dialog-shell {
+    min-height: 0;
+  }
+
+  #s-results:not(.hidden) {
+    max-height: none;
+  }
 }
 
 #s-results {

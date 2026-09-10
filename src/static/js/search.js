@@ -19,12 +19,44 @@ let activeAbort = null;
 let debounceTimer = null;
 let lockedScrollY = 0;
 let touchLockBound = false;
+let viewportSyncBound = false;
 
 const loadingSpinner = `
   <svg class="h-4 w-4 animate-spin text-slate-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" aria-hidden="true">
     <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
     <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z"></path>
   </svg>`;
+
+/** Keep the dialog inside the visible viewport above the soft keyboard. */
+const syncSearchViewport = () => {
+  const vv = window.visualViewport;
+  const top = vv ? vv.offsetTop : 0;
+  const height = vv ? vv.height : window.innerHeight;
+  pageHtml.style.setProperty('--search-vv-top', `${top}px`);
+  pageHtml.style.setProperty('--search-vv-height', `${height}px`);
+};
+
+const setViewportSync = (enabled) => {
+  if (enabled) {
+    syncSearchViewport();
+    if (!viewportSyncBound) {
+      window.visualViewport?.addEventListener('resize', syncSearchViewport);
+      window.visualViewport?.addEventListener('scroll', syncSearchViewport);
+      window.addEventListener('resize', syncSearchViewport);
+      viewportSyncBound = true;
+    }
+    return;
+  }
+
+  if (viewportSyncBound) {
+    window.visualViewport?.removeEventListener('resize', syncSearchViewport);
+    window.visualViewport?.removeEventListener('scroll', syncSearchViewport);
+    window.removeEventListener('resize', syncSearchViewport);
+    viewportSyncBound = false;
+  }
+  pageHtml.style.removeProperty('--search-vv-top');
+  pageHtml.style.removeProperty('--search-vv-height');
+};
 
 /** Allow touch scrolling only inside the results list (iOS ignores overflow:hidden on body). */
 const canTouchScroll = (target) => {
@@ -80,6 +112,7 @@ const setResultsPanel = (visible, busy = false) => {
   searchResultsPanel?.setAttribute('aria-busy', busy ? 'true' : 'false');
   searchUpdating?.setAttribute('aria-hidden', busy ? 'false' : 'true');
   searchInput?.setAttribute('aria-expanded', visible ? 'true' : 'false');
+  if (window.open) syncSearchViewport();
 };
 
 const hasRenderedResults = () =>
@@ -241,14 +274,20 @@ const setOpen = (value) => {
     searchOpen?.setAttribute('aria-expanded', 'true');
     searchInput?.setAttribute('aria-expanded', 'true');
     setBodyScrollLocked(true);
-    searchInput?.focus();
+    setViewportSync(true);
     window.open = true;
     setResultsPanel(false);
+    // Focus after layout so iOS keeps the top-docked field above the keyboard.
+    requestAnimationFrame(() => {
+      syncSearchViewport();
+      searchInput?.focus();
+    });
   } else {
     searchRequest += 1;
     abortActive();
     clearTimeout(debounceTimer);
     setResultsPanel(false);
+    setViewportSync(false);
     setBodyScrollLocked(false);
     if (searchBackdrop) {
       setTimeout(() => (searchBackdrop.style.display = 'none'), 150);
