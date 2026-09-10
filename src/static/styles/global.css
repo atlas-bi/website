@@ -292,6 +292,65 @@ pre[class*="language-"] {
   display: none;
 }
 
+/* iOS: overflow:hidden alone does not stop rubber-band scroll behind the modal. */
+html.search-open,
+html.search-open body {
+  overflow: hidden;
+  overscroll-behavior: none;
+  touch-action: none;
+}
+
+#search-backdrop {
+  height: 100dvh;
+  overscroll-behavior: none;
+  touch-action: none;
+}
+
+/* Desktop: keep the centered modal capped. */
+#search-dialog {
+  overscroll-behavior: none;
+}
+
+@media (min-width: 640px) {
+  #search-dialog {
+    max-height: min(90dvh, 40rem);
+  }
+
+  #s-results:not(.hidden) {
+    max-height: min(28rem, 70vh);
+  }
+}
+
+/*
+ * Phones: dock under the status bar / visual viewport top so the keyboard
+ * shrinks available height instead of covering a centered dialog.
+ */
+@media (max-width: 639px) {
+  #search-dialog {
+    top: calc(var(--search-vv-top, 0px) + 0.5rem);
+    left: 0.75rem;
+    right: 0.75rem;
+    width: auto;
+    max-width: none;
+    max-height: calc(var(--search-vv-height, 100dvh) - 1rem);
+    transform: none;
+  }
+
+  #search-dialog .search-dialog-shell {
+    min-height: 0;
+  }
+
+  #s-results:not(.hidden) {
+    max-height: none;
+  }
+}
+
+#s-results {
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior: contain;
+  touch-action: pan-y;
+}
+
 .search-result {
   display: flex;
   width: 100%;
@@ -309,10 +368,6 @@ pre[class*="language-"] {
 
 #s-results.is-searching #search-updating {
   display: flex;
-}
-
-#s-results {
-  overscroll-behavior: contain;
 }
 
 .search-result em {
