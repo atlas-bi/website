@@ -292,6 +292,31 @@ pre[class*="language-"] {
   display: none;
 }
 
+/* iOS: overflow:hidden alone does not stop rubber-band scroll behind the modal. */
+html.search-open,
+html.search-open body {
+  overflow: hidden;
+  overscroll-behavior: none;
+  touch-action: none;
+}
+
+#search-backdrop {
+  height: 100dvh;
+  overscroll-behavior: none;
+  touch-action: none;
+}
+
+#search-dialog {
+  overscroll-behavior: none;
+  max-height: min(90dvh, 40rem);
+}
+
+#s-results {
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior: contain;
+  touch-action: pan-y;
+}
+
 .search-result {
   display: flex;
   width: 100%;
@@ -309,10 +334,6 @@ pre[class*="language-"] {
 
 #s-results.is-searching #search-updating {
   display: flex;
-}
-
-#s-results {
-  overscroll-behavior: contain;
 }
 
 .search-result em {

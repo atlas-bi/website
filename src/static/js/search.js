@@ -12,10 +12,13 @@ const searchDialog = document.querySelector('#search-dialog');
 const searchClose = document.querySelector('#search-close');
 const searchUpdating = document.getElementById('search-updating');
 const pageBody = document.body;
+const pageHtml = document.documentElement;
 
 let searchRequest = 0;
 let activeAbort = null;
 let debounceTimer = null;
+let lockedScrollY = 0;
+let touchLockBound = false;
 
 const loadingSpinner = `
   <svg class="h-4 w-4 animate-spin text-slate-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" aria-hidden="true">
@@ -23,8 +26,52 @@ const loadingSpinner = `
     <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z"></path>
   </svg>`;
 
+/** Allow touch scrolling only inside the results list (iOS ignores overflow:hidden on body). */
+const canTouchScroll = (target) => {
+  const panel = target instanceof Element ? target.closest('#s-results') : null;
+  if (!panel || panel.classList.contains('hidden')) return false;
+  return panel.scrollHeight > panel.clientHeight;
+};
+
+const onTouchMoveWhileOpen = (e) => {
+  if (!window.open) return;
+  if (canTouchScroll(e.target)) return;
+  e.preventDefault();
+};
+
 const setBodyScrollLocked = (locked) => {
-  pageBody?.classList.toggle('overflow-hidden', locked);
+  if (!pageBody) return;
+
+  if (locked) {
+    lockedScrollY = window.scrollY || window.pageYOffset || 0;
+    pageHtml.classList.add('search-open');
+    pageBody.classList.add('search-open', 'overflow-hidden');
+    pageBody.style.position = 'fixed';
+    pageBody.style.top = `-${lockedScrollY}px`;
+    pageBody.style.left = '0';
+    pageBody.style.right = '0';
+    pageBody.style.width = '100%';
+    if (!touchLockBound) {
+      document.addEventListener('touchmove', onTouchMoveWhileOpen, {
+        passive: false,
+      });
+      touchLockBound = true;
+    }
+    return;
+  }
+
+  pageHtml.classList.remove('search-open');
+  pageBody.classList.remove('search-open', 'overflow-hidden');
+  pageBody.style.position = '';
+  pageBody.style.top = '';
+  pageBody.style.left = '';
+  pageBody.style.right = '';
+  pageBody.style.width = '';
+  window.scrollTo(0, lockedScrollY);
+  if (touchLockBound) {
+    document.removeEventListener('touchmove', onTouchMoveWhileOpen);
+    touchLockBound = false;
+  }
 };
 
 const setResultsPanel = (visible, busy = false) => {
