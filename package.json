@@ -34,7 +34,7 @@
     "markdown-it-imsize": "2.0.1",
     "meilisearch": "^0.62.0",
     "node-fetch": "^2.7.0",
-    "npm-run-all2": "^8.0.4",
+    "npm-run-all2": "^9.0.0",
     "nunjucks": "^3.2.4",
     "outdent": "0.8.0",
     "rollup": "^4.53.3",
