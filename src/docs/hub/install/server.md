@@ -73,7 +73,7 @@ apt-get -y install curl nginx lsof build-essential git gnupg2 \\
 curl -fsSL https://deb.nodesource.com/setup_18.x | bash -
 apt-get install -y nodejs
 corepack enable
-corepack prepare "pnpm@9.15.4+sha512.stwg4vxys+GISEWbNzWaMgZGY+VielHkx0ssKd2OjgSRSDw6u0B4nP1Xi/Ni+2uoJhsF8Dh9dnku1uI+o7G2oA==" --activate
+corepack prepare "pnpm@11.26.0+sha512./A4r+JC5+YNhHxq2jAY3vOkUOQZTaZ+DwaeLAF7SXyyB53kgyP2O7i7PC1iyjNywCoTZf2m898VrLzRHECOGZA==" --activate
 pnpm i -g pm2
 pm2 install pm2-logrotate
 
@@ -88,14 +88,14 @@ id: 'alpine',
 content: '
 
 ```bash
-apk add --no-cache curl nginx nodejs npm grep gnupg redis \\
+apk add --no-cache curl nginx nodejs grep gnupg redis \\
                    sqlite sqlite-libs build-base libressl \\
                    libffi-dev libressl-dev libxslt-dev \\
                    libxml2-dev xmlsec-dev xmlsec \\
                    nano openldap-dev python3-dev wget \\
                    libffi-dev unixodbc unixodbc-dev libpq-dev
 corepack enable
-corepack prepare pnpm@latest --activate
+corepack prepare "pnpm@11.26.0+sha512./A4r+JC5+YNhHxq2jAY3vOkUOQZTaZ+DwaeLAF7SXyyB53kgyP2O7i7PC1iyjNywCoTZf2m898VrLzRHECOGZA==" --activate
 pnpm i -g pm2
 pm2 install pm2-logrotate
 
@@ -148,7 +148,7 @@ yum -y install nodejs nginx lsof git gcc gcc-c++ make gnupg2 \\
 yum groupinstall "Development tools"
 yum install -y openldap-devel python-devel
 corepack enable
-corepack prepare pnpm@latest --activate
+corepack prepare "pnpm@11.26.0+sha512./A4r+JC5+YNhHxq2jAY3vOkUOQZTaZ+DwaeLAF7SXyyB53kgyP2O7i7PC1iyjNywCoTZf2m898VrLzRHECOGZA==" --activate
 pnpm i -g pm2
 pm2 install pm2-logrotate
 
