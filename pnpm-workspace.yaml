@@ -1,6 +1,10 @@
 packages:
   - "."
 
-# Skip djlint postinstall (needs pip). Used by local/Coolify installs.
-neverBuiltDependencies:
-  - djlint
+# pnpm 11+: allowBuilds replaces neverBuiltDependencies / onlyBuiltDependencies.
+# sharp + @parcel/watcher are needed for Eleventy image processing / watch.
+# djlint postinstall needs pip — skip (Coolify/Dockerfile use --ignore-scripts).
+allowBuilds:
+  sharp: true
+  "@parcel/watcher": true
+  djlint: false

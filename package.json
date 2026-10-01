@@ -84,10 +84,5 @@
   },
   "dependencies": {
     "tailwindcss-animate": "^1.0.7"
-  },
-  "pnpm": {
-    "neverBuiltDependencies": [
-      "djlint"
-    ]
   }
 }
