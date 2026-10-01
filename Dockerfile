@@ -36,9 +36,18 @@ ENV SITE_URL=$SITE_URL \
     GLITCHTIP_SECURITY_ENDPOINT=$GLITCHTIP_SECURITY_ENDPOINT \
     GLITCHTIP_TRACES_SAMPLE_RATE=$GLITCHTIP_TRACES_SAMPLE_RATE \
     GLITCHTIP_ENVIRONMENT=$GLITCHTIP_ENVIRONMENT \
-    GLITCHTIP_RELEASE=$GLITCHTIP_RELEASE
-# Static build only; index Meilisearch after deploy (or set MEILI_* and change to `pnpm run build`)
-RUN pnpm run build:ci
+    GLITCHTIP_RELEASE=$GLITCHTIP_RELEASE \
+    ELEVENTY_IMG_CI=1 \
+    ELEVENTY_IMG_CONCURRENCY=1 \
+    ELEVENTY_IMG_TIMEOUT_MS=90000 \
+    ELEVENTY_FETCH_TIMEOUT_MS=20000 \
+    ELEVENTY_SKIP_REMOTE_IMAGES=1 \
+    SHARP_CONCURRENCY=1 \
+    UV_THREADPOOL_SIZE=4
+# Static build only; index Meilisearch after deploy (or set MEILI_* and change to `pnpm run build`).
+# Persist eleventy-img disk cache across Coolify rebuilds when BuildKit cache mounts are available.
+RUN mkdir -p .cache/eleventy-img \
+  && pnpm run build:ci
 
 FROM node:24-bookworm-slim AS runtime
 WORKDIR /app
