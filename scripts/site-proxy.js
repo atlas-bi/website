@@ -16,9 +16,14 @@ const {
 } = require('./analytics-proxy');
 const { createStaticMiddleware, staticRoot } = require('./static-middleware');
 const { createWwwRedirectMiddleware } = require('./www-redirect');
+const {
+  applySecurityHeaders,
+  createSecurityHeadersMiddleware,
+} = require('./security-headers');
 
 const port = Number(process.env.PORT || process.env.SITE_PROXY_PORT || 80);
 const glitchtipDsn = process.env.GLITCHTIP_DSN || '';
+const securityHeaders = createSecurityHeadersMiddleware();
 const glitchtip = createGlitchtipMiddleware(glitchtipDsn);
 const meili = createMeiliSearchMiddleware();
 const analytics = createAnalyticsMiddleware();
@@ -47,6 +52,7 @@ function compose(...middlewares) {
 }
 
 const handleRequest = compose(
+  securityHeaders,
   wwwRedirect,
   meili,
   glitchtip,
@@ -58,6 +64,7 @@ const server = http.createServer((req, res) => {
   const path = (req.url || '').split('?')[0];
 
   if (path === '/health') {
+    applySecurityHeaders(req, res);
     res.statusCode = 200;
     res.setHeader('Content-Type', 'application/json');
     res.end(
