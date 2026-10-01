@@ -1,8 +1,6 @@
 const fs = require('node:fs');
 const path = require('node:path');
-// @11ty/eleventy-img v7 is ESM-only; CJS require returns the module namespace.
-const eleventyImg = require('@11ty/eleventy-img');
-const Image = typeof eleventyImg === 'function' ? eleventyImg : eleventyImg.default;
+const Image = require('@11ty/eleventy-img');
 const syntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight');
 const slugify = require('slugify');
 const metagen = require('eleventy-plugin-metagen');
