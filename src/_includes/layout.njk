@@ -2,9 +2,12 @@
 <html lang="en-US">
     <head>
         {% block meta %}
+            {% set seoTitle = (title or metadata.title or site.title) %}
+            {% set seoTitle = (seoTitle.split(' | ')[0] | trim) if (' | ' in seoTitle) else seoTitle %}
+            {% set seoDesc = (desc or description or metadata.desc or metadata.description or site.description) %}
             {% metagen
-            title=title or metadata.title or site.title,
-            desc=desc or description or metadata.desc or metadata.description or site.description,
+            title=seoTitle | truncate(60, false, '…'),
+            desc=seoDesc | truncate(155, false, '…'),
             url=site.url + page.url,
             img=image or site.url + "/static/img/logo.png",
             img_alt=alt or "Atlas logo",
