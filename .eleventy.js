@@ -1,6 +1,8 @@
 const fs = require('node:fs');
 const path = require('node:path');
-const Image = require('@11ty/eleventy-img');
+// @11ty/eleventy-img v7 is ESM-only; CJS require returns the module namespace.
+const eleventyImg = require('@11ty/eleventy-img');
+const Image = typeof eleventyImg === 'function' ? eleventyImg : eleventyImg.default;
 const syntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight');
 const slugify = require('slugify');
 const metagen = require('eleventy-plugin-metagen');
@@ -139,9 +141,13 @@ module.exports = async (eleventyConfig) => {
   const { createMeiliSearchMiddleware } = require('./scripts/meili-proxy');
   const { createAnalyticsMiddleware } = require('./scripts/analytics-proxy');
   const { createWwwRedirectMiddleware } = require('./scripts/www-redirect');
+  const {
+    createSecurityHeadersMiddleware,
+  } = require('./scripts/security-headers');
   eleventyConfig.setServerOptions({
     port: Number(process.env.PORT || 8080),
     middleware: [
+      createSecurityHeadersMiddleware(),
       createWwwRedirectMiddleware(),
       createMeiliSearchMiddleware(),
       createGlitchtipMiddleware(),
