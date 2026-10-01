@@ -9,8 +9,9 @@ RUN apt-get update \
   && rm -rf /var/lib/apt/lists/*
 RUN corepack enable
 
-COPY package.json pnpm-lock.yaml ./
+COPY package.json pnpm-lock.yaml pnpm-workspace.yaml ./
 # Skip lifecycle scripts so djlint does not need pip; rebuild native packages used at build time.
+# pnpm-workspace.yaml must be present so allowBuilds applies during rebuild (pnpm 12+).
 RUN pnpm install --frozen-lockfile --ignore-scripts \
   && pnpm rebuild sharp @parcel/watcher esbuild
 
