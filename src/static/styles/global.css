@@ -6,6 +6,10 @@
 @plugin "tailwindcss-animated";
 @source "../../**/*.{html,njk,md,svg,js}";
 
+/* Light-only site: do not follow prefers-color-scheme. dark:* stays inert
+   unless an ancestor has class "dark" (we never set it). */
+@custom-variant dark (&:where(.dark, .dark *));
+
 @theme {
   --color-border: hsl(var(--border));
   --color-input: hsl(var(--input));

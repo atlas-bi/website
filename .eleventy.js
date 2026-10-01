@@ -139,9 +139,13 @@ module.exports = async (eleventyConfig) => {
   const { createMeiliSearchMiddleware } = require('./scripts/meili-proxy');
   const { createAnalyticsMiddleware } = require('./scripts/analytics-proxy');
   const { createWwwRedirectMiddleware } = require('./scripts/www-redirect');
+  const {
+    createSecurityHeadersMiddleware,
+  } = require('./scripts/security-headers');
   eleventyConfig.setServerOptions({
     port: Number(process.env.PORT || 8080),
     middleware: [
+      createSecurityHeadersMiddleware(),
       createWwwRedirectMiddleware(),
       createMeiliSearchMiddleware(),
       createGlitchtipMiddleware(),
