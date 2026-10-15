@@ -65,7 +65,11 @@ exporter MEILI_PORT=$MEILI_PORT
 fmt_yellow "Starting new services.."
 
 # Start web process.
-dotenv -- pm2 start node --name="$APP_PROCESS" --merge-logs -- ./build/server.js
+pm2_prepare_logs
+dotenv -- pm2 start node --name="$APP_PROCESS" --merge-logs \
+  --output "$(pm2_out "$APP")" \
+  --error "$(pm2_err "$APP")" \
+  -- ./build/server.js
 
 wait_for_url "http://127.0.0.1:$PORT"
 
@@ -116,7 +120,7 @@ ${CYAN}View Current Configuration
 
 ${BLUE}cat $PORT/.env
 
-${YELLOW}Web process was started with ${BLUE}dotenv -v PORT=$PORT -- pm2 start node --name="$APP_PROCESS" --merge-logs -- ./build/server.js
+${YELLOW}Web process was started with ${BLUE}dotenv -- pm2 start node --name="$APP_PROCESS" --merge-logs --output "$(pm2_out "$APP")" --error "$(pm2_err "$APP")" -- ./build/server.js
 
 ${CYAN}Updating App Settings
 

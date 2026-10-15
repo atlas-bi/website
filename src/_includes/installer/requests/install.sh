@@ -107,10 +107,16 @@ exporter MEILISEARCH_URL=http://localhost:$MEILI_PORT
 exporter MEILI_HTTP_ADDR=localhost:$MEILI_PORT
 
 # Start web process.
-dotenv -v PORT=$PORT -- pm2 start node --name="$APP_PROCESS" --merge-logs -- ./build/server.js
+pm2_prepare_logs
+dotenv -v PORT=$PORT -- pm2 start node --name="$APP_PROCESS" --merge-logs \
+  --output "$(pm2_out "$APP")" \
+  --error "$(pm2_err "$APP")" \
+  -- ./build/server.js
 
 # Start meili process.
-dotenv -- pm2 start meilisearch --name="$MEILI_PROCESS"
+dotenv -- pm2 start meilisearch --name="$MEILI_PROCESS" --merge-logs \
+  --output "$(pm2_out "$APP-meili")" \
+  --error "$(pm2_err "$APP-meili")"
 
 fmt_blue "Done setting up."
 cd ..
@@ -159,9 +165,9 @@ ${CYAN}Current Configuration
 
 ${YELLOW}$(cat $PORT/.env.local)
 
-${YELLOW}Web process was started with ${BLUE}dotenv -v PORT=$PORT -- pm2 start node --name="$APP_PROCESS" --merge-logs -- ./build/server.js
+${YELLOW}Web process was started with ${BLUE}dotenv -v PORT=$PORT -- pm2 start node --name="$APP_PROCESS" --merge-logs --output "$(pm2_out "$APP")" --error "$(pm2_err "$APP")" -- ./build/server.js
 ${YELLOW}Quirrel process was started with ${BLUE}dotenv -v PORT=$QUIRREL_PORT -- pm2 start node --name="$QUIRREL_PROCESS" -- node_modules/quirrel/dist/cjs/src/api/main.js
-${YELLOW}Meilisearch process was started with ${BLUE}dotenv -- pm2 start meilisearch --name="$MEILI_PROCESS"
+${YELLOW}Meilisearch process was started with ${BLUE}dotenv -- pm2 start meilisearch --name="$MEILI_PROCESS" --merge-logs --output "$(pm2_out "$APP-meili")" --error "$(pm2_err "$APP-meili")"
 
 ${CYAN}Updating App Settings
 
