@@ -91,9 +91,16 @@ RUNNER_CMD=".venv/bin/gunicorn --worker-class=gevent --worker-connections=1000 -
 
 echo $APP_CMD
 
-pm2 start "$APP_CMD" --name="$APP_PROCESS"
-pm2 start "$SCHEDULER_CMD" --name="$SCHEDULER_PROCESS"
-pm2 start "$RUNNER_CMD" --name="$RUNNER_PROCESS"
+pm2_prepare_logs
+pm2 start "$APP_CMD" --name="$APP_PROCESS" --merge-logs \
+  --output "$(pm2_out "$PM2_PREFIX")" \
+  --error "$(pm2_err "$PM2_PREFIX")"
+pm2 start "$SCHEDULER_CMD" --name="$SCHEDULER_PROCESS" --merge-logs \
+  --output "$(pm2_out "$PM2_PREFIX-scheduler")" \
+  --error "$(pm2_err "$PM2_PREFIX-scheduler")"
+pm2 start "$RUNNER_CMD" --name="$RUNNER_PROCESS" --merge-logs \
+  --output "$(pm2_out "$PM2_PREFIX-runner")" \
+  --error "$(pm2_err "$PM2_PREFIX-runner")"
 
 fmt_blue "Done setting up."
 
@@ -144,9 +151,9 @@ echo ""
 cat <<EOF
 ${CYAN}Current Configuration
 
-${YELLOW}Web process was started with ${BLUE}pm2 start "$APP_CMD" --name="$APP_PROCESS"
-${YELLOW}Scheduler process was started with ${BLUE}pm2 start "$SCHEDULER_CMD" --name="$SCHEDULER_PROCESS"
-${YELLOW}Runner process was started with ${BLUE}pm2 start "$RUNNER_CMD" --name="$RUNNER_PROCESS"
+${YELLOW}Web process was started with ${BLUE}pm2 start "$APP_CMD" --name="$APP_PROCESS" --merge-logs --output "$(pm2_out "$PM2_PREFIX")" --error "$(pm2_err "$PM2_PREFIX")"
+${YELLOW}Scheduler process was started with ${BLUE}pm2 start "$SCHEDULER_CMD" --name="$SCHEDULER_PROCESS" --merge-logs --output "$(pm2_out "$PM2_PREFIX-scheduler")" --error "$(pm2_err "$PM2_PREFIX-scheduler")"
+${YELLOW}Runner process was started with ${BLUE}pm2 start "$RUNNER_CMD" --name="$RUNNER_PROCESS" --merge-logs --output "$(pm2_out "$PM2_PREFIX-runner")" --error "$(pm2_err "$PM2_PREFIX-runner")"
 
 ${CYAN}Updating App Settings
 

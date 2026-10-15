@@ -21,3 +21,17 @@ check_file() {
 exporter() {
   echo $1 | tee -a .env .env.local >/dev/null
 }
+
+# Log paths stay the same across deploys (process names include the port).
+pm2_prepare_logs() {
+  PM2_LOG_DIR="${PM2_HOME:-$HOME/.pm2}/logs"
+  mkdir -p "$PM2_LOG_DIR"
+}
+
+pm2_out() {
+  echo "$PM2_LOG_DIR/${1}-out.log"
+}
+
+pm2_err() {
+  echo "$PM2_LOG_DIR/${1}-error.log"
+}
