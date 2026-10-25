@@ -217,7 +217,7 @@ importers:
         version: 3.3.0(@types/node@25.0.10)(typescript@5.9.3)
       djlint:
         specifier: ^1.36.4
-        version: 1.46.6
+        version: 1.47.0
       dotenv-cli:
         specifier: ^11.0.0
         version: 11.0.0
@@ -1627,8 +1627,8 @@ packages:
     engines: {node: '>= 0.8.0'}
     hasBin: true
 
-  djlint@1.46.6:
-    resolution: {integrity: sha512-wIWZHvS7LMNtdK3g3nYko+hb5op8b4bPAdsxq8PlH0Q+fmXCHHodygaBYbjfA4QJ+SWbwntTMoNtOsOpUVZDrQ==}
+  djlint@1.47.0:
+    resolution: {integrity: sha512-31iQMkvp6tw3ufNpornsvaAf6r2vgeTdv24nCGd+54L0K0w5iXIhsj7KmapRRo9mKhsHvBNoDWPRVRvxrTihLQ==}
 
   doctypes@1.1.0:
     resolution: {integrity: sha512-LLBi6pEqS6Do3EKQ3J0NqHWV5hhb78Pi8vvESYwyOy2c31ZEZVdtitdzsQsKb7878PEERhzUk0ftqGhG6Mz+pQ==}
@@ -4808,7 +4808,7 @@ snapshots:
 
   dev-ip@1.0.1: {}
 
-  djlint@1.46.6: {}
+  djlint@1.47.0: {}
 
   doctypes@1.1.0: {}
 
