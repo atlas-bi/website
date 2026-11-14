@@ -1,7 +1,7 @@
 # Production image for Coolify (prefer this over Railpack).
 # Serves `_site` + same-origin proxies for Meilisearch / GlitchTip / analytics.
 
-FROM node:24-bookworm-slim AS build
+FROM node:26-bookworm-slim AS build
 WORKDIR /app
 # Eleventy `date: git Last Modified` needs git + a .git directory in the build context.
 RUN apt-get update \
@@ -49,7 +49,7 @@ ENV SITE_URL=$SITE_URL \
 RUN mkdir -p .cache/eleventy-img \
   && pnpm run build:ci
 
-FROM node:24-bookworm-slim AS runtime
+FROM node:26-bookworm-slim AS runtime
 WORKDIR /app
 # Coolify healthchecks require curl/wget inside the image.
 RUN apt-get update \
