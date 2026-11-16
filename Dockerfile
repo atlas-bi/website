@@ -7,7 +7,7 @@ WORKDIR /app
 RUN apt-get update \
   && apt-get install -y --no-install-recommends git \
   && rm -rf /var/lib/apt/lists/*
-RUN corepack enable
+RUN npm install -g corepack && corepack enable
 
 COPY package.json pnpm-lock.yaml pnpm-workspace.yaml ./
 # Skip lifecycle scripts so djlint does not need pip; rebuild native packages used at build time.
