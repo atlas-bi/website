@@ -10,10 +10,9 @@ RUN apt-get update \
 RUN npm install -g --ignore-scripts corepack@0.36.0 && corepack enable
 
 COPY package.json pnpm-lock.yaml pnpm-workspace.yaml ./
-# Skip lifecycle scripts so djlint does not need pip; rebuild native packages used at build time.
-# pnpm-workspace.yaml must be present so allowBuilds applies during rebuild (pnpm 12+).
-RUN pnpm install --frozen-lockfile --ignore-scripts \
-  && pnpm rebuild sharp @parcel/watcher esbuild
+# pnpm-workspace.yaml allowBuilds runs sharp/@parcel/watcher/esbuild and skips djlint (no pip).
+# Avoid --ignore-scripts + rebuild: that path is fragile on Coolify (native install scripts skipped).
+RUN pnpm install --frozen-lockfile
 
 COPY . .
 # Bake public client config into HTML at build time (set these in Coolify build env).
@@ -45,7 +44,6 @@ ENV SITE_URL=$SITE_URL \
     SHARP_CONCURRENCY=1 \
     UV_THREADPOOL_SIZE=4
 # Static build only; index Meilisearch after deploy (or set MEILI_* and change to `pnpm run build`).
-# Persist eleventy-img disk cache across Coolify rebuilds when BuildKit cache mounts are available.
 RUN mkdir -p .cache/eleventy-img \
   && pnpm run build:ci
 

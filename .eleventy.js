@@ -7,13 +7,11 @@ const syntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight');
 const slugify = require('slugify');
 const metagen = require('eleventy-plugin-metagen');
 const eleventyNavigationPlugin = require('@11ty/eleventy-navigation');
-const outdent = require('outdent');
 const schema = require('@quasibit/eleventy-plugin-schema');
 const editOnGithub = require('eleventy-plugin-edit-on-github');
 const rollupPlugin = require('eleventy-plugin-rollup');
 const { nodeResolve } = require('@rollup/plugin-node-resolve');
 const commonjs = require('@rollup/plugin-commonjs');
-const { babel } = require('@rollup/plugin-babel');
 const cleanup = require('rollup-plugin-cleanup');
 
 const slugifyCustom = (s) =>
@@ -79,7 +77,7 @@ async function imageShortcode(
   // Fewer widths + milder PNG compression in CI to keep Coolify builds under memory/CPU limits.
   const widths = isCiImgBuild
     ? [300, 600, 1200]
-    : [72, 96, 300, 400, 500, 600, 800, 1200];
+    : [96, 400, 800, 1200];
 
   const metadata = await withTimeout(
     Image(src, {
@@ -186,19 +184,11 @@ module.exports = async (eleventyConfig) => {
   eleventyConfig.setUseGitIgnore(false);
   eleventyConfig.addFilter('widont', widont);
   eleventyConfig.addWatchTarget('./src/static/');
-  eleventyConfig.addWatchTarget('./styles/');
   eleventyConfig.addExtension('sh', {
     key: 'njk',
   });
   eleventyConfig.addNunjucksAsyncShortcode('image', imageShortcode);
   eleventyConfig.addNunjucksAsyncShortcode('get_page', getPage);
-
-  if (process.env.ELEVENTY_PRODUCTION === true) {
-    eleventyConfig.addTransform(
-      'htmlmin',
-      require('./src/_utils/minify-html.js'),
-    );
-  }
 
   eleventyConfig.addPlugin(syntaxHighlight, {
     preAttributes: {
@@ -237,9 +227,6 @@ module.exports = async (eleventyConfig) => {
         nodeResolve({ browser: true }),
         commonjs({ sourceMap: false }),
         cleanup(),
-        babel({
-          babelHelpers: 'bundled',
-        }),
       ],
     },
   });
@@ -284,10 +271,8 @@ module.exports = async (eleventyConfig) => {
   };
   markdownIt
     .use(markdownItAnchor, opts)
-    .use(require('markdown-it-imsize'), { autofill: true })
     .use(require('@toycode/markdown-it-class'), mapping)
-    .use(require('markdown-it-div'), 'div', {})
-    .use(require('markdown-it-emoji').full);
+    .use(require('markdown-it-div'), 'div', {});
 
   markdownIt.core.ruler.push('fix-heading-skip', (state) => {
     const opens = state.tokens.filter((token) => token.type === 'heading_open');
@@ -397,9 +382,9 @@ module.exports = async (eleventyConfig) => {
 
   eleventyConfig.addShortcode(
     'admonition',
-    (icon, title, text) => outdent`
-    <div class="mt-8 relative w-full rounded-lg border p-4 [&>svg]:absolute [&>svg]:text-foreground [&>svg]:left-4 [&>svg]:top-4 [&>svg+div]:translate-y-[-3px] [&:has(svg)]:pl-11 bg-background text-foreground ${icon}">
-    ${icons[icon]} 
+    (icon, title, text) =>
+      `<div class="mt-8 relative w-full rounded-lg border p-4 [&>svg]:absolute [&>svg]:text-foreground [&>svg]:left-4 [&>svg]:top-4 [&>svg+div]:translate-y-[-3px] [&:has(svg)]:pl-11 bg-background text-foreground ${icon}">
+    ${icons[icon]}
     <p class="mb-1 font-medium leading-none tracking-tight">${title}</p>
       <div class="text-sm [&amp;_p]:leading-relaxed mt-0">${unwrapper(markdownIt.render(text))}</div>
     </div>`,
