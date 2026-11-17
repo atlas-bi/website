@@ -4,6 +4,9 @@
   ],
   "description": "atlas website",
   "packageManager": "pnpm@12.20.0",
+  "engines": {
+    "node": ">=26"
+  },
   "devDependencies": {
     "@11ty/eleventy": "^3.1.2",
     "@11ty/eleventy-img": "^7.0.0",
@@ -11,37 +14,30 @@
     "@11ty/eleventy-plugin-syntaxhighlight": "^5.0.2",
     "@biomejs/biome": "^2.5.12",
     "@quasibit/eleventy-plugin-schema": "1.14.0",
-    "@rollup/plugin-babel": "^7.0.0",
     "@rollup/plugin-commonjs": "^29.0.0",
     "@rollup/plugin-node-resolve": "^16.0.3",
     "@sentry/browser": "^11.0.0",
     "@tailwindcss/cli": "^4.1.17",
     "@tailwindcss/typography": "^0.5.19",
     "@toycode/markdown-it-class": "1.2.4",
-    "axios": "^1.13.2",
     "cz-conventional-changelog": "3.3.0",
     "djlint": "^1.36.4",
     "dotenv-cli": "^11.0.0",
     "eleventy-plugin-edit-on-github": "1.1.0",
     "eleventy-plugin-metagen": "1.8.5",
     "eleventy-plugin-rollup": "^1.3.0",
-    "html-minifier": "5.1.0",
     "lint-staged": "^17.0.0",
     "markdown-it": "15.0.3",
     "markdown-it-anchor": "10.1.0",
     "markdown-it-div": "1.1.0",
-    "markdown-it-emoji": "3.1.0",
-    "markdown-it-imsize": "2.0.1",
     "meilisearch": "^0.63.0",
-    "node-fetch": "^3.0.0",
     "npm-run-all2": "^9.0.0",
     "nunjucks": "^3.2.4",
-    "outdent": "0.8.0",
     "rollup": "^4.53.3",
     "rollup-plugin-cleanup": "^3.2.1",
     "slugify": "^1.6.6",
     "tailwindcss": "^4.1.17",
-    "tailwindcss-animated": "^2.0.0"
+    "tailwindcss-animate": "^1.0.7"
   },
   "license": "AGPL-3.0-or-later",
   "name": "atlas-website",
@@ -50,8 +46,8 @@
     "url": "github:atlas-bi/website"
   },
   "scripts": {
-    "build": "ELEVENTY_PRODUCTION=true dotenv -- eleventy && NODE_ENV=production npx tailwindcss -i src/static/styles/global.css -c src/static/styles/tailwind.config.js -o _site/static/css/style.css --minify && pnpm run updateSearch",
-    "build:ci": "ELEVENTY_PRODUCTION=true eleventy && NODE_ENV=production npx tailwindcss -i src/static/styles/global.css -c src/static/styles/tailwind.config.js -o _site/static/css/style.css --minify",
+    "build": "ELEVENTY_PRODUCTION=true dotenv -- eleventy && NODE_ENV=production npx tailwindcss -i src/static/styles/global.css -o _site/static/css/style.css --minify && pnpm run updateSearch",
+    "build:ci": "ELEVENTY_PRODUCTION=true eleventy && NODE_ENV=production npx tailwindcss -i src/static/styles/global.css -o _site/static/css/style.css --minify",
     "start": "run-p meili 11ty:start tailwind:process",
     "start:prod": "SITE_STATIC_DIR=_site node ./scripts/site-proxy.js",
     "meili": "node ./scripts/meili-dev.js",
@@ -67,7 +63,7 @@
     "format:biome": "biome check --write .",
     "format:djlint": "djlint src -e njk --reformat --quiet --warn",
     "commit": "git add . && pnpm run pre-commit && cz --no-verify",
-    "tailwind:process": "npx tailwindcss -i src/static/styles/global.css -c src/static/styles/tailwind.config.js -o _site/static/css/style.css --watch"
+    "tailwind:process": "npx tailwindcss -i src/static/styles/global.css -o _site/static/css/style.css --watch"
   },
   "lint-staged": {
     "*": [
@@ -81,8 +77,5 @@
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
     }
-  },
-  "dependencies": {
-    "tailwindcss-animate": "^1.0.7"
   }
 }

@@ -9,7 +9,6 @@
     ":enableVulnerabilityAlertsWithLabel(security)",
     ":rebaseStalePrs"
   ],
-  "bumpVersion": "patch",
   "commitMessagePrefix": "chore(deps)",
   "labels": ["maintenance", "renovate"],
   "minimumReleaseAge": "3 days",
@@ -19,8 +18,8 @@
       "automerge": true
     },
     {
-      "matchDepTypes": ["devDependencies"],
-      "automerge": true
+      "matchUpdateTypes": ["major"],
+      "automerge": false
     },
     {
       "extends": "packages:linters",
