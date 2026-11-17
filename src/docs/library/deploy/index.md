@@ -32,7 +32,7 @@ Download the [latest release](https://github.com/atlas-bi/Library/releases) of A
 
 ## Update Settings
 
-Update the website configuration files as specified in [configuration](/docs/library/deploy/configuration).
+Update the website configuration files as specified in [configuration](/docs/library/deploy/configuration/).
 
 ## Install Dependencies and Update Database
 
@@ -48,8 +48,8 @@ The built website is will be in the `/out` folder and is ready to be copied to y
 
 ## Publish to the Web Server
 
-If you changes have tested nicely you can [publish](/docs/library/deploy/publish) to your web server.
+If you changes have tested nicely you can [publish](/docs/library/deploy/publish/) to your web server.
 
 We recommend to having two instances of Atlas (Atlas and Atlas-Test).
 
-First, [publish](/docs/library/deploy/publish) to test, and if your updates work well, then [publish](/docs/library/deploy/publish) to your production server.
+First, [publish](/docs/library/deploy/publish/) to test, and if your updates work well, then [publish](/docs/library/deploy/publish/) to your production server.
