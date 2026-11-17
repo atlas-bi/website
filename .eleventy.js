@@ -7,13 +7,11 @@ const syntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight');
 const slugify = require('slugify');
 const metagen = require('eleventy-plugin-metagen');
 const eleventyNavigationPlugin = require('@11ty/eleventy-navigation');
-const outdent = require('outdent');
 const schema = require('@quasibit/eleventy-plugin-schema');
 const editOnGithub = require('eleventy-plugin-edit-on-github');
 const rollupPlugin = require('eleventy-plugin-rollup');
 const { nodeResolve } = require('@rollup/plugin-node-resolve');
 const commonjs = require('@rollup/plugin-commonjs');
-const { babel } = require('@rollup/plugin-babel');
 const cleanup = require('rollup-plugin-cleanup');
 
 const slugifyCustom = (s) =>
@@ -22,6 +20,40 @@ const slugifyCustom = (s) =>
 const unwrapper = (html) => {
   return html.replace(/^<p[^>]*>/, '').replace(/<\/p>$/, '');
 };
+
+// Coolify/Docker builds hang when many {% image %} shortcodes run at once.
+// Default eleventy-img concurrency is 8–16 (CPU-based); cap it in CI and allow override.
+const isCiImgBuild =
+  process.env.ELEVENTY_IMG_CI === '1' ||
+  process.env.CI === 'true' ||
+  process.env.COOLIFY === 'true';
+
+const imgConcurrency = Number(
+  process.env.ELEVENTY_IMG_CONCURRENCY || (isCiImgBuild ? 1 : 2),
+);
+Image.concurrency =
+  Number.isFinite(imgConcurrency) && imgConcurrency > 0 ? imgConcurrency : 1;
+
+const imgTimeoutMs = Number(process.env.ELEVENTY_IMG_TIMEOUT_MS || 90000);
+const fetchTimeoutMs = Number(process.env.ELEVENTY_FETCH_TIMEOUT_MS || 20000);
+const skipRemoteImages =
+  process.env.ELEVENTY_SKIP_REMOTE_IMAGES === '1' || isCiImgBuild;
+const skipRemoteContent =
+  process.env.ELEVENTY_SKIP_REMOTE === '1' ||
+  process.env.SKIP_REMOTE_CONTENT === '1';
+
+function withTimeout(promise, ms, label) {
+  if (!Number.isFinite(ms) || ms <= 0) return promise;
+  let timer;
+  return Promise.race([
+    promise.finally(() => clearTimeout(timer)),
+    new Promise((_, reject) => {
+      timer = setTimeout(() => {
+        reject(new Error(`${label} timed out after ${ms}ms`));
+      }, ms);
+    }),
+  ]);
+}
 
 async function imageShortcode(
   src,
@@ -33,19 +65,43 @@ async function imageShortcode(
   classes = '',
   fetchpriority = '',
 ) {
-  const metadata = await Image(src, {
-    widths: [72, 96, 300, 400, 500, 600, 800, 1200],
-    formats: ['webp', 'png'],
-    sharpWebpOptions: {
-      quality: 65,
-    },
-    sharpPngOptions: {
-      compressionLevel: 9,
-      quality: 70,
-    },
-    outputDir: './_site/static/img/',
-    urlPath: '/static/img/',
-  });
+  const isRemote = /^https?:\/\//i.test(String(src));
+  if (isRemote && skipRemoteImages) {
+    const cls = classes || 'm-0';
+    const priorityAttr = fetchpriority
+      ? ` fetchpriority="${fetchpriority}"`
+      : '';
+    return `<img src="${src}" alt="${alt}" sizes="${sizes}" loading="${loading}" decoding="${decoding}" class="${cls}"${priorityAttr}>`;
+  }
+
+  // Fewer widths + milder PNG compression in CI to keep Coolify builds under memory/CPU limits.
+  const widths = isCiImgBuild
+    ? [300, 600, 1200]
+    : [96, 400, 800, 1200];
+
+  const metadata = await withTimeout(
+    Image(src, {
+      widths,
+      formats: ['webp', 'png'],
+      sharpWebpOptions: {
+        quality: 65,
+      },
+      sharpPngOptions: {
+        compressionLevel: isCiImgBuild ? 6 : 9,
+        quality: 70,
+      },
+      outputDir: './_site/static/img/',
+      urlPath: '/static/img/',
+      useCache: true,
+      cacheOptions: {
+        duration: '1y',
+        directory: '.cache/eleventy-img',
+      },
+      failOnError: true,
+    }),
+    imgTimeoutMs,
+    `eleventy-img (${src})`,
+  );
 
   const imageAttributes = {
     alt,
@@ -99,11 +155,26 @@ const widont = (string) => {
 };
 
 async function getPage(url) {
-  const response = await fetch(url);
-  const body = await response.text();
-  fixed = body.replace(/```env/g, '```ini');
-  fixed = fixed.replace(/```sh/g, '```bash');
-  return fixed;
+  if (skipRemoteContent) {
+    return `<!-- skipped remote content (${url}) -->`;
+  }
+  const controller = new AbortController();
+  const timer = setTimeout(() => controller.abort(), fetchTimeoutMs);
+  try {
+    const response = await fetch(url, { signal: controller.signal });
+    if (!response.ok) {
+      throw new Error(`HTTP ${response.status}`);
+    }
+    const body = await response.text();
+    let fixed = body.replace(/```env/g, '```ini');
+    fixed = fixed.replace(/```sh/g, '```bash');
+    return fixed;
+  } catch (err) {
+    console.warn(`[get_page] ${url}: ${err.message || err}`);
+    return `<!-- failed to fetch remote content (${url}) -->`;
+  } finally {
+    clearTimeout(timer);
+  }
 }
 
 module.exports = async (eleventyConfig) => {
@@ -113,19 +184,11 @@ module.exports = async (eleventyConfig) => {
   eleventyConfig.setUseGitIgnore(false);
   eleventyConfig.addFilter('widont', widont);
   eleventyConfig.addWatchTarget('./src/static/');
-  eleventyConfig.addWatchTarget('./styles/');
   eleventyConfig.addExtension('sh', {
     key: 'njk',
   });
   eleventyConfig.addNunjucksAsyncShortcode('image', imageShortcode);
   eleventyConfig.addNunjucksAsyncShortcode('get_page', getPage);
-
-  if (process.env.ELEVENTY_PRODUCTION === true) {
-    eleventyConfig.addTransform(
-      'htmlmin',
-      require('./src/_utils/minify-html.js'),
-    );
-  }
 
   eleventyConfig.addPlugin(syntaxHighlight, {
     preAttributes: {
@@ -164,9 +227,6 @@ module.exports = async (eleventyConfig) => {
         nodeResolve({ browser: true }),
         commonjs({ sourceMap: false }),
         cleanup(),
-        babel({
-          babelHelpers: 'bundled',
-        }),
       ],
     },
   });
@@ -211,10 +271,8 @@ module.exports = async (eleventyConfig) => {
   };
   markdownIt
     .use(markdownItAnchor, opts)
-    .use(require('markdown-it-imsize'), { autofill: true })
     .use(require('@toycode/markdown-it-class'), mapping)
-    .use(require('markdown-it-div'), 'div', {})
-    .use(require('markdown-it-emoji').full);
+    .use(require('markdown-it-div'), 'div', {});
 
   markdownIt.core.ruler.push('fix-heading-skip', (state) => {
     const opens = state.tokens.filter((token) => token.type === 'heading_open');
@@ -324,9 +382,9 @@ module.exports = async (eleventyConfig) => {
 
   eleventyConfig.addShortcode(
     'admonition',
-    (icon, title, text) => outdent`
-    <div class="mt-8 relative w-full rounded-lg border p-4 [&>svg]:absolute [&>svg]:text-foreground [&>svg]:left-4 [&>svg]:top-4 [&>svg+div]:translate-y-[-3px] [&:has(svg)]:pl-11 bg-background text-foreground ${icon}">
-    ${icons[icon]} 
+    (icon, title, text) =>
+      `<div class="mt-8 relative w-full rounded-lg border p-4 [&>svg]:absolute [&>svg]:text-foreground [&>svg]:left-4 [&>svg]:top-4 [&>svg+div]:translate-y-[-3px] [&:has(svg)]:pl-11 bg-background text-foreground ${icon}">
+    ${icons[icon]}
     <p class="mb-1 font-medium leading-none tracking-tight">${title}</p>
       <div class="text-sm [&amp;_p]:leading-relaxed mt-0">${unwrapper(markdownIt.render(text))}</div>
     </div>`,

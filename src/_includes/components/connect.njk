@@ -9,14 +9,14 @@
            target="_blank"
            rel="noopener noreferrer"
            class="fill-violet-700 hover:fill-violet-800 border rounded p-1">
-            {% set class = "w-5 h-5 animate-pulse animate-infinite " %}
+            {% set class = "w-5 h-5 animate-pulse " %}
             {% include 'src/_includes/svg/discord.svg' %}
             <span class="sr-only">Chat on Discord (opens in a new tab)</span>
         </a>
         {% if site.emails.christopher %}
         <a href="mailto:{{ site.emails.christopher }}"
            class="fill-violet-700 hover:fill-violet-800 border rounded p-1">
-            {% set class = "w-5 h-5 animate-pulse animate-infinite " %}
+            {% set class = "w-5 h-5 animate-pulse " %}
             {% include 'src/_includes/svg/send.svg' %}
             <span class="sr-only">Send an email</span>
         </a>
